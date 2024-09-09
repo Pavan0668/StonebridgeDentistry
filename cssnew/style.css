@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700|Work+Sans:300,400,500,600,700,900&display=swap");
+
+.Emergency_contact {
+  position: relative;
+  z-index: 1;
+}
+
+.Emergency_contact::before, .Emergency_contact::after {
+  background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg?t=st=1719919507~exp=1719923107~hmac=45cefc581e22bcfe8c5c77e7a254656695ce129b3036a8133b9d238ac05d4097&w=740);
+  content: '';
+  width: 50%;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.Emergency_contact::before {
+  left: 0;
+  top: 0;
+}
+
+.Emergency_contact::after {
+  right: 0;
+  top: 0;
+  background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg?w=740);
+}
+
+.Emergency_contact .Emergency_contact_inner {
+  padding: 50px 0; /* Reduced padding to decrease height */
+  position: relative;
+  z-index: 1;
+}
+
+.Emergency_contact .Emergency_contact_inner::before, .Emergency_contact .Emergency_contact_inner::after {
+  background-color: rgba(0, 171, 231, 0.8);
+  content: '';
+  width: 50%;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+@media (max-width: 767px) {
+  .Emergency_contact .Emergency_contact_inner::before, .Emergency_contact .Emergency_contact_inner::after {
+    width: 100%;
+  }
+}
+
+.Emergency_contact .Emergency_contact_inner::before {
+  left: 0;
+  top: 0;
+}
+
+.Emergency_contact .Emergency_contact_inner::after {
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 113, 253, 0.8);
+}
+
+.Emergency_contact .Emergency_contact_inner .single_emergency {
+  position: relative;
+  z-index: 87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.Emergency_contact .Emergency_contact_inner .single_emergency.left-side .info,
+.Emergency_contact .Emergency_contact_inner .single_emergency.right-side .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Emergency_contact .Emergency_contact_inner .single_emergency .icon {
+  font-size: 50px;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.Emergency_contact .Emergency_contact_inner .single_emergency .info span {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 4px;
+  font-family: "Work Sans", sans-serif;
+}
+
+.Emergency_contact .Emergency_contact_inner .single_emergency .info h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.boxed-btn3 {
+  background-color: #009dff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  border: none; /* Corrected from border: #fff; */
+}
+
+.boxed-btn3:hover {
+  background-color: #007acc;
+  color: #fff;
+}
+
+
+@media (max-width: 767px) {
+  .Emergency_contact .Emergency_contact_inner .single_emergency {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .Emergency_contact .Emergency_contact_inner .single_emergency .icon {
+    font-size: 45px;
+    margin-right: 10px;
+  }
+  .Emergency_contact .Emergency_contact_inner .single_emergency .info span {
+    font-size: 15px;
+  }
+  .Emergency_contact .Emergency_contact_inner .single_emergency .info h3 {
+    font-size: 30px;
+  }
+  .single_emergency.left-side .info_button {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+}

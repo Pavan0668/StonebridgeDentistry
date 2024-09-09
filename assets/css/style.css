@@ -1,0 +1,127 @@
+.btn-behance.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #4a8aff; }
+    .btn-behance.btn-social-icon-text i {
+      background: #1769ff;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+.btn-dribbble.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #ef7aa7; }
+    .btn-dribbble.btn-social-icon-text i {
+      background: #ea4c89;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+
+ .btn-reddit.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #ff6a33; }
+    .btn-reddit.btn-social-icon-text i {
+      background: #ff4500;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+
+.btn.btn-social-icon, .fc button.btn-social-icon, .ajax-upload-dragdrop .btn-social-icon.ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-social-icon.swal2-styled, .wizard > .actions a.btn-social-icon {
+    width: 50px;
+    height: 50px;
+    padding: 0; }
+
+
+
+
+ .btn-twitter.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #59bce7; }
+    .btn-twitter.btn-social-icon-text i {
+      background: #2caae1;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+
+
+
+.btn-facebook.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #4e6ebd; }
+    .btn-facebook.btn-social-icon-text i {
+      background: #3b579d;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+ .btn-google.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #e47163; }
+
+    .btn-google.btn-social-icon-text i {
+      background: #dc4a38;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+ .btn-linkedin.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #0198e8; }
+    .btn-linkedin.btn-social-icon-text i {
+      background: #0177b5;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+
+.btn-pinterest.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #e04046; }
+    .btn-pinterest.btn-social-icon-text i {
+      background: #cc2127;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+ .btn-youtube.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #ea5955; }
+    .btn-youtube.btn-social-icon-text i {
+      background: #e52d27;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+
+.btn-github.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #4d4d4d; }
+    .btn-github.btn-social-icon-text i {
+      background: #333333;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem; }
+
+
+.btn-outline-facebook {
+  border: 1px solid #3b579d;
+  color: #3b579d; }
+  .btn-outline-facebook:hover {
+    background: #3b579d;
+    color: #ffffff; }
+
+.btn-outline-twitter {
+  border: 1px solid #2caae1;
+  color: #2caae1; }
+  .btn-outline-twitter:hover {
+    background: #2caae1;
+    color: #ffffff; }
+
+.btn-outline-linkedin {
+  border: 1px solid #0177b5;
+  color: #0177b5; }
+  .btn-outline-linkedin:hover {
+    background: #0177b5;
+    color: #ffffff; }
+
