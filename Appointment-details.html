@@ -326,6 +326,76 @@
     }
 </style>
 
+<script>
+    function toggleWhitenedWhen() {
+        var yesCheckbox = document.getElementById('whitened-teeth-yes');
+        var whenSection = document.getElementById('whitened-when-section');
+        
+        // Show the "If Yes, when?" section if the Yes checkbox is checked
+        if (yesCheckbox.checked) {
+            whenSection.style.display = 'block';
+        } else {
+            whenSection.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    function toggleJawWhen() {
+        var yesCheckbox = document.getElementById('diagnosed-jaw-yes');
+        var whenSection = document.getElementById('jaw-when-section');
+        
+        // Show the "If Yes, when?" section if the Yes checkbox is checked
+        if (yesCheckbox.checked) {
+            whenSection.style.display = 'block';
+        } else {
+            whenSection.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    function toggleTreatedWhen() {
+        var treatedCheckbox = document.getElementById('treated-checkbox');
+        var treatedWhenSection = document.getElementById('treated-when-section');
+        
+        // Show the "If Treated, when?" section if the Treated checkbox is checked
+        if (treatedCheckbox.checked) {
+            treatedWhenSection.style.display = 'block';
+        } else {
+            treatedWhenSection.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    function togglePeriodontistWhen() {
+        var yesCheckbox = document.getElementById('seen-periodontist-yes');
+        var whenSection = document.getElementById('periodontist-when-section');
+        
+        // Show the "If Yes, when?" section if the Yes checkbox is checked
+        if (yesCheckbox.checked) {
+            whenSection.style.display = 'block';
+        } else {
+            whenSection.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    function toggleSensitiveWhen() {
+        var yesCheckbox = document.getElementById('sensitive-sweets-yes');
+        var whenSection = document.getElementById('sensitive-when-section');
+        
+        // Show the "If so, when?" section if the Yes checkbox is checked
+        if (yesCheckbox.checked) {
+            whenSection.style.display = 'block';
+        } else {
+            whenSection.style.display = 'none';
+        }
+    }
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- <script>
@@ -13648,7 +13718,7 @@ By signing this form, you give consent to our office to communicate with you via
                         </div>
                         <label>Cell#</label><input type="text" id="cell-ID">
                         <label>Home#</label><input type="text" id="Home-ID">
-                        <label>Date of birth</label><input type="text" placeholder="D / M / Y">
+                        <label>Date of birth</label><input type="text" placeholder="DD/MM/YYYY">
                         <label>Email</label><input type="text" placeholder="Emaid-ID">
                         <label>Name of spouse/Parents/Guardian</label><input type="text" placeholder="Name-Spouse">
                         <label>Emergency contact</label><input type="text" placeholder="Emergency-Contact">
@@ -13667,6 +13737,7 @@ By signing this form, you give consent to our office to communicate with you via
                     <section class="section" style="border: 1px solid black; padding: 10px;">
                         <h2>Financial Information</h2>
                         <label style="display: block; margin-bottom: 10px;">Do you have dental insurance? Yes/No/More than one</label>
+                        <label style="display: block; margin-bottom: 10px;">Do you have or have you ever had any of the following medical conditions</label>
                         <div class="row insurance" style="display: flex; justify-content: space-between;">
                             <div class="column insurance-column" style="flex: 1; padding: 10px; border-right: 1px solid black;">
                                 <h3>Primary Insurance</h3>
@@ -13690,17 +13761,17 @@ By signing this form, you give consent to our office to communicate with you via
                                 <label style="display: block; margin-bottom: 5px;">Subscriber Name</label>
                                 <input type="text" id="Suscriber-Name" style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Policy #</label>
-                                <input type="text" id="PolicyName_txt" placeholder="PolicyName_txt" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="PolicyName_txt"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Id #</label>
-                                <input type="text" id="txtID_name" placeholder="txtID_name" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="txtID_name"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth (D/M/Y)</label>
-                                <input type="text" id="DMY_DOB" placeholder="DMY_DOB" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="DMY_DOB"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Employer</label>
-                                <input type="text" id="Employees_cnd" placeholder="Employees_cnd" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="Employees_cnd"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Ins Co.</label>
-                                <input type="text" id="InsuranceNo_txt" placeholder="InsuranceNo_txt" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="InsuranceNo_txt"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Relationship to Subscriber</label>
-                                <input type="text" id="relation_subscriber" placeholder="relation_subscriber" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="relation_subscriber"  style="display: block; width: 100%; margin-bottom: 10px;">
                             </div>
                         </div>
                         <p class="note" style="margin-top: 10px;">Our office is happy to file claims electronically on your behalf, so that in many cases, we will receive your insurance reimbursement.<br>
@@ -13798,33 +13869,67 @@ By signing this form, you give consent to our office to communicate with you via
     <label>Are you looking for Comprehensive Dental Care, or Emergency Care Only?</label>
     <input type="text" id="Comprehensive-Dental">
     <div class="inline-group">
-        <label>Do you have a history of Gum Disease?</label>
-        <input type="text" id="Gum-Disease">
-        <label>Treated?</label>
-        <input type="text" id="Treated">
-        <label>Untreated?</label>
-        <input type="text" id="Untreated">
+        <label>Do you have a history of Gum Disease?</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+            <label for="treated-checkbox">Treated?</label>
+            <input type="checkbox" id="treated-checkbox" name="treated" onclick="toggleTreatedWhen()">
+            
+            <label for="untreated-checkbox">Untreated?</label>
+            <input type="checkbox" id="untreated-checkbox" name="untreated">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="treated-when-section" style="display: none; margin-top: 10px;">
+            <label>If Treated, when?</label>
+            <input type="text" id="treated-when" placeholder="Enter the date or time">
+        </div>
+    </div>
+    
+    <div class="inline-group">
+        <label>Have you seen a Periodontist?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+            <label for="seen-periodontist-yes">Yes</label>
+            <input type="checkbox" id="seen-periodontist-yes" name="seen-periodontist" onclick="togglePeriodontistWhen()">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="seen-periodontist-no">No</label>
+            <input type="checkbox" id="seen-periodontist-no" name="seen-periodontist" onclick="togglePeriodontistWhen()">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="periodontist-when-section" style="display: none; margin-top: 10px;">
+            <label>If Yes, when?</label>
+            <input type="text" id="Periodontist-when" placeholder="Enter the date or time">
+        </div>
     </div>
     <div class="inline-group">
-        <label>Have you seen a Periodontist?</label>
-        <input type="text" id="Periodontist-name">
-        <label>If so, when?</label>
-        <input type="text" id="Periodontist-when">
+        <label>Are your teeth sensitive to Sweets?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+            <label for="sensitive-sweets-yes">Yes</label>
+            <input type="checkbox" id="sensitive-sweets-yes" name="sensitive-sweets" onclick="toggleSensitiveWhen()">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="sensitive-sweets-no">No</label>
+            <input type="checkbox" id="sensitive-sweets-no" name="sensitive-sweets" onclick="toggleSensitiveWhen()">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="sensitive-when-section" style="display: none; margin-top: 10px;">
+            <label>If Yes, when?</label>
+            <input type="text" id="sensitive-when" placeholder="Enter the date or time">
+        </div>
     </div>
     <div class="inline-group">
-        <label>Are your teeth sensitive to Sweets?</label>
-        <input type="text" id="sensitive-Sweets">
-        <label>If so, when?</label>
-        <input type="text" id="sensitive-when">
-    </div>
-    <div class="inline-group">
-        <label>Have you been diagnosed with TAU (Jaw Joint) problems?</label>
-        <input type="text" id="diagnosed-TAU">
-        <label>If so, when?</label>
-        <input type="text" id="TAU-when">
-        <label>Treated/Untreated?</label>
-        <input type="text" id="Treated-Untreated" placeholder="Treated-Untreated">
-    </div>
+        <label>Have you been diagnosed with JAW (Jaw Joint) problems?</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+            <label for="diagnosed-jaw-yes">Yes</label>
+            <input type="checkbox" id="diagnosed-jaw-yes" name="diagnosed-jaw" onclick="toggleJawWhen()">
+            
+            <label for="diagnosed-jaw-no">No</label>
+            <input type="checkbox" id="diagnosed-jaw-no" name="diagnosed-jaw" onclick="toggleJawWhen()">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="jaw-when-section" style="display: none; margin-top: 10px;">
+            <label>If Yes, when?</label>
+            <input type="text" id="JAW-when" placeholder="Enter the date or time">
+        </div>
+    </div>    
     <label>Does your Jaw Joints "Click" or "Pop' when you open?</label>
     <input type="text" id="medication-reason">
     <label>Are you aware If you grind or clench your teeth at night?</label>
@@ -13838,10 +13943,20 @@ By signing this form, you give consent to our office to communicate with you via
         <input type="text" id="Removable-Fixed">
     </div>
     <div class="inline-group">
-        <label>Have you Professionally Whitened your teeth before? Yes</label>
-        <input type="text" id="Whitened-Sweets">
-        <label>No</label>
-        <input type="text" id="Whitened-No">
+        <label>Have you Professionally Whitened your teeth before?</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+            <label for="whitened-teeth-yes">Yes</label>
+            <input type="checkbox" id="whitened-teeth-yes" name="whitened-teeth" onclick="toggleWhitenedWhen()">
+            
+            <label for="whitened-teeth-no">No</label>
+            <input type="checkbox" id="whitened-teeth-no" name="whitened-teeth" onclick="toggleWhitenedWhen()">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div id="whitened-when-section" style="display: none; margin-top: 10px;">
+            <label>If Yes, when?</label>
+            <input type="text" id="Whitened-when" placeholder="Enter the date or time">
+        </div>
     </div>
     <label>Are you happy with your smile?</label>
     <input type="text" id="supplement-reason">                        
@@ -13882,73 +13997,60 @@ By signing this form, you give consent to our office to communicate with you via
                         <p>By signing this form, you give consent to our office to communicate with you via:</p>
                         <div class="container" style="display: flex; flex-wrap: wrap; width: 100%;">
                             <form id="contact-form" style="width: 100%; display: flex;">
-                                <div style="flex: 1; padding: 10px; border-right: 1px solid #000;">
+                                <div style="flex: 1; padding: 10px;">
                                     <div class="form-group" style="margin-bottom: 10px;">
-                                        <div
-                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="communication-text" name="communication-method"
-                                                value="Mobile No." style="margin-right: 10px;">
+                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="communication-text" name="communication-method" value="Mobile No." style="margin-right: 10px;">
                                             <label for="communication-text">Mobile No.</label>
                                         </div>
-                                        <div
-                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="communication-email" name="communication-method"
-                                                value="email" style="margin-right: 10px;">
+                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="communication-email" name="communication-method" value="email" style="margin-right: 10px;">
                                             <label for="communication-email">Email</label>
                                         </div>
-                                        <div
-                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="Both-email" name="Both-method" value="Both"
-                                                style="margin-right: 10px;">
+                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="Both-email" name="Both-method" value="Both" style="margin-right: 10px;">
                                             <label for="Both-email">Both text & Email address</label>
                                         </div>
-                                        <div
-                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="Both-email" name="Both-method" value="Both"
-                                                style="margin-right: 10px;">
-                                            <label for="Both-email">Neither Text nor Email</label>
+                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="Neither-email" name="Neither-method" value="Neither" style="margin-right: 10px;">
+                                            <label for="Neither-email">i do not wish to receive either text or email</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div style="flex: 1; padding: 10px;">
                                     <div class="form-group" style="margin-bottom: 10px;">
                                         <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px;">
-                                            <!-- <label for="mobile-number" style="width: 150px; display: inline-block;">Mobile Number:</label> -->
-                                            <input type="tel" id="mobile-number" name="mobile-number"
-                                                placeholder="Text your mobile number"
-                                                style="width: calc(100% - 160px);">
+                                            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Text your mobile number" style="width: calc(100% - 160px);">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div style="border: 1px solid black; padding: 5px;">
-                                            <!-- <label for="email-address" style="width: 150px; display: inline-block;">Email Address:</label> -->
-                                            <input type="email" id="email-address" name="email-address"
-                                                placeholder="Email your email address"
-                                                style="width: calc(100% - 160px);">
+                                            <input type="email" id="email-address" name="email-address" placeholder="Email your email address" style="width: calc(100% - 160px);">
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        
                         <div class="signature-section">
                             <div>
                                 <label for="signature">Signature</label>
-                                <input type="text" id="signature">
+                                <input type="text" id="signature" style="width: 350px;">
                             </div>
                             <div>
                                 <label for="print-name">Print Name</label>
-                                <input type="text" id="print-name">
+                                <input type="text" id="print-name" style="width: 350px;">
                             </div>
                             <div>
                                 <label for="date">Date</label>
-                                <input type="text" id="date" placeholder="D / M / Y">
+                                <input type="text" id="date" placeholder="DD/MM/YYYY" style="width: 350px;">
                             </div>
                         </div>
                     </section>
                 </form>
                 <hr>
             </div>
-            <button class="btn btn-primary" id="btnsbmtrprt" style="float: right;margin-right: 100px">Book Appointment</button>
+            <button class="btn btn-primary" id="btnsbmtrprt" style="float: right;margin-right: 100px">Submit Form</button>
 <br>
         </div>
         <script>
