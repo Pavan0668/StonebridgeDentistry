@@ -295,6 +295,36 @@
         }
     </style>
 
+  <style>
+        .bt_bb_column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .bt_bb_row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .bt_bb_column_content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .bt_bb_icon_list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+    
+        .bt_bb_icon_list li {
+            display: inline-block;
+        }
+    </style>
 <!-- <style>
     .bt_bb_column {
         display: flex;
@@ -1011,7 +1041,7 @@
                     'Do you have a history of Gum Disease? Treated? Untreated?',
                     'Have you seen a Periodontist? If so, when?',
                     'Are your teeth sensitive to Sweets? Hot? Cold?',
-                    'Have you been diagnosed with TAU (Jaw Joint) problems? If so, when? Treated/Untreated?',
+                    'Have you been diagnosed with TMJ (Jaw Joint) problems? If so, when? Treated/Untreated?',
                     'Does your Jaw Joints "Click" or "Pop" when you open?',
                     'Are you aware if you grind or clench your teeth at night?',
                     'Have you had orthodontic work done (braces)?',
@@ -1042,7 +1072,7 @@
                     const nextLineQuestions = [
                         'Last Dental Checkup and Cleaning? How Frequently do you visit?',
                         'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
-                        'Have you been diagnosed with TAU (Jaw Joint) problems? If so, when? Treated/Untreated?'
+                        'Have you been diagnosed with TMJ (Jaw Joint) problems? If so, when? Treated/Untreated?'
                     ];
                     
                     // Print answer
@@ -1144,7 +1174,7 @@ By signing this form, you give consent to our office to communicate with you via
                 drawBorderedBox(10, 110, 150, 20, 'Text your mobile number', mobileNumber, isTextChecked);
                 drawBorderedBox(10, 130, 150, 20, 'Email your email address', emailAddress, isEmailChecked);
                 drawBorderedBox(10, 150, 150, 20, 'Both text & Email address', '', isBothChecked);
-                drawBorderedBox(10, 170, 150, 20, 'Neither Text nor Email', '', isNeitherChecked);
+                drawBorderedBox(10, 170, 150, 20, 'I do not wish to receive either text or email', '', isNeitherChecked);
 
 
 
@@ -13789,7 +13819,7 @@ By signing this form, you give consent to our office to communicate with you via
                             <label>Date of last physical</label>
                             <input type="text" id="last-physical-date">
                         </div>
-                        <label>Are you being treated for any medical condition? If so, which?</label><input type="text" id="medical-condition-treat">
+                        <label>Are you being treated for any medical condition? If Yes, which?</label><input type="text" id="medical-condition-treat">
                         <label>Are you taking any drugs or medications at this time?</label>
                         <label>Drug:</label><input type="text" id="medication-drug-time">
                         <label>Reason:</label><input type="text" id="medication-reason">
@@ -13799,7 +13829,7 @@ By signing this form, you give consent to our office to communicate with you via
                         <label>Do you have any drug allergies or adverse effects? (Penicillin, Sulfonamide, Aspirin, Codeine, Local Anesthetic)</label><input type="text" id="drug-allergies">
                         <label>Any Latex, Nickel, or General Anesthesia Allergies?</label><input type="text" id="latex-allergies">
                         <label>Do you bruise easily or bleed for a prolonged period of time? </label><input type="text" id="bruise-bleed">
-                        <label>Do you smoke? If so, how much per day, and how long?</label><input type="text" id="antibiotics_smoke">
+                        <label>Do you smoke? If Yes, how much per day, and how long?</label><input type="text" id="antibiotics_smoke">
                         <label>Have you ever fainted, had shortness of breath or chest pains? </label><input type="text" id="antibiotics-reason">
                         <label>Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/ NO</label><input type="text" id="Pregnent-reason">
                         <label>Have you in the past, or are currently taking cortisone-based medications such as Prednisone? </label><input type="text" id="Prednisone-reason">
