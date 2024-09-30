@@ -295,7 +295,7 @@
         }
     </style>
 
-<style>
+<!-- <style>
     .bt_bb_column {
         display: flex;
         flex-direction: column;
@@ -394,7 +394,7 @@
             whenSection.style.display = 'none';
         }
     }
-</script>
+</script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -13737,7 +13737,7 @@ By signing this form, you give consent to our office to communicate with you via
                     <section class="section" style="border: 1px solid black; padding: 10px;">
                         <h2>Financial Information</h2>
                         <label style="display: block; margin-bottom: 10px;">Do you have dental insurance? Yes/No/More than one</label>
-                        <label style="display: block; margin-bottom: 10px;">Do you have or have you ever had any of the following medical conditions</label>
+                        
                         <div class="row insurance" style="display: flex; justify-content: space-between;">
                             <div class="column insurance-column" style="flex: 1; padding: 10px; border-right: 1px solid black;">
                                 <h3>Primary Insurance</h3>
@@ -13764,7 +13764,7 @@ By signing this form, you give consent to our office to communicate with you via
                                 <input type="text" id="PolicyName_txt"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Id #</label>
                                 <input type="text" id="txtID_name"  style="display: block; width: 100%; margin-bottom: 10px;">
-                                <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth (D/M/Y)</label>
+                                <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth (DD/MM/YYYY)</label>
                                 <input type="text" id="DMY_DOB"  style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Employer</label>
                                 <input type="text" id="Employees_cnd"  style="display: block; width: 100%; margin-bottom: 10px;">
@@ -13803,6 +13803,8 @@ By signing this form, you give consent to our office to communicate with you via
                         <label>Have you ever fainted, had shortness of breath or chest pains? </label><input type="text" id="antibiotics-reason">
                         <label>Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/ NO</label><input type="text" id="Pregnent-reason">
                         <label>Have you in the past, or are currently taking cortisone-based medications such as Prednisone? </label><input type="text" id="Prednisone-reason">
+                        <br><br>
+                        <label style="display: block; margin-bottom: 10px;font: bold;">Do you have or have you ever had any of the following medical conditions</label>
                         <div class="table" id="tblmedcndtn">
                             <div class="column">
                                 <ul>
@@ -13871,51 +13873,51 @@ By signing this form, you give consent to our office to communicate with you via
     <div class="inline-group">
         <label>Do you have a history of Gum Disease?</label>&nbsp;&nbsp;&nbsp;&nbsp;
         <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-            <label for="treated-checkbox">Treated?</label>
+            <label for="treated-checkbox">Yes</label>
             <input type="checkbox" id="treated-checkbox" name="treated" onclick="toggleTreatedWhen()">
             
-            <label for="untreated-checkbox">Untreated?</label>
+            <label for="untreated-checkbox">No</label>
             <input type="checkbox" id="untreated-checkbox" name="untreated">
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="treated-when-section" style="display: none; margin-top: 10px;">
+        <div id="treated-when-section" style=" margin-top: 10px;">
             <label>If Treated, when?</label>
             <input type="text" id="treated-when" placeholder="Enter the date or time">
         </div>
     </div>
     
     <div class="inline-group">
-        <label>Have you seen a Periodontist?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Have you seen a Periodontist?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
             <label for="seen-periodontist-yes">Yes</label>
             <input type="checkbox" id="seen-periodontist-yes" name="seen-periodontist" onclick="togglePeriodontistWhen()">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             <label for="seen-periodontist-no">No</label>
             <input type="checkbox" id="seen-periodontist-no" name="seen-periodontist" onclick="togglePeriodontistWhen()">
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="periodontist-when-section" style="display: none; margin-top: 10px;">
+        <div id="periodontist-when-section" style=" margin-top: 10px;">
             <label>If Yes, when?</label>
             <input type="text" id="Periodontist-when" placeholder="Enter the date or time">
         </div>
     </div>
     <div class="inline-group">
-        <label>Are your teeth sensitive to Sweets?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Are your teeth sensitive to Sweets?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
             <label for="sensitive-sweets-yes">Yes</label>
             <input type="checkbox" id="sensitive-sweets-yes" name="sensitive-sweets" onclick="toggleSensitiveWhen()">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             <label for="sensitive-sweets-no">No</label>
             <input type="checkbox" id="sensitive-sweets-no" name="sensitive-sweets" onclick="toggleSensitiveWhen()">
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="sensitive-when-section" style="display: none; margin-top: 10px;">
+        <div id="sensitive-when-section" style=" margin-top: 10px;">
             <label>If Yes, when?</label>
             <input type="text" id="sensitive-when" placeholder="Enter the date or time">
         </div>
     </div>
     <div class="inline-group">
-        <label>Have you been diagnosed with JAW (Jaw Joint) problems?</label>
+        <label>Have you been diagnosed with TMJ (Jaw Joint) problems?</label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
             <label for="diagnosed-jaw-yes">Yes</label>
@@ -13925,7 +13927,7 @@ By signing this form, you give consent to our office to communicate with you via
             <input type="checkbox" id="diagnosed-jaw-no" name="diagnosed-jaw" onclick="toggleJawWhen()">
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="jaw-when-section" style="display: none; margin-top: 10px;">
+        <div id="jaw-when-section" style=" margin-top: 10px;">
             <label>If Yes, when?</label>
             <input type="text" id="JAW-when" placeholder="Enter the date or time">
         </div>
