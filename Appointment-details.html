@@ -295,24 +295,24 @@
         }
     </style>
 
-  <style>
+    <style>
         .bt_bb_column {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-    
+
         .bt_bb_row {
             display: flex;
             flex-wrap: wrap;
         }
-    
+
         .bt_bb_column_content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-    
+
         .bt_bb_icon_list ul {
             list-style: none;
             padding: 0;
@@ -320,12 +320,12 @@
             display: flex;
             gap: 10px;
         }
-    
+
         .bt_bb_icon_list li {
             display: inline-block;
         }
     </style>
-<!-- <style>
+    <!-- <style>
     .bt_bb_column {
         display: flex;
         flex-direction: column;
@@ -426,9 +426,9 @@
     }
 </script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script>
     $(document).ready(function() {
         // When the button is clicked
         $("#btnsbmtrprt").click(function() {
@@ -546,7 +546,7 @@
 
 
 
-   
+
     <style>
         .btBelowLogoArea {
             background-color: white;
@@ -603,623 +603,631 @@
     <link rel="stylesheet" href="css/responsive.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    
-<!-- Include jsPDF AutoTable plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.17/jspdf.plugin.autotable.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $("#btnsbmtrprt").click(function (event) {
-            event.preventDefault();
-            alert('Button clicked! Generating PDF.');
-
-            try {
-                const formData = {
-                    title: $("input[name='title']:checked").val() || "",
-                    firstName: $("input[placeholder='First']").val() || "",
-                    initial: $("input[placeholder='Initial']").val() || "",
-                    lastName: $("input[placeholder='Last']").val() || "",
-                    street: $("input[placeholder='Street']").val() || "",
-                    apt: $("input[placeholder='Apt']").val() || "",
-                    city: $("input[placeholder='City']").val() || "",
-                    prov: $("input[placeholder='Prov']").val() || "",
-                    postalCode: $("input[placeholder='Postal Code']").val() || "",
-                    cell: $("input[id='cell-ID']").val() || "",
-                    home: $("input[id='Home-ID']").val() || "",
-                    dob: $("input[placeholder='D / M / Y']").val() || "",
-                    email: $("input[placeholder='Emaid-ID']").val() || "",
-                    spouse: $("input[placeholder='Name-Spouse']").val() || "",
-                    emergencyContact: $("input[placeholder='Emergency-Contact']").val() || "",
-                    emergencyPhone: $("input[placeholder='Phone-ID']").val() || "",
-                    primarySubscriberName: $("input[id='SubscriberName']").val() || "",
-                    primaryPolicyNumber: $("input[id='IDtxt']").val() || "",
-                    primaryIdNumber: $("input[id='Policy']").val() || "",
-                    primarySubscriberDob: $("input[id='DOBtxt']").val() || "",
-                    primaryEmployer: $("input[id='Employertxt']").val() || "",
-                    primaryInsCo: $("input[id='Insurtxt']").val() || "",
-                    primaryRelationship: $("input[id='relnshpsbsbr']").val() || "",
-                    secondarySubscriberName: $("input[id='Suscriber-Name']").val() || "",
-                    secondaryPolicyNumber: $("input[placeholder='PolicyName_txt']").val() || "",
-                    secondaryIdNumber: $("input[placeholder='txtID_name']").val() || "",
-                    secondarySubscriberDob: $("input[placeholder='DMY_DOB']").val() || "",
-                    secondaryEmployer: $("input[placeholder='Employees_cnd']").val() || "",
-                    secondaryInsCo: $("input[placeholder='InsuranceNo_txt']").val() || "",
-                    secondaryRelationship: $("input[placeholder='relation_subscriber']").val() || "",
-                    signature: $(".signature-section input[type='text']").eq(0).val() || "",
-                    printName: $(".signature-section input[type='text']").eq(1).val() || "",
-                    date: $(".signature-section input[type='text']").eq(2).val() || ""
-                };
-
-                const physicianName = $('#physician-name').val() || "";
-                const physicianPhone = $('#physician-phone').val() || "";
-                const lastPhysicalDate = $('#last-physical-date').val() || "";
-                const medicalCondition = $('#medical-condition-treat').val() || "";
-                const medicationDrug = $('#medication-drug-time').val() || "";
-                const medicationReason = $('#medication-reason').val() || "";
-                const supplement = $('#supplement').val() || "";
-                const supplementReason = $('#supplement-reason').val() || "";
-                const drugAllergies = $('#drug-allergies').val() || "";
-                const latexAllergies = $('#latex-allergies').val() || "";
-                const bruiseBleed = $('#bruise-bleed').val() || "";
-                const antibiotics_smoke = $('#antibiotics-smoke').val() || "";
-                const antibioticsReason = $('#antibiotics-reason').val() || "";
-                const Pregnent_reason = $('#Pregnent-reason').val() || "";
-                const Prednisone_reason = $('#Prednisone-reason').val() || "";
-                
-                const medicalConditions = Array.from($('input[name="medical-condition"]:checked')).map(checkbox => checkbox.value);
-
-                const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
-                const addHeader = (doc) => {
-                    const logoPath = 'img/asset 0.png';
-                    const logoWidth = 70;
-                    const logoHeight = 30;
-                    doc.addImage(logoPath, 'PNG', 120, 10, logoWidth, logoHeight);
-
-                    const headerTitle = 'STONEBRIDGE DENTISTRY';
-                    doc.setFontSize(14);
-                    doc.setFont("helvetica", "bold");
-                    doc.text(headerTitle, 10, 15);
-
-                    // Address formatting
-                    doc.setFontSize(10);
-                    doc.setFont("helvetica", "bold");
-                    doc.text('1 Market Lane, Unit 9', 20, 20);
-                    doc.text('Wasaga Beach, ON', 20, 25);
-                    doc.text('L9Z 0B6', 55, 25);
-
-                    // Email
-                    doc.setFont("helvetica", "normal");
-                    doc.setTextColor(0, 0, 255);
-                    doc.text('reception.stonebridgedentistry@gmail.com', 10, 30);
-
-                    // Phone and Fax
-                    doc.setFont("helvetica", "normal");
-                    doc.setTextColor(0, 0, 0);
-                    doc.text('Tel: 705-422-2490', 10, 35);
-                    doc.text('Fax: 705-422-2493', 43, 35); // Adjusted x-coordinate for horizontal alignment
-
-
-
-
-                    doc.setFontSize(14);
-                    doc.text('NEW PATIENT FORM', doc.internal.pageSize.getWidth() / 2, 50, { align: 'center' });
-
-                    //doc.setLineWidth(0.5);
-                    //doc.line(10, 55, 200, 55);
-                };
-
-                // Add header to the first page
-                addHeader(doc);
-                /*// Adding the header
-                doc.setFontSize(18);
-                doc.text('STONEBRIDGE DENTISTRY', 105, 20, { align: 'center' });
-                doc.setFontSize(12);
-                doc.text(`1 Market Lane, Unit 9\nWasaga Beach, On\nL9Z 0B6\nreception.stonebridgedentistry@gmail.com\nTel: 705-422-2490   Fax: 705-422-2493`, 105, 30, { align: 'center' });
-                doc.setFontSize(16);
-                doc.text('NEW PATIENT FORM', 105, 60, { align: 'center' });*/
-
-                // Adding the horizontal line
-                doc.setLineWidth(0.5);
-                doc.line(10, 65, 200, 65);
-
-                // Patient Information
-                doc.setFontSize(12);
-                doc.text('Patient Information (please print)', 10, 70);
-
-                // Title
-                doc.setFontSize(10);
-                doc.text('Title:', 10, 80);
-                doc.text(formData.title, 35, 80);
-
-                // Adding Name Section with Line
-                doc.setFontSize(10);
-                doc.text('Name:', 10, 90);
-                doc.text(formData.firstName, 50, 87);
-                doc.text(formData.initial, 100, 87);
-                doc.text(formData.lastName, 150, 87);
-                doc.line(35, 89, 200, 89); // Line for the name
-                doc.text('First', 50, 95);
-                doc.text('Initial', 100, 95);
-                doc.text('Last', 150, 95);
-
-                // Adding Address Section with Line
-                doc.text('Address:', 10, 110);
-                doc.line(35, 110, 200, 110); // Line for the address
-                doc.setFontSize(10);
-                doc.text('Street', 40, 115);
-                doc.text('Apt', 70, 115);
-                doc.text('City', 100, 115);
-                doc.text('Prov', 130, 115);
-                doc.text('Postal Code', 160, 115);
-                doc.text(formData.street, 40, 108);
-                doc.text(formData.apt, 70, 108);
-                doc.text(formData.city, 100, 108);
-                doc.text(formData.prov, 130, 108);
-                doc.text(formData.postalCode, 160, 108);
-
-                // Adding Cell and Home in One Line
-                doc.text('Cell:', 10, 130);
-                doc.line(25, 130, 100, 130); // Line for the cell
-                doc.text(formData.cell, 25, 127);
-                doc.text('Home:', 105, 130);
-                doc.line(125, 130, 200, 130); // Line for the home
-                doc.text(formData.home, 125, 127);
-
-                // Adding Date of Birth and Email
-                doc.text('Date of Birth:', 10, 145);
-                doc.line(35, 145, 100, 145); // Line for the date of birth
-                doc.text(formData.dob, 35, 142);
-                doc.text('Email:', 105, 145);
-                doc.line(125, 145, 200, 145); // Line for the email
-                doc.text(formData.email, 125, 142);
-
-                // Adding Name of Spouse/Parent/Guardian
-                doc.text('Name of Spouse/Parent/Guardian:', 10, 160);
-                doc.line(70, 160, 200, 160); // Line for the spouse/parent/guardian
-                doc.text(formData.spouse || '', 70, 157); // Adjusted Y-coordinate for alignment
-
-                // Adding Emergency Contact and Phone
-                doc.text('Emergency Contact:', 10, 175);
-                doc.line(45, 175, 100, 175); // Line for the emergency contact
-                doc.text(formData.emergencyContact || '', 45, 170); // Adjusted Y-coordinate for alignment
-                doc.text('Phone:', 105, 175);
-                doc.line(117, 175, 200, 175); // Line for the phone
-                doc.text(formData.emergencyPhone || '', 120, 172); // Adjusted Y-coordinate for alignment
-
-
-
-
-                // Financial Information
-                doc.text('Financial Information', 10, 190);
-                doc.autoTable({
-                    startY: 195,
-                    head: [['Labels', 'Primary Insurance', 'Secondary Insurance']],
-                    body: [
-                        ['Subscriber Name', formData.primarySubscriberName, formData.secondarySubscriberName],
-                        ['Policy', formData.primaryPolicyNumber, formData.secondaryPolicyNumber],
-                        ['ID', formData.primaryIdNumber, formData.secondaryIdNumber],
-                        ['Subscriber DOB', formData.primarySubscriberDob, formData.secondarySubscriberDob],
-                        ['Employer', formData.primaryEmployer, formData.secondaryEmployer],
-                        ['Ins Co.', formData.primaryInsCo, formData.secondaryInsCo],
-                        ['Relationship', formData.primaryRelationship, formData.secondaryRelationship],
-                        [{ content: 'Our office is happy to file claims electronically on your behalf, so that in many cases, we will receive your insurance reimbursement. As such, payment of your dental visit is expected at the time of service should there be any balances. Please let your front desk staff know ahead of time, in the event that you are unable to make payment when it is due, so that other options can be discussed with you at that time.', colSpan: 3 }]
-                    ],
-                    theme: 'grid',
-                    styles: { fontSize: 10, cellPadding: 2 }
-                });
-
-                // Add a new page for Medical History
-                doc.addPage();
-
-                // Medical History Section
-                doc.setFontSize(12);
-                // Set checkbox color to dark black
-                doc.setDrawColor(0, 0, 0); // Set color to dark black
-                doc.text('Medical History : (Confidential as Per PIPEDA Legislation)', 10, 20);
-                doc.setFontSize(10);
-                // Name of Family Physician
-                doc.text('Name of Family Physician', 10, 30);
-                doc.line(60, 30, 200, 30);
-                doc.text(physicianName, 60, 28);
-
-                // Phone
-                doc.text('Phone', 10, 40);
-                doc.line(25, 40, 200, 40);
-                doc.text(physicianPhone, 25, 38);
-
-                // Date of Last Physical
-                doc.text('Date of Last Physical', 10, 50);
-                doc.line(55, 50, 200, 50);
-                doc.text(lastPhysicalDate, 55, 48);
-
-                // Are you being treated for any medical condition?
-                doc.text('Are you being treated for any medical condition? If so, which', 10, 60);
-                doc.line(10, 68, 200, 68);
-                doc.text(medicalCondition, 20, 66);
-
-                // Are you taking any drugs or medications at this time?
-                doc.text('Are you taking any drugs or medications at this time?', 10, 75);
-                doc.line(10, 80, 200, 80);
-                doc.text(medicationDrug, 100, 78);
-
-                // Drug and Reason
-                doc.text('Drug:', 10, 90);
-                doc.line(20, 90, 90, 90);
-                doc.text(medicationDrug, 22, 88);
-                doc.text('Reason:', 95, 90);
-                doc.line(115, 90, 200, 90);
-                doc.text(medicationReason, 115, 88);
-
-                // Are you taking any Herbal or Vitamin Supplements?
-                doc.text('Are you taking any Herbal or Vitamin Supplements?', 10, 100);
-                //doc.line(10, 105, 200, 105);
-
-                // Supplement and Reason
-                doc.text('Supplement:', 10, 110);
-                doc.line(33, 110, 90, 110);
-                doc.text(supplement, 33, 108);
-                doc.text('Reason:', 95, 110);
-                doc.line(110, 110, 200, 110);
-                doc.text(supplementReason, 112, 108);
-
-                // Do you have any drug allergies or adverse effects?
-                doc.text('Do you have any drug allergies or adverse effects?', 10, 125);
-                doc.line(10, 130, 200, 130);
-                doc.text(drugAllergies, 100, 128);
-
-                // Any Latex, Nickel, or General Anesthesia Allergies?
-                doc.text('Any Latex, Nickel, or General Anesthesia Allergies?', 10, 140);
-                doc.line(10, 145, 200, 145);
-                doc.text(latexAllergies, 100, 142);
-
-                // Do you bruise easily or bleed for a prolonged period of time?
-                doc.text('Do you bruise easily or bleed for a prolonged period of time?', 10, 155);
-                doc.line(10, 160, 200, 160);
-                doc.text(bruiseBleed, 120, 158);
-
-                // Do you smoke? If so, how much per day, and how long?
-                doc.text('Do you smoke? If so, how much per day, and how long?', 10, 170);
-                doc.line(10, 175, 200, 175);
-                doc.text(antibiotics_smoke, 100, 173);
-
-                // Have you ever fainted, had shortness of breath or chest pains?
-                doc.text('Have you ever fainted, had shortness of breath or chest pains?', 10, 185);
-                doc.line(10, 190, 200, 190);
-                doc.text(antibioticsReason, 120, 187);
-
-                // Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/NO
-                doc.text('Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/NO', 10, 200);
-                doc.line(10, 205, 200, 205);
-                doc.text(Pregnent_reason, 160, 202);
-
-                // Have you in the past, or are currently taking cortisone-based medications such as Prednisone
-                doc.text('Have you in the past, or are currently taking cortisone-based medications such as Prednisone', 10, 215);
-                doc.line(10, 220, 200, 220);
-                doc.text(Prednisone_reason, 160, 217);
-                // Add a new page for Medical History and Medical Conditions
-
-                doc.addPage();
-
-                // Adding the Medical Conditions section with checkboxes
-                doc.setFontSize(12);
-                doc.text('Do you have or have you ever had any of the following medical conditions?', 10, 20); // Move the heading outside of the box
-                doc.setFontSize(10);
-
-                // Draw border for Medical Conditions section
-                const sectionX = 5;
-                const sectionY = 30; // Adjusting startY for the box placement
-                const sectionWidth = 200;
-                const sectionHeight = 170;
-                doc.rect(sectionX, sectionY, sectionWidth, sectionHeight);
-
-                // Set checkbox color to dark black
-                doc.setDrawColor(0, 0, 0); // Set color to dark black
-
-                const medicalConditionsColumns = [
-                    ['Artificial Joints', 'Asthma', 'Malignant'],
-                    ['Anemia', 'Circulation Problems', 'Hypothermia'],
-                    ['Bone Density', 'Cortisone/Steroids', 'Mental Nervous Disorder'],
-                    ['Blood Thinner', 'Drug/Alcohol Dependency', 'Mitral Valve Prolapse'],
-                    ['Cancer', 'Eating Disorder', 'Organ Transplants'],
-                    ['Radiation', 'Epilepsy', 'Psychiatric Disorder'],
-                    ['Chemotherapy', 'Glaucoma', 'Rheumatic Fever'],
-                    ['Diabetic', 'Head/Neck Injury', 'Sickle Cell'],
-                    ['Infective Endocarditis', 'Herpes', 'Sinus Problem'],
-                    ['Hep A/B/C', 'Hodgkin Disease', 'Thyroid Problem'],
-                    ['HIV Positive', 'Hyperglycemia', 'Tuberculosis'],
-                    ['Hemophilia', 'Jaundice', 'Ulcers'],
-                    ['Blood Pressure H / L', 'Kidney Disease', 'Other'],
-                    ['Pacemaker', 'Liver Disease', ''],
-                    ['Stroke', 'Lung Disease', ''],
-                    ['Heart Issues', '', '']
-                ];
-
-                const drawCheckbox = (doc, x, y, checked) => {
-                    doc.rect(x, y, 4, 4); // Draw the square
-                    if (checked) {
-                        doc.line(x, y, x + 4, y + 4); // Draw the checkmark
-                        doc.line(x + 4, y, x, y + 4);
-                    }
-                };
-
-                const checkboxColumnWidth = 60;
-                const checkboxRowHeight = 7;
-                let startY = sectionY + 10;
-
-                // Collecting checked values
-                const getCheckedValues = () => {
-                    const checkboxes = document.querySelectorAll('input[name="medical-condition"]');
-                    const checkedValues = [];
-                    checkboxes.forEach(checkbox => {
-                        if (checkbox.checked) {
-                            checkedValues.push(checkbox.value);
-                        }
-                    });
-                    return checkedValues;
-                };
-
-                const checkedValues = getCheckedValues();
-
-                // Draw the columns and their content
-                medicalConditionsColumns.forEach((row, rowIndex) => {
-                    row.forEach((condition, colIndex) => {
-                        if (condition) {
-                            const checked = checkedValues.includes(condition);
-                            drawCheckbox(doc, sectionX + 5 + colIndex * checkboxColumnWidth, startY, checked);
-                            doc.text(condition, sectionX + 11 + colIndex * checkboxColumnWidth, startY + 3);
-                        }
-                    });
-                    startY += checkboxRowHeight;
-                });
-
-                // Draw vertical lines for the table columns
-                for (let i = 0; i <= medicalConditionsColumns[0].length; i++) {
-                    doc.line(sectionX + i * checkboxColumnWidth, sectionY, sectionX + i * checkboxColumnWidth, sectionY + sectionHeight);
-                }
-
-                // Add horizontal line below the Medical Conditions heading
-                //doc.line(sectionX, 28, sectionX + sectionWidth, 28);
-
-                // Add the recent surgeries or hospital visits section
-                startY += 10;
-                doc.text('List Recent Surgeries or Hospital \nVisits:', sectionX + 5, startY);
-                const recentSurgeries = document.getElementById('recentSurgeries').value;
-                doc.text(recentSurgeries, sectionX + 5, startY + 10);
-
-                // Add horizontal line above the recent surgeries label
-                doc.line(sectionX, startY - 5, sectionX + sectionWidth, startY - 5);
-
-
-
-                // Add a line to separate sections if needed
-                //doc.line(sectionX + 5, startY + 25, sectionX + sectionWidth - 5, startY + 25);
-
-
-
-
-                // Add a new page for Dental History
-                doc.addPage();
-
-
-                function getFormValues() {
-                    return {
-                        "Checkup-name": document.getElementById("Checkup-name")?.value || '',
-                        "Frequently-visit": document.getElementById("Frequently-visit")?.value || '',
-                        "antibiotics-condition": document.getElementById("antibiotics-condition")?.value || '',
-                        "Comprehensive-Dental": document.getElementById("Comprehensive-Dental")?.value || '',
-                        "Gum-Disease": document.getElementById("Gum-Disease")?.value || '',
-                        "Treated": document.getElementById("Treated")?.value || '',
-                        "Untreated": document.getElementById("Untreated")?.value || '',
-                        "Periodontist-name": document.getElementById("Periodontist-name")?.value || '',
-                        "Periodontist-when": document.getElementById("Periodontist-when")?.value || '',
-                        "sensitive-Sweets": document.getElementById("sensitive-Sweets")?.value || '',
-                        "sensitive-when": document.getElementById("sensitive-when")?.value || '',
-                        "diagnosed-TAU": document.getElementById("diagnosed-TAU")?.value || '',
-                        "TAU-when": document.getElementById("TAU-when")?.value || '',
-                        "Treated-Untreated": document.getElementById("Treated-Untreated")?.value || '',
-                        "medication-reason": document.getElementById("medication-reason")?.value || '',
-                        "clench-teeth": document.getElementById("clench-teeth")?.value || '',
-                        "orthodontic": document.getElementById("orthodontic")?.value || '',
-                        "oral-appliances": document.getElementById("oral-appliances")?.value || '',
-                        "Removable-Fixed": document.getElementById("Removable-Fixed")?.value || '',
-                        "Whitened-Sweets": document.getElementById("Whitened-Sweets")?.value || '',
-                        "Whitened-No": document.getElementById("Whitened-No")?.value || '',
-                        "supplement-reason": document.getElementById("supplement-reason")?.value || ''
+    <!-- Include jsPDF AutoTable plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.17/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnsbmtrprt").click(function (event) {
+                event.preventDefault();
+                alert('Button clicked! Generating PDF.');
+
+                try {
+                    const formData = {
+                        title: $("input[name='title']:checked").val() || "",
+                        firstName: $("input[placeholder='First']").val() || "",
+                        initial: $("input[placeholder='Initial']").val() || "",
+                        lastName: $("input[placeholder='Last']").val() || "",
+                        street: $("input[placeholder='Street']").val() || "",
+                        apt: $("input[placeholder='Apt']").val() || "",
+                        city: $("input[placeholder='City']").val() || "",
+                        prov: $("input[placeholder='Prov']").val() || "",
+                        postalCode: $("input[placeholder='Postal Code']").val() || "",
+                        cell: $("input[id='cell-ID']").val() || "",
+                        home: $("input[id='Home-ID']").val() || "",
+                        dob: $("input[placeholder='D / M / Y']").val() || "",
+                        email: $("input[placeholder='Emaid-ID']").val() || "",
+                        spouse: $("input[placeholder='Name-Spouse']").val() || "",
+                        emergencyContact: $("input[placeholder='Emergency-Contact']").val() || "",
+                        emergencyPhone: $("input[placeholder='Phone-ID']").val() || "",
+                        primarySubscriberName: $("input[id='SubscriberName']").val() || "",
+                        primaryPolicyNumber: $("input[id='IDtxt']").val() || "",
+                        primaryIdNumber: $("input[id='Policy']").val() || "",
+                        primarySubscriberDob: $("input[id='DOBtxt']").val() || "",
+                        primaryEmployer: $("input[id='Employertxt']").val() || "",
+                        primaryInsCo: $("input[id='Insurtxt']").val() || "",
+                        primaryRelationship: $("input[id='relnshpsbsbr']").val() || "",
+                        secondarySubscriberName: $("input[id='Suscriber-Name']").val() || "",
+                        secondaryPolicyNumber: $("input[placeholder='PolicyName_txt']").val() || "",
+                        secondaryIdNumber: $("input[placeholder='txtID_name']").val() || "",
+                        secondarySubscriberDob: $("input[placeholder='DMY_DOB']").val() || "",
+                        secondaryEmployer: $("input[placeholder='Employees_cnd']").val() || "",
+                        secondaryInsCo: $("input[placeholder='InsuranceNo_txt']").val() || "",
+                        secondaryRelationship: $("input[placeholder='relation_subscriber']").val() || "",
+                        signature: $(".signature-section input[type='text']").eq(0).val() || "",
+                        printName: $(".signature-section input[type='text']").eq(1).val() || "",
+                        date: $(".signature-section input[type='text']").eq(2).val() || ""
                     };
-                }
-                // Dental History Section
-                doc.setFontSize(14);
-                doc.text('Dental History:', 10, 20);
-                doc.setFontSize(8);
 
-                // Questions for Dental History
-                const dentalHistoryQuestions = [
-                    'Last Dental Checkup and Cleaning? How Frequently do you visit?',
-                    'Do you usually take antibiotics before a procedure?',
-                    'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
-                    'Do you have a history of Gum Disease? Treated? Untreated?',
-                    'Have you seen a Periodontist? If so, when?',
-                    'Are your teeth sensitive to Sweets? Hot? Cold?',
-                    'Have you been diagnosed with TMJ (Jaw Joint) problems? If so, when? Treated/Untreated?',
-                    'Does your Jaw Joints "Click" or "Pop" when you open?',
-                    'Are you aware if you grind or clench your teeth at night?',
-                    'Have you had orthodontic work done (braces)?',
-                    'Do you wear any oral appliances? Removable or Fixed?',
-                    'Have you professionally whitened your teeth before? Yes No',
-                    'Are you happy with your smile?'
-                ];
+                    const physicianName = $('#physician-name').val() || "";
+                    const physicianPhone = $('#physician-phone').val() || "";
+                    const lastPhysicalDate = $('#last-physical-date').val() || "";
+                    const medicalCondition = $('#medical-condition-treat').val() || "";
+                    const medicationDrug = $('#medication-drug-time').val() || "";
+                    const medicationReason = $('#medication-reason').val() || "";
+                    const supplement = $('#supplement').val() || "";
+                    const supplementReason = $('#supplement-reason').val() || "";
+                    const drugAllergies = $('#drug-allergies').val() || "";
+                    const latexAllergies = $('#latex-allergies').val() || "";
+                    const bruiseBleed = $('#bruise-bleed').val() || "";
+                    const antibiotics_smoke = $('#antibiotics-smoke').val() || "";
+                    const antibioticsReason = $('#antibiotics-reason').val() || "";
+                    const Pregnent_reason = $('#Pregnent-reason').val() || "";
+                    const Prednisone_reason = $('#Prednisone-reason').val() || "";
 
-                // Collect form values
-                const answersReceived = getFormValues();
+                    const medicalConditions = Array.from($('input[name="medical-condition"]:checked')).map(checkbox => checkbox.value);
 
-                // Display form values in alert for testing
-                let message = "Form Values:\n";
-                for (const key in answersReceived) {
-                    message += `${key}: ${answersReceived[key]}\n`;
-                }
-                alert(message);
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    const addHeader = (doc) => {
+                        const logoPath = 'img/asset 0.png';
+                        const logoWidth = 70;
+                        const logoHeight = 30;
+                        doc.addImage(logoPath, 'PNG', 120, 10, logoWidth, logoHeight);
 
-                // Initial startY position
-                let startYY = 30;
+                        const headerTitle = 'STONEBRIDGE DENTISTRY';
+                        doc.setFontSize(14);
+                        doc.setFont("helvetica", "bold");
+                        doc.text(headerTitle, 10, 15);
 
-                // Iterate over each question and answer
-                dentalHistoryQuestions.forEach((question, index) => {
-                    // Print question
+                        // Address formatting
+                        doc.setFontSize(10);
+                        doc.setFont("helvetica", "bold");
+                        doc.text('1 Market Lane, Unit 9', 20, 20);
+                        doc.text('Wasaga Beach, ON', 20, 25);
+                        doc.text('L9Z 0B6', 55, 25);
+
+                        // Email
+                        doc.setFont("helvetica", "normal");
+                        doc.setTextColor(0, 0, 255);
+                        doc.text('reception.stonebridgedentistry@gmail.com', 10, 30);
+
+                        // Phone and Fax
+                        doc.setFont("helvetica", "normal");
+                        doc.setTextColor(0, 0, 0);
+                        doc.text('Tel: 705-422-2490', 10, 35);
+                        doc.text('Fax: 705-422-2493', 43, 35); // Adjusted x-coordinate for horizontal alignment
+
+
+
+
+                        doc.setFontSize(14);
+                        doc.text('NEW PATIENT FORM', doc.internal.pageSize.getWidth() / 2, 50, { align: 'center' });
+
+                        //doc.setLineWidth(0.5);
+                        //doc.line(10, 55, 200, 55);
+                    };
+
+                    // Add header to the first page
+                    addHeader(doc);
+                    /*// Adding the header
+                    doc.setFontSize(18);
+                    doc.text('STONEBRIDGE DENTISTRY', 105, 20, { align: 'center' });
+                    doc.setFontSize(12);
+                    doc.text(`1 Market Lane, Unit 9\nWasaga Beach, On\nL9Z 0B6\nreception.stonebridgedentistry@gmail.com\nTel: 705-422-2490   Fax: 705-422-2493`, 105, 30, { align: 'center' });
+                    doc.setFontSize(16);
+                    doc.text('NEW PATIENT FORM', 105, 60, { align: 'center' });*/
+
+                    // Adding the horizontal line
+                    doc.setLineWidth(0.5);
+                    doc.line(10, 65, 200, 65);
+
+                    // Patient Information
+                    doc.setFontSize(12);
+                    doc.text('Patient Information (please print)', 10, 70);
+
+                    // Title
                     doc.setFontSize(10);
-                    doc.text(question, 10, startYY);
-                    // Print answer on the next line for specific questions
-                    const nextLineQuestions = [
-                        'Last Dental Checkup and Cleaning? How Frequently do you visit?',
-                        'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
-                        'Have you been diagnosed with TMJ (Jaw Joint) problems? If so, when? Treated/Untreated?'
-                    ];
-                    
-                    // Print answer
-                    const answerKeys = [
-                        "Checkup-name",
-                        "Frequently-visit",
-                        "antibiotics-condition",
-                        "Comprehensive-Dental",
-                        "Gum-Disease",
-                        "Treated",
-                        "Untreated",
-                        "Periodontist-name",
-                        "Periodontist-when",
-                        "sensitive-Sweets",
-                        "sensitive-when",
-                        "diagnosed-TAU",
-                        "TAU-when",
-                        "Treated-Untreated",
-                        "medication-reason",
-                        "clench-teeth",
-                        "orthodontic",
-                        "oral-appliances",
-                        "Removable-Fixed",
-                        "Whitened-Sweets",
-                        "Whitened-No",
-                        "supplement-reason"
-                    ];
-                    doc.setFontSize(10);
-                    //doc.text(answersReceived[answerKeys[index]] || '', 110, startYY);
+                    doc.text('Title:', 10, 80);
+                    doc.text(formData.title, 35, 80);
 
-                    if (nextLineQuestions.includes(question)) {
-                        startYY += 5;  // Increment startY for next line
-                        doc.text(answersReceived[answerKeys[index]] || '', 10, startYY);
-                        doc.line(10, startYY + 2, 100, startYY + 2);
-                    } else {
-                        doc.text(answersReceived[answerKeys[index]] || '', 110, startYY);
+                    // Adding Name Section with Line
+                    doc.setFontSize(10);
+                    doc.text('Name:', 10, 90);
+                    doc.text(formData.firstName, 50, 87);
+                    doc.text(formData.initial, 100, 87);
+                    doc.text(formData.lastName, 150, 87);
+                    doc.line(35, 89, 200, 89); // Line for the name
+                    doc.text('First', 50, 95);
+                    doc.text('Initial', 100, 95);
+                    doc.text('Last', 150, 95);
+
+                    // Adding Address Section with Line
+                    doc.text('Address:', 10, 110);
+                    doc.line(35, 110, 200, 110); // Line for the address
+                    doc.setFontSize(10);
+                    doc.text('Street', 40, 115);
+                    doc.text('Apt', 70, 115);
+                    doc.text('City', 100, 115);
+                    doc.text('Prov', 130, 115);
+                    doc.text('Postal Code', 160, 115);
+                    doc.text(formData.street, 40, 108);
+                    doc.text(formData.apt, 70, 108);
+                    doc.text(formData.city, 100, 108);
+                    doc.text(formData.prov, 130, 108);
+                    doc.text(formData.postalCode, 160, 108);
+
+                    // Adding Cell and Home in One Line
+                    doc.text('Cell:', 10, 130);
+                    doc.line(25, 130, 100, 130); // Line for the cell
+                    doc.text(formData.cell, 25, 127);
+                    doc.text('Home:', 105, 130);
+                    doc.line(125, 130, 200, 130); // Line for the home
+                    doc.text(formData.home, 125, 127);
+
+                    // Adding Date of Birth and Email
+                    doc.text('Date of Birth:', 10, 145);
+                    doc.line(35, 145, 100, 145); // Line for the date of birth
+                    doc.text(formData.dob, 35, 142);
+                    doc.text('Email:', 105, 145);
+                    doc.line(125, 145, 200, 145); // Line for the email
+                    doc.text(formData.email, 125, 142);
+
+                    // Adding Name of Spouse/Parent/Guardian
+                    doc.text('Name of Spouse/Parent/Guardian:', 10, 160);
+                    doc.line(70, 160, 200, 160); // Line for the spouse/parent/guardian
+                    doc.text(formData.spouse || '', 70, 157); // Adjusted Y-coordinate for alignment
+
+                    // Adding Emergency Contact and Phone
+                    doc.text('Emergency Contact:', 10, 175);
+                    doc.line(45, 175, 100, 175); // Line for the emergency contact
+                    doc.text(formData.emergencyContact || '', 45, 170); // Adjusted Y-coordinate for alignment
+                    doc.text('Phone:', 105, 175);
+                    doc.line(117, 175, 200, 175); // Line for the phone
+                    doc.text(formData.emergencyPhone || '', 120, 172); // Adjusted Y-coordinate for alignment
+
+
+
+
+                    // Financial Information
+                    doc.text('Financial Information', 10, 190);
+                    doc.autoTable({
+                        startY: 195,
+                        head: [['Labels', 'Primary Insurance', 'Secondary Insurance']],
+                        body: [
+                            ['Subscriber Name', formData.primarySubscriberName, formData.secondarySubscriberName],
+                            ['Policy', formData.primaryPolicyNumber, formData.secondaryPolicyNumber],
+                            ['ID', formData.primaryIdNumber, formData.secondaryIdNumber],
+                            ['Subscriber DOB', formData.primarySubscriberDob, formData.secondarySubscriberDob],
+                            ['Employer', formData.primaryEmployer, formData.secondaryEmployer],
+                            ['Ins Co.', formData.primaryInsCo, formData.secondaryInsCo],
+                            ['Relationship', formData.primaryRelationship, formData.secondaryRelationship],
+                            [{ content: 'Our office is happy to file claims electronically on your behalf, so that in many cases, we will receive your insurance reimbursement. As such, payment of your dental visit is expected at the time of service should there be any balances. Please let your front desk staff know ahead of time, in the event that you are unable to make payment when it is due, so that other options can be discussed with you at that time.', colSpan: 3 }]
+                        ],
+                        theme: 'grid',
+                        styles: { fontSize: 10, cellPadding: 2 }
+                    });
+
+                    // Add a new page for Medical History
+                    doc.addPage();
+
+                    // Medical History Section
+                    doc.setFontSize(12);
+                    // Set checkbox color to dark black
+                    doc.setDrawColor(0, 0, 0); // Set color to dark black
+                    doc.text('Medical History : (Confidential as Per PIPEDA Legislation)', 10, 20);
+                    doc.setFontSize(10);
+                    // Name of Family Physician
+                    doc.text('Name of Family Physician', 10, 30);
+                    doc.line(60, 30, 200, 30);
+                    doc.text(physicianName, 60, 28);
+
+                    // Phone
+                    doc.text('Phone', 10, 40);
+                    doc.line(25, 40, 200, 40);
+                    doc.text(physicianPhone, 25, 38);
+
+                    // Date of Last Physical
+                    doc.text('Date of Last Physical', 10, 50);
+                    doc.line(55, 50, 200, 50);
+                    doc.text(lastPhysicalDate, 55, 48);
+
+                    // Are you being treated for any medical condition?
+                    doc.text('Are you being treated for any medical condition? If so, which', 10, 60);
+                    doc.line(10, 68, 200, 68);
+                    doc.text(medicalCondition, 20, 66);
+
+                    // Are you taking any drugs or medications at this time?
+                    doc.text('Are you taking any drugs or medications at this time?', 10, 75);
+                    doc.line(10, 80, 200, 80);
+                    doc.text(medicationDrug, 100, 78);
+
+                    // Drug and Reason
+                    doc.text('Drug:', 10, 90);
+                    doc.line(20, 90, 90, 90);
+                    doc.text(medicationDrug, 22, 88);
+                    doc.text('Reason:', 95, 90);
+                    doc.line(115, 90, 200, 90);
+                    doc.text(medicationReason, 115, 88);
+
+                    // Are you taking any Herbal or Vitamin Supplements?
+                    doc.text('Are you taking any Herbal or Vitamin Supplements?', 10, 100);
+                    //doc.line(10, 105, 200, 105);
+
+                    // Supplement and Reason
+                    doc.text('Supplement:', 10, 110);
+                    doc.line(33, 110, 90, 110);
+                    doc.text(supplement, 33, 108);
+                    doc.text('Reason:', 95, 110);
+                    doc.line(110, 110, 200, 110);
+                    doc.text(supplementReason, 112, 108);
+
+                    // Do you have any drug allergies or adverse effects?
+                    doc.text('Do you have any drug allergies or adverse effects?', 10, 125);
+                    doc.line(10, 130, 200, 130);
+                    doc.text(drugAllergies, 100, 128);
+
+                    // Any Latex, Nickel, or General Anesthesia Allergies?
+                    doc.text('Any Latex, Nickel, or General Anesthesia Allergies?', 10, 140);
+                    doc.line(10, 145, 200, 145);
+                    doc.text(latexAllergies, 100, 142);
+
+                    // Do you bruise easily or bleed for a prolonged period of time?
+                    doc.text('Do you bruise easily or bleed for a prolonged period of time?', 10, 155);
+                    doc.line(10, 160, 200, 160);
+                    doc.text(bruiseBleed, 120, 158);
+
+                    // Do you smoke? If so, how much per day, and how long?
+                    doc.text('Do you smoke? If so, how much per day, and how long?', 10, 170);
+                    doc.line(10, 175, 200, 175);
+                    doc.text(antibiotics_smoke, 100, 173);
+
+                    // Have you ever fainted, had shortness of breath or chest pains?
+                    doc.text('Have you ever fainted, had shortness of breath or chest pains?', 10, 185);
+                    doc.line(10, 190, 200, 190);
+                    doc.text(antibioticsReason, 120, 187);
+
+                    // Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/NO
+                    doc.text('Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/NO', 10, 200);
+                    doc.line(10, 205, 200, 205);
+                    doc.text(Pregnent_reason, 160, 202);
+
+                    // Have you in the past, or are currently taking cortisone-based medications such as Prednisone
+                    doc.text('Have you in the past, or are currently taking cortisone-based medications such as Prednisone', 10, 215);
+                    doc.line(10, 220, 200, 220);
+                    doc.text(Prednisone_reason, 160, 217);
+                    // Add a new page for Medical History and Medical Conditions
+
+                    doc.addPage();
+
+                    // Adding the Medical Conditions section with checkboxes
+                    doc.setFontSize(12);
+                    doc.text('Do you have or have you ever had any of the following medical conditions?', 10, 20); // Move the heading outside of the box
+                    doc.setFontSize(10);
+
+                    // Draw border for Medical Conditions section
+                    const sectionX = 5;
+                    const sectionY = 30; // Adjusting startY for the box placement
+                    const sectionWidth = 200;
+                    const sectionHeight = 170;
+                    doc.rect(sectionX, sectionY, sectionWidth, sectionHeight);
+
+                    // Set checkbox color to dark black
+                    doc.setDrawColor(0, 0, 0); // Set color to dark black
+
+                    const medicalConditionsColumns = [
+                        ['Artificial Joints', 'Asthma', 'Malignant'],
+                        ['Anemia', 'Circulation Problems', 'Hypothermia'],
+                        ['Bone Density', 'Cortisone/Steroids', 'Mental Nervous Disorder'],
+                        ['Blood Thinner', 'Drug/Alcohol Dependency', 'Mitral Valve Prolapse'],
+                        ['Cancer', 'Eating Disorder', 'Organ Transplants'],
+                        ['Radiation', 'Epilepsy', 'Psychiatric Disorder'],
+                        ['Chemotherapy', 'Glaucoma', 'Rheumatic Fever'],
+                        ['Diabetic', 'Head/Neck Injury', 'Sickle Cell'],
+                        ['Infective Endocarditis', 'Herpes', 'Sinus Problem'],
+                        ['Hep A/B/C', 'Hodgkin Disease', 'Thyroid Problem'],
+                        ['HIV Positive', 'Hyperglycemia', 'Tuberculosis'],
+                        ['Hemophilia', 'Jaundice', 'Ulcers'],
+                        ['Blood Pressure H / L', 'Kidney Disease', 'Other'],
+                        ['Pacemaker', 'Liver Disease', ''],
+                        ['Stroke', 'Lung Disease', ''],
+                        ['Heart Issues', '', '']
+                    ];
+
+                    const drawCheckbox = (doc, x, y, checked) => {
+                        doc.rect(x, y, 4, 4); // Draw the square
+                        if (checked) {
+                            doc.line(x, y, x + 4, y + 4); // Draw the checkmark
+                            doc.line(x + 4, y, x, y + 4);
+                        }
+                    };
+
+                    const checkboxColumnWidth = 60;
+                    const checkboxRowHeight = 7;
+                    let startY = sectionY + 10;
+
+                    // Collecting checked values
+                    const getCheckedValues = () => {
+                        const checkboxes = document.querySelectorAll('input[name="medical-condition"]');
+                        const checkedValues = [];
+                        checkboxes.forEach(checkbox => {
+                            if (checkbox.checked) {
+                                checkedValues.push(checkbox.value);
+                            }
+                        });
+                        return checkedValues;
+                    };
+
+                    const checkedValues = getCheckedValues();
+
+                    // Draw the columns and their content
+                    medicalConditionsColumns.forEach((row, rowIndex) => {
+                        row.forEach((condition, colIndex) => {
+                            if (condition) {
+                                const checked = checkedValues.includes(condition);
+                                drawCheckbox(doc, sectionX + 5 + colIndex * checkboxColumnWidth, startY, checked);
+                                doc.text(condition, sectionX + 11 + colIndex * checkboxColumnWidth, startY + 3);
+                            }
+                        });
+                        startY += checkboxRowHeight;
+                    });
+
+                    // Draw vertical lines for the table columns
+                    for (let i = 0; i <= medicalConditionsColumns[0].length; i++) {
+                        doc.line(sectionX + i * checkboxColumnWidth, sectionY, sectionX + i * checkboxColumnWidth, sectionY + sectionHeight);
                     }
 
-                    // Add line under the answer
-                    doc.line(110, startYY + 2, 200, startYY + 2);
+                    // Add horizontal line below the Medical Conditions heading
+                    //doc.line(sectionX, 28, sectionX + sectionWidth, 28);
 
-                    // Increment startY for the next question
-                    startYY += 15;
-                });
+                    // Add the recent surgeries or hospital visits section
+                    startY += 10;
+                    doc.text('List Recent Surgeries or Hospital \nVisits:', sectionX + 5, startY);
+                    const recentSurgeries = document.getElementById('recentSurgeries').value;
+                    doc.text(recentSurgeries, sectionX + 5, startY + 10);
+
+                    // Add horizontal line above the recent surgeries label
+                    doc.line(sectionX, startY - 5, sectionX + sectionWidth, startY - 5);
 
 
-                // Add a new page for Consent or other sections as needed
-                doc.addPage();
 
-                // Consent Section
-                doc.setFontSize(10);
-                const consentText = `GENERAL RELEASE: I, the undersigned, certify that the information contained in the medical and dental history is correct to the best of my knowledge. I consent to the release of medical information from my medical doctor, or other healthcare providers, if required by this dental office. I authorize this dental office to perform diagnostic procedures as may be required to determine necessary treatment. I understand that payment for my dental treatment is due at the time of service unless otherwise arranged in advance with office management. I understand that I am responsible for my account with this dental office, and that all of my dependents, and I will not allow payments to be in arrears.
+                    // Add a line to separate sections if needed
+                    //doc.line(sectionX + 5, startY + 25, sectionX + sectionWidth - 5, startY + 25);
+
+
+
+
+                    // Add a new page for Dental History
+                    doc.addPage();
+
+
+                  // Function to handle toggling between Yes and No checkboxes for different sections
+                    function toggleCheckbox(yesId, noId, inputSectionId) {
+                        const yesCheckbox = document.getElementById(yesId);
+                        const noCheckbox = document.getElementById(noId);
+                        const inputSection = document.getElementById(inputSectionId);
+
+                        if (yesCheckbox.checked) {
+                            noCheckbox.checked = false;
+                            inputSection.style.display = 'block';
+                        } else if (noCheckbox.checked) {
+                            yesCheckbox.checked = false;
+                            inputSection.style.display = 'none';
+                        }
+                    }
+
+                    // Functions to handle each question's Yes/No toggle
+                    function toggleTreatedWhen() {
+                        toggleCheckbox('treated-checkbox', 'untreated-checkbox', 'treated-when-section');
+                    }
+
+                    function togglePeriodontistWhen() {
+                        toggleCheckbox('seen-periodontist-yes', 'seen-periodontist-no', 'periodontist-when-section');
+                    }
+
+                    function toggleSensitiveWhen() {
+                        toggleCheckbox('sensitive-sweets-yes', 'sensitive-sweets-no', 'sensitive-when-section');
+                    }
+
+                    function toggleJawWhen() {
+                        toggleCheckbox('diagnosed-jaw-yes', 'diagnosed-jaw-no', 'jaw-when-section');
+                    }
+
+                    function getFormValues() {
+                        return {
+                            "Checkup-name": document.getElementById("Checkup-name")?.value || '',
+                            "Frequently-visit": document.getElementById("Frequently-visit")?.value || '',
+                            "antibiotics-condition": document.getElementById("antibiotics-condition")?.value || '',
+                            "Comprehensive-Dental": document.getElementById("Comprehensive-Dental")?.value || '',
+                            "Gum-Disease": document.getElementById("treated-checkbox").checked ? "Yes" : (document.getElementById("untreated-checkbox").checked ? "No" : ''),
+                            "Treated-When": document.getElementById("treated-when").value || '',
+                            "Periodontist": document.getElementById("seen-periodontist-yes").checked ? "Yes" : (document.getElementById("seen-periodontist-no").checked ? "No" : ''),
+                            "Periodontist-When": document.getElementById("Periodontist-when").value || '',
+                            "Sensitive-Sweets": document.getElementById("sensitive-sweets-yes").checked ? "Yes" : (document.getElementById("sensitive-sweets-no").checked ? "No" : ''),
+                            "Sensitive-When": document.getElementById("sensitive-when").value || '',
+                            "TMJ-Problems": document.getElementById("diagnosed-jaw-yes").checked ? "Yes" : (document.getElementById("diagnosed-jaw-no").checked ? "No" : ''),
+                            "TMJ-When": document.getElementById("JAW-when").value || '',
+                            "Treated-Untreated": document.getElementById("Treated-Untreated")?.value || '',
+                            "medication-reason": document.getElementById("medication-reason")?.value || '',
+                            "clench-teeth": document.getElementById("clench-teeth")?.value || '',
+                            "orthodontic": document.getElementById("orthodontic")?.value || '',
+                            "oral-appliances": document.getElementById("oral-appliances")?.value || '',
+                            "Removable-Fixed": document.getElementById("Removable-Fixed")?.value || '',
+                            "Whitened-Sweets": document.getElementById("Whitened-Sweets")?.value || '',
+                            "Whitened-No": document.getElementById("Whitened-No")?.value || '',
+                            "supplement-reason": document.getElementById("supplement-reason")?.value || ''
+                        };
+                    }
+
+                    // Dental History Section
+                    doc.setFontSize(14);
+                    doc.text('Dental History:', 10, 20);
+                    doc.setFontSize(8);
+
+                    // Questions for Dental History
+                    const dentalHistoryQuestions = [
+                        'Last Dental Checkup and Cleaning? How Frequently do you visit?',
+                        'Do you usually take antibiotics before a procedure?',
+                        'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
+                        'Do you have a history of Gum Disease?',
+                        'Have you seen a Periodontist?',
+                        'Are your teeth sensitive to Sweets?',
+                        'Have you been diagnosed with TMJ (Jaw Joint) problems?',
+                        'Does your Jaw Joints "Click" or "Pop" when you open?',
+                        'Are you aware if you grind or clench your teeth at night?',
+                        'Have you had orthodontic work done (braces)?',
+                        'Do you wear any oral appliances? Removable or Fixed?',
+                        'Have you professionally whitened your teeth before?',
+                        'Are you happy with your smile?'
+                    ];
+
+                    // Collect form values
+                    const answersReceived = getFormValues();
+
+                    // Initial startY position for questions and answers
+                    let startYY = 30;
+
+                    // Iterate over each question and answer
+                    dentalHistoryQuestions.forEach((question, index) => {
+                        // Print question
+                        doc.setFontSize(10);
+                        doc.text(question, 10, startYY);
+
+                        // Answer alignment - print on the same line for Yes/No
+                        let answer = '';
+                        switch (question) {
+                            case 'Do you have a history of Gum Disease?':
+                                answer = answersReceived["Gum-Disease"] + (answersReceived["Treated-When"] ? `, Treated When: ${answersReceived["Treated-When"]}` : '');
+                                break;
+                            case 'Have you seen a Periodontist?':
+                                answer = answersReceived["Periodontist"] + (answersReceived["Periodontist-When"] ? `, When: ${answersReceived["Periodontist-When"]}` : '');
+                                break;
+                            case 'Are your teeth sensitive to Sweets?':
+                                answer = answersReceived["Sensitive-Sweets"] + (answersReceived["Sensitive-When"] ? `, When: ${answersReceived["Sensitive-When"]}` : '');
+                                break;
+                            case 'Have you been diagnosed with TMJ (Jaw Joint) problems?':
+                                answer = answersReceived["TMJ-Problems"] + (answersReceived["TMJ-When"] ? `, When: ${answersReceived["TMJ-When"]}` : '');
+                                break;
+                            default:
+                                answer = answersReceived[Object.keys(answersReceived)[index]] || '';
+                                break;
+                        }
+
+                        // Print the answer next to the question
+                        doc.text(answer, 110, startYY);
+
+                        // Add line under the answer
+                        doc.line(110, startYY + 2, 200, startYY + 2);
+
+                        // Increment startY for the next question
+                        startYY += 15;
+                    });
+
+
+
+
+                    // Add a new page for Consent or other sections as needed
+                    doc.addPage();
+
+                    // Consent Section
+                    doc.setFontSize(10);
+                    const consentText = `GENERAL RELEASE: I, the undersigned, certify that the information contained in the medical and dental history is correct to the best of my knowledge. I consent to the release of medical information from my medical doctor, or other healthcare providers, if required by this dental office. I authorize this dental office to perform diagnostic procedures as may be required to determine necessary treatment. I understand that payment for my dental treatment is due at the time of service unless otherwise arranged in advance with office management. I understand that I am responsible for my account with this dental office, and that all of my dependents, and I will not allow payments to be in arrears.
 
 We need to have your consent to begin communicating with you by text or email.
 Email and text messaging allows us to communicate efficiently for the benefit of our patients. At the same time, we recognize the risk if addressed to the wrong person or accessed improperly while in storage or during transmission.
 HIPAA requires that providers take reasonable steps to protect against these risks but acknowledges that a balance must be struck between the need to secure personal information and the need to ensure that clinicians can efficiently exchange important patient care information. Stonebridge Dentistry has implemented such measures through obtaining informed consent from patients using any potentially unencrypted electronic format.
 By signing this form, you give consent to our office to communicate with you via`;
 
-                doc.text(consentText, 10, 20, { maxWidth: 190, align: 'left' });
+                    doc.text(consentText, 10, 20, { maxWidth: 190, align: 'left' });
 
-                // Capture form inputs with null/undefined checks
-                const mobileNumber = document.getElementById('mobile-number') ? document.getElementById('mobile-number').value : '';
-                const emailAddress = document.getElementById('email-address') ? document.getElementById('email-address').value : '';
-                const signature = document.getElementById('signature') ? document.getElementById('signature').value : '';
-                const printName = document.getElementById('print-name') ? document.getElementById('print-name').value : '';
-                const date = document.getElementById('date') ? document.getElementById('date').value : '';
+                    // Capture form inputs with null/undefined checks
+                    const mobileNumber = document.getElementById('mobile-number') ? document.getElementById('mobile-number').value : '';
+                    const emailAddress = document.getElementById('email-address') ? document.getElementById('email-address').value : '';
+                    const signature = document.getElementById('signature') ? document.getElementById('signature').value : '';
+                    const printName = document.getElementById('print-name') ? document.getElementById('print-name').value : '';
+                    const date = document.getElementById('date') ? document.getElementById('date').value : '';
 
-                // Checkbox statuses with null checks
-                const isTextChecked = document.getElementById('communication-text') ? document.getElementById('communication-text').checked : false;
-                const isEmailChecked = document.getElementById('communication-email') ? document.getElementById('communication-email').checked : false;
-                const isBothChecked = document.getElementById('Both-email') ? document.getElementById('Both-email').checked : false;
-                const isNeitherChecked = document.getElementById('Neither-email') ? document.getElementById('Neither-email').checked : false;
+                    // Checkbox statuses with null checks
+                    const isTextChecked = document.getElementById('communication-text') ? document.getElementById('communication-text').checked : false;
+                    const isEmailChecked = document.getElementById('communication-email') ? document.getElementById('communication-email').checked : false;
+                    const isBothChecked = document.getElementById('Both-email') ? document.getElementById('Both-email').checked : false;
+                    const isNeitherChecked = document.getElementById('Neither-email') ? document.getElementById('Neither-email').checked : false;
 
-                // Function to draw consent checkbox
-                const drawConsentCheckbox = (x, y, checked) => {
-                    doc.rect(x, y, 4, 4); // Draw the square
-                    if (checked) {
-                        doc.line(x, y, x + 4, y + 4); // Draw the checkmark
-                        doc.line(x + 4, y, x, y + 4);
+                    // Function to draw consent checkbox
+                    const drawConsentCheckbox = (x, y, checked) => {
+                        doc.rect(x, y, 4, 4); // Draw the square
+                        if (checked) {
+                            doc.line(x, y, x + 4, y + 4); // Draw the checkmark
+                            doc.line(x + 4, y, x, y + 4);
+                        }
+                    };
+
+                    // Function to draw a bordered box with horizontal alignment
+                    const drawBorderedBox = (x, y, width, height, label, value, checked) => {
+                        doc.rect(x, y, width, height); // Draw the rectangle
+                        drawConsentCheckbox(x + 2, y + 7, checked); // Draw the checkbox inside the rectangle
+                        doc.text(label, x + 8, y + 11); // Adjust label position within the rectangle
+
+                        // Draw vertical line
+                        const verticalLineX = x + (width / 2);
+                        doc.line(verticalLineX, y, verticalLineX, y + height);
+
+                        if (value) {
+                            doc.text(value, verticalLineX + 5, y + 11); // Adjust value position within the rectangle
+                        }
+                    };
+
+                    // Draw boxes with or without values and checked status
+                    drawBorderedBox(10, 110, 150, 20, 'Text your mobile number', mobileNumber, isTextChecked);
+                    drawBorderedBox(10, 130, 150, 20, 'Email your email address', emailAddress, isEmailChecked);
+                    drawBorderedBox(10, 150, 150, 20, 'Both text & Email address', '', isBothChecked);
+                    drawBorderedBox(10, 170, 150, 20, 'I do not wish to receive either text or email', '', isNeitherChecked);
+
+
+
+
+                    // Signature, Print Name, Date
+                    const lineY = 210; // Base Y position for the line
+
+                    doc.text('Signature', 10, lineY);
+                    doc.line(30, lineY, 70, lineY);
+                    if (signature) {
+                        const textY = lineY - 2; // Adjust Y position for signature text (2 units above line)
+                        doc.text(signature, 30, textY); // Add signature value if not empty
                     }
-                };
 
-                // Function to draw a bordered box with horizontal alignment
-                const drawBorderedBox = (x, y, width, height, label, value, checked) => {
-                    doc.rect(x, y, width, height); // Draw the rectangle
-                    drawConsentCheckbox(x + 2, y + 7, checked); // Draw the checkbox inside the rectangle
-                    doc.text(label, x + 8, y + 11); // Adjust label position within the rectangle
-
-                    // Draw vertical line
-                    const verticalLineX = x + (width / 2);
-                    doc.line(verticalLineX, y, verticalLineX, y + height);
-
-                    if (value) {
-                        doc.text(value, verticalLineX + 5, y + 11); // Adjust value position within the rectangle
+                    doc.text('Print Name', 80, lineY);
+                    doc.line(100, lineY, 145, lineY);
+                    if (printName) {
+                        const textY = lineY - 2; // Adjust Y position for print name text (2 units above line)
+                        doc.text(printName, 100, textY); // Add print name value if not empty
                     }
-                };
 
-                // Draw boxes with or without values and checked status
-                drawBorderedBox(10, 110, 150, 20, 'Text your mobile number', mobileNumber, isTextChecked);
-                drawBorderedBox(10, 130, 150, 20, 'Email your email address', emailAddress, isEmailChecked);
-                drawBorderedBox(10, 150, 150, 20, 'Both text & Email address', '', isBothChecked);
-                drawBorderedBox(10, 170, 150, 20, 'I do not wish to receive either text or email', '', isNeitherChecked);
-
-
+                    doc.text('Date', 155, lineY);
+                    doc.line(165, lineY, 195, lineY);
+                    if (date) {
+                        const textY = lineY - 2; // Adjust Y position for date text (2 units above line)
+                        doc.text(date, 165, textY); // Add date value if not empty
+                    }
 
 
-                // Signature, Print Name, Date
-                const lineY = 210; // Base Y position for the line
 
-                doc.text('Signature', 10, lineY);
-                doc.line(30, lineY, 70, lineY);
-                if (signature) {
-                    const textY = lineY - 2; // Adjust Y position for signature text (2 units above line)
-                    doc.text(signature, 30, textY); // Add signature value if not empty
+                    // Save the PDF
+                    doc.save('appointment-details.pdf');
+                    alert('PDF generated successfully!');
+                } catch (error) {
+                    console.error('Error generating PDF:', error);
+                    alert('An error occurred while generating the PDF. Please check the console for details.');
                 }
-
-                doc.text('Print Name', 80, lineY);
-                doc.line(100, lineY, 145, lineY);
-                if (printName) {
-                    const textY = lineY - 2; // Adjust Y position for print name text (2 units above line)
-                    doc.text(printName, 100, textY); // Add print name value if not empty
-                }
-
-                doc.text('Date', 155, lineY);
-                doc.line(165, lineY, 195, lineY);
-                if (date) {
-                    const textY = lineY - 2; // Adjust Y position for date text (2 units above line)
-                    doc.text(date, 165, textY); // Add date value if not empty
-                }
-
-
-
-                // Save the PDF
-                doc.save('appointment-details.pdf');
-                alert('PDF generated successfully!');
-            } catch (error) {
-                console.error('Error generating PDF:', error);
-                alert('An error occurred while generating the PDF. Please check the console for details.');
-            }
+            });
         });
-    });
-</script>
+    </script>
 
 
 
-<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link rel="alternate" type="application/rss+xml" title="Allen &raquo; Feed"
         href="https://denticare.bold-themes.com/allen/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Allen &raquo; Comments Feed"
@@ -13717,17 +13725,19 @@ By signing this form, you give consent to our office to communicate with you via
             </section>
             <br><br>
             <div class="container" id="medical-form">
-                <header class="header" style="display: flex; justify-content: space-between; align-items: center; padding-left: 20px;">
+                <header class="header"
+                    style="display: flex; justify-content: space-between; align-items: center; padding-left: 20px;">
                     <div style="text-align: left;">
                         <h4 style="font-weight: bold; margin: 0;">STONEBRIDGE DENTISTRY</h4>
                         <div style="text-align: center; font-weight: bold; margin: 0;">
                             <p style="margin: 0;">1 Market Lane, Unit 9<br>Wasaga Beach, ON L9Z 0B6</p>
                         </div>
-                        <p style="color: blue; text-decoration: underline; margin: 5px 0;">reception.stonebridgedentistry@gmail.com</p>
+                        <p style="color: blue; text-decoration: underline; margin: 5px 0;">
+                            reception.stonebridgedentistry@gmail.com</p>
                         <p style="margin: 5px 0;">Tel: 705-422-2490 &nbsp; | &nbsp; Fax: 705-422-2493</p>
-                    </div>                    
+                    </div>
                     <img src="img/asset 0.png" alt="Logo" style="height: 100px; width: 300px; margin-left: 20px;" />
-                </header>                               
+                </header>
                 <hr>
                 <form class="form">
                     <section class="section">
@@ -13766,49 +13776,70 @@ By signing this form, you give consent to our office to communicate with you via
                     </section>
                     <section class="section" style="border: 1px solid black; padding: 10px;">
                         <h2>Financial Information</h2>
-                        <label style="display: block; margin-bottom: 10px;">Do you have dental insurance? Yes/No/More than one</label>
-                        
+                        <label style="display: block; margin-bottom: 10px;">Do you have dental insurance? Yes/No/More
+                            than one</label>
+
                         <div class="row insurance" style="display: flex; justify-content: space-between;">
-                            <div class="column insurance-column" style="flex: 1; padding: 10px; border-right: 1px solid black;">
+                            <div class="column insurance-column"
+                                style="flex: 1; padding: 10px; border-right: 1px solid black;">
                                 <h3>Primary Insurance</h3>
                                 <label style="display: block; margin-bottom: 5px;">Subscriber Name</label>
-                                <input type="text" id="SubscriberName" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="SubscriberName"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Policy #</label>
-                                <input type="text" id="Policy" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="Policy"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Id #</label>
                                 <input type="text" id="IDtxt" style="display: block; width: 100%; margin-bottom: 10px;">
-                                <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth (DD/MM/YYYY)</label>
-                                <input type="text" id="DOBtxt" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth
+                                    (DD/MM/YYYY)</label>
+                                <input type="text" id="DOBtxt"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Employer</label>
-                                <input type="text" id="Employertxt" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="Employertxt"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Ins Co.</label>
-                                <input type="text" id="Insurtxt" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="Insurtxt"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Relationship to Subscriber</label>
-                                <input type="text" id="relnshpsbsbr" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="relnshpsbsbr"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                             </div>
                             <div class="column insurance-column" style="flex: 1; padding: 10px;">
                                 <h3>Secondary Insurance</h3>
                                 <label style="display: block; margin-bottom: 5px;">Subscriber Name</label>
-                                <input type="text" id="Suscriber-Name" style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="Suscriber-Name"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Policy #</label>
-                                <input type="text" id="PolicyName_txt"  style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="PolicyName_txt"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Id #</label>
-                                <input type="text" id="txtID_name"  style="display: block; width: 100%; margin-bottom: 10px;">
-                                <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth (DD/MM/YYYY)</label>
-                                <input type="text" id="DMY_DOB"  style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="txtID_name"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
+                                <label style="display: block; margin-bottom: 5px;">Subscriber Date of Birth
+                                    (DD/MM/YYYY)</label>
+                                <input type="text" id="DMY_DOB"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Employer</label>
-                                <input type="text" id="Employees_cnd"  style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="Employees_cnd"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Ins Co.</label>
-                                <input type="text" id="InsuranceNo_txt"  style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="InsuranceNo_txt"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                                 <label style="display: block; margin-bottom: 5px;">Relationship to Subscriber</label>
-                                <input type="text" id="relation_subscriber"  style="display: block; width: 100%; margin-bottom: 10px;">
+                                <input type="text" id="relation_subscriber"
+                                    style="display: block; width: 100%; margin-bottom: 10px;">
                             </div>
                         </div>
-                        <p class="note" style="margin-top: 10px;">Our office is happy to file claims electronically on your behalf, so that in many cases, we will receive your insurance reimbursement.<br>
-                            As such, payment of your dental visit is expected at the time of service should there be any balances.<br>
-                            Please let your front desk staff know ahead of time, in the event that you are unable to make payment when it is due, so that other options can be discussed with you at that time.</p>
+                        <p class="note" style="margin-top: 10px;">Our office is happy to file claims electronically on
+                            your behalf, so that in many cases, we will receive your insurance reimbursement.<br>
+                            As such, payment of your dental visit is expected at the time of service should there be any
+                            balances.<br>
+                            Please let your front desk staff know ahead of time, in the event that you are unable to
+                            make payment when it is due, so that other options can be discussed with you at that time.
+                        </p>
                     </section>
-                    
+
                     <section class="section">
                         <h2>Medical History (Confidential as per PIPEDA legislation)</h2>
                         <div class="inline-group">
@@ -13819,181 +13850,245 @@ By signing this form, you give consent to our office to communicate with you via
                             <label>Date of last physical</label>
                             <input type="text" id="last-physical-date">
                         </div>
-                        <label>Are you being treated for any medical condition? If Yes, which?</label><input type="text" id="medical-condition-treat">
+                        <label>Are you being treated for any medical condition? If Yes, which?</label><input type="text"
+                            id="medical-condition-treat">
                         <label>Are you taking any drugs or medications at this time?</label>
                         <label>Drug:</label><input type="text" id="medication-drug-time">
                         <label>Reason:</label><input type="text" id="medication-reason">
                         <label>Are you taking any Herbal or Vitamin Supplements?</label>
                         <label>Supplement:</label><input type="text" id="supplement">
                         <label>Reason:</label><input type="text" id="supplement-reason">
-                        <label>Do you have any drug allergies or adverse effects? (Penicillin, Sulfonamide, Aspirin, Codeine, Local Anesthetic)</label><input type="text" id="drug-allergies">
-                        <label>Any Latex, Nickel, or General Anesthesia Allergies?</label><input type="text" id="latex-allergies">
-                        <label>Do you bruise easily or bleed for a prolonged period of time? </label><input type="text" id="bruise-bleed">
-                        <label>Do you smoke? If Yes, how much per day, and how long?</label><input type="text" id="antibiotics_smoke">
-                        <label>Have you ever fainted, had shortness of breath or chest pains? </label><input type="text" id="antibiotics-reason">
-                        <label>Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/ NO</label><input type="text" id="Pregnent-reason">
-                        <label>Have you in the past, or are currently taking cortisone-based medications such as Prednisone? </label><input type="text" id="Prednisone-reason">
+                        <label>Do you have any drug allergies or adverse effects? (Penicillin, Sulfonamide, Aspirin,
+                            Codeine, Local Anesthetic)</label><input type="text" id="drug-allergies">
+                        <label>Any Latex, Nickel, or General Anesthesia Allergies?</label><input type="text"
+                            id="latex-allergies">
+                        <label>Do you bruise easily or bleed for a prolonged period of time? </label><input type="text"
+                            id="bruise-bleed">
+                        <label>Do you smoke? If Yes, how much per day, and how long?</label><input type="text"
+                            id="antibiotics_smoke">
+                        <label>Have you ever fainted, had shortness of breath or chest pains? </label><input type="text"
+                            id="antibiotics-reason">
+                        <label>Women: Are you pregnant? YES/NO, Nursing? YES/NO, Using Birth control? YES/
+                            NO</label><input type="text" id="Pregnent-reason">
+                        <label>Have you in the past, or are currently taking cortisone-based medications such as
+                            Prednisone? </label><input type="text" id="Prednisone-reason">
                         <br><br>
-                        <label style="display: block; margin-bottom: 10px;font: bold;">Do you have or have you ever had any of the following medical conditions</label>
+                        <label style="display: block; margin-bottom: 10px;font: bold;">Do you have or have you ever had
+                            any of the following medical conditions</label>
                         <div class="table" id="tblmedcndtn">
                             <div class="column">
                                 <ul>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Artificial Joints"> Artificial Joints </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Anemia"> Anemia </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Bone Density"> Bone Density </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Blood Thinner"> Blood Thinner </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Cancer"> Cancer </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Radiation"> Radiation </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Chemotherapy"> Chemotherapy </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Diabetic"> Diabetic </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Infective"> Infective </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Endocarditis"> Endocarditis </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Hep A/B/C"> Hep A/B/C </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="HIV Positive"> H.I.V Positive </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Artificial Joints"> Artificial Joints </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Anemia"> Anemia </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Bone Density"> Bone Density </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Blood Thinner"> Blood Thinner </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Cancer"> Cancer </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Radiation"> Radiation </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Chemotherapy"> Chemotherapy </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Diabetic"> Diabetic </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Infective"> Infective </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Endocarditis"> Endocarditis </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Hep A/B/C"> Hep A/B/C </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="HIV Positive"> H.I.V Positive </label></li>
                                 </ul>
                             </div>
                             <div class="column">
                                 <ul>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Hemophilia"> Hemophilia </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Blood Pressure H/L"> Blood Pressure H / L </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Pace Maker"> Pace Maker </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Stroke"> Stroke </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Heart Issues"> Heart Issues </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Asthma"> Asthma </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Circulation Problems"> Circulation Problems </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Cortisone/Steroids"> Cortisone/Steroids </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Drug/Alcohol Dependency"> Drug/Alcohol Dependency </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Eating Disorder"> Eating Disorder </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Hemophilia"> Hemophilia </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Blood Pressure H/L"> Blood Pressure H / L </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Pace Maker"> Pace Maker </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Stroke"> Stroke </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Heart Issues"> Heart Issues </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Asthma"> Asthma </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Circulation Problems"> Circulation Problems </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Cortisone/Steroids"> Cortisone/Steroids </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Drug/Alcohol Dependency"> Drug/Alcohol Dependency </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Eating Disorder"> Eating Disorder </label></li>
                                 </ul>
                             </div>
                             <div class="column">
                                 <ul>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Epilepsy"> Epilepsy </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Glaucoma"> Glaucoma </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Head/Neck Injury"> Head/Neck injury </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Herpes"> Herpes </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Hodgkin Disease"> Hodgkin Disease </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Hyperglycemia"> Hyperglycemia </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Jaundice"> Jaundice </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Kidney Disease"> Kidney Disease </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Liver Disease"> Liver Disease </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Lung Disease"> Lung Disease </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Malignant"> Malignant </label></li>
-                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition" value="Hypothermia"> Hypothermia </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Epilepsy"> Epilepsy </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Glaucoma"> Glaucoma </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Head/Neck Injury"> Head/Neck injury </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Herpes"> Herpes </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Hodgkin Disease"> Hodgkin Disease </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Hyperglycemia"> Hyperglycemia </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Jaundice"> Jaundice </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Kidney Disease"> Kidney Disease </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Liver Disease"> Liver Disease </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Lung Disease"> Lung Disease </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Malignant"> Malignant </label></li>
+                                    <li><label class="checkbox-label"><input type="checkbox" name="medical-condition"
+                                                value="Hypothermia"> Hypothermia </label></li>
                                 </ul>
                             </div>
                             <div class="column">
                                 <ul style="text-decoration: underline;">
                                     <li>List recent surgeries or hospital visits.</li>
-                                    <li><textarea id="recentSurgeries" name="recent-surgeries" rows="5" cols="30"></textarea></li>
+                                    <li><textarea id="recentSurgeries" name="recent-surgeries" rows="5"
+                                            cols="30"></textarea></li>
                                 </ul>
                             </div>
                         </div>
                         <h4>Dental History:</h4>
-    <div class="inline-group">
-        <label>Last Dental Checkup and Cleaning?</label>
-        <input type="text" id="Checkup-name">
-        <label>How Frequently do you visit?</label>
-        <input type="text" id="Frequently-visit">
-    </div>
-    <label>Do you usually take antibiotics before a procedure?</label>
-    <input type="text" id="antibiotics-condition">
-    <label>Are you looking for Comprehensive Dental Care, or Emergency Care Only?</label>
-    <input type="text" id="Comprehensive-Dental">
-    <div class="inline-group">
-        <label>Do you have a history of Gum Disease</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-            <label for="treated-checkbox">Yes</label>
-            <input type="checkbox" id="treated-checkbox" name="treated" onclick="toggleTreatedWhen()">
-            
-            <label for="untreated-checkbox">No</label>
-            <input type="checkbox" id="untreated-checkbox" name="untreated">
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="treated-when-section" style=" margin-top: 10px;">
-            <label>If Treated, when?</label>
-            <input type="text" id="treated-when" placeholder="Enter the date or time">
-        </div>
-    </div>
-    
-    <div class="inline-group">
-        <label>Have you seen a Periodontist</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-            <label for="seen-periodontist-yes">Yes</label>
-            <input type="checkbox" id="seen-periodontist-yes" name="seen-periodontist" onclick="togglePeriodontistWhen()">
-            
-            <label for="seen-periodontist-no">No</label>
-            <input type="checkbox" id="seen-periodontist-no" name="seen-periodontist" onclick="togglePeriodontistWhen()">
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="periodontist-when-section" style=" margin-top: 10px;">
-            <label>If Yes, when?</label>
-            <input type="text" id="Periodontist-when" placeholder="Enter the date or time">
-        </div>
-    </div>
-    <div class="inline-group">
-        <label>Are your teeth sensitive to Sweets</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-            <label for="sensitive-sweets-yes">Yes</label>
-            <input type="checkbox" id="sensitive-sweets-yes" name="sensitive-sweets" onclick="toggleSensitiveWhen()">
-            
-            <label for="sensitive-sweets-no">No</label>
-            <input type="checkbox" id="sensitive-sweets-no" name="sensitive-sweets" onclick="toggleSensitiveWhen()">
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="sensitive-when-section" style=" margin-top: 10px;">
-            <label>If Yes, when?</label>
-            <input type="text" id="sensitive-when" placeholder="Enter the date or time">
-        </div>
-    </div>
-    <div class="inline-group">
-        <label>Have you been diagnosed with TMJ (Jaw Joint) problems</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-            <label for="diagnosed-jaw-yes">Yes</label>
-            <input type="checkbox" id="diagnosed-jaw-yes" name="diagnosed-jaw" onclick="toggleJawWhen()">
-            
-            <label for="diagnosed-jaw-no">No</label>
-            <input type="checkbox" id="diagnosed-jaw-no" name="diagnosed-jaw" onclick="toggleJawWhen()">
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="jaw-when-section" style=" margin-top: 10px;">
-            <label>If Yes, when?</label>
-            <input type="text" id="JAW-when" placeholder="Enter the date or time">
-        </div>
-    </div>    
-    <label>Does your Jaw Joints "Click" or "Pop' when you open</label>
-    <input type="text" id="medication-reason">
-    <label>Are you aware If you grind or clench your teeth at night</label>
-    <input type="text" id="clench-teeth">
-    <label>Have you had orthodontic work done (braces)</label>
-    <input type="text" id="orthodontic">
-    <div class="inline-group">
-        <label>Do you wear any oral appliances</label>
-        <input type="text" id="oral-appliances">
-        <label>Removable or Fixed?</label>
-        <input type="text" id="Removable-Fixed">
-    </div>
-    <div class="inline-group">
-        <label>Have you Professionally Whitened your teeth before</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-            <label for="whitened-teeth-yes">Yes</label>
-            <input type="checkbox" id="whitened-teeth-yes" name="whitened-teeth" onclick="toggleWhitenedWhen()">
-            
-            <label for="whitened-teeth-no">No</label>
-            <input type="checkbox" id="whitened-teeth-no" name="whitened-teeth" onclick="toggleWhitenedWhen()">
-        </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="whitened-when-section" style="display: none; margin-top: 10px;">
-            <label>If Yes, when?</label>
-            <input type="text" id="Whitened-when" placeholder="Enter the date or time">
-        </div>
-    </div>
-    <label>Are you happy with your smile ?</label>
-    <input type="text" id="supplement-reason">                        
+                        <div class="inline-group">
+                            <label>Last Dental Checkup and Cleaning?</label>
+                            <input type="text" id="Checkup-name">
+                            <label>How Frequently do you visit?</label>
+                            <input type="text" id="Frequently-visit">
+                        </div>
+                        <label>Do you usually take antibiotics before a procedure?</label>
+                        <input type="text" id="antibiotics-condition">
+                        <label>Are you looking for Comprehensive Dental Care, or Emergency Care Only?</label>
+                        <input type="text" id="Comprehensive-Dental">
+                        <div class="inline-group">
+                            <label>Do you have a history of Gum Disease?</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <label for="treated-checkbox">Yes</label>
+                                <input type="checkbox" id="treated-checkbox" name="treated"
+                                    onclick="toggleTreatedWhen()">
+                                <label for="untreated-checkbox">No</label>
+                                <input type="checkbox" id="untreated-checkbox" name="untreated"
+                                    onclick="toggleTreatedWhen()">
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div id="treated-when-section" style="margin-top: 10px;">
+                                <label>If Treated, when?</label>
+                                <input type="text" id="treated-when" placeholder="Enter the date or time">
+                            </div>
+                        </div>
+
+                        <div class="inline-group">
+                            <label>Have you seen a Periodontist?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <label for="seen-periodontist-yes">Yes</label>
+                                <input type="checkbox" id="seen-periodontist-yes" name="seen-periodontist"
+                                    onclick="togglePeriodontistWhen()">
+                                <label for="seen-periodontist-no">No</label>
+                                <input type="checkbox" id="seen-periodontist-no" name="seen-periodontist"
+                                    onclick="togglePeriodontistWhen()">
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div id="periodontist-when-section" style=" margin-top: 10px;">
+                                <label>If Yes, when?</label>
+                                <input type="text" id="Periodontist-when" placeholder="Enter the date or time">
+                            </div>
+                        </div>
+
+                        <div class="inline-group">
+                            <label>Are your teeth sensitive to Sweets?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <label for="sensitive-sweets-yes">Yes</label>
+                                <input type="checkbox" id="sensitive-sweets-yes" name="sensitive-sweets"
+                                    onclick="toggleSensitiveWhen()">
+                                <label for="sensitive-sweets-no">No</label>
+                                <input type="checkbox" id="sensitive-sweets-no" name="sensitive-sweets"
+                                    onclick="toggleSensitiveWhen()">
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div id="sensitive-when-section" style=" margin-top: 10px;">
+                                <label>If Yes, when?</label>
+                                <input type="text" id="sensitive-when" placeholder="Enter the date or time">
+                            </div>
+                        </div>
+
+                        <div class="inline-group">
+                            <label>Have you been diagnosed with TMJ (Jaw Joint)
+                                problems?</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <label for="diagnosed-jaw-yes">Yes</label>
+                                <input type="checkbox" id="diagnosed-jaw-yes" name="diagnosed-jaw"
+                                    onclick="toggleJawWhen()">
+                                <label for="diagnosed-jaw-no">No</label>
+                                <input type="checkbox" id="diagnosed-jaw-no" name="diagnosed-jaw"
+                                    onclick="toggleJawWhen()">
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <div id="jaw-when-section" style=" margin-top: 10px;">
+                                <label>If Yes, when?</label>
+                                <input type="text" id="JAW-when" placeholder="Enter the date or time">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label>Does your Jaw Joints "Click" or "Pop" when you open?</label>
+                            <input type="text" id="medication-reason" placeholder="Enter details">
+                        </div>
+                        
+                        <div>
+                            <label>Are you aware if you grind or clench your teeth at night?</label>
+                            <input type="text" id="clench-teeth" placeholder="Enter details">
+                        </div>
+                        
+                        <div>
+                            <label>Have you had orthodontic work done (braces)?</label>
+                            <input type="text" id="orthodontic" placeholder="Enter details">
+                        </div>
+                        
+                        <div class="inline-group">
+                            <label>Do you wear any oral appliances?</label>
+                            <input type="text" id="oral-appliances" placeholder="Enter details">
+                            <label>Removable or Fixed?</label>
+                            <input type="text" id="Removable-Fixed" placeholder="Specify">
+                        </div>
+                        
+                        <div class="inline-group">
+                            <label>Have you professionally whitened your teeth before?</label>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <label for="whitened-teeth-yes">Yes</label>
+                                <input type="checkbox" id="whitened-teeth-yes" name="whitened-teeth" onclick="toggleWhitenedWhen()">
+                        
+                                <label for="whitened-teeth-no">No</label>
+                                <input type="checkbox" id="whitened-teeth-no" name="whitened-teeth" onclick="toggleWhitenedWhen()">
+                            </div>
+                            
+                            <div id="whitened-when-section" style="display: none; margin-top: 10px;">
+                                <label>If Yes, when?</label>
+                                <input type="text" id="Whitened-when" placeholder="Enter the date or time">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label>Are you happy with your smile?</label>
+                            <input type="text" id="supplement-reason" placeholder="Enter details">
+                        </div>                        
                     </section>
-            
+
                     <section class="section">
                         <h2>Consent, Signature and Date</h2>
                         <p>GENERAL RELEASE: I, the undersigned,
@@ -14031,39 +14126,52 @@ By signing this form, you give consent to our office to communicate with you via
                             <form id="contact-form" style="width: 100%; display: flex;">
                                 <div style="flex: 1; padding: 10px;">
                                     <div class="form-group" style="margin-bottom: 10px;">
-                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="communication-text" name="communication-method" value="Mobile No." style="margin-right: 10px;">
+                                        <div
+                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="communication-text" name="communication-method"
+                                                value="Mobile No." style="margin-right: 10px;">
                                             <label for="communication-text">Mobile No.</label>
                                         </div>
-                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="communication-email" name="communication-method" value="email" style="margin-right: 10px;">
+                                        <div
+                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="communication-email" name="communication-method"
+                                                value="email" style="margin-right: 10px;">
                                             <label for="communication-email">Email</label>
                                         </div>
-                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="Both-email" name="Both-method" value="Both" style="margin-right: 10px;">
+                                        <div
+                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="Both-email" name="Both-method" value="Both"
+                                                style="margin-right: 10px;">
                                             <label for="Both-email">Both text & Email address</label>
                                         </div>
-                                        <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
-                                            <input type="checkbox" id="Neither-email" name="Neither-method" value="Neither" style="margin-right: 10px;">
-                                            <label for="Neither-email">I do not wish to receive either text or email</label>
+                                        <div
+                                            style="border: 1px solid black; padding: 5px; margin-bottom: 5px; display: flex; align-items: center;">
+                                            <input type="checkbox" id="Neither-email" name="Neither-method"
+                                                value="Neither" style="margin-right: 10px;">
+                                            <label for="Neither-email">I do not wish to receive either text or
+                                                email</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div style="flex: 1; padding: 10px;">
                                     <div class="form-group" style="margin-bottom: 10px;">
                                         <div style="border: 1px solid black; padding: 5px; margin-bottom: 5px;">
-                                            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Text your mobile number" style="width: calc(100% - 160px);">
+                                            <input type="tel" id="mobile-number" name="mobile-number"
+                                                placeholder="Text your mobile number"
+                                                style="width: calc(100% - 160px);">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div style="border: 1px solid black; padding: 5px;">
-                                            <input type="email" id="email-address" name="email-address" placeholder="Email your email address" style="width: calc(100% - 160px);">
+                                            <input type="email" id="email-address" name="email-address"
+                                                placeholder="Email your email address"
+                                                style="width: calc(100% - 160px);">
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                        
+
                         <div class="signature-section">
                             <div>
                                 <label for="signature">Signature</label>
@@ -14082,18 +14190,19 @@ By signing this form, you give consent to our office to communicate with you via
                 </form>
                 <hr>
             </div>
-            <button class="btn btn-primary" id="btnsbmtrprt" style="float: right;margin-right: 100px">Submit Form</button>
-<br>
+            <button class="btn btn-primary" id="btnsbmtrprt" style="float: right;margin-right: 100px">Submit
+                Form</button>
+            <br>
         </div>
         <script>
             // Function to generate PDF
             function generatePDF() {
                 // Create a new jsPDF instance
                 var doc = new jsPDF();
-        
+
                 // Get HTML content to be converted to PDF
                 var element = document.getElementById("btContentWrap");
-        
+
                 // Options for the PDF
                 var options = {
                     margin: 10,
@@ -14102,18 +14211,18 @@ By signing this form, you give consent to our office to communicate with you via
                     html2canvas: { scale: 2 },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
                 };
-        
+
                 // Use html2pdf library to generate PDF
                 html2pdf().from(element).set(options).save();
-        
+
                 // Show alert for click identification
                 alert('PDF generated!');
             }
-        
+
             // Event listener for the button click
             document.getElementById('btnGeneratePDF').addEventListener('click', generatePDF);
         </script>
-    
+
         <!-- <script>
             document.getElementById('printPDF').addEventListener('click', function (e) {
                 e.preventDefault();
@@ -14133,494 +14242,513 @@ By signing this form, you give consent to our office to communicate with you via
         </script> -->
         <br>
         <div class="btSiteFooter">
-			<div class="bt_bb_wrapper">
-				<section id="bt_bb_section6657ed3319b61"
-         class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_extra_small"
-         style="background-color:#f2f2f2; background-position:15% 55%; background-size:95%; padding-top: 40px; padding-bottom: 0px;"
-         data-bt-override-class="null">
-    <div class="bt_bb_background_image_holder_wrapper">
-        <div class="bt_bb_background_image_holder btLazyLoadBackground bt_bb_parallax"
-             style="background-color: lightskyblue; height: 100%; width: 100%;">
-        </div>
-    </div>
-    <div class="bt_bb_port">
-        <div class="bt_bb_cell">
-            <div class="bt_bb_row_wrapper">
-                <div class="bt_bb_row bt_bb_column_gap_30" data-bt-override-class="{}">
-                    <!-- Column 1 -->
-                    <div class="bt_bb_column col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-                         data-width="3" data-bt-override-class="{}">
-                        <div class="bt_bb_column_content">
-                            <header class="bt_bb_headline bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-                                    style="--primary-color:#422774; --secondary-color:#191919;"
-                                    data-bt-override-class="{}">
-                                <h6 class="bt_bb_headline_tag"><span class="bt_bb_headline_content"><span><strong>Stonebridge</strong><b>Dentistry</b></span></span></h6>
-                            </header>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                            <div class="bt_bb_text" style="line-height: 1.875;">
-                                <p>A team of dentists working to ensure you receive the best treatment.</p>
-                            </div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                            <div class="bt_bb_icon bt_bb_color_scheme_7 bt_bb_style_borderless bt_bb_size_xsmall bt_bb_shape_circle bt_bb_target_self bt_bb_align_inherit"
-                                 style="--primary-color:#422774; --secondary-color:#191919;"
-                                 data-bt-override-class="{}"><a href="tel:4152055550" target="_self"
-                                                                title="(705) 422-2490" class="bt_bb_icon_holder"><i class="fa fa-phone" aria-hidden="true"></i> <span>(705) 422-2490</span></a></div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                            <div class="bt_bb_icon"
-                                 style="--primary-color:#422774; --secondary-color:#191919;"
-                                 data-bt-override-class="{}">
-                                <a href="mailto:reception.stonebridgedentistry@gmail.com" target="_self"
-                                   title="reception.stonebridgedentistry@gmail.com"
-                                   onclick="this.textContent='reception.stonebridgedentistry@gmail.com'; return true;">
-                                    <span><i class="fas fa-envelope"></i> Email Us</span>
-                                </a>
-                            </div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                            <div class="bt_bb_icon"
-                                 style="--primary-color:#422774; --secondary-color:#191919;"
-                                 data-bt-override-class="{}">
-                                <a href="https://www.stonebridgedentistry.ca/" target="_blank"
-                                   title="https://www.stonebridgedentistry.ca/">
-                                    <span><i class="fas fa-globe"></i>stonebridgedentistry.ca/</span>
-                                </a>
-                            </div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
+            <div class="bt_bb_wrapper">
+                <section id="bt_bb_section6657ed3319b61"
+                    class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_extra_small"
+                    style="background-color:#f2f2f2; background-position:15% 55%; background-size:95%; padding-top: 40px; padding-bottom: 0px;"
+                    data-bt-override-class="null">
+                    <div class="bt_bb_background_image_holder_wrapper">
+                        <div class="bt_bb_background_image_holder btLazyLoadBackground bt_bb_parallax"
+                            style="background-color: lightskyblue; height: 100%; width: 100%;">
                         </div>
                     </div>
-                    <!-- Column 2 -->
-                    <div class="bt_bb_column col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-                         data-width="2" data-bt-override-class="{}">
-                        <div class="bt_bb_column_content">
-                            <header class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-                                    style="--primary-color:#422774; --secondary-color:#191919;"
-                                    data-bt-override-class="{}">
-                                <h6 class="bt_bb_headline_tag"><span class="bt_bb_headline_content"><span>About</span></span></h6>
-                            </header>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                            <div class="bt_bb_custom_menu bt_bb_direction_vertical">
-                                <div class="menu-footer-about-container">
-                                    <ul id="menu-footer-about" class="menu">
-                                        <li id="menu-item-452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452">
-                                            <a href="Team.html">Our Dental Team</a>
-                                        </li>
-                                        <li id="menu-item-1422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1422">
-                                            <a href="Testimonials.html">Testimonials</a>
-                                        </li>
-                                        <li id="menu-item-456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456">
-                                            <a href="Services.html">Dental Services</a>
-                                        </li>
-                                        <li id="menu-item-457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457">
-                                            <a href="About-Us.html">About</a>
-                                        </li>
-                                    </ul>
+                    <div class="bt_bb_port">
+                        <div class="bt_bb_cell">
+                            <div class="bt_bb_row_wrapper">
+                                <div class="bt_bb_row bt_bb_column_gap_30" data-bt-override-class="{}">
+                                    <!-- Column 1 -->
+                                    <div class="bt_bb_column col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
+                                        data-width="3" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <header
+                                                class="bt_bb_headline bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
+                                                style="--primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}">
+                                                <h6 class="bt_bb_headline_tag"><span
+                                                        class="bt_bb_headline_content"><span><strong>Stonebridge</strong><b>Dentistry</b></span></span>
+                                                </h6>
+                                            </header>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_text" style="line-height: 1.875;">
+                                                <p>A team of dentists working to ensure you receive the best treatment.
+                                                </p>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_icon bt_bb_color_scheme_7 bt_bb_style_borderless bt_bb_size_xsmall bt_bb_shape_circle bt_bb_target_self bt_bb_align_inherit"
+                                                style="--primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}"><a href="tel:4152055550" target="_self"
+                                                    title="(705) 422-2490" class="bt_bb_icon_holder"><i
+                                                        class="fa fa-phone" aria-hidden="true"></i> <span>(705)
+                                                        422-2490</span></a></div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_icon"
+                                                style="--primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}">
+                                                <a href="mailto:reception.stonebridgedentistry@gmail.com" target="_self"
+                                                    title="reception.stonebridgedentistry@gmail.com"
+                                                    onclick="this.textContent='reception.stonebridgedentistry@gmail.com'; return true;">
+                                                    <span><i class="fas fa-envelope"></i> Email Us</span>
+                                                </a>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_icon"
+                                                style="--primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}">
+                                                <a href="https://www.stonebridgedentistry.ca/" target="_blank"
+                                                    title="https://www.stonebridgedentistry.ca/">
+                                                    <span><i class="fas fa-globe"></i>stonebridgedentistry.ca/</span>
+                                                </a>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Column 2 -->
+                                    <div class="bt_bb_column col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
+                                        data-width="2" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <header
+                                                class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
+                                                style="--primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}">
+                                                <h6 class="bt_bb_headline_tag"><span
+                                                        class="bt_bb_headline_content"><span>About</span></span></h6>
+                                            </header>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_custom_menu bt_bb_direction_vertical">
+                                                <div class="menu-footer-about-container">
+                                                    <ul id="menu-footer-about" class="menu">
+                                                        <li id="menu-item-452"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452">
+                                                            <a href="Team.html">Our Dental Team</a>
+                                                        </li>
+                                                        <li id="menu-item-1422"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1422">
+                                                            <a href="Testimonials.html">Testimonials</a>
+                                                        </li>
+                                                        <li id="menu-item-456"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456">
+                                                            <a href="Services.html">Dental Services</a>
+                                                        </li>
+                                                        <li id="menu-item-457"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457">
+                                                            <a href="About-Us.html">About</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Column 3 -->
+                                    <div class="bt_bb_column col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
+                                        data-width="4" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <header
+                                                class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
+                                                style="--primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}">
+                                                <h6 class="bt_bb_headline_tag"><span
+                                                        class="bt_bb_headline_content"><span>Our Awards</span></span>
+                                                </h6>
+                                            </header>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_row_wrapper">
+                                                <div class="bt_bb_row_inner" data-bt-override-class="{}"
+                                                    data-structure="12">
+                                                    <div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_align_center bt_bb_vertical_align_top bt_bb_padding_normal"
+                                                        data-width="12" data-bt-override-class="{}">
+                                                        <div class="bt_bb_column_inner_content">
+                                                            <div class="bt_bb_image bt_footer_awards bt_bb_shape_square bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_top bt_bb_content_exists"
+                                                                data-bt-override-class="{}"><span><img loading="lazy"
+                                                                        decoding="async" width="490" height="200"
+                                                                        src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
+                                                                        class="attachment-full size-full"
+                                                                        alt="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
+                                                                        data-full_image_src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
+                                                                        title="footer-awards-new"
+                                                                        srcset="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png 490w, https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new-320x131.png 320w"
+                                                                        sizes="(max-width: 490px) 100vw, 490px"></span>
+                                                                <div class="bt_bb_image_content">
+                                                                    <div class="bt_bb_image_content_flex">
+                                                                        <div class="bt_bb_image_content_inner">
+                                                                            <div class="bt_bb_text"
+                                                                                style="line-height: 1.875;">
+                                                                                <p>StoneBridge is a multiple award
+                                                                                    winner</p>
+                                                                            </div>
+                                                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                                                data-bt-override-class="null"></div>
+                                                                            <header
+                                                                                class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
+                                                                                data-bt-override-class="{}">
+                                                                                <h6 class="bt_bb_headline_tag"><span
+                                                                                        class="bt_bb_headline_content"><span
+                                                                                            style="color: #000;">Best
+                                                                                            Patient Care
+                                                                                            <strong><u>2017</u></strong></span></span>
+                                                                                </h6>
+                                                                            </header>
+                                                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
+                                                                                data-bt-override-class="null"></div>
+                                                                            <header
+                                                                                class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
+                                                                                data-bt-override-class="{}">
+                                                                                <h6 class="bt_bb_headline_tag"><span
+                                                                                        class="bt_bb_headline_content"><span
+                                                                                            style="color: #000;">Best
+                                                                                            Practice &amp; Team
+                                                                                            <strong><u>2016</u></strong></span></span>
+                                                                                </h6>
+                                                                            </header>
+                                                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
+                                                                                data-bt-override-class="null"></div>
+                                                                            <header
+                                                                                class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
+                                                                                data-bt-override-class="{}">
+                                                                                <h6 class="bt_bb_headline_tag"><span
+                                                                                        class="bt_bb_headline_content"><span
+                                                                                            style="color: #000;">Best
+                                                                                            Patient Care
+                                                                                            <strong><u>2014</u></strong></span></span>
+                                                                                </h6>
+                                                                            </header>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bt_bb_column_inner_highlight"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Column 4 -->
+                                    <div class="bt_bb_column col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
+                                        data-width="3" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <header
+                                                class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
+                                                style="; --primary-color:#422774; --secondary-color:#191919;"
+                                                data-bt-override-class="{}">
+                                                <h6 class="bt_bb_headline_tag"><span
+                                                        class="bt_bb_headline_content"><span>Social
+                                                            Networks</span></span></h6>
+                                            </header>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_text">
+                                                <p>Visit StoneBridge on these social links and connect with us. Make
+                                                    sure to follow our accounts for regular updates.</p>
+                                            </div>
+                                            <div class="social-icons">
+                                                <a href="https://www.facebook.com/boldthemes/" target="_blank"
+                                                    class="social-icon"
+                                                    style="--primary-color:#ffffff; --secondary-color:#422774;">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                                <a href="https://twitter.com/bold_themes" target="_blank"
+                                                    class="social-icon"
+                                                    style="--primary-color:#ffffff; --secondary-color:#422774;">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                                <a href="#" target="_blank" class="social-icon"
+                                                    style="--primary-color:#ffffff; --secondary-color:#422774;">
+                                                    <i class="fab fa-linkedin-in"></i>
+                                                </a>
+                                                <a href="#" target="_blank" class="social-icon"
+                                                    style="--primary-color:#ffffff; --secondary-color:#422774;">
+                                                    <i class="fab fa-pinterest"></i>
+                                                </a>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
                         </div>
                     </div>
-                    <!-- Column 3 -->
-                    <div class="bt_bb_column col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-                         data-width="4" data-bt-override-class="{}">
-                        <div class="bt_bb_column_content">
-                            <header class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-                                    style="--primary-color:#422774; --secondary-color:#191919;"
+                </section>
+
+
+                <section id="bt_bb_section6657ed331b789"
+                    class="bt_bb_section bt_bb_color_scheme_1 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top"
+                    style="background: transparent;; --section-primary-color:#ffffff; --section-secondary-color:#191919;;background-color:#422774;"
+                    data-bt-override-class="null">
+                    <div class="bt_bb_port">
+                        <div class="bt_bb_cell">
+                            <!-- <div class="bt_bb_cell_inner"> -->
+                            <div class="bt_bb_row_wrapper">
+                                <div class="bt_bb_row bt_bb_hidden_xs bt_bb_hidden_ms bt_bb_hidden_sm"
                                     data-bt-override-class="{}">
-                                <h6 class="bt_bb_headline_tag"><span class="bt_bb_headline_content"><span>Our Awards</span></span></h6>
-                            </header>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-								 <div class="bt_bb_row_wrapper">
-									<div class="bt_bb_row_inner" data-bt-override-class="{}"
-										data-structure="12">
-										<div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_align_center bt_bb_vertical_align_top bt_bb_padding_normal"
-											data-width="12" data-bt-override-class="{}">
-											<div class="bt_bb_column_inner_content">
-												<div class="bt_bb_image bt_footer_awards bt_bb_shape_square bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_top bt_bb_content_exists"
-													data-bt-override-class="{}"><span><img loading="lazy"
-															decoding="async" width="490" height="200"
-															src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
-															class="attachment-full size-full"
-															alt="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
-															data-full_image_src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
-															title="footer-awards-new"
-															srcset="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png 490w, https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new-320x131.png 320w"
-															sizes="(max-width: 490px) 100vw, 490px"></span>
-													<div class="bt_bb_image_content">
-														<div class="bt_bb_image_content_flex">
-															<div class="bt_bb_image_content_inner">
-																<div class="bt_bb_text"
-																	style="line-height: 1.875;">
-																	<p>StoneBridge is a multiple award
-																		winner</p>
-																</div>
-																<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-																	data-bt-override-class="null"></div>
-																<header
-																	class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
-																	data-bt-override-class="{}">
-																	<h6 class="bt_bb_headline_tag"><span
-																			class="bt_bb_headline_content"><span
-																				style="color: #000;">Best
-																				Patient Care
-																				<strong><u>2017</u></strong></span></span>
-																	</h6>
-																</header>
-																<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-																	data-bt-override-class="null"></div>
-																<header
-																	class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
-																	data-bt-override-class="{}">
-																	<h6 class="bt_bb_headline_tag"><span
-																			class="bt_bb_headline_content"><span
-																				style="color: #000;">Best
-																				Practice &amp; Team
-																				<strong><u>2016</u></strong></span></span>
-																	</h6>
-																</header>
-																<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-																	data-bt-override-class="null"></div>
-																<header
-																	class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
-																	data-bt-override-class="{}">
-																	<h6 class="bt_bb_headline_tag"><span
-																			class="bt_bb_headline_content"><span
-																				style="color: #000;">Best
-																				Patient Care
-																				<strong><u>2014</u></strong></span></span>
-																	</h6>
-																</header>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="bt_bb_column_inner_highlight"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                        </div>
-                    </div>
-                    <!-- Column 4 -->
-                    <div class="bt_bb_column col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-                         data-width="3" data-bt-override-class="{}">
-						<div class="bt_bb_column_content">
-							<header
-								class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-								style="; --primary-color:#422774; --secondary-color:#191919;" data-bt-override-class="{}">
-								<h6 class="bt_bb_headline_tag"><span class="bt_bb_headline_content"><span>Social
-											Networks</span></span></h6>
-							</header>
-							<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small" data-bt-override-class="null"></div>
-							<div class="bt_bb_text">
-								<p>Visit StoneBridge on these social links and connect with us. Make
-									sure to follow our accounts for regular updates.</p>
-							</div>
-							<div class="social-icons">
-								<a href="https://www.facebook.com/boldthemes/" target="_blank"
-									class="social-icon"
-									style="--primary-color:#ffffff; --secondary-color:#422774;">
-									<i class="fab fa-facebook-f"></i>
-								</a>
-								<a href="https://twitter.com/bold_themes" target="_blank"
-									class="social-icon"
-									style="--primary-color:#ffffff; --secondary-color:#422774;">
-									<i class="fab fa-twitter"></i>
-								</a>
-								<a href="#" target="_blank" class="social-icon"
-									style="--primary-color:#ffffff; --secondary-color:#422774;">
-									<i class="fab fa-linkedin-in"></i>
-								</a>
-								<a href="#" target="_blank" class="social-icon"
-									style="--primary-color:#ffffff; --secondary-color:#422774;">
-									<i class="fab fa-pinterest"></i>
-								</a>
-							</div>
-                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                 data-bt-override-class="null"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-	
-	
-				<section id="bt_bb_section6657ed331b789"
-					class="bt_bb_section bt_bb_color_scheme_1 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top"
-					style="background: transparent;; --section-primary-color:#ffffff; --section-secondary-color:#191919;;background-color:#422774;"
-					data-bt-override-class="null">
-					<div class="bt_bb_port">
-						<div class="bt_bb_cell">
-							<!-- <div class="bt_bb_cell_inner"> -->
-								<div class="bt_bb_row_wrapper">
-									<div class="bt_bb_row bt_bb_hidden_xs bt_bb_hidden_ms bt_bb_hidden_sm"
-										data-bt-override-class="{}">
-										<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-											data-width="4" data-bt-override-class="{}">
-											<div class="bt_bb_column_content">
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-												<div class="bt_bb_text">
-	
-												</div>
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-											</div>
-										</div>
-										<div class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_top bt_bb_align_right bt_bb_padding_normal"
-											data-width="8" data-bt-override-class="{}">
-											<div class="bt_bb_column_content">
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-												<div class="bt_bb_custom_menu btBottomFooterMenu bt_bb_direction_vertical">
-													<div class="menu-footer-menu-container">
-														<ul id="menu-footer-menu" class="menu">
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-445">
-																<a href="About-Us.html">ABOUT
-																	US</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446">
-																<a href="Services.html">SERVICES</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447">
-																<a href="Testimonials.html">TESTIMONIALS</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448">
-																<a href="Team.html">OUR TEAM</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449">
-																<a href="Contact-Us.html">CONTACT US</a>
-															</li>
-															<!-- <li
+                                    <div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
+                                        data-width="4" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_text">
+
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
+                                    <div class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_top bt_bb_align_right bt_bb_padding_normal"
+                                        data-width="8" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_custom_menu btBottomFooterMenu bt_bb_direction_vertical">
+                                                <div class="menu-footer-menu-container">
+                                                    <ul id="menu-footer-menu" class="menu">
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-445">
+                                                            <a href="About-Us.html">ABOUT
+                                                                US</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446">
+                                                            <a href="Services.html">SERVICES</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447">
+                                                            <a href="Testimonials.html">TESTIMONIALS</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448">
+                                                            <a href="Team.html">OUR TEAM</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449">
+                                                            <a href="Contact-Us.html">CONTACT US</a>
+                                                        </li>
+                                                        <!-- <li
 																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
 																<a
 																	href="Pricing-Plan.html">PRICING</a>
 															</li> -->
-															<li
-																class="bt_bb_back_to_top menu-item menu-item-type-custom menu-item-object-custom menu-item-451">
-																<a href="#top">BACK TO TOP</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="bt_bb_row_wrapper">
-									<div class="bt_bb_row bt_bb_hidden_md bt_bb_hidden_lg" data-bt-override-class="{}">
-										<div class="bt_bb_column col-xxl-12 col-xl-12 bt_bb_vertical_align_top bt_bb_align_center bt_bb_mobile_align_to_both_edges bt_bb_padding_normal"
-											data-width="12" data-bt-override-class="{}">
-											<div class="bt_bb_column_content">
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-												<div class="bt_bb_text">
-													<!-- <p>Copyright 2020 by <strong>BoldThemes</strong>. All rights
+                                                        <li
+                                                            class="bt_bb_back_to_top menu-item menu-item-type-custom menu-item-object-custom menu-item-451">
+                                                            <a href="#top">BACK TO TOP</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bt_bb_row_wrapper">
+                                <div class="bt_bb_row bt_bb_hidden_md bt_bb_hidden_lg" data-bt-override-class="{}">
+                                    <div class="bt_bb_column col-xxl-12 col-xl-12 bt_bb_vertical_align_top bt_bb_align_center bt_bb_mobile_align_to_both_edges bt_bb_padding_normal"
+                                        data-width="12" data-bt-override-class="{}">
+                                        <div class="bt_bb_column_content">
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_text">
+                                                <!-- <p>Copyright 2020 by <strong>BoldThemes</strong>. All rights
 														reserved.</p> -->
-												</div>
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-												<div class="bt_bb_custom_menu btBottomFooterMenu bt_bb_direction_vertical">
-													<div class="menu-footer-menu-container">
-														<ul id="menu-footer-menu-1" class="menu">
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-445">
-																<a href="About-Us.html">ABOUT
-																	US</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446">
-																<a href="Services.html">SERVICES</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447">
-																<a href="Testimonials.html">TESTIMONIALS</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448">
-																<a href="Team.html">OUR TEAM</a>
-															</li>
-															<li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449">
-																<a href="Contact-Us.html">CONTACT US</a>
-															</li>
-															<!-- <li
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                            <div class="bt_bb_custom_menu btBottomFooterMenu bt_bb_direction_vertical">
+                                                <div class="menu-footer-menu-container">
+                                                    <ul id="menu-footer-menu-1" class="menu">
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-445">
+                                                            <a href="About-Us.html">ABOUT
+                                                                US</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446">
+                                                            <a href="Services.html">SERVICES</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447">
+                                                            <a href="Testimonials.html">TESTIMONIALS</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448">
+                                                            <a href="Team.html">OUR TEAM</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449">
+                                                            <a href="Contact-Us.html">CONTACT US</a>
+                                                        </li>
+                                                        <!-- <li
 																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
 																<a
 																	href="Pricing-Plan.html">PRICING</a>
 															</li> -->
-															<li
-																class="bt_bb_back_to_top menu-item menu-item-type-custom menu-item-object-custom menu-item-451">
-																<a href="#top">BACK TO TOP</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-													data-bt-override-class="null"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							<!-- </div> -->
-						</div>
-					</div><!-- port -->
-				</section>
-			</div>
-			<!-- <footer class="btLightSkin"></footer> -->
-		</div><!-- /btSiteFooter -->
-
-    
+                                                        <li
+                                                            class="bt_bb_back_to_top menu-item menu-item-type-custom menu-item-object-custom menu-item-451">
+                                                            <a href="#top">BACK TO TOP</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
+                                                data-bt-override-class="null"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                    </div><!-- port -->
+                </section>
+            </div>
+            <!-- <footer class="btLightSkin"></footer> -->
+        </div><!-- /btSiteFooter -->
 
 
-    <!-- BEGIN recaptcha, injected by plugin wp-recaptcha-integration  -->
-    <script type="text/javascript">
-        var recaptcha_widgets = {};
-        function wp_recaptchaLoadCallback() {
-            try {
-                grecaptcha;
-            } catch (err) {
-                return;
+
+
+        <!-- BEGIN recaptcha, injected by plugin wp-recaptcha-integration  -->
+        <script type="text/javascript">
+            var recaptcha_widgets = {};
+            function wp_recaptchaLoadCallback() {
+                try {
+                    grecaptcha;
+                } catch (err) {
+                    return;
+                }
+                var e = document.querySelectorAll ? document.querySelectorAll('.g-recaptcha:not(.wpcf7-form-control)') : document.getElementsByClassName('g-recaptcha'),
+                    form_submits;
+
+                for (var i = 0; i < e.length; i++) {
+                    (function (el) {
+                        var wid;
+                        // check if captcha element is unrendered
+                        if (!el.childNodes.length) {
+                            wid = grecaptcha.render(el, {
+                                'sitekey': '6LfmEKAaAAAAAJGwYMNSdux-yATrkwZcw6GT6N41',
+                                'theme': el.getAttribute('data-theme') || 'light'
+                            });
+                            el.setAttribute('data-widget-id', wid);
+                        } else {
+                            wid = el.getAttribute('data-widget-id');
+                            grecaptcha.reset(wid);
+                        }
+                    })(e[i]);
+                }
             }
-            var e = document.querySelectorAll ? document.querySelectorAll('.g-recaptcha:not(.wpcf7-form-control)') : document.getElementsByClassName('g-recaptcha'),
-                form_submits;
 
-            for (var i = 0; i < e.length; i++) {
-                (function (el) {
-                    var wid;
-                    // check if captcha element is unrendered
-                    if (!el.childNodes.length) {
-                        wid = grecaptcha.render(el, {
-                            'sitekey': '6LfmEKAaAAAAAJGwYMNSdux-yATrkwZcw6GT6N41',
-                            'theme': el.getAttribute('data-theme') || 'light'
-                        });
-                        el.setAttribute('data-widget-id', wid);
-                    } else {
-                        wid = el.getAttribute('data-widget-id');
-                        grecaptcha.reset(wid);
-                    }
-                })(e[i]);
-            }
-        }
+            // if jquery present re-render jquery/ajax loaded captcha elements
+            if (typeof jQuery !== 'undefined')
+                jQuery(document).ajaxComplete(function (evt, xhr, set) {
+                    if (xhr.responseText && xhr.responseText.indexOf('6LfmEKAaAAAAAJGwYMNSdux-yATrkwZcw6GT6N41') !== -1)
+                        wp_recaptchaLoadCallback();
+                });
 
-        // if jquery present re-render jquery/ajax loaded captcha elements
-        if (typeof jQuery !== 'undefined')
-            jQuery(document).ajaxComplete(function (evt, xhr, set) {
-                if (xhr.responseText && xhr.responseText.indexOf('6LfmEKAaAAAAAJGwYMNSdux-yATrkwZcw6GT6N41') !== -1)
-                    wp_recaptchaLoadCallback();
-            });
-
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=wp_recaptchaLoadCallback&#038;render=explicit" async
-        defer></script>
-    <!-- END recaptcha -->
-    <script type='text/javascript'>
-        (function () {
-            var c = document.body.className;
-            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-            document.body.className = c;
-        })();
-    </script>
-    <link rel='stylesheet' id='bt_bb_working_hours-css'
-        href='https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements_misc/css/bt_bb_working_hours.css?ver=6.5.3'
-        type='text/css' media='screen' />
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.9.3"
-        id="swv-js"></script>
-    <script type="text/javascript" id="contact-form-7-js-extra">
-        /* <![CDATA[ */
-        var wpcf7 = { "api": { "root": "https:\/\/denticare.bold-themes.com\/allen\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.9.3"
-        id="contact-form-7-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=8.7.0"
-        id="sourcebuster-js-js"></script>
-    <script type="text/javascript" id="wc-order-attribution-js-extra">
-        /* <![CDATA[ */
-        var wc_order_attribution = { "params": { "lifetime": 1.0000000000000000818030539140313095458623138256371021270751953125e-5, "session": 30, "ajaxurl": "https:\/\/denticare.bold-themes.com\/allen\/wp-admin\/admin-ajax.php", "prefix": "wc_order_attribution_", "allowTracking": true }, "fields": { "source_type": "current.typ", "referrer": "current_add.rf", "utm_campaign": "current.cmp", "utm_source": "current.src", "utm_medium": "current.mdm", "utm_content": "current.cnt", "utm_id": "current.id", "utm_term": "current.trm", "session_entry": "current_add.ep", "session_start_time": "current_add.fd", "session_pages": "session.pgs", "session_count": "udata.vst", "user_agent": "udata.uag" } };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=8.7.0"
-        id="wc-order-attribution-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/duracelltomi-google-tag-manager/dist/js/gtm4wp-form-move-tracker.js?ver=1.20"
-        id="gtm4wp-form-move-tracker-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/framework/js/fancySelect.js?ver=6.5.3"
-        id="fancySelect-js"></script>
-    <script type="text/javascript" id="denticare-header-misc-js-before">
-        /* <![CDATA[ */
-        window.BoldThemesURI = "https://denticare.bold-themes.com/allen/wp-content/themes/denticare"; window.BoldThemesAJAXURL = "https://denticare.bold-themes.com/allen/wp-admin/admin-ajax.php"; window.boldthemes_text = []; window.boldthemes_text.previous = 'previous'; window.boldthemes_text.next = 'next';
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/framework/js/header.misc.js?ver=6.5.3"
-        id="denticare-header-misc-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/framework/js/misc.js?ver=6.5.3"
-        id="denticare-misc-js"></script>
-    <script type="text/javascript" id="wc-cart-fragments-js-extra">
-        /* <![CDATA[ */
-        var wc_cart_fragments_params = { "ajax_url": "\/allen\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/allen\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_03e0c7bf27fa2e05735f82b4a66d219c", "fragment_name": "wc_fragments_03e0c7bf27fa2e05735f82b4a66d219c", "request_timeout": "5000" };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=8.7.0"
-        id="wc-cart-fragments-js" defer="defer" data-wp-strategy="defer"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/content_elements/bt_bb_section/bt_bb_elements.js?ver=4.8.8"
-        id="bt_bb_elements-js"></script>
-    <script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_86280-js-extra">
-        /* <![CDATA[ */
-        var slider_object = { "slider_id": "bt_bb_content_slider_86280" };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_content_slider/bt_bb_content_slider.js?ver=6.5.3"
-        id="bt_bb_content_slider_jsbt_bb_content_slider_86280-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-includes/js/imagesloaded.min.js?ver=5.0.0"
-        id="imagesloaded-js"></script>
-    <script type="text/javascript" src="https://denticare.bold-themes.com/allen/wp-includes/js/masonry.min.js?ver=4.2.2"
-        id="masonry-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b"
-        id="jquery-masonry-js"></script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/content_elements/bt_bb_masonry_image_grid/bt_bb_masonry_image_grid.js?ver=4.8.8"
-        id="bt_bb_image_grid-js"></script>
-    <script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_97832-js-extra">
-        /* <![CDATA[ */
-        var slider_object = { "slider_id": "bt_bb_content_slider_97832" };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_content_slider/bt_bb_content_slider.js?ver=6.5.3"
-        id="bt_bb_content_slider_jsbt_bb_content_slider_97832-js"></script>
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsdbQUq1QaP-0yXrNtClJ5nfoTIFxFVo8&amp;loading=async&amp;callback=window.bt_bb_init_all_maps&amp;ver=6.5.3"
-        id="gmaps_api-js" async="async" data-wp-strategy="async"></script>
+        </script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=wp_recaptchaLoadCallback&#038;render=explicit" async
+            defer></script>
+        <!-- END recaptcha -->
+        <script type='text/javascript'>
+            (function () {
+                var c = document.body.className;
+                c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+                document.body.className = c;
+            })();
+        </script>
+        <link rel='stylesheet' id='bt_bb_working_hours-css'
+            href='https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements_misc/css/bt_bb_working_hours.css?ver=6.5.3'
+            type='text/css' media='screen' />
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.9.3"
+            id="swv-js"></script>
+        <script type="text/javascript" id="contact-form-7-js-extra">
+            /* <![CDATA[ */
+            var wpcf7 = { "api": { "root": "https:\/\/denticare.bold-themes.com\/allen\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.9.3"
+            id="contact-form-7-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=8.7.0"
+            id="sourcebuster-js-js"></script>
+        <script type="text/javascript" id="wc-order-attribution-js-extra">
+            /* <![CDATA[ */
+            var wc_order_attribution = { "params": { "lifetime": 1.0000000000000000818030539140313095458623138256371021270751953125e-5, "session": 30, "ajaxurl": "https:\/\/denticare.bold-themes.com\/allen\/wp-admin\/admin-ajax.php", "prefix": "wc_order_attribution_", "allowTracking": true }, "fields": { "source_type": "current.typ", "referrer": "current_add.rf", "utm_campaign": "current.cmp", "utm_source": "current.src", "utm_medium": "current.mdm", "utm_content": "current.cnt", "utm_id": "current.id", "utm_term": "current.trm", "session_entry": "current_add.ep", "session_start_time": "current_add.fd", "session_pages": "session.pgs", "session_count": "udata.vst", "user_agent": "udata.uag" } };
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=8.7.0"
+            id="wc-order-attribution-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/duracelltomi-google-tag-manager/dist/js/gtm4wp-form-move-tracker.js?ver=1.20"
+            id="gtm4wp-form-move-tracker-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/framework/js/fancySelect.js?ver=6.5.3"
+            id="fancySelect-js"></script>
+        <script type="text/javascript" id="denticare-header-misc-js-before">
+            /* <![CDATA[ */
+            window.BoldThemesURI = "https://denticare.bold-themes.com/allen/wp-content/themes/denticare"; window.BoldThemesAJAXURL = "https://denticare.bold-themes.com/allen/wp-admin/admin-ajax.php"; window.boldthemes_text = []; window.boldthemes_text.previous = 'previous'; window.boldthemes_text.next = 'next';
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/framework/js/header.misc.js?ver=6.5.3"
+            id="denticare-header-misc-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/framework/js/misc.js?ver=6.5.3"
+            id="denticare-misc-js"></script>
+        <script type="text/javascript" id="wc-cart-fragments-js-extra">
+            /* <![CDATA[ */
+            var wc_cart_fragments_params = { "ajax_url": "\/allen\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/allen\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_03e0c7bf27fa2e05735f82b4a66d219c", "fragment_name": "wc_fragments_03e0c7bf27fa2e05735f82b4a66d219c", "request_timeout": "5000" };
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=8.7.0"
+            id="wc-cart-fragments-js" defer="defer" data-wp-strategy="defer"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/content_elements/bt_bb_section/bt_bb_elements.js?ver=4.8.8"
+            id="bt_bb_elements-js"></script>
+        <script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_86280-js-extra">
+            /* <![CDATA[ */
+            var slider_object = { "slider_id": "bt_bb_content_slider_86280" };
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_content_slider/bt_bb_content_slider.js?ver=6.5.3"
+            id="bt_bb_content_slider_jsbt_bb_content_slider_86280-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-includes/js/imagesloaded.min.js?ver=5.0.0"
+            id="imagesloaded-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-includes/js/masonry.min.js?ver=4.2.2"
+            id="masonry-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b"
+            id="jquery-masonry-js"></script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/content_elements/bt_bb_masonry_image_grid/bt_bb_masonry_image_grid.js?ver=4.8.8"
+            id="bt_bb_image_grid-js"></script>
+        <script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_97832-js-extra">
+            /* <![CDATA[ */
+            var slider_object = { "slider_id": "bt_bb_content_slider_97832" };
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+            src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_content_slider/bt_bb_content_slider.js?ver=6.5.3"
+            id="bt_bb_content_slider_jsbt_bb_content_slider_97832-js"></script>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsdbQUq1QaP-0yXrNtClJ5nfoTIFxFVo8&amp;loading=async&amp;callback=window.bt_bb_init_all_maps&amp;ver=6.5.3"
+            id="gmaps_api-js" async="async" data-wp-strategy="async"></script>
 
 </body>
 
