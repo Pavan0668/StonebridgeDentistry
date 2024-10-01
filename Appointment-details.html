@@ -1002,38 +1002,22 @@
                     doc.addPage();
 
 
-                  // Function to handle toggling between Yes and No checkboxes for different sections
-                    function toggleCheckbox(yesId, noId, inputSectionId) {
-                        const yesCheckbox = document.getElementById(yesId);
-                        const noCheckbox = document.getElementById(noId);
-                        const inputSection = document.getElementById(inputSectionId);
+                    // Function to handle toggling between Yes and No checkboxes for the 'whitened teeth' question
+                    function toggleWhitenedWhen() {
+                        const whitenedYes = document.getElementById('whitened-teeth-yes');
+                        const whitenedNo = document.getElementById('whitened-teeth-no');
+                        const whitenedWhenSection = document.getElementById('whitened-when-section');
 
-                        if (yesCheckbox.checked) {
-                            noCheckbox.checked = false;
-                            inputSection.style.display = 'block';
-                        } else if (noCheckbox.checked) {
-                            yesCheckbox.checked = false;
-                            inputSection.style.display = 'none';
+                        if (whitenedYes.checked) {
+                            whitenedNo.checked = false;
+                            whitenedWhenSection.style.display = 'block';
+                        } else if (whitenedNo.checked) {
+                            whitenedYes.checked = false;
+                            whitenedWhenSection.style.display = 'none';
                         }
                     }
 
-                    // Functions to handle each question's Yes/No toggle
-                    function toggleTreatedWhen() {
-                        toggleCheckbox('treated-checkbox', 'untreated-checkbox', 'treated-when-section');
-                    }
-
-                    function togglePeriodontistWhen() {
-                        toggleCheckbox('seen-periodontist-yes', 'seen-periodontist-no', 'periodontist-when-section');
-                    }
-
-                    function toggleSensitiveWhen() {
-                        toggleCheckbox('sensitive-sweets-yes', 'sensitive-sweets-no', 'sensitive-when-section');
-                    }
-
-                    function toggleJawWhen() {
-                        toggleCheckbox('diagnosed-jaw-yes', 'diagnosed-jaw-no', 'jaw-when-section');
-                    }
-
+                    // Updated getFormValues function to include the additional questions
                     function getFormValues() {
                         return {
                             "Checkup-name": document.getElementById("Checkup-name")?.value || '',
@@ -1048,83 +1032,76 @@
                             "Sensitive-When": document.getElementById("sensitive-when").value || '',
                             "TMJ-Problems": document.getElementById("diagnosed-jaw-yes").checked ? "Yes" : (document.getElementById("diagnosed-jaw-no").checked ? "No" : ''),
                             "TMJ-When": document.getElementById("JAW-when").value || '',
-                            "Treated-Untreated": document.getElementById("Treated-Untreated")?.value || '',
-                            "medication-reason": document.getElementById("medication-reason")?.value || '',
-                            "clench-teeth": document.getElementById("clench-teeth")?.value || '',
-                            "orthodontic": document.getElementById("orthodontic")?.value || '',
-                            "oral-appliances": document.getElementById("oral-appliances")?.value || '',
-                            "Removable-Fixed": document.getElementById("Removable-Fixed")?.value || '',
-                            "Whitened-Sweets": document.getElementById("Whitened-Sweets")?.value || '',
-                            "Whitened-No": document.getElementById("Whitened-No")?.value || '',
-                            "supplement-reason": document.getElementById("supplement-reason")?.value || ''
+
+                            // New fields
+                            "Jaw-Click-Pop": document.getElementById("medication-reason").value || '',
+                            "Clench-Teeth": document.getElementById("clench-teeth").value || '',
+                            "Orthodontic-Work": document.getElementById("orthodontic").value || '',
+                            "Oral-Appliances": document.getElementById("oral-appliances").value || '',
+                            "Removable-Fixed": document.getElementById("Removable-Fixed").value || '',
+                            "Whitened-Teeth": document.getElementById("whitened-teeth-yes").checked ? "Yes" : (document.getElementById("whitened-teeth-no").checked ? "No" : ''),
+                            "Whitened-When": document.getElementById("Whitened-when").value || '',
+                            "Happy-With-Smile": document.getElementById("supplement-reason").value || ''
                         };
                     }
 
-                    // Dental History Section
-                    doc.setFontSize(14);
-                    doc.text('Dental History:', 10, 20);
-                    doc.setFontSize(8);
+                    // Updated PDF generation
+                    function generatePDF(doc) {
+                        doc.setFontSize(14);
+                        doc.text('Dental History:', 10, 20);
+                        doc.setFontSize(8);
 
-                    // Questions for Dental History
-                    const dentalHistoryQuestions = [
-                        'Last Dental Checkup and Cleaning? How Frequently do you visit?',
-                        'Do you usually take antibiotics before a procedure?',
-                        'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
-                        'Do you have a history of Gum Disease?',
-                        'Have you seen a Periodontist?',
-                        'Are your teeth sensitive to Sweets?',
-                        'Have you been diagnosed with TMJ (Jaw Joint) problems?',
-                        'Does your Jaw Joints "Click" or "Pop" when you open?',
-                        'Are you aware if you grind or clench your teeth at night?',
-                        'Have you had orthodontic work done (braces)?',
-                        'Do you wear any oral appliances? Removable or Fixed?',
-                        'Have you professionally whitened your teeth before?',
-                        'Are you happy with your smile?'
-                    ];
+                        const dentalHistoryQuestions = [
+                            'Last Dental Checkup and Cleaning? How Frequently do you visit?',
+                            'Do you usually take antibiotics before a procedure?',
+                            'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
+                            'Do you have a history of Gum Disease? Yes? No?',
+                            'Have you seen a Periodontist? If Yes, when?',
+                            'Are your teeth sensitive to Sweets? Yes? No?',
+                            'Have you been diagnosed with TMJ (Jaw Joint) problems? If Yes, when? Treated/Untreated?',
+                            'Does your Jaw Joints "Click" or "Pop" when you open?',
+                            'Are you aware if you grind or clench your teeth at night?',
+                            'Have you had orthodontic work done (braces)?',
+                            'Do you wear any oral appliances? Removable or Fixed?',
+                            'Have you professionally whitened your teeth before? Yes No',
+                            'Are you happy with your smile?'
+                        ];
 
-                    // Collect form values
-                    const answersReceived = getFormValues();
+                        const answersReceived = getFormValues();
+                        let startY = 30;
 
-                    // Initial startY position for questions and answers
-                    let startYY = 30;
+                        dentalHistoryQuestions.forEach((question, index) => {
+                            doc.setFontSize(10);
+                            doc.text(question, 10, startY);
 
-                    // Iterate over each question and answer
-                    dentalHistoryQuestions.forEach((question, index) => {
-                        // Print question
-                        doc.setFontSize(10);
-                        doc.text(question, 10, startYY);
+                            const nextLineQuestions = [
+                                'Last Dental Checkup and Cleaning? How Frequently do you visit?',
+                                'Are you looking for Comprehensive Dental Care, or Emergency Care Only?',
+                                'Have you been diagnosed with TMJ (Jaw Joint) problems? If so, when? Treated/Untreated?'
+                            ];
 
-                        // Answer alignment - print on the same line for Yes/No
-                        let answer = '';
-                        switch (question) {
-                            case 'Do you have a history of Gum Disease?':
-                                answer = answersReceived["Gum-Disease"] + (answersReceived["Treated-When"] ? `, Treated When: ${answersReceived["Treated-When"]}` : '');
-                                break;
-                            case 'Have you seen a Periodontist?':
-                                answer = answersReceived["Periodontist"] + (answersReceived["Periodontist-When"] ? `, When: ${answersReceived["Periodontist-When"]}` : '');
-                                break;
-                            case 'Are your teeth sensitive to Sweets?':
-                                answer = answersReceived["Sensitive-Sweets"] + (answersReceived["Sensitive-When"] ? `, When: ${answersReceived["Sensitive-When"]}` : '');
-                                break;
-                            case 'Have you been diagnosed with TMJ (Jaw Joint) problems?':
-                                answer = answersReceived["TMJ-Problems"] + (answersReceived["TMJ-When"] ? `, When: ${answersReceived["TMJ-When"]}` : '');
-                                break;
-                            default:
-                                answer = answersReceived[Object.keys(answersReceived)[index]] || '';
-                                break;
-                        }
+                            // Map the correct answers from answersReceived based on index
+                            const answerKeys = [
+                                "Checkup-name", "Frequently-visit", "antibiotics-condition", "Comprehensive-Dental",
+                                "Gum-Disease", "Treated-When", "Periodontist", "Periodontist-When",
+                                "Sensitive-Sweets", "Sensitive-When", "TMJ-Problems", "TMJ-When",
+                                "Jaw-Click-Pop", "Clench-Teeth", "Orthodontic-Work", "Oral-Appliances",
+                                "Removable-Fixed", "Whitened-Teeth", "Whitened-When", "Happy-With-Smile"
+                            ];
 
-                        // Print the answer next to the question
-                        doc.text(answer, 110, startYY);
+                            doc.setFontSize(10);
+                            if (nextLineQuestions.includes(question)) {
+                                startY += 5;  // Increment startY for next line answers
+                                doc.text(answersReceived[answerKeys[index]] || '', 10, startY);
+                                doc.line(10, startY + 2, 100, startY + 2);
+                            } else {
+                                doc.text(answersReceived[answerKeys[index]] || '', 110, startY);
+                            }
 
-                        // Add line under the answer
-                        doc.line(110, startYY + 2, 200, startYY + 2);
-
-                        // Increment startY for the next question
-                        startYY += 15;
-                    });
-
-
+                            doc.line(110, startY + 2, 200, startY + 2);
+                            startY += 15; // Increment startY for the next question
+                        });
+                    }
 
 
                     // Add a new page for Consent or other sections as needed
