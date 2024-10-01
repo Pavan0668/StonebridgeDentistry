@@ -62,6 +62,53 @@
             display: inline-block;
         }
     </style> -->
+
+    <style>
+        /* General CSS for desktop and mobile styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Basic layout that will work for desktops */
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Make the text responsive */
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        /* Make the layout responsive for smaller screens (up to 768px wide) */
+        @media only screen and (max-width: 768px) {
+            /* Stack elements vertically on mobile */
+            .col-md-3 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .card-body {
+                padding: 15px;
+                font-size: 1rem; /* Smaller font for mobile */
+            }
+
+            /* Ensure images or background images fit the mobile screen */
+            .card-body {
+                background-size: cover;
+                background-position: center;
+            }
+
+            /* Responsive heading */
+            h4 {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            /* Other mobile-specific styles can go here */
+        }
+    </style>
     <style>
         .bt_bb_column_content {
             position: relative;
