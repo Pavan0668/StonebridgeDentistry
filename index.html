@@ -31,7 +31,60 @@
  <link rel="stylesheet" href="cssnew/animate.css">
  <link rel="stylesheet" href="cssnew/slicknav.css"> -->
     <link rel="stylesheet" href="cssnew/style.css">
+<!-- CSS for Carousel Tabs -->
+<style>
+    .carousel-tabs {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .carousel-nav {
+        list-style: none;
+        padding: 0;
+    }
+    .carousel-nav .tab {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #989898;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .carousel-nav .tab:hover {
+        background-color: #989898;
+    }
+    .carousel-nav .tab.active {
+        background-color: #989898;
+    }
+</style>
 
+<!-- Script to Activate Tabs -->
+<script>
+    $(document).ready(function(){
+        // Initialize Slick slider
+        $('.slick-slider').slick();
+        
+        // Custom tab click function
+        $('.carousel-nav .tab').on('click', function(){
+            var slideIndex = $(this).data('slide');
+            $('.slick-slider').slick('slickGoTo', slideIndex);
+            
+            // Remove 'active' class from other tabs
+            $('.carousel-nav .tab').removeClass('active');
+            // Add 'active' class to clicked tab
+            $(this).addClass('active');
+        });
+
+        // Sync Slick with tabs
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $('.carousel-nav .tab').removeClass('active');
+            $('.carousel-nav .tab[data-slide="' + currentSlide + '"]').addClass('active');
+        });
+    });
+</script>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <!-- <style>
         .bt_bb_column {
@@ -12642,7 +12695,7 @@
                             <div class="topBarInLogoAreaCell">
                                 <div class="btIconWidget bt_icon_alternate btWidgetWithText">
                                     <div class="btIconWidgetIcon">
-                                        <span class="fas fa-phone"></span>
+                                        <span class="fas fa-phone" style="font-size: 30px;"></span> <!-- Adjust the font size here -->
                                     </div>
                                     <div class="btIconWidgetContent">
                                         <span class="btIconWidgetTitle">(705) 422-2490</span>
@@ -12662,10 +12715,7 @@
                             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
                             text-align: center;
                             margin: 10px 0;
-                        ">
-                                    Contact Us
-                                </a>
-
+                        ">Book Appointment</a>
                             </div><!-- /topBarInLogoAreaCell -->
                         </div><!-- /topBarInLogoArea -->
                     </div><!-- /port -->
@@ -12716,6 +12766,14 @@
                                                 <div class="bt_bb_column_content">
                                                     <div
                                                         class="bt_bb_content_slider bt_bb_content_slider_95994 bt_bb_gap_no_gap bt_bb_arrows_size_no_arrows bt_bb_arrows_style_transparent_accent bt_bb_show_dots_right bt_bb_dots_style_accent_dot bt_bb_show_paging_as_square bt_bb_height_keep-height bt_bb_animation_fade bt_bb_animation_fade animate">
+                                                        <!-- Navigation Tabs --><br/>
+                                                        <div class="carousel-tabs">
+                                                            <ul class="carousel-nav">
+                                                                <li class="tab active" data-slide="0">Accepting New Patients</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                <li class="tab" data-slide="1">Direct Billing to Insurance</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                <li class="tab" data-slide="2">Accepting CDCP Patients</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            </ul>
+                                                        </div>
                                                         <div class="slick-slider fade"
                                                             data-slick='{ "lazyLoad": "progressive", "cssEase": "ease-out", "speed": "600", "accessibility": false, "fade": true, "prevArrow": "", "nextArrow": "", "dots": true,"autoplay": true, "autoplaySpeed": 4500,"pauseOnHover": false}'>
                                                             <div class="bt_bb_content_slider_item bt_bb_column_background_image bt_bb_background_overlay_light_solid bt_bb_content_slider_item_responsive_overlay"
