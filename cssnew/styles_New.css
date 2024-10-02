@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #f7c594;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 10px solid #f7c594;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: #003478;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-field {
+    position: relative;
+    width: 48%;
+}
+
+.input-field.full-width {
+    width: 100%;
+}
+
+.input-field label {
+    display: block;
+    font-size: 14px;
+    color: #003478;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    color: #333;
+    padding: 5px 0;
+}
+
+.underline {
+    height: 2px;
+    background-color: #003478;
+    transition: width 0.3s ease;
+    width: 0;
+}
+
+.input:focus + .underline,
+.input:not(:placeholder-shown) + .underline {
+    width: 100%;
+}
+
+.email-underline {
+    background-color: red;
+}
+
+.submit-btn {
+    background-color: transparent;
+    color: #003478;
+    border: 2px solid #003478;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #003478;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #003478;
+    padding: 8px 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #003478;
+    width: 100%;
+}
+
+textarea {
+    height: 80px;
+}
+
+input:focus,
+textarea:focus {
+    border-bottom: 2px solid #003478;
+}
+
+input.error,
+textarea.error {
+    border-bottom: 2px solid red;
+}
+
+input[type="email"].error + .email-underline {
+    background-color: red;
+}

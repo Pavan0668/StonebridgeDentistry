@@ -7,248 +7,48 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<title>About us &#8211; Allen</title>
+	<title>Testimonials &#8211; Allen</title>
+	<meta name='robots' content='max-image-preview:large' />
 
-
-	
 	<style>
 		.btBelowLogoArea {
             background-color: white;
         }
 
-		
         .btLogoArea {
             background-color: lightskyblue;
         }
 	</style>
-
-<style>
-	.bt_bb_column {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.bt_bb_row {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	.bt_bb_column_content {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.bt_bb_icon_list ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		gap: 10px;
-	}
-
-	.bt_bb_icon_list li {
-		display: inline-block;
-	}
-</style>
 	<style>
-		/* Define the fade-in animation */
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-				transform: translateY(20px);
-			}
-	
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-	
-		/* Apply animation to the cards */
-		.card {
-			opacity: 0;
-			/* Initial opacity to hide the cards */
-			animation: fadeIn 0.5s ease-in-out forwards;
-			/* Use forwards to keep the final state after animation */
-		}
-	</style>
-	<style>
-		.section-800x800 {
-			padding: 0;
-			background-color: #f8f9fa;
-		}
-	
-		.card {
-			border: none;
-			background-color: transparent;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			margin: 0;
-		}
-	
-		.card:hover .card-body {
-			transform: scale(1.05);
-			transition: transform 0.3s ease-in-out;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-		}
-	
-		.card-body {
-			transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-			position: relative;
-			height: 200px;
-			background-size: cover;
-			background-position: center;
-			border-radius: 0;
-			overflow: hidden;
-		}
-	
-		.overlay {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background-color: rgba(0, 0, 0, 0.6);
-			color: #fff;
-			padding: 10px;
-		}
-	
-		.overlay h4 {
-			margin-bottom: 5px;
-		}
-	
-		.overlay p {
-			font-size: 14px;
-			margin-bottom: 0;
-		}
-	
-		.rounded-text {
-			background-color: #007bff;
-			color: #fff;
-			text-align: center;
-			padding: 20px;
-			height: 100%;
-			border-bottom-right-radius: 200px;
-		}
-	
-		.content {
-			padding: 20px;
-		}
-	
-		.content h3,
-		.content h6 {
-			text-align: center;
-		}
-	
-		.content h3 {
-			font-size: 28px;
-			margin-bottom: 10px;
-		}
-	
-		.content h6 {
-			font-size: 16px;
-			color: #6c757d;
-			margin-bottom: 0;
-		}
-	
-		.row.no-gutters {
-			margin-right: 0;
-			margin-left: 0;
-		}
-	
-		.row.no-gutters>[class^="col-"] {
-			padding-right: 0;
-			padding-left: 0;
-		}
-	
-		.row {
-			margin-bottom: 0;
-		}
-	</style>
-	<script>
-		// Function to trigger the animation for each card
-		function animateCards() {
-			const cards = document.querySelectorAll('.card');
-
-			cards.forEach((card, index) => {
-				// Delay each card's animation by multiplying index with 150ms
-				setTimeout(() => {
-					card.classList.add('fadeIn');
-				}, index * 150);
-			});
-		}
-
-		// Wait for the DOM content to be loaded
-		document.addEventListener('DOMContentLoaded', () => {
-			// Trigger the animation once the DOM content is loaded
-			animateCards();
-		});
-	</script>
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<style>
-		.bt_bb_icon_holder {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			width: 60px;
-			/* Adjust the size as needed */
-			height: 60px;
-			/* Adjust the size as needed */
-			border-radius: 50%;
-			background-color: #ffffff;
-			color: #04A86F;
-			font-size: 24px;
-			/* Adjust the size as needed */
-			text-decoration: none;
-			transition: all 0.3s ease;
-			margin: 5px;
-			/* Adding some margin between icons */
-		}
-
-		.bt_bb_icon_holder:hover {
-			background-color: #ffffff;
-			color: #04A86F;
-		}
-	</style>
-	<style>
-		.progress-circle-wrapper {
-			position: relative;
-		}
-
-		.progress-circle {
-			position: relative;
-			width: 100%;
-			height: 100%;
-		}
-
-		.circular-chart {
-			display: block;
-			margin: 10px auto;
-			max-width: 80%;
-			max-height: 80%;
-		}
-
-		.circle-bg {
-			fill: none;
-			stroke: #181818;
-			stroke-width: 1.5;
-		}
-
-		.circle {
-			fill: none;
-			stroke-width: 1.5; /* Adjusted stroke-width for thinner arc */
-			stroke-linecap: round;
-			stroke: #2663b1;
-			transition: stroke-dasharray 1.4s ease-out;
-		}
-
-		@keyframes progress {
-			0% {
-				stroke-dasharray: 0 100;
-			}
-		}
-	</style>
+        .bt_bb_column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .bt_bb_row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .bt_bb_column_content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .bt_bb_icon_list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+    
+        .bt_bb_icon_list li {
+            display: inline-block;
+        }
+    </style>
 
 <style>
 	.social-icons {
@@ -283,59 +83,17 @@
 		color: var(--secondary-color);
 	}
 </style>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// Function to animate the progress circle
-			function animateProgressCircle(elementId, percentage) {
-				const circle = document.querySelector(`#${elementId} .circle`);
-				const radius = circle.r.baseVal.value;
-				const circumference = 2 * Math.PI * radius;
-
-				circle.style.strokeDasharray = `${circumference} ${circumference}`;
-				circle.style.strokeDashoffset = circumference;
-
-				const offset = circumference - (percentage / 100) * circumference;
-				circle.style.strokeDashoffset = offset;
-			}
-
-			// Call the function with the desired percentage
-			animateProgressCircle('container_84889', 95);  // Adjust percentage as needed
-		});
-	</script>
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<link rel="icon"
-		href="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/favicon-new-100x100.png"
-		sizes="32x32" />
-	<link rel="icon" href="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/favicon-new.png"
-		sizes="192x192" />
-	<link rel="apple-touch-icon"
-		href="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/favicon-new.png" />
-	<meta name="msapplication-TileImage"
-		content="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/favicon-new.png" />
-	<!-- boostrap link  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<!-- font  -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR9LZ9hTxPlyFf7b1jsuS6k+/gF3D8ouOX+bkox+t" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
-	<!-- custom css  -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive.css">
-
-	<meta name='robots' content='max-image-preview:large' />
-
 	<!-- Google Tag Manager for WordPress by gtm4wp.com -->
 	<script data-cfasync="false" data-pagespeed-no-defer>
 		var gtm4wp_datalayer_name = "dataLayer";
 		var dataLayer = dataLayer || [];
 	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- custom css  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
 	<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
 	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
 	<link rel="alternate" type="application/rss+xml" title="Allen &raquo; Feed"
@@ -3548,17 +3306,17 @@
 		id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
 	<link rel="https://api.w.org/" href="https://denticare.bold-themes.com/allen/wp-json/" />
 	<link rel="alternate" type="application/json"
-		href="https://denticare.bold-themes.com/allen/wp-json/wp/v2/pages/312" />
+		href="https://denticare.bold-themes.com/allen/wp-json/wp/v2/pages/315" />
 	<link rel="EditURI" type="application/rsd+xml" title="RSD"
 		href="https://denticare.bold-themes.com/allen/xmlrpc.php?rsd" />
 	<meta name="generator" content="WordPress 6.5.3" />
 	<meta name="generator" content="WooCommerce 8.7.0" />
-	<link rel="canonical" href="#/" />
-	<link rel='shortlink' href='https://denticare.bold-themes.com/allen/?p=312' />
+	<link rel="canonical" href="https://denticare.bold-themes.com/allen/about-us/testimonials/" />
+	<link rel='shortlink' href='https://denticare.bold-themes.com/allen/?p=315' />
 	<link rel="alternate" type="application/json+oembed"
-		href="https://denticare.bold-themes.com/allen/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdenticare.bold-themes.com%2Fallen%2Fabout-us%2F" />
+		href="https://denticare.bold-themes.com/allen/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdenticare.bold-themes.com%2Fallen%2Fabout-us%2Ftestimonials%2F" />
 	<link rel="alternate" type="text/xml+oembed"
-		href="https://denticare.bold-themes.com/allen/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdenticare.bold-themes.com%2Fallen%2Fabout-us%2F&#038;format=xml" />
+		href="https://denticare.bold-themes.com/allen/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdenticare.bold-themes.com%2Fallen%2Fabout-us%2Ftestimonials%2F&#038;format=xml" />
 	<script>
 		// Select the node that will be observed for mutations
 		const targetNode = document.documentElement;
@@ -12723,11 +12481,13 @@
 		}
 	</style>
 	<script>window.bt_bb_custom_elements = false;</script>
+    
+
 </head>
 
 
 <body
-	class="page-template-default page page-id-312 page-parent theme-denticare bt_bb_plugin_active bt_bb_fe_preview_toggle woocommerce-no-js btHeadingStyle_default btMenuFontSize-16 btMenuFocusElementDash btPageHeadlineAlternate btMenuLeftEnabled btMenuBelowLogo btStickyEnabled btHideHeadline btLightSkin btBelowMenu noBodyPreloader btSoftRoundedButtons btTransparentDarkHeader btNoSidebar btShopSaleTagDesignHardRounded">
+	class="page-template-default page page-id-315 page-child parent-pageid-312 theme-denticare bt_bb_plugin_active bt_bb_fe_preview_toggle woocommerce-no-js btHeadingStyle_default btMenuFontSize-16 btMenuFocusElementDash btPageHeadlineAlternate btMenuLeftEnabled btMenuBelowLogo btStickyEnabled btLightSkin noBodyPreloader btSoftRoundedButtons btTransparentDarkHeader btNoSidebar btShopSaleTagDesignHardRounded">
 
 
 	<!-- GTM Container placement set to automatic -->
@@ -12828,471 +12588,175 @@
                 </div><!-- /menuHolder / btBelowLogoArea -->
             </div><!-- /inner header -->
         </header><!-- /.mainHeader -->
-		<div class="btContentWrap btClear">
-			<div class="btContentHolder">
-				<div class="btContent">
-					<br class="bt_bb_wrapper">
-						<section id="bt_bb_section664fb57d9720e"
-							class="bt_bb_section bt_bb_color_scheme_2 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_overlay_light_solid bt_bb_top_spacing_extra_large bt_bb_bottom_spacing_extra_large"
-							style="; --section-primary-color:#191919; --section-secondary-color:#ffffff;"
-							data-bt-override-class="null">
-							<div class="bt_bb_background_image_holder_wrapper">
-								<div class="bt_bb_background_image_holder btLazyLoadBackground bt_bb_parallax"
-									data-background_image_src="img/angled-mirror-used.jpg"
-									data-parallax="0.7" data-parallax-offset="0" data-parallax-zoom-start="1"
-									data-parallax-zoom-end="1" data-parallax-blur-start="0" data-parallax-blur-end="0"
-									data-parallax-opacity-start="1" data-parallax-opacity-end="1"
-									style=" background-image: url(&#039;https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/img/blank.gif&#039;);">
-								</div>
-							</div>
-							<div class="bt_bb_port">
-								<div class="bt_bb_cell">
-									<div class="bt_bb_cell_inner">
-										<div class="bt_bb_row_wrapper">
-											<div class="bt_bb_row" data-bt-override-class="{}">
-												<div class="bt_bb_column col-xxl-12 col-xl-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-													data-width="12" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_large"
-															data-bt-override-class="null"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="bt_bb_row_wrapper">
-											<div class="bt_bb_row" data-bt-override-class="{}">
-												<div class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate"
-													data-width="8" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<header
-															class="bt_bb_headline bt_bb_font_weight_bolder bt_bb_color_scheme_17 bt_bb_dash_none bt_bb_size_huge bt_bb_align_inherit bt_bb_dash_type_none"
-															style="; --primary-color:#422774; --secondary-color:#FF793E;"
-															data-bt-override-class="{}">
-															<h1 class="bt_bb_headline_tag"><span
-																	class="bt_bb_headline_content"><span><small>We Would
-																			Love To</small><br />
-																		See You Smile</span></span></h1>
-														</header>
-													</div>
-												</div>
-												<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-													data-width="4" data-bt-override-class="{}">
-													<div class="bt_bb_column_content"></div>
-												</div>
-											</div>
-										</div>
-										<div class="bt_bb_row_wrapper">
-											<div class="bt_bb_row" data-bt-override-class="{}">
-												<div class="bt_bb_column col-xxl-12 col-xl-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate"
-													data-width="12" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<div class="bt_bb_separator bt_bb_border_style_solid bt_bb_top_spacing_normal bt_bb_bottom_spacing_normal"
-															data-bt-override-class="null"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="bt_bb_row_wrapper">
-											<div class="bt_bb_row" data-bt-override-class="{}">
-												<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate"
-													data-width="4" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<div class="bt_bb_text">
-															<p style="color: #000;font-size: large;" >Our Mission is to provide the finest, 
-																highest quality dental care. We're committed to a lifetime of 
-																optimum oral health in partnership with our patients.
-																 We strive to build our relationships on trust and provide 
-																 service with a truly personal touch.</p>
-														</div>
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-															data-bt-override-class="null"></div>
-													</div>
-												</div>
-												<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate"
-													data-width="4" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<div class="bt_bb_text">
-															<p style="color: #000; font-size: large;">We offer comprehensive dental care with an equal commitment to preventative,
-																 restorative, and cosmetic dentistry.  Our primary goal is to provide excellence
-																  in all facets of dentistry and 
-																to carry it out in a gentle and caring way using the latest techniques.</p>
-														</div>
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"
-															data-bt-override-class="null"></div>
-													</div>
-												</div>
-												<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate"
-													data-width="4" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<div class="bt_bb_progress_bar bt_bb_color_scheme_3 bt_bb_align_inherit bt_bb_size_small bt_bb_style_line bt_bb_shape_square"
-															style="; --primary-color:#FF793E; --secondary-color:#191919;"
-															data-bt-override-class="{}">
-															<div class="bt_bb_progress_bar_bg"></div>
-															<div class="bt_bb_progress_bar_inner animate"
-																style="width:95%"><span
-																	class="bt_bb_progress_bar_text">Client
-																	Satisfaction</span></div>
-														</div>
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-															data-bt-override-class="null"></div>
-														<div class="bt_bb_progress_bar bt_bb_color_scheme_3 bt_bb_align_inherit bt_bb_size_small bt_bb_style_line bt_bb_shape_square"
-															style="; --primary-color:#FF793E; --secondary-color:#191919;"
-															data-bt-override-class="{}">
-															<div class="bt_bb_progress_bar_bg"></div>
-															<div class="bt_bb_progress_bar_inner animate"
-																style="width:97%"><span
-																	class="bt_bb_progress_bar_text">Dental
-																	Success</span></div>
-														</div>
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-															data-bt-override-class="null"></div>
-														<div class="bt_bb_progress_bar bt_bb_color_scheme_3 bt_bb_align_inherit bt_bb_size_small bt_bb_style_line bt_bb_shape_square"
-															style="; --primary-color:#FF793E; --secondary-color:#191919;"
-															data-bt-override-class="{}">
-															<div class="bt_bb_progress_bar_bg"></div>
-															<div class="bt_bb_progress_bar_inner animate"
-																style="width:89%"><span
-																	class="bt_bb_progress_bar_text">Client
-																	Referral</span></div>
-														</div>
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-															data-bt-override-class="null"></div>
-														<div class="bt_bb_progress_bar bt_bb_color_scheme_3 bt_bb_align_inherit bt_bb_size_small bt_bb_style_line bt_bb_shape_square"
-															style="; --primary-color:#FF793E; --secondary-color:#191919;"
-															data-bt-override-class="{}">
-															<div class="bt_bb_progress_bar_bg"></div>
-															<div class="bt_bb_progress_bar_inner animate"
-																style="width:93%"><span
-																	class="bt_bb_progress_bar_text">Travel
-																	Satisfaction</span></div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="bt_bb_row_wrapper">
-											<div class="bt_bb_row" data-bt-override-class="{}">
-												<div class="bt_bb_column col-xxl-12 col-xl-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-													data-width="12" data-bt-override-class="{}">
-													<div class="bt_bb_column_content">
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_large bt_bb_hidden_sm bt_bb_hidden_md bt_bb_hidden_lg"
-															data-bt-override-class="null"></div>
-														<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_large"
-															data-bt-override-class="null"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-
-						<section id="bt_bb_section664fb57da0b30"
-    class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_medium bt_bb_bottom_spacing_normal"
-    style="display: flex; justify-content: center; align-items: center; height: 500px; background-color: #A9A9A9; background-position: 15% 55%; background-size: 95%;">
-
-    <div class="Emergency_contact" style="text-align: center;">
-        <div class="Emergency_contact_inner">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6">
-                        <div class="single_emergency left-side">
-                            <div class="info">
-                                <h3>Book Appointment</h3>
-
-                                <!-- Call Us button -->
-                                <div class="info_button text-center mt-3">
-                                    <a href="tel:+17054222490" class="boxed-btn3" style="
-                                        display: inline-block;
-                                        padding: 10px 20px;
-                                        background-color: #2CB5E5;
-                                        color: white;
-                                        text-decoration: none;
-                                        font-size: 16px;
-                                        font-weight: bold;
-                                        width: 200px;
-                                        border-radius: 5px;
-                                        transition: background-color 0.3s ease;
-                                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-                                        margin: 5px 0;
-                                    ">Call Us: (705) 422-2490</a>
-                                </div>
-
-                                <!-- Email Us button -->
-                                <div class="info_button text-center mt-3">
-                                    <a href="mailto:reception.stonebridgedentistry@gmail.com" class="boxed-btn3" style="
-                                        display: inline-block;
-                                        padding: 10px 20px;
-                                        background-color: #2CB5E5;
-                                        color: white;
-                                        text-decoration: none;
-                                        font-size: 16px;
-                                        font-weight: bold;
-                                        width: 200px;
-                                        border-radius: 5px;
-                                        transition: background-color 0.3s ease;
-                                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-                                        margin: 5px 0;
-                                    ">Email Us</a>
-                                </div>
-
-                                <!-- Contact Us button -->
-                                <div class="info_button text-center mt-3">
-                                    <a href="BookOnline.html" class="boxed-btn3" style="
-                                        display: inline-block;
-                                        padding: 10px 20px;
-                                        background-color: #2CB5E5;
-                                        color: white;
-                                        text-decoration: none;
-                                        font-size: 16px;
-                                        font-weight: bold;
-                                        border-radius: 5px;
-                                        width: 200px;
-                                        transition: background-color 0.3s ease;
-                                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-                                        margin: 5px 0;
-                                    ">Contact Us</a>
-                                </div>
-
-                                <!-- Download Form button -->
-                                <div class="info_button text-center mt-3">
-                                    <a href="img/Stonebridge Dentistry 1.pdf" class="boxed-btn3" style="
-                                        display: inline-block;
-                                        padding: 10px 20px;
-                                        background-color: #2CB5E5;
-                                        color: white;
-                                        text-decoration: none;
-                                        font-size: 16px;
-                                        font-weight: bold;
-                                        border-radius: 5px;
-                                        width: 200px;
-                                        transition: background-color 0.3s ease;
-                                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-                                        margin: 5px 0;
-                                    " download>Download Form</a>
-                                </div>
-                            </div>
+		<br><br>  
+        <div class="btContentWrap btClear">
+            <div class="contact-form-container">
+                <section style="
+                background-color: #d3d3d3;
+                padding: 50px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            ">
+                <form class="contact-form" id="contactForm" style="
+                    background-color: #ffffff;
+                    padding: 30px;
+                    border: 10px solid #f7c594;
+                    max-width: 500px; /* Increased the max-width for a bigger card */
+                    width: 100%;
+                    margin: 0 auto;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    font-family: 'Arial', sans-serif;
+                ">
+                    <h2 style="
+                        font-size: 24px;
+                        color: #003478;
+                        margin-bottom: 20px;
+                        text-align: center;
+                        font-family: 'Work Sans', sans-serif;
+                    ">Contact Us</h2>
+            
+                    <div class="form-group" style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 15px;
+                    ">
+                        <div class="input-field" style="width: 48%;">
+                            <label for="firstName" style="
+                                display: block;
+                                font-size: 14px;
+                                color: #003478;
+                                margin-bottom: 5px;
+                            ">First name</label>
+                            <input type="text" id="firstName" class="input" name="firstName" required style="
+                                width: 100%;
+                                border: none;
+                                outline: none;
+                                border-bottom: 2px solid #003478;
+                                padding: 5px 0;
+                                color: #333;
+                            ">
+                            <div class="underline" style="
+                                height: 2px;
+                                background-color: #003478;
+                                width: 100%;
+                            "></div>
+                        </div>
+            
+                        <div class="input-field" style="width: 48%;">
+                            <label for="lastName" style="
+                                display: block;
+                                font-size: 14px;
+                                color: #003478;
+                                margin-bottom: 5px;
+                            ">Last name</label>
+                            <input type="text" id="lastName" class="input" name="lastName" required style="
+                                width: 100%;
+                                border: none;
+                                outline: none;
+                                border-bottom: 2px solid #003478;
+                                padding: 5px 0;
+                                color: #333;
+                            ">
+                            <div class="underline" style="
+                                height: 2px;
+                                background-color: #003478;
+                                width: 100%;
+                            "></div>
                         </div>
                     </div>
-                </div>
+            
+                    <div class="input-field" style="margin-bottom: 15px;">
+                        <label for="email" style="
+                            display: block;
+                            font-size: 14px;
+                            color: #003478;
+                            margin-bottom: 5px;
+                        ">Email *</label>
+                        <input type="email" id="email" class="input" name="email" required style="
+                            width: 100%;
+                            border: none;
+                            outline: none;
+                            border-bottom: 2px solid #003478;
+                            padding: 5px 0;
+                            color: #333;
+                        ">
+                        <div class="underline email-underline" style="
+                            height: 2px;
+                            background-color: #003478;
+                            width: 100%;
+                        "></div>
+                    </div>
+            
+                    <div class="input-field" style="margin-bottom: 15px;">
+                        <label for="phone" style="
+                            display: block;
+                            font-size: 14px;
+                            color: #003478;
+                            margin-bottom: 5px;
+                        ">Phone</label>
+                        <input type="tel" id="phone" class="input" name="phone" style="
+                            width: 100%;
+                            border: none;
+                            outline: none;
+                            border-bottom: 2px solid #003478;
+                            padding: 5px 0;
+                            color: #333;
+                        ">
+                        <div class="underline" style="
+                            height: 2px;
+                            background-color: #003478;
+                            width: 100%;
+                        "></div>
+                    </div>
+            
+                    <div class="input-field" style="margin-bottom: 15px;">
+                        <label for="message" style="
+                            display: block;
+                            font-size: 14px;
+                            color: #003478;
+                            margin-bottom: 5px;
+                        ">Write a message</label>
+                        <textarea id="message" class="input" name="message" style="
+                            width: 100%;
+                            height: 80px;
+                            border: none;
+                            outline: none;
+                            border-bottom: 2px solid #003478;
+                            padding: 5px 0;
+                            color: #333;
+                        "></textarea>
+                        <div class="underline" style="
+                            height: 2px;
+                            background-color: #003478;
+                            width: 100%;
+                        "></div>
+                    </div>
+            
+                    <button type="submit" class="submit-btn" style="
+                        background-color: transparent;
+                        color: #003478;
+                        border: 2px solid #003478;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        margin-top: 20px;
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        transition: background-color 0.3s ease;
+                    ">Submit</button>
+                </form>
+            </section>
+            
+        
             </div>
-        </div>
-    </div>
+            <br><br>
 
-    <script>
-        function redirectToBookingPage() {
-            window.location.href = "Appointment-details.html";
-        }
-    </script>
-</section>
 
-						
-						<br>
-						<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small bt_bb_hidden_md bt_bb_hidden_lg"
-						data-bt-override-class="null"></div>
-						<div class="container">
-							<section class="container-fluid section-800x800">
-								<div class="row no-gutters">
-									<div class="col-md-6" style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-										<div class="content">
-											<h3>Dentistry for Today’s Lifestyle</h3>
-											<h6>We Have All Your Dental Needs Covered</h6>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Comprehensive Exams</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Hygiene Services</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row no-gutters">
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Tooth coloured fillings</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Crowns and Bridges</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Root Canal Treatments</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Dentures</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row no-gutters">
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Orthodontics</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="card">
-											<div class="card-body"
-											style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/47/06/68/1000_F_247066810_91GZ03F1RFH1n7M8LkkQ8HMucoao9Y39.jpg'); background-size: cover; background-position: center; height: 200px; color: white;">
-												<div class="overlay">
-													<h4>Invisalign</h4>
-													<!-- <p>This is a short description elaborating the service
-														you have mentioned above.</p> -->
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="rounded-text" ><br><br>
-											<h4>Mobile Number: (705) 422-2490</h4>
-											<h6>Call us today to book an appointment!</h6>
-										</div>
-									</div>
-								</div>
-							</section>
-						</div>
-						<br>
-						<section id="bt_bb_section6657ed33181a6"
-                        class="bt_bb_section bt_bb_color_scheme_1 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_section_show_right_boxed_content bt_bb_overlap_columns_right_under"
-                        style="background-image: url('https://images.pexels.com/photos/4269700/pexels-photo-4269700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
-                        <div class="bt_bb_port" style="display: flex; justify-content: center;">
-                            <div class="bt_bb_cell"
-                                style="max-width: 1200px; width: 100%; display: flex; justify-content: space-between; gap: 20px;">
-                                <!-- Location Card -->
-                                <div class="bt_bb_column"
-                                    style="width: 48%; background-color: #fff; padding: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <div class="bt_bb_column_content">
-                                        <h3 style="text-align: center;">Location</h3>
-                                        <div class="map"
-                                            style="width: 500px; height: 600px; padding: 10px; box-sizing: border-box; margin-bottom: 20px;">
-                                            <iframe
-                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5519456949146!2d-80.0092124246058!3d44.52433009565658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a83d53bb6efef%3A0xff83ab9925fd3a36!2sStonebridge%20Dentistry!5e0!3m2!1sen!2sin!4v1718860622063!5m2!1sen!2sin"
-                                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Working Hours Card -->
-                                <div class="bt_bb_column"
-                                    style="width: 48%; background-color: rgba(14, 84, 174, 1); padding: 20px; color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                                    <div class="bt_bb_column_content">
-                                        <h4 style="text-align: center;">Working Hours</h4>
-                                        <p style="text-align: center;">Check out DentiCare's Office hours to plan your visit.</p>
-                                        <div class="btWorkingHoursInner">
-                                            <div class="bt_bb_working_hours_inner_row">
-                                                <div class="bt_bb_working_hours_inner_wrapper">
-                                                    <div class="bt_bb_working_hours_inner_title">Monday</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <div class="bt_bb_working_hours_inner_content">8AM-9PM</div>
-                                                </div>
-                                            </div><br>
-                                            <div class="bt_bb_working_hours_inner_row">
-                                                <div class="bt_bb_working_hours_inner_wrapper">
-                                                    <div class="bt_bb_working_hours_inner_title">Tuesday</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <div class="bt_bb_working_hours_inner_content">8AM-9PM</div>
-                                                </div>
-                                            </div><br>
-                                            <div class="bt_bb_working_hours_inner_row">
-                                                <div class="bt_bb_working_hours_inner_wrapper">
-                                                    <div class="bt_bb_working_hours_inner_title">Wednesday</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <div class="bt_bb_working_hours_inner_content">9AM-6:30PM</div>
-                                                </div>
-                                            </div><br>
-                                            <div class="bt_bb_working_hours_inner_row">
-                                                <div class="bt_bb_working_hours_inner_wrapper">
-                                                    <div class="bt_bb_working_hours_inner_title">Thursday</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <div class="bt_bb_working_hours_inner_content">8AM-9PM</div>
-                                                </div>
-                                            </div><br>
-                                            <div class="bt_bb_working_hours_inner_row">
-                                                <div class="bt_bb_working_hours_inner_wrapper">
-                                                    <div class="bt_bb_working_hours_inner_title">Friday</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <div class="bt_bb_working_hours_inner_content">8AM-9PM</div>
-                                                </div>
-                                            </div><br>
-                                            <div class="bt_bb_working_hours_inner_row">
-                                                <div class="bt_bb_working_hours_inner_wrapper">
-                                                    <div class="bt_bb_working_hours_inner_title">Saturday-Sunday</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <div class="bt_bb_working_hours_inner_content">Closed</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div style="text-align: center; margin-top: 20px;">
-                                            <a href="BookOnline.html" target="_self" class="bt_bb_link"
-                                                style="padding: 10px 20px; background-color: #FF793E; color: #fff; text-decoration: none; border-radius: 5px;">
-                                                Suggest Checkup Time
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-					</div>
-				</div><!-- /boldthemes_content -->
-
-			</div><!-- /contentHolder -->
 		</div><!-- /contentWrap -->
-		
-		
-		
+
 		<div class="btSiteFooter">
 			<div class="bt_bb_wrapper">
 				<section id="bt_bb_section6657ed3319b61"
@@ -13324,10 +12788,10 @@
                             </div>
                             <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
                                  data-bt-override-class="null"></div>
-                            <div class="bt_bb_icon bt_bb_colr_schee_7 bt_bb_style_borderless bt_bb_size_xsmal bt_bb_shape_cice bt_bb_tagt_self bt_bb_algn_inhrit"
+                            <div class="bt_bb_icon bt_bb_color_scheme_7 bt_bb_style_borderless bt_bb_size_xsmall bt_bb_shape_circle bt_bb_target_self bt_bb_align_inherit"
                                  style="--primary-color:#422774; --secondary-color:#191919;"
                                  data-bt-override-class="{}"><a href="tel:4152055550" target="_self"
-                                                                title="(705) 422-2490" class="bt_bb_icon_holde"><i class="fa fa-phone" aria-hidden="true"></i> <span>(705) 422-2490</span></a></div>
+                                                                title="(705) 422-2490" class="bt_bb_icon_holder"><i class="fa fa-phone" aria-hidden="true"></i> <span>(705) 422-2490</span></a></div>
                             <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
                                  data-bt-override-class="null"></div>
                             <div class="bt_bb_icon"
@@ -13697,9 +13161,6 @@
 			document.body.className = c;
 		})();
 	</script>
-	<link rel='stylesheet' id='bt_bb_progressbar_advanced-css'
-		href='https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements_misc/css/bt_bb_progress_bar_advanced.css?ver=6.5.3'
-		type='text/css' media='screen' />
 	<link rel='stylesheet' id='bt_bb_working_hours-css'
 		href='https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements_misc/css/bt_bb_working_hours.css?ver=6.5.3'
 		type='text/css' media='screen' />
@@ -13753,20 +13214,33 @@
 	<script type="text/javascript"
 		src="https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/content_elements/bt_bb_section/bt_bb_elements.js?ver=4.8.8"
 		id="bt_bb_elements-js"></script>
-	<script type="text/javascript"
-		src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_progress_bar_advanced/bb_progressbar_advanced.js?ver=6.5.3"
-		id="bt_bb_progressbar_advanced_js-js"></script>
-	<script type="text/javascript"
-		src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements_misc/js/bt_bb_progress_bar_advanced.js?ver=6.5.3"
-		id="bt_bb_progressbar_advanced-js"></script>
-	<script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_70659-js-extra">
+	<script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_86280-js-extra">
 		/* <![CDATA[ */
-		var slider_object = { "slider_id": "bt_bb_content_slider_70659" };
+		var slider_object = { "slider_id": "bt_bb_content_slider_86280" };
 		/* ]]> */
 	</script>
 	<script type="text/javascript"
 		src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_content_slider/bt_bb_content_slider.js?ver=6.5.3"
-		id="bt_bb_content_slider_jsbt_bb_content_slider_70659-js"></script>
+		id="bt_bb_content_slider_jsbt_bb_content_slider_86280-js"></script>
+	<script type="text/javascript"
+		src="https://denticare.bold-themes.com/allen/wp-includes/js/imagesloaded.min.js?ver=5.0.0"
+		id="imagesloaded-js"></script>
+	<script type="text/javascript" src="https://denticare.bold-themes.com/allen/wp-includes/js/masonry.min.js?ver=4.2.2"
+		id="masonry-js"></script>
+	<script type="text/javascript"
+		src="https://denticare.bold-themes.com/allen/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b"
+		id="jquery-masonry-js"></script>
+	<script type="text/javascript"
+		src="https://denticare.bold-themes.com/allen/wp-content/plugins/bold-page-builder/content_elements/bt_bb_masonry_image_grid/bt_bb_masonry_image_grid.js?ver=4.8.8"
+		id="bt_bb_image_grid-js"></script>
+	<script type="text/javascript" id="bt_bb_content_slider_jsbt_bb_content_slider_97832-js-extra">
+		/* <![CDATA[ */
+		var slider_object = { "slider_id": "bt_bb_content_slider_97832" };
+		/* ]]> */
+	</script>
+	<script type="text/javascript"
+		src="https://denticare.bold-themes.com/allen/wp-content/themes/denticare/bold-page-builder/content_elements/bt_bb_content_slider/bt_bb_content_slider.js?ver=6.5.3"
+		id="bt_bb_content_slider_jsbt_bb_content_slider_97832-js"></script>
 	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsdbQUq1QaP-0yXrNtClJ5nfoTIFxFVo8&amp;loading=async&amp;callback=window.bt_bb_init_all_maps&amp;ver=6.5.3"
 		id="gmaps_api-js" async="async" data-wp-strategy="async"></script>

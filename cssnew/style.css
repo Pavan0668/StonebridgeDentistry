@@ -3,61 +3,45 @@
 .Emergency_contact {
   position: relative;
   z-index: 1;
+  overflow: hidden; /* Ensure no overflow from child elements */
 }
 
-.Emergency_contact::before, .Emergency_contact::after {
-  background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg?t=st=1719919507~exp=1719923107~hmac=45cefc581e22bcfe8c5c77e7a254656695ce129b3036a8133b9d238ac05d4097&w=740);
+.Emergency_contact::before,
+.Emergency_contact::after {
+  background-size: cover; /* Ensures background image fits nicely */
   content: '';
   width: 50%;
   top: 0;
   height: 100%;
   position: absolute;
   z-index: -1;
+  opacity: 0.8; /* Adjust transparency of the images */
 }
 
 .Emergency_contact::before {
   left: 0;
-  top: 0;
+  background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg?t=st=1719919507~exp=1719923107~hmac=45cefc581e22bcfe8c5c77e7a254656695ce129b3036a8133b9d238ac05d4097&w=740);
 }
 
 .Emergency_contact::after {
   right: 0;
-  top: 0;
   background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg?w=740);
 }
 
 .Emergency_contact .Emergency_contact_inner {
-  padding: 50px 0; /* Reduced padding to decrease height */
+  padding: 50px 0;
   position: relative;
-  z-index: 1;
-}
-
-.Emergency_contact .Emergency_contact_inner::before, .Emergency_contact .Emergency_contact_inner::after {
-  background-color: rgba(0, 171, 231, 0.8);
-  content: '';
-  width: 50%;
-  top: 0;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
+  z-index: 2; /* Ensure it is on top of the background */
+  background-color: rgba(240, 240, 240, 0.7); /* Semi-transparent light grey */
 }
 
 @media (max-width: 767px) {
-  .Emergency_contact .Emergency_contact_inner::before, .Emergency_contact .Emergency_contact_inner::after {
-    width: 100%;
+  .Emergency_contact::before,
+  .Emergency_contact::after {
+    width: 100%; /* Ensure image takes full width on small screens */
   }
 }
 
-.Emergency_contact .Emergency_contact_inner::before {
-  left: 0;
-  top: 0;
-}
-
-.Emergency_contact .Emergency_contact_inner::after {
-  right: 0;
-  top: 0;
-  background-color: rgba(0, 113, 253, 0.8);
-}
 
 .Emergency_contact .Emergency_contact_inner .single_emergency {
   position: relative;
