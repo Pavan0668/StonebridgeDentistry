@@ -13230,9 +13230,38 @@
 														<u>RENEE</u>
 													</span>
 												</h4>
+												<!-- Description paragraph (initially hidden, visible on hover) -->
+												<div class="description"
+													style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+													<p style="margin: 5px 0;">
+														I started my dental career in 1997 as a Surgical Dental Assistant. 
+														I expanded my dental career and became a Registered Dental Hygienist
+														 in 2008. I have worked with Dr. Ghobrial since 2010 and continue now 
+														 to work for Stonebridge Dentistry. I have 2 small children and enjoy 
+														 spending time with friends and family</p>
+												</div>
 											</div>
 										</div>
 									</div>
+									<script>
+										// JavaScript to handle hover effect for Maranda's card
+										const ReneeCard = document.querySelector('.bt_bb_column:nth-child(3) .container'); // Target the correct card
+										const ReneeImg = ReneeCard.querySelector('img');
+										const ReneeName = ReneeCard.querySelector('.name');
+										const ReneeParagraph = ReneeCard.querySelector('.description');
+	
+										ReneeCard.addEventListener('mouseover', () => {
+											ReneeImg.style.transform = 'scale(1.1)';
+											ReneeName.style.opacity = '0';
+											ReneeParagraph.style.opacity = '1';
+										});
+	
+										ReneeCard.addEventListener('mouseout', () => {
+											ReneeImg.style.transform = 'scale(1)';
+											ReneeName.style.opacity = '1';
+											ReneeParagraph.style.opacity = '0';
+										});
+									</script>
 
 									<div class="bt_bb_column"
 										style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden;">
@@ -13270,6 +13299,26 @@
 											</div>
 										</div>
 									</div>
+
+									<script>
+										// JavaScript to handle hover effect for Maranda's card
+										const CrystalCard = document.querySelector('.bt_bb_column:nth-child(3) .container'); // Target the correct card
+										const CrystalImg = CrystalCard.querySelector('img');
+										const CrystalName = CrystalCard.querySelector('.name');
+										const CrystalParagraph = CrystalCard.querySelector('.description');
+	
+										CrystalCard.addEventListener('mouseover', () => {
+											CrystalImg.style.transform = 'scale(1.1)';
+											CrystalName.style.opacity = '0';
+											CrystalParagraph.style.opacity = '1';
+										});
+	
+										CrystalCard.addEventListener('mouseout', () => {
+											CrystalImg.style.transform = 'scale(1)';
+											CrystalName.style.opacity = '1';
+											CrystalParagraph.style.opacity = '0';
+										});
+									</script>
 
 								</div>
 
