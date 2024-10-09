@@ -32,6 +32,43 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <style>
+        /* Add your CSS here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh; /* Full viewport height */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        #bt_bb_section6657ed33152f1 {
+            width: 100%; /* Full width */
+            height: 400px; /* Fixed height for the card section */
+        }
+
+      
+        .bt_bb_image img {
+            width: 100%; /* Responsive images */
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .bt_bb_column {
+                flex: 1 1 45%; /* Two columns on smaller screens */
+                height: auto; /* Allow height to adjust */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bt_bb_column {
+                flex: 1 1 100%; /* One column on very small screens */
+            }
+        }
+    </style>
+    <style>
         /* Custom CSS for responsiveness */
         body {
             font-family: Arial, sans-serif;
