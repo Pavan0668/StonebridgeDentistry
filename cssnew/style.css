@@ -47,9 +47,9 @@
   position: relative;
   z-index: 87;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
   padding: 20px;
 }
 
