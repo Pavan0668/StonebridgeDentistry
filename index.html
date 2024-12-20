@@ -13358,131 +13358,297 @@
                     </section> -->
 
 
-                    <section id="bt_bb_section664fb57da0b30"
-                        style="background-color: #A9A9A9; padding: 0; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; height: 100vh;">
-
+                    <section id="section664fb57da0b30" class="responsive-section">
                         <!-- Left Side Content -->
-                        <div
-                            style="flex: 1; padding: 0; background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg?w=740); background-size: cover; background-position: center; filter: blur(-12px); height: 100%; position: relative; display: flex; justify-content: center; align-items: center;">
-                            <div
-                                style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; width: 90%; max-width: 500px;">
-                                <h3 style="font-size: 24px; color: #000;">Book Appointment</h3>
-
-                                <!-- Call Us Button -->
-                                <div style="margin-bottom: 15px;">
-                                    <a href="tel:+17054222490"
-                                        style="display: inline-block; padding: 15px 20px; background-color: #2CB5E5; color: white; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 5px; transition: background-color 0.3s ease; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); width: 100%; text-align: center;">
-                                        <i class="fas fa-phone" style="margin-right: 10px;"></i>(705) 422-2490
-                                    </a>
-                                </div>
-
-                                <!-- Email Us Button -->
-                                <div style="margin-bottom: 15px;">
-                                    <a href="mailto:reception.Stonebridgedentistry@gmail.com"
-                                        style="display: inline-block; padding: 15px 20px; background-color: #2CB5E5; color: white; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 5px; transition: background-color 0.3s ease; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); width: 100%; text-align: center;">
-                                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
-                                        reception.Stonebridgedentistry@gmail.com
-                                    </a>
+                        <div class="left-side-content">
+                            <div class="left-side-background">
+                                <div class="appointment-box">
+                                    <h3 class="appointment-title">Book Appointment</h3>
+                    
+                                    <!-- Call Us button -->
+                                    <div class="call-button">
+                                        <a href="tel:+17054222490" class="buttons call-us" style="color: white;">
+                                            <i class="fas fa-phone"></i> (705) 422-2490
+                                        </a>
+                                    </div>
+                    
+                                    <!-- Email Us button -->
+                                    <div class="email-button">
+                                        <a href="mailto:reception.Stonebridgedentistry@gmail.com" class="buttons email-us" style="color: white;"> 
+                                            <i class="fas fa-envelope"></i> reception.Stonebridgedentistry@gmail.com
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Right Side Contact Form -->
-                        <div
-                            style="flex: 1; padding: 20px; background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg?w=740); background-size: cover; background-position: center; position: relative; height: 100%; display: flex; justify-content: center; align-items: center;">
-                            <form id="contactForm"
-                                style="background-color: rgba(255, 255, 255, 0.9); padding: 20px; border: 10px solid #f7c594; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 90%; max-width: 500px;">
-                                <h2 style="font-size: 24px; color: #003478; text-align: center;">Contact Us</h2>
-
-                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
-                                    <div style="flex: 1; min-width: 45%;">
-                                        <label for="firstName"
-                                            style="display: block; font-size: 14px; color: #003478; margin-bottom: 5px;">First
-                                            Name</label>
-                                        <input type="text" id="firstName" name="firstName" required
-                                            style="width: 100%; border: none; border-bottom: 2px solid #003478; padding: 5px 0; outline: none;">
+                        <div class="right-side-content">
+                            <form class="contact-form">
+                                <h2 class="form-title">Contact Us</h2>
+                    
+                                <!-- First and Last Name Fields -->
+                                <div class="name-fields">
+                                    <div class="form-field">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" required>
                                     </div>
-                                    <div style="flex: 1; min-width: 45%;">
-                                        <label for="lastName"
-                                            style="display: block; font-size: 14px; color: #003478; margin-bottom: 5px;">Last
-                                            Name</label>
-                                        <input type="text" id="lastName" name="lastName" required
-                                            style="width: 100%; border: none; border-bottom: 2px solid #003478; padding: 5px 0; outline: none;">
+                                    <div class="form-field">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
-
-                                <div style="margin-bottom: 15px;">
-                                    <label for="email"
-                                        style="display: block; font-size: 14px; color: #003478; margin-bottom: 5px;">Email
-                                        *</label>
-                                    <input type="email" id="email" name="email" required
-                                        style="width: 100%; border: none; border-bottom: 2px solid #003478; padding: 5px 0; outline: none;">
+                    
+                                <!-- Email Field -->
+                                <div class="form-field">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
                                 </div>
-
-                                <div style="margin-bottom: 15px;">
-                                    <label for="phone"
-                                        style="display: block; font-size: 14px; color: #003478; margin-bottom: 5px;">Phone</label>
-                                    <input type="tel" id="phone" name="phone"
-                                        style="width: 100%; border: none; border-bottom: 2px solid #003478; padding: 5px 0; outline: none;">
+                    
+                                <!-- Phone Field -->
+                                <div class="form-field">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone">
                                 </div>
-
-                                <div style="margin-bottom: 15px;">
-                                    <label for="message"
-                                        style="display: block; font-size: 14px; color: #003478; margin-bottom: 5px;">Write
-                                        a Message</label>
-                                    <textarea id="message" name="message" rows="4"
-                                        style="width: 100%; border: none; border-bottom: 2px solid #003478; padding: 5px 0; outline: none;"></textarea>
+                    
+                                <!-- Message Field -->
+                                <div class="form-field">
+                                    <label for="message">Write a Message</label>
+                                    <textarea id="message" name="message" rows="4"></textarea>
                                 </div>
-
-                                <button type="submit"
-                                    style="background-color: #003478; color: #ffffff; border: none; padding: 10px; font-size: 16px; cursor: pointer; text-align: center; width: 100%; border-radius: 5px;">
+                    
+                                <!-- Submit Button -->
+                                <button type="submit" class="submit-button">
                                     Submit
                                 </button>
                             </form>
                         </div>
                     </section>
+                    
+                               
+                               <!-- Media Queries for Mobile -->
+                               <style>
+                                 @media only screen and (max-width: 767px) {
+                                   #bt_bb_section664fb57da0b30 {
+                                     flex-direction: column; /* Stack items vertically on small screens */
+                                     height: auto;
+                                   }
+                                   .bt_bb_section664fb57da0b30 > div {
+                                     width: 100%; /* Make sure both columns are full width on mobile */
+                                     padding: 15px;
+                                   }
+                                   .bt_bb_section664fb57da0b30 > div:first-child {
+                                     background-image: none; /* Remove background blur on mobile for better readability */
+                                   }
+                                   .bt_bb_section664fb57da0b30 > div:last-child {
+                                     background-image: none; /* Remove background blur on mobile for better readability */
+                                   }
+                                   form {
+                                     width: 90%; /* Adjust form width for mobile */
+                                   }
+                                   .bt_bb_column {
+                                     width: 100%; /* Ensure columns take up full width */
+                                   }
+                                 }
+                               </style>
+                               
+                               <style>
+                        /* General Styling */
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+                    
+                    body {
+                        font-family: Arial, sans-serif;
+                    }
+                    
+                    /* Section Styles */
+                    .responsive-section {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        height: 120vh;
+                        background-color: #A9A9A9;
+                        padding: 0;
+                        
+                    }
+                    
+                    /* Left Side Content */
+                    .left-side-content {
+                        flex: 1;
+                        padding: 0;
+                        height: 120vh;
+                    }
+                    
+                    .left-side-background {
+                        background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        height: 120vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                    }
+                    
+                    .appointment-box {
+                        background-color: rgba(255, 255, 255, 0.8);
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        text-align: center;
+                        width: 500px;
+                    }
+                    
+                    .appointment-title {
+                        font-size: 24px;
+                        color: #000;
+                    }
+                    
+                    /* Button Styles */
+						.buttons {
+							display: inline-block;
+							padding: 10px 20px;
+							background-color: #2CB5E5;
+							color: white;
+							/* Ensures the text is always white */
+							text-decoration: none;
+							font-size: 18px;
+							font-weight: bold;
+							border-radius: 5px;
+							transition: background-color 0.3s ease;
+							width: 100%;
+							text-align: center;
+							box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+							margin-bottom: 15px;
+							/* Normal gap between buttons */
+							white-space: nowrap;
+							/* Prevent text from wrapping */
+						}
 
-                    <!-- Media Query for Small Screens -->
-                    <style>
-                        @media (max-width: 768px) {
-                            #bt_bb_section664fb57da0b30 {
-                                flex-direction: column;
-                                /* Stack the sections vertically on small screens */
-                                height: auto;
-                                /* Allow the content to adjust the height accordingly */
-                            }
+						/* Call Us Button */
+						.call-us {
+							margin-bottom: 15px;
+							/* Adds space below the call button */
+						}
 
-                            /* Adjust Left Side Content */
-                            #bt_bb_section664fb57da0b30>div:nth-child(1) {
-                                background-size: cover;
-                                height: auto;
-                                /* Allow the left content to adjust height */
-                                padding: 0;
-                                filter: none;
-                            }
-
-                            /* Adjust Right Side Content */
-                            #bt_bb_section664fb57da0b30>div:nth-child(2) {
-                                padding: 15px;
-                                /* Adjust padding for smaller screens */
-                                height: auto;
-                                /* Allow the form content to adjust height */
-                            }
-
-                            form {
-                                padding: 15px;
-                                width: 100%;
-                                /* Ensure the form takes full width */
-                                max-width: 100%;
-                                /* No max width to allow full responsiveness */
-                            }
-
-                            .bt_bb_section664fb57da0b30>div {
-                                flex: none;
-                                width: 100%;
-                                height: auto;
-                            }
+						/* Email Us Button */
+						.email-us {
+							margin-bottom: 15px;
+							/* Adds space below the email button */
+							white-space: nowrap;
+							/* Ensures the email address fits inside the button */
+						}
+                    
+                    .button i {
+                        margin-right: 10px;
+                    }
+                    
+                    /* Right Side Contact Form */
+                    .right-side-content {
+                        flex: 1;
+                        padding: 10px;
+                        background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        filter: blur(-12px);
+                        position: relative;
+                        height: 120vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .contact-form {
+                        background-color: rgba(255, 255, 255, 0.9);
+                        padding: 30px;
+                        border: 10px solid #f7c594;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        font-family: 'Arial', sans-serif;
+                        width: 500px;
+                    }
+                    
+                    .form-title {
+                        font-size: 24px;
+                        color: #003478;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
+                        text-align: center;
+                    }
+                    
+                    .form-field {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .form-field label {
+                        display: block;
+                        font-size: 14px;
+                        color: #003478;
+                        margin-bottom: 5px;
+                    }
+                    
+                    .form-field input,
+                    .form-field textarea {
+                        width: 100%;
+                        border: none;
+                        border-bottom: 2px solid #003478;
+                        padding: 5px 0;
+                        outline: none;
+                        font-size: 0.850rem;
+                    }
+                    
+                    /* Button Styles */
+                    .submit-button {
+                        background-color: #003478;
+                        color: #ffffff;
+                        border: none;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        text-align: center;
+                        width: 100%;
+                        border-radius: 5px;
+                        transition: background-color 0.3s ease;
+                    }
+                    
+                    /* Responsive Design */
+                    @media (max-width: 768px) {
+                        .responsive-section {
+                            flex-direction: column;
+                            height: auto;
                         }
+                    
+                        .left-side-background,
+                        .right-side-content {
+                            height: auto;
+                        }
+                    
+                        .appointment-box,
+                        .contact-form {
+                            width: 90%;
+                            margin: 10px;
+                        }
+                    
+                        .name-fields {
+                            flex-direction: column;
+                        }
+                    
+                        .form-field {
+                            width: 100%;
+                        }
+                    
+                        .buttons {
+                            font-size: 12px;
+                        }
+                    
+                        .form-title {
+                            font-size: 20px;
+                        }
+                    }
+                    
                     </style>
 
 
