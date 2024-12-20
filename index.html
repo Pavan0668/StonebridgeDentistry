@@ -12482,93 +12482,161 @@
             </div><!-- /btLogoArea -->
         </div>
 
-        <header class="mainHeader btClear gutter" style="margin-bottom: 0; background-color: #A9A9A9;">
-            <div class="mainHeaderInner">
+        <header class="mainHeadr btClear gutter" style="margin-bottom: 0; background-color: #A9A9A9;">
+            <div class="mainHeaderInne">
                 <div class="btLogoArea menuHolder btClear" style="background-color: #A9A9A9;">
-                    <div class="port" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px;">
-                        <div class="btHorizontalMenuTrigger" style="display: none;">
-                            <span class="bt_bb_icon_holder">&#9776;</span>
+                    <div class="port">
+                        <!-- Hamburger Icon -->
+                        <div class="btHorizontalMenuTrigger">
+                            <button id="hamburger-icon" class="hamburger-menu" aria-label="Toggle navigation">
+                                <span class="hamburger-line"></span>
+                                <span class="hamburger-line"></span>
+                                <span class="hamburger-line"></span>
+                            </button>
                         </div>
                         <div class="logo">
-                            <a href="index.html">
-                                <img class="btMainLogo" src="img/asset 0.png" alt="Allen" style="max-width: 150px; height: auto;">
-                            </a>
-                        </div>
-                        <div class="topBarInLogoArea" style="display: flex; align-items: center; flex-wrap: wrap; gap: 15px;">
-                            <div class="btIconWidgetIcon" style="display: inline-block;">
-                                <span class="fas fa-phone" style="font-size: 20px; transform: rotateY(180deg);"></span>
+                            <span>
+                                <a href="index.html"><img class="btMainLogo" data-hw="1.8461538461538"
+                                        src="img/asset 0.png" alt="Allen"></a>
+                            </span>
+                        </div><!-- /logo -->
+                        <div class="topBarInLogoArea" style="display: flex; align-items: center;">
+                            <div class="topBarInLogoAreaCell" style="display: flex; align-items: center;">
+                                <!-- Phone Icon and Contact Number -->
+                                <div class="btIconWidgetIcon" style="display: inline-block; margin-right: 10px;">
+                                    <span class="fas fa-phone"
+                                        style="font-size: 25px;transform: rotateY(180deg);"></span>
+                                </div>
+                                <div class="btIconWidgetContent" style="display: inline-block; margin-right: 20px;">
+                                    <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                                        <span class="btIconWidgetTitle" style="font-size: 16px; font-weight: bold;">(705) 422-2490</span>
+                                    </a>
+                                </div>
+                                <!-- Book Appointment Button -->
+                                <a href="Contact-New.html" class="book-appointment-btn">Book Appointment</a>
                             </div>
-                            <div class="btIconWidgetContent" style="display: inline-block;">
-                                <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-                                    <span style="font-size: 14px; font-weight: bold;">(705) 422-2490</span>
-                                </a>
-                            </div>
-                            <a href="Contact-New.html" style="
-                                display: inline-block;
-                                padding: 8px 15px;
-                                background-color: #3A3A3A;
-                                color: white;
-                                text-decoration: none;
-                                font-size: 14px;
-                                font-weight: bold;
-                                border-radius: 5px;
-                                transition: background-color 0.3s ease;
-                                text-align: center;">
-                                Book Appointment
-                            </a>
                         </div>
-                    </div>
-                </div>
+                    </div><!-- /port -->
+                </div><!-- /menuHolder -->
                 <div class="btBelowLogoArea btClear" style="background-color: #f0f0f0;">
                     <div class="port">
-                        <nav>
-                            <ul id="menu-primary-menu" class="menu" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; padding: 10px; list-style: none; margin: 0; gap: 15px;">
-                                <li style="font-weight: bold; color: #F0B87A;">
-                                    <a href="index.html" style="text-decoration: none; color: inherit;">HOME</a>
-                                </li>
-                                <li>
-                                    <a href="About-Us.html" style="text-decoration: none; color: #333;">ABOUT</a>
-                                </li>
-                                <li>
-                                    <a href="Services.html" style="text-decoration: none; color: #333;">SERVICES</a>
-                                </li>
-                                <li>
-                                    <a href="Team.html" style="text-decoration: none; color: #333;">OUR TEAM</a>
-                                </li>
-                                <li>
-                                    <a href="Testimonials.html" style="text-decoration: none; color: #333;">TESTIMONIALS</a>
-                                </li>
-                                <li>
-                                    <a href="Technology.html" style="text-decoration: none; color: #333;">OUR OFFICE</a>
-                                </li>
-                                <li>
-                                    <a href="Contact-Us.html" style="text-decoration: none; color: #333;">CONTACT</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="menuPort">
+                            <nav id="main-nav" class="menu">
+                                <ul id="menu-primary-menu">
+                                    <li class="menu-item active"><a href="index.html">HOME</a></li>
+                                    <li class="menu-item"><a href="About-Us.html">ABOUT</a></li>
+                                    <li class="menu-item"><a href="Services.html">SERVICES</a></li>
+                                    <li class="menu-item"><a href="Team.html">OUR TEAM</a></li>
+                                    <li class="menu-item"><a href="Testimonials.html">TESTIMONIALS</a></li>
+                                    <li class="menu-item"><a href="Technology.html">OUR OFFICE</a></li>
+                                    <li class="menu-item"><a href="Contact-Us.html">CONTACT</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <style>
-            @media (max-width: 768px) {
-                .topBarInLogoArea {
-                    flex-direction: column;
-                    gap: 10px;
-                }
-                .btLogoArea .port {
-                    flex-direction: column;
-                    text-align: center;
-                }
-                #menu-primary-menu {
-                    flex-direction: column;
-                    gap: 10px;
-                }
-                .btHorizontalMenuTrigger {
-                    display: inline-block;
-                }
-            }
-        </style>
+        
+        
+
+        <!-- CSS -->
+<style>
+ /* General Styles */
+.book-appointment-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3A3A3A;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .btHorizontalMenuTrigger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1000;
+    }
+
+    #hamburger-icon {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 24px;
+        width: 30px;
+    }
+
+    .hamburger-line {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        border-radius: 5px;
+    }
+
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        padding: 15px;
+    }
+
+    #main-nav.active {
+        display: flex;
+    }
+
+    .menuPort ul {
+        flex-direction: column;
+        padding: 0;
+        list-style: none;
+    }
+
+    .menuPort ul li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .topBarInLogoArea {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .book-appointment-btn {
+        margin: 15px auto;
+    }
+}
+
+
+</style>
+
+<!-- JavaScript -->
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger-icon");
+    const mainNav = document.getElementById("main-nav");
+
+    hamburger.addEventListener("click", function () {
+        mainNav.classList.toggle("active");
+    });
+});
+
+</script>
 
         <div class="btContentWrap btClear" style="margin-top: 0;">
             <div class="btContentHolder">
