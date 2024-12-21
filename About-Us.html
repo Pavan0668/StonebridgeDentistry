@@ -13136,185 +13136,204 @@
 						</section>
 					</div>
 					<br>
-<style>
-	/* General Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+					<style>
+                        /* General Styling */
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+                    
+                    body {
+                        font-family: Arial, sans-serif;
+                    }
+                    
+                    /* Section Styles */
+                    .responsive-section {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        height: 120vh;
+                        background-color: #A9A9A9;
+                        padding: 0;
+                        
+                    }
+                    
+                    /* Left Side Content */
+                    .left-side-content {
+                        flex: 1;
+                        padding: 0;
+                        height: 120vh;
+                    }
+                    
+                    .left-side-background {
+                        background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        height: 120vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                    }
+                    
+                    .appointment-box {
+                        background-color: rgba(255, 255, 255, 0.8);
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        text-align: center;
+                        width: 500px;
+                    }
+                    
+                    .appointment-title {
+                        font-size: 24px;
+                        color: #000;
+                    }
+                    
+                    /* Button Styles */
+						.buttons {
+							display: inline-block;
+							padding: 10px 20px;
+							background-color: #2CB5E5;
+							color: white;
+							/* Ensures the text is always white */
+							text-decoration: none;
+							font-size: 18px;
+							font-weight: bold;
+							border-radius: 5px;
+							transition: background-color 0.3s ease;
+							width: 100%;
+							text-align: center;
+							box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+							margin-bottom: 15px;
+							/* Normal gap between buttons */
+							white-space: nowrap;
+							/* Prevent text from wrapping */
+						}
 
-body {
-    font-family: Arial, sans-serif;
-}
+						/* Call Us Button */
+						.call-us {
+							margin-bottom: 15px;
+							/* Adds space below the call button */
+						}
 
-/* Section Styles */
-.responsive-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 120vh;
-    background-color: #A9A9A9;
-    padding: 0;
-	
-}
-
-/* Left Side Content */
-.left-side-content {
-    flex: 1;
-    padding: 0;
-	height: 120vh;
-}
-
-.left-side-background {
-    background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.appointment-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 500px;
-}
-
-.appointment-title {
-    font-size: 24px;
-    color: #000;
-}
-
-/* Button Styles */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2CB5E5;
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.button i {
-    margin-right: 10px;
-}
-
-/* Right Side Contact Form */
-.right-side-content {
-    flex: 1;
-    padding: 10px;
-    background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(-12px);
-    position: relative;
-    height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-form {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border: 10px solid #f7c594;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    width: 500px;
-}
-
-.form-title {
-    font-size: 24px;
-    color: #003478;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.form-field {
-    margin-bottom: 20px;
-}
-
-.form-field label {
-    display: block;
-    font-size: 14px;
-    color: #003478;
-    margin-bottom: 5px;
-}
-
-.form-field input,
-.form-field textarea {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #003478;
-    padding: 5px 0;
-    outline: none;
-    font-size: 0.850rem;
-}
-
-/* Button Styles */
-.submit-button {
-    background-color: #003478;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    width: 100%;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .responsive-section {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .left-side-background,
-    .right-side-content {
-        height: auto;
-    }
-
-    .appointment-box,
-    .contact-form {
-        width: 90%;
-        margin: 10px;
-    }
-
-    .name-fields {
-        flex-direction: column;
-    }
-
-    .form-field {
-        width: 100%;
-    }
-
-    .button {
-        font-size: 18px;
-    }
-
-    .form-title {
-        font-size: 20px;
-    }
-}
-
-</style>
+						/* Email Us Button */
+						.email-us {
+							margin-bottom: 15px;
+							/* Adds space below the email button */
+							white-space: nowrap;
+							/* Ensures the email address fits inside the button */
+						}
+                    
+                    .button i {
+                        margin-right: 10px;
+                    }
+                    
+                    /* Right Side Contact Form */
+                    .right-side-content {
+                        flex: 1;
+                        padding: 10px;
+                        background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        filter: blur(-12px);
+                        position: relative;
+                        height: 120vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .contact-form {
+                        background-color: rgba(255, 255, 255, 0.9);
+                        padding: 30px;
+                        border: 10px solid #f7c594;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        font-family: 'Arial', sans-serif;
+                        width: 500px;
+                    }
+                    
+                    .form-title {
+                        font-size: 24px;
+                        color: #003478;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
+                        text-align: center;
+                    }
+                    
+                    .form-field {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .form-field label {
+                        display: block;
+                        font-size: 14px;
+                        color: #003478;
+                        margin-bottom: 5px;
+                    }
+                    
+                    .form-field input,
+                    .form-field textarea {
+                        width: 100%;
+                        border: none;
+                        border-bottom: 2px solid #003478;
+                        padding: 5px 0;
+                        outline: none;
+                        font-size: 0.850rem;
+                    }
+                    
+                    /* Button Styles */
+                    .submit-button {
+                        background-color: #003478;
+                        color: #ffffff;
+                        border: none;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        text-align: center;
+                        width: 100%;
+                        border-radius: 5px;
+                        transition: background-color 0.3s ease;
+                    }
+                    
+                    /* Responsive Design */
+                    @media (max-width: 768px) {
+                        .responsive-section {
+                            flex-direction: column;
+                            height: auto;
+                        }
+                    
+                        .left-side-background,
+                        .right-side-content {
+                            height: auto;
+                        }
+                    
+                        .appointment-box,
+                        .contact-form {
+                            width: 90%;
+                            margin: 10px;
+                        }
+                    
+                        .name-fields {
+                            flex-direction: column;
+                        }
+                    
+                        .form-field {
+                            width: 100%;
+                        }
+                    
+                        .buttons {
+                            font-size: 12px;
+                        }
+                    
+                        .form-title {
+                            font-size: 20px;
+                        }
+                    }
+                    
+                    </style>
 <section id="section664fb57da0b30" class="responsive-section">
     <!-- Left Side Content -->
     <div class="left-side-content">
@@ -13324,14 +13343,14 @@ body {
 
                 <!-- Call Us button -->
                 <div class="call-button">
-                    <a href="tel:+17054222490" class="button call-us">
+                    <a href="tel:+17054222490" class="buttons call-us" style="color: white;">
                         <i class="fas fa-phone"></i> (705) 422-2490
                     </a>
                 </div>
 
                 <!-- Email Us button -->
                 <div class="email-button">
-                    <a href="mailto:reception.Stonebridgedentistry@gmail.com" class="button email-us">
+                    <a href="mailto:reception.Stonebridgedentistry@gmail.com" class="buttons email-us" style="color: white;">
                         <i class="fas fa-envelope"></i> reception.Stonebridgedentistry@gmail.com
                     </a>
                 </div>
