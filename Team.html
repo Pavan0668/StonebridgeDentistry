@@ -13555,14 +13555,14 @@
 				
 								<!-- Call Us button -->
 								<div class="call-button">
-									<a href="tel:+17054222490" class="button call-us">
+									<a href="tel:+17054222490" class="buttons call-us" style="color: white;">
 										<i class="fas fa-phone"></i> (705) 422-2490
 									</a>
 								</div>
 				
 								<!-- Email Us button -->
 								<div class="email-button">
-									<a href="mailto:reception.Stonebridgedentistry@gmail.com" class="button email-us">
+									<a href="mailto:reception.Stonebridgedentistry@gmail.com" class="buttons email-us" style="color: white;"> 
 										<i class="fas fa-envelope"></i> reception.Stonebridgedentistry@gmail.com
 									</a>
 								</div>
@@ -13696,20 +13696,39 @@
 				}
 				
 				/* Button Styles */
-				.button {
-					display: inline-block;
-					padding: 10px 20px;
-					background-color: #2CB5E5;
-					color: white;
-					text-decoration: none;
-					font-size: 22px;
-					font-weight: bold;
-					border-radius: 5px;
-					transition: background-color 0.3s ease;
-					width: 100%;
-					text-align: center;
-					box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-				}
+					.buttons {
+						display: inline-block;
+						padding: 10px 20px;
+						background-color: #2CB5E5;
+						color: white;
+						/* Ensures the text is always white */
+						text-decoration: none;
+						font-size: 18px;
+						font-weight: bold;
+						border-radius: 5px;
+						transition: background-color 0.3s ease;
+						width: 100%;
+						text-align: center;
+						box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+						margin-bottom: 15px;
+						/* Normal gap between buttons */
+						white-space: nowrap;
+						/* Prevent text from wrapping */
+					}
+
+					/* Call Us Button */
+					.call-us {
+						margin-bottom: 15px;
+						/* Adds space below the call button */
+					}
+
+					/* Email Us Button */
+					.email-us {
+						margin-bottom: 15px;
+						/* Adds space below the email button */
+						white-space: nowrap;
+						/* Ensures the email address fits inside the button */
+					}
 				
 				.button i {
 					margin-right: 10px;
@@ -13809,8 +13828,8 @@
 						width: 100%;
 					}
 				
-					.button {
-						font-size: 18px;
+					.buttons {
+						font-size: 12px;
 					}
 				
 					.form-title {
