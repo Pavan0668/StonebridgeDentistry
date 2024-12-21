@@ -14498,7 +14498,7 @@
 									<div class="bt_bb_column_content">
 										<header
 											class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-											style="; --primary-color:#422774; --secondary-color:#191919;"
+											style=" --primary-color:#422774; --secondary-color:#191919;"
 											data-bt-override-class="{}">
 											<h6 class="bt_bb_headline_tag"><span
 													class="bt_bb_headline_content"><span>Social
@@ -14534,6 +14534,32 @@
 											data-bt-override-class="null"></div>
 									</div>
 								</div>
+								<style>
+									/* Center content on small screens */
+									@media only screen and (max-width: 767px) {
+										.bt_bb_columns {
+											text-align: center; /* Centers all text and inline elements */
+											margin: 0 auto; /* Centers the column itself */
+										}
+										.social-icons {
+											display: flex;
+											justify-content: center; /* Centers icons horizontally */
+											gap: 10px; /* Adds spacing between icons */
+											padding-left: 90px;
+										}
+										.bt_bb_text p {
+											text-align: center; /* Centers the paragraph text */
+										}
+										.bt_bb_headlines h6 {
+											text-align: center; /* Centers the headline */
+											padding-left: 90px;
+										}
+										.bt_bb_headline{
+											text-align: center; /* Centers the headline */
+											padding-left: 40px;
+										}
+									}
+									</style>
 							</div>
 						</div>
 					</div>
