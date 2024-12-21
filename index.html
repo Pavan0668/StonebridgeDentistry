@@ -12501,6 +12501,77 @@
         }
     </style>
     <script>window.bt_bb_custom_elements = false;</script>
+    <style>
+        /* Loader Container Styling */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff; /* Background color for the loader */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* Bouncing Dots Animation */
+.bouncing-dots {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #FF5C35;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Hide content initially */
+.content {
+    visibility: hidden;
+}
+
+    </style>
+
+    <script>
+        // Wait for the page to fully load
+window.addEventListener('load', function () {
+    // Hide the loader
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+
+    // Show the content
+    const content = document.querySelector('.content');
+    content.style.visibility = 'visible';
+});
+
+    </script>
 </head>
 
 
@@ -12515,6 +12586,18 @@
     <!-- End Google Tag Manager (noscript) -->
     <div class="btPageWrap" id="top">
 
+
+        <div class="loader-container" id="loader">
+            <div class="bouncing-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
+        
+        
+        
         <!-- <div class="btVerticalHeaderTop">
             <div class="btVerticalMenuTrigger">
                 &nbsp;

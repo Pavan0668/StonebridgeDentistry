@@ -60,61 +60,110 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<style>
 		/* Container styling */
-		.services-section {
-			text-align: center;
-			padding: 50px 0;
-			background-color: #f9f9f9;
-		}
+.services-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
 
-		/* Service items styling */
-		.services-container {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 30px;
-		}
+/* Service items styling */
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 
-		.service-item {
-			width: 180px;
-			/* Increased width */
-			height: 180px;
-			/* Increased height */
-			border-radius: 50%;
-			background-color: #2CB5E5;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			padding: 15px;
-			transition: transform 0.3s ease;
-		}
+/* Service item animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-		.service-item:hover {
-			transform: scale(1.1);
-		}
+.service-item {
+  width: 180px; /* Increased width */
+  height: 180px; /* Increased height */
+  border-radius: 50%;
+  background-color: #2CB5E5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: var(--delay); /* Delay each item */
+}
 
-		.service-icon {
-			font-size: 50px;
-			/* Increased icon size */
-			color: #fff;
-			margin-bottom: 10px;
-		}
+/* Hover effect */
+.service-item:hover {
+  transform: scale(1.1);
+}
 
-		.service-title {
-			font-size: 16px;
-			/* Increased font size */
-			color: #fff;
-			font-weight: bold;
-			text-align: center;
-		}
+.service-icon {
+  font-size: 50px; /* Increased icon size */
+  color: #fff;
+  margin-bottom: 10px;
+}
 
-		/* Services section title */
-		h2 {
-			color: #444;
-			font-size: 36px;
-			margin-bottom: 30px;
-		}
+.service-title {
+  font-size: 16px; /* Increased font size */
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Services section title */
+h2 {
+  color: #444;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-item {
+    width: 150px; /* Smaller width for mobile */
+    height: 150px; /* Smaller height for mobile */
+  }
+  h2 {
+    font-size: 28px;
+  }
+}
+
 	</style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+  const serviceItems = document.querySelectorAll('.service-item');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  serviceItems.forEach(item => {
+    observer.observe(item);
+  });
+});
+
+</script>
+
 	<style>
 		.bt_bb_column {
 			display: flex;
@@ -12824,6 +12873,8 @@
 	class="page-template-default page page-id-312 page-parent theme-denticare bt_bb_plugin_active bt_bb_fe_preview_toggle woocommerce-no-js btHeadingStyle_default btMenuFontSize-16 btMenuFocusElementDash btPageHeadlineAlternate btMenuLeftEnabled btMenuBelowLogo btStickyEnabled btHideHeadline btLightSkin btBelowMenu noBodyPreloader btSoftRoundedButtons btTransparentDarkHeader btNoSidebar btShopSaleTagDesignHardRounded">
 
 
+	
+
 	<!-- GTM Container placement set to automatic -->
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHZKTQL" height="0" width="0"
@@ -13083,7 +13134,8 @@
 			   </div>
 		   </section>
 		   
-
+		   
+		  
 
 					<!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small bt_bb_hidden_md bt_bb_hidden_lg"
 								data-bt-override-class="null"></div> -->
@@ -13092,43 +13144,43 @@
 							<h2>Services</h2>
 							<div class="services-container">
 								<!-- First Row of Service Items -->
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-tooth service-icon"></i>
 									<p class="service-title">Comprehensive Exams</p>
 								</div>
 
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-shield-alt service-icon"></i>
 									<p class="service-title">Hygiene Services</p>
 								</div>
 
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-fill service-icon"></i>
 									<p class="service-title">Tooth Coloured Fillings</p>
 								</div>
 
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-crown service-icon"></i>
 									<p class="service-title">Crowns and Bridges</p>
 								</div>
 
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-procedures service-icon"></i>
 									<p class="service-title">Root Canal Treatments</p>
 								</div>
 
 								<!-- Second Row of Service Items -->
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-tooth service-icon"></i>
 									<p class="service-title">Dentures</p>
 								</div>
 
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-teeth service-icon"></i>
 									<p class="service-title">Orthodontics</p>
 								</div>
 
-								<div class="service-item">
+								<div class="service-item" style="--delay: 1s;">
 									<i class="fas fa-align-center service-icon"></i>
 									<p class="service-title">Invisalign</p>
 								</div>
