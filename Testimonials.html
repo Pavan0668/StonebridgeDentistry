@@ -50,6 +50,31 @@
 		}
 	</style>
 
+ <!-- Script to Activate Tabs -->
+ <script>
+	$(document).ready(function () {
+		// Initialize Slick slider
+		$('.slick-slider').slick();
+
+		// Custom tab click function
+		$('.carousel-nav .tab').on('click', function () {
+			var slideIndex = $(this).data('slide');
+			$('.slick-slider').slick('slickGoTo', slideIndex);
+
+			// Remove 'active' class from other tabs
+			$('.carousel-nav .tab').removeClass('active');
+			// Add 'active' class to clicked tab
+			$(this).addClass('active');
+		});
+
+		// Sync Slick with tabs
+		$('.slick-slider').on('afterChange', function (event, slick, currentSlide) {
+			$('.carousel-nav .tab').removeClass('active');
+			$('.carousel-nav .tab[data-slide="' + currentSlide + '"]').addClass('active');
+		});
+	});
+</script>
+
 	<style>
 		.social-icons {
 			display: flex;
@@ -12694,7 +12719,80 @@
 				</div>
 			</section>
 			<br><br>
+<style>
+	@media only screen and (max-width: 768px) {
+  /* Ensure the section is full width and adapts to small screens */
+  #bt_bb_section6658052452512 {
+    width: 100% !important;
+    padding: 10px !important; /* Add padding to avoid content sticking to edges */
+    background-color: #f2f2f2 !important;
+  }
 
+  /* Adjust background image for better scaling on mobile */
+  .bt_bb_background_image_holder {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Adjust heading font size */
+  #bt_bb_section6658052452512 h2 {
+    font-size: 24px !important;
+    padding-top: 20px !important;
+    text-align: center !important;
+    color: #422774 !important;
+  }
+
+  /* Make the slider responsive */
+  .bt_bb_content_slider {
+    width: 100% !important;
+  }
+
+  .slick-slider {
+    width: 100% !important;
+  }
+
+  /* Adjust the slider settings for smaller screens */
+  .slick-slider {
+    display: block;
+  }
+
+  .slick-slide {
+    padding: 10px !important; /* Add space between slides */
+  }
+
+  .slick-slide img {
+    width: 100% !important; /* Make images responsive */
+    height: auto !important;
+  }
+
+  /* Stack columns in a single column layout on mobile */
+  .bt_bb_column_inner {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Reduce the space between elements */
+  .bt_bb_row_inner {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .bt_bb_separator {
+    margin-bottom: 15px !important; /* Add spacing between separators */
+  }
+
+  /* Adjust content text size */
+  .bt_bb_column_inner_content {
+    font-size: 16px !important;
+  }
+
+  /* Add better spacing between slider items */
+  .bt_bb_content_slider_item {
+    margin: 0 !important;
+    padding: 20px !important;
+  }
+}
+</style>
 	  <div class="btContentHolder">
 			<section id="bt_bb_section664fb4e19a49f"
 				class="bt_bb_sections bt_bb_layout_wide bt_bb_vertical_align_top bt_bb_top_spacing_large bt_bb_bottom_spacing_extra_large bt_bb_hidden_xs bt_bb_hidden_ms bt_bb_hidden_sm bt_bb_hidden_md bt_stick_right_edge"
@@ -12704,9 +12802,7 @@
 						data-parallax-zoom-end="1" data-parallax-blur-start="0" data-parallax-blur-end="0"
 						data-parallax-opacity-start="1" data-parallax-opacity-end="1" style="background-color: white;"></div>
 				</div>
-				
 					<div class="bt_bb_cell">
-						
 							<div class="bt_bb_row_wrapper" style="background-color: lightgrey; padding: 20px; border-radius: 8px;">
 								<div class="bt_bb_row bt_bb_column_gap_45" data-bt-override-class="{}">
 									<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_middle bt_bb_align_left bt_bb_padding_double bt_bb_animation_fade_in animate"
@@ -13211,7 +13307,7 @@
 					</div>
 				
 				<!-- port -->
-				</section>
+			</section>
 
 				<section id="section664fb57da0b30" class="responsive-section">
 					<!-- Left Side Content -->

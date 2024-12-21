@@ -131,43 +131,80 @@
     <link rel="stylesheet" href="cssnew/style.css">
     <!-- CSS for Carousel Tabs -->
     <style>
-        .carousel-tabs {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+        /* General styling for tabs */
+.carousel-tabs {
+    margin: 20px;
+    padding-top:0;
+}
 
-        .carousel-nav {
-            display: flex;
-            justify-content: space-between;
-            /* Ensures even spacing between items */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-        }
+.carousel-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-        .carousel-nav .tab {
-            flex: 1;
-            /* Ensures that each tab takes up equal space */
-            text-align: center;
-            padding: 15px;
-            background-color: #A9A9A9;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 0 10px;
-            /* Space between tabs */
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+.carousel-nav .tab {
+    display: none; /* Hide tabs initially */
+    text-align: center;
+    padding: 10px;
+    background-color: #A9A9A9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: background-color 0.3s ease, opacity 0.5s ease;
+}
 
-        .carousel-nav .tab:hover {
-            background-color: #A9A9A9;
-        }
+/* Animation to fade in and slide up */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .carousel-nav .tab.active {
-            background-color: #A9A9A9;
-        }
+/* Applying animation to each tab one by one */
+.carousel-nav .tab.show {
+    display: block;
+    animation: fadeInSlideUp 0.5s ease forwards;
+}
+
+/* Add a delay for each tab */
+.carousel-nav .tab:nth-child(1) {
+    animation-delay: 0s;
+}
+.carousel-nav .tab:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.carousel-nav .tab:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Responsive design for small devices (Android, etc.) */
+@media only screen and (max-width: 768px) {
+    .carousel-nav .tab {
+        flex: 1;
+        /* Ensures that each tab takes up equal space */
+        text-align: center;
+        padding: 10px;
+        background-color: #A9A9A9;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0 10px;
+        /* Space between tabs */
+        border-radius: 5px;
+        height: 80px;
+    }
+}
+
     </style>
 
     <!-- Script to Activate Tabs -->
@@ -193,6 +230,20 @@
                 $('.carousel-nav .tab[data-slide="' + currentSlide + '"]').addClass('active');
             });
         });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.carousel-nav .tab');
+
+    // Loop through each tab and trigger the animation one by one
+    tabs.forEach((tab, index) => {
+        setTimeout(() => {
+            tab.classList.add('show');
+        }, index * 500); // Delay each tab's appearance by 500ms
+    });
+});
+
     </script>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <!-- <style>
