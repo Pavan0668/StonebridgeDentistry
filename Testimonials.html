@@ -12538,170 +12538,241 @@
             </div>
         </div> -->
 
-		<header class="mainHeadr btClear gutter" style="margin-bottom: 0; background-color: #A9A9A9;">
-			<div class="mainHeaderInne">
-				<div class="btLogoArea menuHolder btClear" style="background-color: #A9A9A9;">
-					<div class="port">
-						<!-- Hamburger Icon -->
-						<div class="btHorizontalMenuTrigger">
-							<button id="hamburger-icon" class="hamburger-menu" aria-label="Toggle navigation">
-								<span class="hamburger-line"></span>
-								<span class="hamburger-line"></span>
-								<span class="hamburger-line"></span>
-							</button>
-						</div>
-						<div class="logo">
-							<span>
-								<a href="index.html"><img class="btMainLogo" data-hw="1.8461538461538"
-										src="img/asset 0.png" alt="Allen"></a>
-							</span>
-						</div><!-- /logo -->
-						<div class="topBarInLogoArea" style="display: flex; align-items: center;">
-							<div class="topBarInLogoAreaCell" style="display: flex; align-items: center;">
-								<!-- Phone Icon and Contact Number -->
-								<div class="btIconWidgetIcon" style="display: inline-block; margin-right: 10px;">
-									<span class="fas fa-phone"
-										style="font-size: 25px;transform: rotateY(180deg);"></span>
-								</div>
-								<div class="btIconWidgetContent" style="display: inline-block; margin-right: 20px;">
-									<a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-										<span class="btIconWidgetTitle"
-											style="font-size: 16px; font-weight: bold;">(705) 422-2490</span>
-									</a>
-								</div>
-								<!-- Book Appointment Button -->
-								<a href="Contact-New.html" class="book-appointment-btn">Book Appointment</a>
-							</div>
-						</div>
-					</div><!-- /port -->
-				</div><!-- /menuHolder -->
-				<div class="btBelowLogoArea btClear" style="background-color: #f0f0f0;">
-					<div class="port">
-						<div class="menuPort">
-							<nav id="main-nav" class="menu">
-								<ul id="menu-primary-menu">
-									<li class="menu-item active"><a href="index.html">HOME</a></li>
-									<li class="menu-item"><a href="About-Us.html">ABOUT</a></li>
-									<li class="menu-item"><a href="Services.html">SERVICES</a></li>
-									<li class="menu-item"><a href="Team.html">OUR TEAM</a></li>
-									<li class="menu-item"><a href="Testimonials.html">TESTIMONIALS</a></li>
-									<li class="menu-item"><a href="Technology.html">OUR OFFICE</a></li>
-									<li class="menu-item"><a href="Contact-Us.html">CONTACT</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<header class="main-header" style="margin-bottom: 0; background-color: #A9A9A9;">
+            <div class="header-container" style="display: flex; justify-content: space-between; align-items: center;height: 60px;">
+                <!-- Logo Area -->
+                <div class="logo-area" style="display: flex; align-items: center;">
+                    <button id="hamburger-icon" class="hamburger-menu" aria-label="Toggle navigation">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <a href="index.html" class="logo" style="margin-left: 10px;">
+                        <img src="img/asset 0.png" alt="Logo" style="height: 60px;">
+                    </a>
+                </div>
+
+                <!-- Contact and Button -->
+                <div class="topBarInLogoArea" style="display: flex; align-items: center;">
+                    <div class="topBarInLogoAreaCell" style="display: flex; align-items: center;">
+                        <!-- Phone Icon and Contact Number -->
+                        <div class="btIconWidgetIcon" style="display: inline-block; margin-right: 10px;">
+                            <span class="fas fa-phone"
+                                style="font-size: 25px;transform: rotateY(180deg);color: #FFBD0D;"></span>
+                        </div>
+                        <div class="btIconWidgetContent" style="display: inline-block; margin-right: 20px;">
+                            <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                                <span class="btIconWidgetTitle"
+                                    style="font-size: 14px; font-weight: bold;color: #2C2D78;">(705) 422-2490</span>
+                            </a>
+                        </div>
+                        <!-- Book Appointment Button -->
+                        <a href="Contact-New.html" class="book-appointment-btn" style="height: 30px; font-size:12px; display: flex; justify-content: center; align-items: center;width: 150px;background-color: #2C2D78;color: #FFBD0D;margin-right: 20px;">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav class="navbar" id="main-nav" style="background-color: #5783B8;height: -100px;">
+                <ul class="navbar-menu" style="display: flex; justify-content: center; list-style: none; margin: 0; padding: 5px; gap: 30px;">
+                    <li class="menu-item"><a href="index.html">HOME</a></li>
+                    <li class="menu-item"><a href="About-Us.html">About</a></li>
+                    <li class="menu-item"><a href="Services.html">Services</a></li>
+                    <li class="menu-item"><a href="Team.html">Our Team</a></li>
+                    <li class="menu-item active"><a href="Testimonials.html">Testimonials</a></li>
+                    <li class="menu-item"><a href="Technology.html">Our Office</a></li>
+                    <li class="menu-item"><a href="Contact-Us.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- <hr/ style="width: 1000px;height: -10px;color: #00d084;"> -->
+        </header>
 
 
+<style>
+    /* General Styles */
+.navbar-header {
+    background-color: #A9A9A9;
+    padding: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 
-		<!-- CSS -->
-		<style>
-			/* General Styles */
-			.book-appointment-btn {
-				display: inline-block;
-				padding: 10px 20px;
-				background-color: #3A3A3A;
-				color: white;
-				text-decoration: none;
-				font-size: 16px;
-				font-weight: bold;
-				border-radius: 5px;
-				transition: background-color 0.3s ease;
-				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-			}
+}
 
-			/* Responsive Styles */
-			@media screen and (max-width: 768px) {
-				.btHorizontalMenuTrigger {
-					display: block;
-					position: absolute;
-					top: 15px;
-					left: 15px;
-					z-index: 1000;
-				}
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-				#hamburger-icon {
-					background: none;
-					border: none;
-					cursor: pointer;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-around;
-					height: 24px;
-					width: 30px;
-				}
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    min-height: 30px;
+    padding-left: 150px;
+}
 
-				.hamburger-line {
-					width: 30px;
-					height: 3px;
-					background-color: black;
-					border-radius: 5px;
-				}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Spacing between menu items */
+    padding: 0;
+    margin: 0;
+}
 
-				#main-nav {
-					display: none;
-					flex-direction: column;
-					background-color: #f0f0f0;
-					position: absolute;
-					top: 60px;
-					left: 0;
-					right: 0;
-					z-index: 999;
-					padding: 15px;
-				}
+.menu-item {
+    position: relative;
+   /* font-family:'Futura Std Condensed Light'; */
+}
 
-				#main-nav.active {
-					display: flex;
-				}
+.menu-item a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+}
 
-				#mainHeaderInne {
-					height: 120px;
-				}
+.menu-item.active a {
+    font-weight: bold;
+    color: #fff;
+    background-color: #2CB5E5;
+}
 
-				.menuPort ul {
-					flex-direction: column;
-					padding: 0;
-					list-style: none;
-				}
+.menu-item a:hover {
+    background-color: #2D2D79;
+    color: #fff;
+}
 
-				.menuPort ul li {
-					padding: 10px 0;
-					text-align: center;
-				}
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
 
-				.topBarInLogoArea {
-					flex-direction: column;
-					align-items: flex-end;
-					padding: 1px;
-				}
+    .navbar-menu {
+        flex-direction: column;
+        gap: 10px; /* Reduce spacing on smaller screens */
+    }
 
-				.logo {
-					align-items: flex-end;
-					margin-top: 60px;
-					margin-right: 150px;
-				}
+    .menu-item a {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
 
-				.book-appointment-btn {
-					margin: 15px auto;
-				}
-			}
-		</style>
+</style>
 
-		<!-- JavaScript -->
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const hamburger = document.getElementById("hamburger-icon");
-				const mainNav = document.getElementById("main-nav");
+        <!-- CSS -->
+        <style>
+            /* General Styles */
+            .book-appointment-btn {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #3A3A3A;
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
 
-				hamburger.addEventListener("click", function () {
-					mainNav.classList.toggle("active");
-				});
-			});
+            /* Responsive Styles */
+            @media screen and (max-width: 768px) {
+                .btHorizontalMenuTrigger {
+                    display: block;
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    z-index: 1000;
+                }
+                #carousel-ta
+                {
+                    display: none;
+                    visibility: hidden;
+                }
+                #hamburger-icon {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    height: 24px;
+                    width: 30px;
+                }
 
-		</script>
+                .hamburger-line {
+                    width: 30px;
+                    height: 3px;
+                    background-color: black;
+                    border-radius: 5px;
+                }
+
+                #main-nav {
+                    display: none;
+                    flex-direction: column;
+                    background-color: #f0f0f0;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    right: 0;
+                    z-index: 999;
+                    padding: 5px;
+
+                }
+
+                #main-nav.active {
+                    display: flex;
+                }
+
+                #mainHeaderInne{
+                    height: 100px;
+                }
+                .menuPort ul {
+                    flex-direction: column;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                .menuPort ul li {
+                    padding: 10px 0;
+                    text-align: center;
+                }
+
+                .topBarInLogoArea {
+                    flex-direction: column;
+                    align-items: flex-end;
+                    padding: 1px;
+                }
+                .logo{
+                    align-items: flex-end;
+                    margin-top: 40px;
+                    margin-right: 130px;
+                }
+
+                .book-appointment-btn {
+                    margin: 15px auto;
+                }
+            }
+        </style>
+
+        <!-- JavaScript -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hamburger = document.getElementById("hamburger-icon");
+                const mainNav = document.getElementById("main-nav");
+
+                hamburger.addEventListener("click", function () {
+                    mainNav.classList.toggle("active");
+                });
+            });
+
+        </script>
 
 		<div class="btContentWrap btClear">
 			<section
@@ -13616,318 +13687,296 @@
 			</div><!-- /contentHolder -->
 		</div><!-- /contentWrap -->
 
-		<div class="btSiteFooter">
-			<div class="bt_bb_wrapper">
-				<section id="bt_bb_section6657ed3319b61"
-					style="display: flex; justify-content: space-between; background-color: #f2f2f2; padding: 40px 0; flex-wrap: wrap;">
-					<div class="bt_bb_background_image_holder_wrapper">
-						<div class="bt_bb_background_image_holder btLazyLoadBackground bt_bb_parallax"
-							style="background-color: #F0F0F0; height: 100%; width: 100%;">
-						</div>
+		<footer class="footer">
+			<!-- Section 1 -->
+			<div class="footer-section" id="footer-section-1">
+				<h3 class="footer-heading">
+					<span style="color: #422774;">Stonebridge</span>
+					<span style="color: #FF793E;">Dentistry</span>
+				  </h3>
+				<p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
+				<div class="contact-info">
+					<div class="contact-item">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<a href="tel:(705)422-2490">(705) 422-2490</a>
 					</div>
-					<div class="bt_bb_port">
-						<div class="bt_bb_cell">
-							<div class="bt_bb_row_wrapper">
-								<div class="bt_bb_row bt_bb_column_gap_30" data-bt-override-class="{}">
-									<!-- Column 1 -->
-									<div class="bt_bb_column col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-										data-width="3" style="padding-left: 40px;">
-										<div class="bt_bb_column_content">
-											<header
-												class="bt_bb_headline bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-												style="--primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}">
-												<h6 class="bt_bb_headline_tag"><span
-														class="bt_bb_headline_content"><span><strong>Stonebridge</strong><b>Dentistry</b></span></span>
-												</h6>
-											</header>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_text" style="line-height: 1.875;">
-												<p>A team of dentists working to ensure you receive the best treatment.
-												</p>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_icon bt_bb_color_scheme_7 bt_bb_style_borderless bt_bb_size_xsmall bt_bb_shape_circle bt_bb_target_self bt_bb_align_inherit"
-												style="--primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}"><a href="tel:4152055550" target="_self"
-													title="(705) 422-2490" class="bt_bb_icon_holder"><i
-														class="fa fa-phone" aria-hidden="true"></i> <span>(705)
-														422-2490</span></a></div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_icon"
-												style="--primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}">
-												<a href="mailto:reception.Stonebridgedentistry@gmail.com" target="_self"
-													title="reception.Stonebridgedentistry@gmail.com"
-													onclick="this.textContent='reception.Stonebridgedentistry@gmail.com'; return true;">
-													<span><i class="fas fa-envelope"></i> Email Us</span>
-												</a>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_icon"
-												style="--primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}">
-												<a href="https://www.Stonebridgedentistry.ca/" target="_blank"
-													title="https://www.Stonebridgedentistry.ca/">
-													<span><i class="fas fa-globe"></i>Stonebridgedentistry.ca/</span>
-												</a>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-										</div>
-									</div>
-									<!-- Column 2 -->
-									<div class="bt_bb_column col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-										data-width="2" style="padding-left: -30px;">
-										<div class="bt_bb_column_content">
-											<header
-												class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-												style="--primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}">
-												<h6 class="bt_bb_headline_tag"><span
-														class="bt_bb_headline_content"><span>About</span></span></h6>
-											</header>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_custom_menu bt_bb_direction_vertical">
-												<div class="menu-footer-about-container">
-													<ul id="menu-footer-about" class="menu">
-														<li id="menu-item-452"
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452">
-															<a href="Team.html">Our Dental Team</a>
-														</li>
-														<li id="menu-item-1422"
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1422">
-															<a href="Testimonials.html">Testimonials</a>
-														</li>
-														<li id="menu-item-456"
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456">
-															<a href="Services.html">Dental Services</a>
-														</li>
-														<li id="menu-item-457"
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457">
-															<a href="About-Us.html">About</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-										</div>
-									</div>
-									<!-- Column 3 -->
-									<div class="bt_bb_column col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-										data-width="4" data-bt-override-class="{}">
-										<div class="bt_bb_column_content">
-											<header
-												class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-												style="--primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}">
-												<h6 class="bt_bb_headline_tag" style="padding-left: 110px;><span class="
-													bt_bb_headline_content"><span>Our Awards</span></span></h6>
-											</header>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_row_wrapper">
-												<div class="bt_bb_row_inner" data-bt-override-class="{}"
-													data-structure="12">
-													<div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_align_center bt_bb_vertical_align_top bt_bb_padding_normal"
-														data-width="12" data-bt-override-class="{}">
-														<div class="bt_bb_column_inner_content">
-															<div class="bt_bb_image bt_footer_awards bt_bb_shape_square bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_top bt_bb_content_exists"
-																data-bt-override-class="{}"><span><img loading="lazy"
-																		decoding="async" width="490" height="200"
-																		src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
-																		class="attachment-full size-full"
-																		alt="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
-																		data-full_image_src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
-																		title="footer-awards-new"
-																		srcset="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png 490w, https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new-320x131.png 320w"
-																		sizes="(max-width: 490px) 100vw, 490px"></span>
-																<div class="bt_bb_image_content">
-																	<div class="bt_bb_image_content_flex">
-																		<div class="bt_bb_image_content_inner">
-																			<div class="bt_bb_text"
-																				style="line-height: 1.875;">
-																				<p>Stonebridge is a multiple award
-																					winner</p>
-																			</div>
-																			<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-																				data-bt-override-class="null"></div>
-																			<header
-																				class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
-																				data-bt-override-class="{}">
-																				<h6 class="bt_bb_headline_tag"><span
-																						class="bt_bb_headline_content"><span
-																							style="color: #000;">Best
-																							Patient Care
-																							<strong><u>2017</u></strong></span></span>
-																				</h6>
-																			</header>
-																			<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-																				data-bt-override-class="null"></div>
-																			<header
-																				class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
-																				data-bt-override-class="{}">
-																				<h6 class="bt_bb_headline_tag"><span
-																						class="bt_bb_headline_content"><span
-																							style="color: #000;">Best
-																							Practice &amp; Team
-																							<strong><u>2016</u></strong></span></span>
-																				</h6>
-																			</header>
-																			<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_extra_small"
-																				data-bt-override-class="null"></div>
-																			<header
-																				class="bt_bb_headline bt_bb_dash_none bt_bb_size_extrasmall bt_bb_align_inherit bt_bb_dash_type_none"
-																				data-bt-override-class="{}">
-																				<h6 class="bt_bb_headline_tag"><span
-																						class="bt_bb_headline_content"><span
-																							style="color: #000;">Best
-																							Patient Care
-																							<strong><u>2014</u></strong></span></span>
-																				</h6>
-																			</header>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="bt_bb_column_inner_highlight"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-										</div>
-									</div>
-									<!-- Column 4 -->
-									<div class="bt_bb_column col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-										data-width="3" style="padding-left: 20px;">
-										<div class="bt_bb_column_content">
-											<header
-												class="bt_bb_headline bt_bb_font_weight_bold bt_bb_color_scheme_7 bt_bb_dash_bottom bt_bb_size_small bt_bb_align_inherit bt_bb_dash_type_none"
-												style="; --primary-color:#422774; --secondary-color:#191919;"
-												data-bt-override-class="{}">
-												<h6 class="bt_bb_headline_tag"><span
-														class="bt_bb_headline_content"><span>Social
-															Networks</span></span></h6>
-											</header>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_text">
-												<p>Visit Stonebridge on these social links and connect with us. Make
-													sure to follow our accounts for regular updates.</p>
-											</div><br>
-											<div class="social-icons">
-												<a href="https://www.facebook.com/boldthemes/" target="_blank"
-													class="social-icon"
-													style="--primary-color:#ffffff; --secondary-color:#422774;">
-													<i class="fab fa-facebook-f"></i>
-												</a>
-												<a href="https://twitter.com/bold_themes" target="_blank"
-													class="social-icon"
-													style="--primary-color:#ffffff; --secondary-color:#422774;">
-													<i class="fab fa-twitter"></i>
-												</a>
-												<a href="#" target="_blank" class="social-icon"
-													style="--primary-color:#ffffff; --secondary-color:#422774;">
-													<i class="fab fa-linkedin-in"></i>
-												</a>
-												<a href="#" target="_blank" class="social-icon"
-													style="--primary-color:#ffffff; --secondary-color:#422774;">
-													<i class="fab fa-pinterest"></i>
-												</a>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="contact-item">
+						<i class="fas fa-envelope"></i>
+						<a href="mailto:info@stonebridgedentistry.ca">Email Us</a>
 					</div>
-				</section>
-				<section id="bt_bb_section6657ed331b789"
-					class="bt_bb_section bt_bb_color_scheme_1 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top"
-					style="background: transparent;; --section-primary-color:#ffffff; --section-secondary-color:#191919;;background-color:#A9A9A9;"
-					data-bt-override-class="null">
-					<div class="bt_bb_port">
-						<div class="bt_bb_cell">
-							<!-- <div class="bt_bb_cell_inner"> -->
-							<div class="bt_bb_row_wrapper">
-								<div class="bt_bb_row " data-bt-override-class="{}">
-									<div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal"
-										data-width="4" data-bt-override-class="{}">
-										<div class="bt_bb_column_content">
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_text">
-
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-										</div>
-									</div>
-									<div class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_top bt_bb_align_right bt_bb_padding_normal"
-										data-width="8" data-bt-override-class="{}">
-										<div class="bt_bb_column_content">
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-											<div class="bt_bb_custom_menu btBottomFooterMenu bt_bb_direction_vertical">
-												<div class="menu-footer-menu-container">
-													<ul id="menu-footer-menu" class="menu">
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-445">
-															<a href="About-Us.html">ABOUT
-																US</a>
-														</li>
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-446">
-															<a href="Services.html">SERVICES</a>
-														</li>
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447">
-															<a href="Testimonials.html">TESTIMONIALS</a>
-														</li>
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448">
-															<a href="Team.html">OUR TEAM</a>
-														</li>
-														<li
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449">
-															<a href="Contact-Us.html">CONTACT US</a>
-														</li>
-														<!-- <li
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
-																<a
-																	href="Pricing-Plan.html">PRICING</a>
-															</li> -->
-														<li
-															class="bt_bb_back_to_top menu-item menu-item-type-custom menu-item-object-custom menu-item-451">
-															<a href="#top">BACK TO TOP</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_extra_small bt_bb_bottom_spacing_small"
-												data-bt-override-class="null"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- </div> -->
-						</div>
-					</div><!-- port -->
-				</section>
+					<div class="contact-item">
+						<i class="fas fa-globe"></i>
+						<a href="https://stonebridgedentistry.ca/" target="_blank">Stonebridgedentistry.ca</a>
+					</div>
+				</div>
 			</div>
-			<!-- <footer class="btLightSkin"></footer> -->
-		</div><!-- /btSiteFooter -->
+		
+			<!-- Section 2 -->
+			<div class="footer-section" id="footer-section-2">
+				<h3 class="footer-heading">About</h3>
+				<ul class="footer-nav">
+					<li><a href="Team.html">Our Dental Team</a></li>
+					<li><a href="Testimonials.html">Testimonials</a></li>
+					<li><a href="Services.html">Dental Services</a></li>
+					<li><a href="About-Us.html">About</a></li>
+				</ul>
+			</div>
+		
+			<!-- Section 3 -->
+			<div class="footer-section" id="footer-section-3">
+				<h3 class="footer-heading">Our Awards</h3>
+				<div class="image-container">
+					<img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png" alt="Sample Image">
+					<div class="image-text">
+						Stonebridge is a multiple award winner<br>
+						<strong>Best Patient Care 2017</strong><br>
+						<strong>Best Practice & Team 2016</strong><br>
+						<strong>Best Patient Care 2014</strong>
+					</div>
+				</div>
+			</div>
+		
+			<!-- Section 4 -->
+			<div class="footer-section" id="footer-section-4">
+				
+				<h3 class="footer-heading">Social Networks</h3>
+				<p class="footer-subtext">
+					Visit Stonebridge on these social links and connect with us. 
+					Make sure to follow our accounts for regular updates.
+				</p>
+				<div class="social-iconss">
+					<a href="#" class="fab fa-facebook-f"></a>
+					<a href="#" class="fab fa-twitter"></a>
+					<a href="#" class="fab fa-instagram"></a>
+					<a href="#" class="fab fa-linkedin-in"></a>
+				</div>
+			</div>
+		</footer>
+		
+		<div class="footer-navigation">
+			<div class="menu-footer-menu-container">
+				<ul id="menu-footer-menu" class="menu">
+					<li class="menu-items"><a href="About-Us.html">ABOUT US</a></li>
+					<li class="menu-items"><a href="Services.html">SERVICES</a></li>
+					<li class="menu-items"><a href="Testimonials.html">TESTIMONIALS</a></li>
+					<li class="menu-items"><a href="Team.html">OUR TEAM</a></li>
+					<li class="menu-items"><a href="Contact-Us.html">CONTACT US</a></li>
+					<li class="menu-items bt_bb_back_to_top"><a href="#top">BACK TO TOP</a></li>
+				</ul>
+			</div>
+		</div>	
+	
+		<style>
+	
+			/* Footer Navigation Strip */
+	.footer-navigation {
+		background-color: #A9A9A9; /* Footer background color */
+		color: #ffffff;
+		padding: 10px 20px;
+		position: relative;
+	}
+	
+	.menu-footer-menu-container {
+		display: flex;
+		justify-content: flex-end; /* Align navigation to the right */
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	
+	.menu {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap; /* Ensure responsive wrapping */
+		gap: 15px;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.menu-items {
+		font-size: 14px;
+	}
+	
+	.menu-items a {
+		color: #ffffff;
+		text-decoration: none;
+		transition: color 0.3s;
+	}
+	
+	.menu-items a:hover {
+		color: #ffa500; /* Light orange hover effect */
+	}
+	
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.menu-footer-menu-container {
+			justify-content: center; /* Center align for smaller devices */
+		}
+	
+		.menu {
+			gap: 10px;
+			font-size: 12px;
+		}
+	}
+	
+	@media (max-width: 480px) {
+		.menu {
+			flex-direction: column; /* Stack items vertically on small screens */
+			align-items: center;
+		}
+	
+		.menu-item {
+			margin-bottom: 5px;
+		}
+	}
+	
+		 .footer {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: #f4f4f4;
+		padding: 20px;
+		text-align: center;
+	}
+	
+	.footer-section {
+		flex: 1 1 25%;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+	
+	.footer-heading {
+		font-size: 18px;
+		font-weight: bold;
+		position: relative;
+		color: #422774;
+	}
+	
+	.footer-heading::after {
+		content: "";
+		display: block;
+		width: 50px;
+		height: 2px;
+		background-color: #FF793E;
+		margin: 8px auto;
+	}
+	
+	.footer-subtext {
+		margin: 10px 0;
+		font-size: 14px;
+	}
+	
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	
+	.contact-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 14px;
+	}
+	
+	.contact-item a {
+		color: #000;
+		text-decoration: none;
+	}
+	
+	.contact-item a:hover {
+		text-decoration: underline;
+	}
+	
+	.footer-nav {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.footer-nav li {
+		margin: 5px 0;
+	}
+	
+	.footer-nav a {
+		color: #000;
+		text-decoration: none;
+	}
+	
+	.footer-nav a:hover {
+		text-decoration: underline;
+		color: #ffa500;
+	}
+	
+	.image-container {
+		position: relative;
+		text-align: center;
+	}
+	
+	.image-container img {
+		max-width: 280px;
+		height: 200px;
+	}
+	
+	.image-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: black;
+		background-color: F4F4F4;
+		padding: 10px;
+		border-radius: 5px;
+		font-size: 13px;
+		text-align: center;
+	}
+	
+	/* .logo {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: #422774;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 10px;
+	}
+	
+	.logo i {
+		color: #fff;
+		font-size: 24px;
+	} */
+	
+	.social-iconss {
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+	}
+	
+	.social-iconss a {
+		color: #422774;
+		font-size: 18px;
+		text-decoration: none;
+	}
+	
+	.social-iconss a:hover {
+		color: #ffa500;
+	}
+	
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.footer-section {
+			flex: 1 1 100%;
+		}
+	
+		.contact-info {
+			align-items: center;
+		}
+	
+		.image-text {
+			font-size: 12px;
+		}
+	}
+	
+		</style>
+		<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
 

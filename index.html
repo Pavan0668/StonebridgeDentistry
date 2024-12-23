@@ -132,79 +132,82 @@
     <!-- CSS for Carousel Tabs -->
     <style>
         /* General styling for tabs */
-.carousel-tabs {
-    margin: 20px;
-    padding-top:0;
-}
+        .carousel-tabs {
+            margin: 20px;
+            padding-top: 0;
+        }
 
-.carousel-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+        .carousel-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-.carousel-nav .tab {
-    display: none; /* Hide tabs initially */
-    text-align: center;
-    padding: 10px;
-    background-color: #A9A9A9;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 5px;
-    border-radius: 5px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: background-color 0.3s ease, opacity 0.5s ease;
-}
+        .carousel-nav .tab {
+            display: none;
+            /* Hide tabs initially */
+            text-align: center;
+            padding: 10px;
+            background-color: #A9A9A9;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: background-color 0.3s ease, opacity 0.5s ease;
+        }
 
-/* Animation to fade in and slide up */
-@keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Animation to fade in and slide up */
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-/* Applying animation to each tab one by one */
-.carousel-nav .tab.show {
-    display: block;
-    animation: fadeInSlideUp 0.5s ease forwards;
-}
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Add a delay for each tab */
-.carousel-nav .tab:nth-child(1) {
-    animation-delay: 0s;
-}
-.carousel-nav .tab:nth-child(2) {
-    animation-delay: 0.5s;
-}
-.carousel-nav .tab:nth-child(3) {
-    animation-delay: 1s;
-}
+        /* Applying animation to each tab one by one */
+        .carousel-nav .tab.show {
+            display: block;
+            animation: fadeInSlideUp 0.5s ease forwards;
+        }
 
-/* Responsive design for small devices (Android, etc.) */
-@media only screen and (max-width: 768px) {
-    .carousel-nav .tab {
-        flex: 1;
-        /* Ensures that each tab takes up equal space */
-        text-align: center;
-        padding: 10px;
-        background-color: #A9A9A9;
-        color: white;
-        font-size: 12px;
-        font-weight: bold;
-        margin: 0 10px;
-        /* Space between tabs */
-        border-radius: 5px;
-        height: 80px;
-    }
-}
+        /* Add a delay for each tab */
+        .carousel-nav .tab:nth-child(1) {
+            animation-delay: 0s;
+        }
 
+        .carousel-nav .tab:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .carousel-nav .tab:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        /* Responsive design for small devices (Android, etc.) */
+        @media only screen and (max-width: 768px) {
+            .carousel-nav .tab {
+                flex: 1;
+                /* Ensures that each tab takes up equal space */
+                text-align: center;
+                padding: 10px;
+                background-color: #A9A9A9;
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+                margin: 0 10px;
+                /* Space between tabs */
+                border-radius: 5px;
+                height: 80px;
+            }
+        }
     </style>
 
     <!-- Script to Activate Tabs -->
@@ -234,15 +237,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-    const tabs = document.querySelectorAll('.carousel-nav .tab');
+            const tabs = document.querySelectorAll('.carousel-nav .tab');
 
-    // Loop through each tab and trigger the animation one by one
-    tabs.forEach((tab, index) => {
-        setTimeout(() => {
-            tab.classList.add('show');
-        }, index * 500); // Delay each tab's appearance by 500ms
-    });
-});
+            // Loop through each tab and trigger the animation one by one
+            tabs.forEach((tab, index) => {
+                setTimeout(() => {
+                    tab.classList.add('show');
+                }, index * 500); // Delay each tab's appearance by 500ms
+            });
+        });
 
     </script>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
@@ -12503,67 +12506,71 @@
     <script>window.bt_bb_custom_elements = false;</script>
     <style>
         /* Loader Container Styling */
-.loader-containers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: #fff; /* Background color for the loader */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-}
+        .loader-containers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #fff;
+            /* Background color for the loader */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
 
-/* Bouncing Dots Animation */
-.bouncing-dots {
-    display: flex;
-    justify-content: space-between;
-    width: 60px;
-}
+        /* Bouncing Dots Animation */
+        .bouncing-dots {
+            display: flex;
+            justify-content: space-between;
+            width: 60px;
+        }
 
-.dots {
-    width: 15px;
-    height: 15px;
-    background-color: #FF5C35;
-    border-radius: 50%;
-    animation: bounce 1.5s infinite;
-}
+        .dots {
+            width: 15px;
+            height: 15px;
+            background-color: #FF5C35;
+            border-radius: 50%;
+            animation: bounce 1.5s infinite;
+        }
 
-.dots:nth-child(1) {
-    animation-delay: 0s;
-}
+        .dots:nth-child(1) {
+            animation-delay: 0s;
+        }
 
-.dots:nth-child(2) {
-    animation-delay: 0.3s;
-}
+        .dots:nth-child(2) {
+            animation-delay: 0.3s;
+        }
 
-.dots:nth-child(3) {
-    animation-delay: 0.6s;
-}
+        .dots:nth-child(3) {
+            animation-delay: 0.6s;
+        }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
     </style>
 
     <script>
         // Wait for the page to fully load
-window.addEventListener('load', function () {
-    // Hide the loader
-    const loader = document.getElementById('loader');
-    loader.style.display = 'none';
+        window.addEventListener('load', function () {
+            // Hide the loader
+            const loader = document.getElementById('loader');
+            loader.style.display = 'none';
 
-    // Show the content
-    const content = document.querySelector('.content');
-    content.style.visibility = 'visible';
-});
+            // Show the content
+            const content = document.querySelector('.content');
+            content.style.visibility = 'visible';
+        });
 
     </script>
 </head>
@@ -12588,10 +12595,10 @@ window.addEventListener('load', function () {
                 <div class="dots"></div>
             </div>
         </div>
-        
-        
-        
-        
+
+
+
+
         <!-- <div class="btVerticalHeaderTop">
             <div class="btVerticalMenuTrigger">
                 &nbsp;
@@ -12610,64 +12617,137 @@ window.addEventListener('load', function () {
             </div>
         </div> -->
 
-        <header class="mainHeadr btClear gutter" style="margin-bottom: 0; background-color: #A9A9A9;">
-            <div class="mainHeaderInne">
-                <div class="btLogoArea menuHolder btClear" style="background-color: #A9A9A9;">
-                    <div class="port">
-                        <!-- Hamburger Icon -->
-                        <div class="btHorizontalMenuTrigger">
-                            <button id="hamburger-icon" class="hamburger-menu" aria-label="Toggle navigation">
-                                <span class="hamburger-line"></span>
-                                <span class="hamburger-line"></span>
-                                <span class="hamburger-line"></span>
-                            </button>
+        <header class="main-header" style="margin-bottom: 0; background-color: #A9A9A9;">
+            <div class="header-container"
+                style="display: flex; justify-content: space-between; align-items: center;height: 60px;">
+                <!-- Logo Area -->
+                <div class="logo-area" style="display: flex; align-items: center;">
+                    <button id="hamburger-icon" class="hamburger-menu" aria-label="Toggle navigation">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <a href="index.html" class="logo" style="margin-left: 10px;">
+                        <img src="img/asset 0.png" alt="Logo" style="height: 60px;">
+                    </a>
+                </div>
+
+                <!-- Contact and Button -->
+                <div class="topBarInLogoArea" style="display: flex; align-items: center;">
+                    <div class="topBarInLogoAreaCell" style="display: flex; align-items: center;">
+                        <!-- Phone Icon and Contact Number -->
+                        <div class="btIconWidgetIcon" style="display: inline-block; margin-right: 10px;">
+                            <span class="fas fa-phone"
+                                style="font-size: 25px;transform: rotateY(180deg);color: #FFBD0D;"></span>
                         </div>
-                        <div class="logo">
-                            <span>
-                                <a href="index.html"><img class="btMainLogo" data-hw="1.8461538461538"
-                                        src="img/asset 0.png" alt="Allen"></a>
-                            </span>
-                        </div><!-- /logo -->
-                        <div class="topBarInLogoArea" style="display: flex; align-items: center;">
-                            <div class="topBarInLogoAreaCell" style="display: flex; align-items: center;">
-                                <!-- Phone Icon and Contact Number -->
-                                <div class="btIconWidgetIcon" style="display: inline-block; margin-right: 10px;">
-                                    <span class="fas fa-phone"
-                                        style="font-size: 25px;transform: rotateY(180deg);"></span>
-                                </div>
-                                <div class="btIconWidgetContent" style="display: inline-block; margin-right: 20px;">
-                                    <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-                                        <span class="btIconWidgetTitle"
-                                            style="font-size: 16px; font-weight: bold;">(705) 422-2490</span>
-                                    </a>
-                                </div>
-                                <!-- Book Appointment Button -->
-                                <a href="Contact-New.html" class="book-appointment-btn">Book Appointment</a>
-                            </div>
+                        <div class="btIconWidgetContent" style="display: inline-block; margin-right: 20px;">
+                            <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                                <span class="btIconWidgetTitle"
+                                    style="font-size: 14px; font-weight: bold;color: #2C2D78;">(705) 422-2490</span>
+                            </a>
                         </div>
-                    </div><!-- /port -->
-                </div><!-- /menuHolder -->
-                <div class="btBelowLogoArea btClear" style="background-color: #f0f0f0;">
-                    <div class="port">
-                        <div class="menuPort">
-                            <nav id="main-nav" class="menu">
-                                <ul id="menu-primary-menu">
-                                    <li class="menu-item active"><a href="index.html">HOME</a></li>
-                                    <li class="menu-item"><a href="About-Us.html">ABOUT</a></li>
-                                    <li class="menu-item"><a href="Services.html">SERVICES</a></li>
-                                    <li class="menu-item"><a href="Team.html">OUR TEAM</a></li>
-                                    <li class="menu-item"><a href="Testimonials.html">TESTIMONIALS</a></li>
-                                    <li class="menu-item"><a href="Technology.html">OUR OFFICE</a></li>
-                                    <li class="menu-item"><a href="Contact-Us.html">CONTACT</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                        <!-- Book Appointment Button -->
+                        <a href="Contact-New.html" class="book-appointment-btn"
+                            style="height: 30px; font-size:12px; display: flex; justify-content: center; align-items: center;width: 150px;background-color: #2C2D78;color: #FFBD0D;margin-right: 20px;">Book
+                            Appointment</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Navigation Bar -->
+            <nav class="navbar" id="main-nav" style="background-color: #5783B8;height: -100px;">
+                <ul class="navbar-menu"
+                    style="display: flex; justify-content: center; list-style: none; margin: 0; padding: 5px; gap: 30px;">
+                    <li class="menu-item active"><a href="index.html">HOME</a></li>
+                    <li class="menu-item"><a href="About-Us.html">About</a></li>
+                    <li class="menu-item"><a href="Services.html">Services</a></li>
+                    <li class="menu-item"><a href="Team.html">Our Team</a></li>
+                    <li class="menu-item"><a href="Testimonials.html">Testimonials</a></li>
+                    <li class="menu-item"><a href="Technology.html">Our Office</a></li>
+                    <li class="menu-item"><a href="Contact-Us.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- <hr/ style="width: 1000px;height: -10px;color: #00d084;"> -->
         </header>
 
 
+        <style>
+            /* General Styles */
+            .navbar-header {
+                background-color: #A9A9A9;
+                padding: 0;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+            }
+
+            .navbar-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: left;
+                align-items: left;
+                min-height: 30px;
+                padding-left: 150px;
+            }
+
+            .navbar-menu {
+                list-style: none;
+                display: flex;
+                gap: 30px;
+                /* Spacing between menu items */
+                padding: 0;
+                margin: 0;
+            }
+
+            .menu-item {
+                position: relative;
+                /* font-family:'Futura Std Condensed Light'; */
+            }
+
+            .menu-item a {
+                text-decoration: none;
+                font-size: 12px;
+                color: #333;
+                padding: 5px 10px;
+                border-radius: 5px;
+                background-color: white;
+            }
+
+            .menu-item.active a {
+                font-weight: bold;
+                color: #fff;
+                background-color: #2CB5E5;
+            }
+
+            .menu-item a:hover {
+                background-color: #2D2D79;
+                color: #fff;
+            }
+
+            /* Media Queries */
+            @media screen and (max-width: 768px) {
+                .navbar {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 10px 0;
+                }
+
+                .navbar-menu {
+                    flex-direction: column;
+                    gap: 10px;
+                    /* Reduce spacing on smaller screens */
+                }
+
+                .menu-item a {
+                    padding: 10px 20px;
+                    font-size: 12px;
+                }
+            }
+        </style>
 
         <!-- CSS -->
         <style>
@@ -12693,6 +12773,11 @@ window.addEventListener('load', function () {
                     top: 15px;
                     left: 15px;
                     z-index: 1000;
+                }
+
+                #carousel-ta {
+                    display: none;
+                    visibility: hidden;
                 }
 
                 #hamburger-icon {
@@ -12722,16 +12807,18 @@ window.addEventListener('load', function () {
                     left: 0;
                     right: 0;
                     z-index: 999;
-                    padding: 15px;
+                    padding: 5px;
+
                 }
 
                 #main-nav.active {
                     display: flex;
                 }
 
-                #mainHeaderInne{
-                    height: 120px;
+                #mainHeaderInne {
+                    height: 100px;
                 }
+
                 .menuPort ul {
                     flex-direction: column;
                     padding: 0;
@@ -12748,10 +12835,11 @@ window.addEventListener('load', function () {
                     align-items: flex-end;
                     padding: 1px;
                 }
-                .logo{
+
+                .logo {
                     align-items: flex-end;
-                    margin-top: 60px;
-                    margin-right: 150px;
+                    margin-top: 40px;
+                    margin-right: 130px;
                 }
 
                 .book-appointment-btn {
@@ -12774,8 +12862,28 @@ window.addEventListener('load', function () {
         </script>
 
         <div class="btContentWrap btClear" style="margin-top: 0;">
+
+            <div class="carousel-tabs" id="carousel-ta"
+                style="padding-top: 0;padding-bottom: 0;margin-top: -20px;padding-top: -20px;padding-bottom: -30px;margin-bottom: -30px;">
+                <ul class="carousel-nav">
+                    <li class="tab active" data-slide="0"
+                        style="font-size: 12px;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
+                        Accepting New
+                        Patients</li>
+                    <li class="tab" data-slide="1"
+                        style="font-size: 12px;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
+                        Direct Billing to
+                        Insurance</li>
+                    <li class="tab" data-slide="2"
+                        style="font-size: 12px;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
+                        Accepting CDCP Patients
+                    </li>
+                </ul>
+            </div>
             <div class="btContentHolder">
+
                 <div class="btContent">
+
                     <section id="bt_bb_section6657ed330fe19"
                         class="bt_bb_section bt_bb_layout_wide bt_bb_vertical_align_top" data-bt-override-class="null">
                         <div class="bt_bb_port">
@@ -12790,16 +12898,7 @@ window.addEventListener('load', function () {
                                                         class="bt_bb_content_slider bt_bb_content_slider_95994 bt_bb_gap_no_gap bt_bb_arrows_size_no_arrows bt_bb_arrows_style_transparent_accent bt_bb_show_dots_right bt_bb_dots_style_accent_dot bt_bb_show_paging_as_square bt_bb_height_keep-height bt_bb_animation_fade bt_bb_animation_fade animate">
                                                         <!-- Navigation Tabs --><br />
                                                         <!-- Navigation Tabs -->
-                                                        <div class="carousel-tabs">
-                                                            <ul class="carousel-nav">
-                                                                <li class="tab active" data-slide="0">Accepting New
-                                                                    Patients</li>
-                                                                <li class="tab" data-slide="1">Direct Billing to
-                                                                    Insurance</li>
-                                                                <li class="tab" data-slide="2">Accepting CDCP Patients
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+
                                                         <div class="slick-slider fade"
                                                             data-slick='{ "lazyLoad": "progressive", "cssEase": "ease-out", "speed": "600", "accessibility": false, "fade": true, "prevArrow": "", "nextArrow": "", "dots": true,"autoplay": true, "autoplaySpeed": 4500,"pauseOnHover": false}'>
                                                             <div class="bt_bb_content_slider_item bt_bb_column_background_image bt_bb_background_overlay_light_solid bt_bb_content_slider_item_responsive_overlay"
@@ -13500,29 +13599,30 @@ window.addEventListener('load', function () {
                             <div class="left-side-background">
                                 <div class="appointment-box">
                                     <h3 class="appointment-title">Book Appointment</h3>
-                    
+
                                     <!-- Call Us button -->
                                     <div class="call-button">
                                         <a href="tel:+17054222490" class="buttons call-us" style="color: white;">
                                             <i class="fas fa-phone"></i> (705) 422-2490
                                         </a>
                                     </div>
-                    
+
                                     <!-- Email Us button -->
                                     <div class="email-button">
-                                        <a href="mailto:reception.Stonebridgedentistry@gmail.com" class="buttons email-us" style="color: white;"> 
+                                        <a href="mailto:reception.Stonebridgedentistry@gmail.com"
+                                            class="buttons email-us" style="color: white;">
                                             <i class="fas fa-envelope"></i> reception.Stonebridgedentistry@gmail.com
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    
+
                         <!-- Right Side Contact Form -->
                         <div class="right-side-content">
                             <form class="contact-form">
                                 <h2 class="form-title">Contact Us</h2>
-                    
+
                                 <!-- First and Last Name Fields -->
                                 <div class="name-fields">
                                     <div class="form-field">
@@ -13534,25 +13634,25 @@ window.addEventListener('load', function () {
                                         <input type="text" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
-                    
+
                                 <!-- Email Field -->
                                 <div class="form-field">
                                     <label for="email">Email *</label>
                                     <input type="email" id="email" name="email" required>
                                 </div>
-                    
+
                                 <!-- Phone Field -->
                                 <div class="form-field">
                                     <label for="phone">Phone</label>
                                     <input type="tel" id="phone" name="phone">
                                 </div>
-                    
+
                                 <!-- Message Field -->
                                 <div class="form-field">
                                     <label for="message">Write a Message</label>
                                     <textarea id="message" name="message" rows="4"></textarea>
                                 </div>
-                    
+
                                 <!-- Submit Button -->
                                 <button type="submit" class="submit-button">
                                     Submit
@@ -13560,231 +13660,241 @@ window.addEventListener('load', function () {
                             </form>
                         </div>
                     </section>
-                    
-                               
-                               <!-- Media Queries for Mobile -->
-                               <style>
-                                 @media only screen and (max-width: 767px) {
-                                   #bt_bb_section664fb57da0b30 {
-                                     flex-direction: column; /* Stack items vertically on small screens */
-                                     height: auto;
-                                   }
-                                   .bt_bb_section664fb57da0b30 > div {
-                                     width: 100%; /* Make sure both columns are full width on mobile */
-                                     padding: 15px;
-                                   }
-                                   .bt_bb_section664fb57da0b30 > div:first-child {
-                                     background-image: none; /* Remove background blur on mobile for better readability */
-                                   }
-                                   .bt_bb_section664fb57da0b30 > div:last-child {
-                                     background-image: none; /* Remove background blur on mobile for better readability */
-                                   }
-                                   form {
-                                     width: 90%; /* Adjust form width for mobile */
-                                   }
-                                   .bt_bb_column {
-                                     width: 100%; /* Ensure columns take up full width */
-                                   }
-                                 }
-                               </style>
-                               
-                               <style>
+
+
+                    <!-- Media Queries for Mobile -->
+                    <style>
+                        @media only screen and (max-width: 767px) {
+                            #bt_bb_section664fb57da0b30 {
+                                flex-direction: column;
+                                /* Stack items vertically on small screens */
+                                height: auto;
+                            }
+
+                            .bt_bb_section664fb57da0b30>div {
+                                width: 100%;
+                                /* Make sure both columns are full width on mobile */
+                                padding: 15px;
+                            }
+
+                            .bt_bb_section664fb57da0b30>div:first-child {
+                                background-image: none;
+                                /* Remove background blur on mobile for better readability */
+                            }
+
+                            .bt_bb_section664fb57da0b30>div:last-child {
+                                background-image: none;
+                                /* Remove background blur on mobile for better readability */
+                            }
+
+                            form {
+                                width: 90%;
+                                /* Adjust form width for mobile */
+                            }
+
+                            .bt_bb_column {
+                                width: 100%;
+                                /* Ensure columns take up full width */
+                            }
+                        }
+                    </style>
+
+                    <style>
                         /* General Styling */
-                    * {
-                        margin: 0;
-                        padding: 0;
-                        box-sizing: border-box;
-                    }
-                    
-                    body {
-                        font-family: Arial, sans-serif;
-                    }
-                    
-                    /* Section Styles */
-                    .responsive-section {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        height: 120vh;
-                        background-color: #A9A9A9;
-                        padding: 0;
-                        
-                    }
-                    
-                    /* Left Side Content */
-                    .left-side-content {
-                        flex: 1;
-                        padding: 0;
-                        height: 120vh;
-                    }
-                    
-                    .left-side-background {
-                        background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
-                        background-size: cover;
-                        background-position: center;
-                        height: 120vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
-                    }
-                    
-                    .appointment-box {
-                        background-color: rgba(255, 255, 255, 0.8);
-                        padding: 20px;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        text-align: center;
-                        width: 500px;
-                    }
-                    
-                    .appointment-title {
-                        font-size: 24px;
-                        color: #000;
-                    }
-                    
-                    /* Button Styles */
-						.buttons {
-							display: inline-block;
-							padding: 10px 20px;
-							background-color: #2CB5E5;
-							color: white;
-							/* Ensures the text is always white */
-							text-decoration: none;
-							font-size: 18px;
-							font-weight: bold;
-							border-radius: 5px;
-							transition: background-color 0.3s ease;
-							width: 100%;
-							text-align: center;
-							box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-							margin-bottom: 15px;
-							/* Normal gap between buttons */
-							white-space: nowrap;
-							/* Prevent text from wrapping */
-						}
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
 
-						/* Call Us Button */
-						.call-us {
-							margin-bottom: 15px;
-							/* Adds space below the call button */
-						}
+                        body {
+                            font-family: Arial, sans-serif;
+                        }
 
-						/* Email Us Button */
-						.email-us {
-							margin-bottom: 15px;
-							/* Adds space below the email button */
-							white-space: nowrap;
-							/* Ensures the email address fits inside the button */
-						}
-                    
-                    .button i {
-                        margin-right: 10px;
-                    }
-                    
-                    /* Right Side Contact Form */
-                    .right-side-content {
-                        flex: 1;
-                        padding: 10px;
-                        background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
-                        background-size: cover;
-                        background-position: center;
-                        filter: blur(-12px);
-                        position: relative;
-                        height: 120vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    
-                    .contact-form {
-                        background-color: rgba(255, 255, 255, 0.9);
-                        padding: 30px;
-                        border: 10px solid #f7c594;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        font-family: 'Arial', sans-serif;
-                        width: 500px;
-                    }
-                    
-                    .form-title {
-                        font-size: 24px;
-                        color: #003478;
-                        padding-bottom: 10px;
-                        padding-top: 10px;
-                        text-align: center;
-                    }
-                    
-                    .form-field {
-                        margin-bottom: 20px;
-                    }
-                    
-                    .form-field label {
-                        display: block;
-                        font-size: 14px;
-                        color: #003478;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .form-field input,
-                    .form-field textarea {
-                        width: 100%;
-                        border: none;
-                        border-bottom: 2px solid #003478;
-                        padding: 5px 0;
-                        outline: none;
-                        font-size: 0.850rem;
-                    }
-                    
-                    /* Button Styles */
-                    .submit-button {
-                        background-color: #003478;
-                        color: #ffffff;
-                        border: none;
-                        padding: 10px 20px;
-                        font-size: 16px;
-                        cursor: pointer;
-                        text-align: center;
-                        width: 100%;
-                        border-radius: 5px;
-                        transition: background-color 0.3s ease;
-                    }
-                    
-                    /* Responsive Design */
-                    @media (max-width: 768px) {
+                        /* Section Styles */
                         .responsive-section {
-                            flex-direction: column;
-                            height: auto;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            height: 120vh;
+                            background-color: #A9A9A9;
+                            padding: 0;
+
                         }
-                    
-                        .left-side-background,
-                        .right-side-content {
-                            height: auto;
+
+                        /* Left Side Content */
+                        .left-side-content {
+                            flex: 1;
+                            padding: 0;
+                            height: 120vh;
                         }
-                    
-                        .appointment-box,
-                        .contact-form {
-                            width: 90%;
-                            margin: 10px;
+
+                        .left-side-background {
+                            background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
+                            background-size: cover;
+                            background-position: center;
+                            height: 120vh;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
                         }
-                    
-                        .name-fields {
-                            flex-direction: column;
+
+                        .appointment-box {
+                            background-color: rgba(255, 255, 255, 0.8);
+                            padding: 20px;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            text-align: center;
+                            width: 500px;
                         }
-                    
-                        .form-field {
-                            width: 100%;
+
+                        .appointment-title {
+                            font-size: 24px;
+                            color: #000;
                         }
-                    
+
+                        /* Button Styles */
                         .buttons {
-                            font-size: 12px;
+                            display: inline-block;
+                            padding: 10px 20px;
+                            background-color: #2CB5E5;
+                            color: white;
+                            /* Ensures the text is always white */
+                            text-decoration: none;
+                            font-size: 18px;
+                            font-weight: bold;
+                            border-radius: 5px;
+                            transition: background-color 0.3s ease;
+                            width: 100%;
+                            text-align: center;
+                            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                            margin-bottom: 15px;
+                            /* Normal gap between buttons */
+                            white-space: nowrap;
+                            /* Prevent text from wrapping */
                         }
-                    
+
+                        /* Call Us Button */
+                        .call-us {
+                            margin-bottom: 15px;
+                            /* Adds space below the call button */
+                        }
+
+                        /* Email Us Button */
+                        .email-us {
+                            margin-bottom: 15px;
+                            /* Adds space below the email button */
+                            white-space: nowrap;
+                            /* Ensures the email address fits inside the button */
+                        }
+
+                        .button i {
+                            margin-right: 10px;
+                        }
+
+                        /* Right Side Contact Form */
+                        .right-side-content {
+                            flex: 1;
+                            padding: 10px;
+                            background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
+                            background-size: cover;
+                            background-position: center;
+                            filter: blur(-12px);
+                            position: relative;
+                            height: 120vh;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .contact-form {
+                            background-color: rgba(255, 255, 255, 0.9);
+                            padding: 30px;
+                            border: 10px solid #f7c594;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            font-family: 'Arial', sans-serif;
+                            width: 500px;
+                        }
+
                         .form-title {
-                            font-size: 20px;
+                            font-size: 24px;
+                            color: #003478;
+                            padding-bottom: 10px;
+                            padding-top: 10px;
+                            text-align: center;
                         }
-                    }
-                    
+
+                        .form-field {
+                            margin-bottom: 20px;
+                        }
+
+                        .form-field label {
+                            display: block;
+                            font-size: 14px;
+                            color: #003478;
+                            margin-bottom: 5px;
+                        }
+
+                        .form-field input,
+                        .form-field textarea {
+                            width: 100%;
+                            border: none;
+                            border-bottom: 2px solid #003478;
+                            padding: 5px 0;
+                            outline: none;
+                            font-size: 0.850rem;
+                        }
+
+                        /* Button Styles */
+                        .submit-button {
+                            background-color: #003478;
+                            color: #ffffff;
+                            border: none;
+                            padding: 10px 20px;
+                            font-size: 16px;
+                            cursor: pointer;
+                            text-align: center;
+                            width: 100%;
+                            border-radius: 5px;
+                            transition: background-color 0.3s ease;
+                        }
+
+                        /* Responsive Design */
+                        @media (max-width: 768px) {
+                            .responsive-section {
+                                flex-direction: column;
+                                height: auto;
+                            }
+
+                            .left-side-background,
+                            .right-side-content {
+                                height: auto;
+                            }
+
+                            .appointment-box,
+                            .contact-form {
+                                width: 90%;
+                                margin: 10px;
+                            }
+
+                            .name-fields {
+                                flex-direction: column;
+                            }
+
+                            .form-field {
+                                width: 100%;
+                            }
+
+                            .buttons {
+                                font-size: 12px;
+                            }
+
+                            .form-title {
+                                font-size: 20px;
+                            }
+                        }
                     </style>
 
 
@@ -13923,8 +14033,8 @@ window.addEventListener('load', function () {
                                                                                         value="" />
                                                                                 </div>
                                                                                 <div class="bt_bb_cf7_form">
-                                                                                  
-                                                                                    
+
+
                                                                                     <div class="bt_bb_cf7_button bt_bb_cf7_button_larger bt_bb_accent_submit bt_bb_closer_button bt_bb_full_width">
                                                                                         <p>
                                                                                             <a href="img/Stonebridge Dentistry 1.pdf" download="Stonebridge Dentistry.pdf" class="wpcf7-form-control wpcf7-submit has-spinner"
@@ -13933,9 +14043,9 @@ window.addEventListener('load', function () {
                                                                                             </a>
                                                                                         </p>
                                                                                     </div>
-                                                                                    
+
                                                                                     <br><br>
-                                                                                    
+
                                                                                     <div class="bt_bb_cf7_button bt_bb_cf7_button_larger bt_bb_accent_submit bt_bb_closer_button bt_bb_full_width">
                                                                                         <p>
                                                                                             <a href="BookOnline.html" target="_blank" class="wpcf7-form-control wpcf7-submit has-spinner"
@@ -13943,19 +14053,19 @@ window.addEventListener('load', function () {
                                                                                                 Book Online Appointment
                                                                                             </a>
                                                                                         </p>
-                                                                                    </div>                                                                                                                                                                       
+                                                                                    </div>
                                                                                 </div>
                                                                                 <div class="wpcf7-response-output"
                                                                                     aria-hidden="true"></div>
                                                                             </form>
                                                                         </div>
                                                                     </div>
-                                                                   
+
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="bt_bb_column_highlight"></div>
                                                 </div>
                                             </div>
@@ -14005,10 +14115,10 @@ window.addEventListener('load', function () {
 
 
 
-                                    
 
 
-                                    </div> 
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -14586,7 +14696,7 @@ window.addEventListener('load', function () {
                     <!-- <section id="bt_bb_section664fb57da0b30"
                 class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_medium bt_bb_bottom_spacing_normal"
                 style=";background-color:#f2f2f2;background-position:15% 55%;background-size:95%;" data-bt-override-class="null">
-            
+
             <div class="Emergency_contact">
                 <div class="Emergency_contact_inner">
                     <div class="container">
@@ -14657,7 +14767,7 @@ window.addEventListener('load', function () {
 
                                                 <div class="bt_bb_content_slider_item"
                                                     style="background-size: auto; background-repeat: no-repeat; background-position: top right;">
-                                                    <div class="bt_bb_content_slider_item_content content">
+                                                    <div class="bt_bb_content_slider_item_content content" style="height: 300px;">
                                                         <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"
                                                             data-bt-override-class="null"></div>
                                                         <div class="bt_bb_row_wrapper">
@@ -14667,24 +14777,23 @@ window.addEventListener('load', function () {
                                                                 <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
                                                                     data-width="3" data-bt-override-class="{}">
                                                                     <div class="bt_bb_column_inner_content">
-                                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                                        <!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
                                                                             data-bt-override-class="null">
-                                                                        </div>
+                                                                        </div> -->
                                                                         <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
                                                                             data-width="3">
                                                                             <div class="bt_bb_column_inner_content">
-                                                                                <div
+                                                                                <!-- <div
                                                                                     class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small">
-                                                                                </div>
+                                                                                </div> -->
                                                                                 <div
                                                                                     class="bt_bb_image bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_middle">
                                                                                     <span>
-                                                                                        <h5>Jody Kirschner</h5>
+                                                                                        <h5>Elaine Murphy</h5>
                                                                                     </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
                                                                         <div class="bt_bb_column_inner_highlight">
                                                                         </div>
                                                                     </div>
@@ -14713,26 +14822,8 @@ window.addEventListener('load', function () {
                                                                             data-bt-override-class="null">
                                                                         </div>
                                                                         <div class="bt_bb_text">
-                                                                            <p>I recently visited Stonebridge dentistry,
-                                                                                and I couldn't be more impressed with my
-                                                                                experience.
-                                                                                From the moment I arrived, the staff
-                                                                                greeted me warmly,
-                                                                                creating a comfortable atmosphere.
-                                                                                Crystal the dental
-                                                                                hygienist was knowledgeable and took the
-                                                                                time to explain
-                                                                                each step of the process, while Dr.
-                                                                                Rishi Panchal
-                                                                                demonstrated expertise and genuine
-                                                                                concern for
-                                                                                my dental health. Overall, I highly
-                                                                                recommend
-                                                                                Stonebridge dentistry for their
-                                                                                exceptional care,
-                                                                                friendly staff, and commitment to
-                                                                                patient comfort
-                                                                                and satisfaction.
+                                                                            <p class="bt_text"
+                                                                                style="text-align: justify;">Integrity and compassion! They'll see you when you're in pain and present you with options, rather than pass you off with a referral - How Refreshing. I am very impressed and grateful for my dental implant which was done completely in house. Everyone in this office truly cares. I can't remember the last time I gave a review, but I wanted other people as frustrated as I was, to know this is a safe and honest place.
                                                                             </p>
                                                                         </div>
                                                                         <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
@@ -14750,7 +14841,7 @@ window.addEventListener('load', function () {
                                                 </div>
                                                 <div class="bt_bb_content_slider_item"
                                                     style="background-size: auto; background-repeat: no-repeat; background-position: top right;">
-                                                    <div class="bt_bb_content_slider_item_content content">
+                                                    <div class="bt_bb_content_slider_item_content content" style="height: 300px;">
                                                         <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"
                                                             data-bt-override-class="null"></div>
                                                         <div class="bt_bb_row_wrapper">
@@ -14760,19 +14851,19 @@ window.addEventListener('load', function () {
                                                                 <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
                                                                     data-width="3" data-bt-override-class="{}">
                                                                     <div class="bt_bb_column_inner_content">
-                                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                                        <!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
                                                                             data-bt-override-class="null">
-                                                                        </div>
+                                                                        </div> -->
                                                                         <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
                                                                             data-width="3">
                                                                             <div class="bt_bb_column_inner_content">
-                                                                                <div
+                                                                                <!-- <div
                                                                                     class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small">
-                                                                                </div>
+                                                                                </div> -->
                                                                                 <div
                                                                                     class="bt_bb_image bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_middle">
                                                                                     <span>
-                                                                                        <h5>Lori Wade</h5>
+                                                                                        <h5>Yennefer Lynn</h5>
                                                                                     </span>
                                                                                 </div>
                                                                             </div>
@@ -14805,17 +14896,8 @@ window.addEventListener('load', function () {
                                                                             data-bt-override-class="null">
                                                                         </div>
                                                                         <div class="bt_bb_text">
-                                                                            <p>I’ve been going to Stonebridge since
-                                                                                2017.
-                                                                                They have always been great with me.
-                                                                                The front staff are amazing and helpful.
-                                                                                Dr. Rishi & Dr. Monica are gentle &
-                                                                                patient, I’m a nervous patient
-                                                                                and they help me through that.
-                                                                                I see Crystal for me cleanings and she
-                                                                                is truly a professional
-                                                                                and wonderful Hygienist. Best Dental
-                                                                                Clinic in my experience.</p>
+                                                                            <p class="bt_text"
+                                                                                style="text-align: justify;">I was in today to get my very first filling ever. I was really nervous about it hurting and I was not looking forward to having it done. But all the staff that were involved were extremely friendly and assured me that everything would be fine and they were right. No pain at all and it was a quick and easy experience. I will continue to come here and would recommend them to others. Thanks 😊</p>
                                                                         </div>
                                                                         <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
                                                                             data-bt-override-class="null">
@@ -14832,85 +14914,7 @@ window.addEventListener('load', function () {
                                                 </div>
                                                 <div class="bt_bb_content_slider_item"
                                                     style="background-size: auto; background-repeat: no-repeat; background-position: top right;">
-                                                    <div class="bt_bb_content_slider_item_content content">
-                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"
-                                                            data-bt-override-class="null"></div>
-                                                        <div class="bt_bb_row_wrapper">
-                                                            <div class="bt_bb_row_inner bt_bb_column_inner_gap_5"
-                                                                style="margin-left: 40px; margin-right: 40px;"
-                                                                data-bt-override-class="{}">
-                                                                <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
-                                                                    data-width="3">
-                                                                    <div class="bt_bb_column_inner_content">
-                                                                        <div
-                                                                            class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small">
-                                                                        </div>
-                                                                        <div
-                                                                            class="bt_bb_image bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_middle">
-                                                                            <span>
-                                                                                <h5>Josh Kirschner</h5>
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="bt_bb_column_inner col-xxl-9 col-xl-9 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_column_inner_background_image bt_bb_padding_normal"
-                                                                    style="background-image:url(&#039;https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/img-quote.png&#039;);background-position:top right;background-size:auto;"
-                                                                    data-width="9" data-bt-override-class="{}">
-                                                                    <div class="bt_bb_column_inner_content">
-                                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
-                                                                            data-bt-override-class="null">
-                                                                        </div>
-                                                                        <div class="bt_bb_column_inner_highlight">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bt_bb_row_wrapper">
-                                                            <div class="bt_bb_row_inner"
-                                                                style="margin-left: 20px; margin-right: 20px;"
-                                                                data-bt-override-class="{}">
-                                                                <div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
-                                                                    data-width="12" data-bt-override-class="{}">
-                                                                    <div class="bt_bb_column_inner_content">
-                                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
-                                                                            data-bt-override-class="null">
-                                                                        </div>
-                                                                        <div class="bt_bb_text">
-                                                                            <p>My wife and I recently visited
-                                                                                Stonebridge dentistry
-                                                                                and it was outstanding. The staff were
-                                                                                incredibly friendly
-                                                                                and welcoming, making me feel at ease
-                                                                                right away.
-                                                                                The dental hygienist Crystal was VERY
-                                                                                thorough and gentle,
-                                                                                and Dr. Rishi Panchal was highly
-                                                                                knowledgeable and took
-                                                                                the time to address all my concerns. I
-                                                                                left feeling confident
-                                                                                in my dental health and would highly
-                                                                                recommend Stonebridge
-                                                                                dentistry to anyone in need of
-                                                                                exceptional dental care.</p>
-                                                                        </div>
-                                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
-                                                                            data-bt-override-class="null">
-                                                                        </div>
-                                                                        <div class="bt_bb_column_inner_highlight">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_normal"
-                                                            data-bt-override-class="null"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="bt_bb_content_slider_item"
-                                                    style="background-size: auto; background-repeat: no-repeat; background-position: top right;">
-                                                    <div class="bt_bb_content_slider_item_content content">
+                                                    <div class="bt_bb_content_slider_item_content content" style="height: 300px;">
                                                         <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"
                                                             data-bt-override-class="null"></div>
                                                         <div class="bt_bb_row_wrapper">
@@ -14920,19 +14924,19 @@ window.addEventListener('load', function () {
                                                                 <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
                                                                     data-width="3" data-bt-override-class="{}">
                                                                     <div class="bt_bb_column_inner_content">
-                                                                        <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                                        <!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
                                                                             data-bt-override-class="null">
-                                                                        </div>
+                                                                        </div> -->
                                                                         <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
                                                                             data-width="3">
                                                                             <div class="bt_bb_column_inner_content">
-                                                                                <div
+                                                                                <!-- <div
                                                                                     class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small">
-                                                                                </div>
+                                                                                </div> -->
                                                                                 <div
                                                                                     class="bt_bb_image bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_middle">
                                                                                     <span>
-                                                                                        <h5>John Gowers</h5>
+                                                                                        <h5>Anthony Clarke</h5>
                                                                                     </span>
                                                                                 </div>
                                                                             </div>
@@ -14965,23 +14969,8 @@ window.addEventListener('load', function () {
                                                                             data-bt-override-class="null">
                                                                         </div>
                                                                         <div class="bt_bb_text">
-                                                                            <p>I was flossing my teeth in the
-                                                                                morning and an old crown came off.
-                                                                                I gave them a call to see if they could
-                                                                                help me.
-                                                                                They booked me in a few hours later. Dr.
-                                                                                Rishi and
-                                                                                his team were great. I was expecting a
-                                                                                big bill
-                                                                                but instead he said the old crown still
-                                                                                fit exceptionally
-                                                                                well and that he could cement it back
-                                                                                in. Thirty minutes
-                                                                                later my tooth was back together again
-                                                                                and I was on my way.
-                                                                                Great staff, great environment,
-                                                                                timely.........can't say
-                                                                                enough about them!
+                                                                            <p class="bt_text"
+                                                                                style="text-align: justify;">The office and Dr Panchal helped with a tooth extraction, root canal and fillings on my front two teeth. The cleanings are painless and I have never really had such a positive experience at a dentist as I have here.
                                                                             </p>
                                                                         </div>
                                                                         <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
@@ -14997,6 +14986,83 @@ window.addEventListener('load', function () {
                                                             data-bt-override-class="null"></div>
                                                     </div>
                                                 </div>
+                                                <div class="bt_bb_content_slider_item"
+                                                style="background-size: auto; background-repeat: no-repeat; background-position: top right;">
+                                                <div class="bt_bb_content_slider_item_content content" style="height: 300px;">
+                                                    <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"
+                                                        data-bt-override-class="null"></div>
+                                                    <div class="bt_bb_row_wrapper">
+                                                        <div class="bt_bb_row_inner bt_bb_column_inner_gap_5"
+                                                            style="margin-left: 40px; margin-right: 40px;"
+                                                            data-bt-override-class="{}">
+                                                            <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
+                                                                data-width="3" data-bt-override-class="{}">
+                                                                <div class="bt_bb_column_inner_content">
+                                                                    <!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                                        data-bt-override-class="null">
+                                                                    </div> -->
+                                                                    <div class="bt_bb_column_inner col-xxl-3 col-xl-3 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
+                                                                        data-width="3">
+                                                                        <div class="bt_bb_column_inner_content">
+                                                                            <!-- <div
+                                                                                class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small">
+                                                                            </div> -->
+                                                                            <div
+                                                                                class="bt_bb_image bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_middle">
+                                                                                <span>
+                                                                                    <h5>Ezana Milton</h5>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bt_bb_column_inner_highlight">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bt_bb_column_inner col-xxl-9 col-xl-9 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_column_inner_background_image bt_bb_padding_normal"
+                                                                style="background-image:url(&#039;https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/img-quote.png&#039;);background-position:top right;background-size:auto;"
+                                                                data-width="9" data-bt-override-class="{}">
+                                                                <div class="bt_bb_column_inner_content">
+                                                                    <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"
+                                                                        data-bt-override-class="null">
+                                                                    </div>
+                                                                    <div class="bt_bb_column_inner_highlight">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bt_bb_row_wrapper">
+                                                        <div class="bt_bb_row_inner"
+                                                            style="margin-left: 20px; margin-right: 20px;"
+                                                            data-bt-override-class="{}">
+                                                            <div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_align_left bt_bb_vertical_align_middle bt_bb_padding_normal"
+                                                                data-width="12" data-bt-override-class="{}">
+                                                                <div class="bt_bb_column_inner_content">
+                                                                    <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
+                                                                        data-bt-override-class="null">
+                                                                    </div>
+                                                                    <div class="bt_bb_text">
+                                                                        <p class="bt_text"
+                                                                            style="text-align: justify;">I've never felt more comfortable respected and treated like a person the service was amazing and I recommend that you make the switch to Stonebridge Dentistry
+
+                                                                            Thanks for everything you did and do
+                                                                            Sincerely Satisfied Customer
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_small"
+                                                                        data-bt-override-class="null">
+                                                                    </div>
+                                                                    <div class="bt_bb_column_inner_highlight">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bt_bb_separator bt_bb_border_style_none bt_bb_top_spacing_normal"
+                                                        data-bt-override-class="null"></div>
+                                                </div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -15006,7 +15072,15 @@ window.addEventListener('load', function () {
                         <!-- </div>
                             </div>
                         </div> -->
+                        <br/>
+                                                        
                     </section>
+
+                    <style>
+                        .bt_text {
+                            font-size: 14px;
+                        }
+                    </style>
                     <!-- <section id="bt_bb_section6657ed3317d7d"
                         class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top"
                         style="margin-top: -1.85em; z-index: 3; position: relative;" data-bt-override-class="null">
@@ -15024,7 +15098,7 @@ window.addEventListener('load', function () {
                                                         <a href="#" target="_self" class="bt_bb_link"
                                                             title="View DentiCare Solutions">
                                                              <span class="bt_bb_button_text">View DentiCare
-                                                                Solutions</span> 
+                                                                Solutions</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -15035,7 +15109,7 @@ window.addEventListener('load', function () {
                             </div>
                         </div>
                     </section> -->
-                    </br></br>
+                    <!-- </br>--></br> 
 
                     <section id="bt_bb_section6658036a7f137"
                         class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_normal bt_bb_bottom_spacing_large"
@@ -15340,14 +15414,14 @@ window.addEventListener('load', function () {
     </div><!-- /contentHolder -->
 
 
-   
+
     <footer class="footer">
         <!-- Section 1 -->
         <div class="footer-section" id="footer-section-1">
             <h3 class="footer-heading">
                 <span style="color: #422774;">Stonebridge</span>
                 <span style="color: #FF793E;">Dentistry</span>
-              </h3>
+            </h3>
             <p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
             <div class="contact-info">
                 <div class="contact-item">
@@ -15364,7 +15438,7 @@ window.addEventListener('load', function () {
                 </div>
             </div>
         </div>
-    
+
         <!-- Section 2 -->
         <div class="footer-section" id="footer-section-2">
             <h3 class="footer-heading">About</h3>
@@ -15375,12 +15449,13 @@ window.addEventListener('load', function () {
                 <li><a href="About-Us.html">About</a></li>
             </ul>
         </div>
-    
+
         <!-- Section 3 -->
         <div class="footer-section" id="footer-section-3">
             <h3 class="footer-heading">Our Awards</h3>
             <div class="image-container">
-                <img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png" alt="Sample Image">
+                <img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
+                    alt="Sample Image">
                 <div class="image-text">
                     Stonebridge is a multiple award winner<br>
                     <strong>Best Patient Care 2017</strong><br>
@@ -15389,13 +15464,13 @@ window.addEventListener('load', function () {
                 </div>
             </div>
         </div>
-    
+
         <!-- Section 4 -->
         <div class="footer-section" id="footer-section-4">
-            
+
             <h3 class="footer-heading">Social Networks</h3>
             <p class="footer-subtext">
-                Visit Stonebridge on these social links and connect with us. 
+                Visit Stonebridge on these social links and connect with us.
                 Make sure to follow our accounts for regular updates.
             </p>
             <div class="social-iconss">
@@ -15406,184 +15481,189 @@ window.addEventListener('load', function () {
             </div>
         </div>
     </footer>
-    
+
     <div class="footer-navigation">
         <div class="menu-footer-menu-container">
             <ul id="menu-footer-menu" class="menu">
-                <li class="menu-item"><a href="About-Us.html">ABOUT US</a></li>
-                <li class="menu-item"><a href="Services.html">SERVICES</a></li>
-                <li class="menu-item"><a href="Testimonials.html">TESTIMONIALS</a></li>
-                <li class="menu-item"><a href="Team.html">OUR TEAM</a></li>
-                <li class="menu-item"><a href="Contact-Us.html">CONTACT US</a></li>
-                <li class="menu-item bt_bb_back_to_top"><a href="#top">BACK TO TOP</a></li>
+                <li class="menu-items"><a href="About-Us.html">ABOUT US</a></li>
+                <li class="menu-items"><a href="Services.html">SERVICES</a></li>
+                <li class="menu-items"><a href="Testimonials.html">TESTIMONIALS</a></li>
+                <li class="menu-items"><a href="Team.html">OUR TEAM</a></li>
+                <li class="menu-items"><a href="Contact-Us.html">CONTACT US</a></li>
+                <li class="menu-items bt_bb_back_to_top"><a href="#top">BACK TO TOP</a></li>
             </ul>
         </div>
     </div>
-    
+
 
     <style>
-
         /* Footer Navigation Strip */
-.footer-navigation {
-    background-color: #A9A9A9; /* Footer background color */
-    color: #ffffff;
-    padding: 10px 20px;
-    position: relative;
-}
+        .footer-navigation {
+            background-color: #A9A9A9;
+            /* Footer background color */
+            color: #ffffff;
+            padding: 10px 20px;
+            position: relative;
+        }
 
-.menu-footer-menu-container {
-    display: flex;
-    justify-content: flex-end; /* Align navigation to the right */
-    margin: 0 auto;
-    max-width: 1200px;
-}
+        .menu-footer-menu-container {
+            display: flex;
+            justify-content: flex-end;
+            /* Align navigation to the right */
+            margin: 0 auto;
+            max-width: 1200px;
+        }
 
-.menu {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap; /* Ensure responsive wrapping */
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-}
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            /* Ensure responsive wrapping */
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
 
-.menu-item {
-    font-size: 14px;
-}
+        .menu-item {
+            font-size: 14px;
+        }
 
-.menu-item a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
+        .menu-item a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.menu-item a:hover {
-    color: #ffa500; /* Light orange hover effect */
-}
+        .menu-item a:hover {
+            color: #ffa500;
+            /* Light orange hover effect */
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu-footer-menu-container {
-        justify-content: center; /* Center align for smaller devices */
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-footer-menu-container {
+                justify-content: center;
+                /* Center align for smaller devices */
+            }
 
-    .menu {
-        gap: 10px;
-        font-size: 12px;
-    }
-}
+            .menu {
+                gap: 10px;
+                font-size: 12px;
+            }
+        }
 
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: center;
-    }
+        @media (max-width: 480px) {
+            .menu {
+                flex-direction: column;
+                /* Stack items vertically on small screens */
+                align-items: center;
+            }
 
-    .menu-item {
-        margin-bottom: 5px;
-    }
-}
+            .menu-item {
+                margin-bottom: 5px;
+            }
+        }
 
-     .footer {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-}
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
 
-.footer-section {
-    flex: 1 1 25%;
-    padding: 20px;
-    box-sizing: border-box;
-}
+        .footer-section {
+            flex: 1 1 25%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-.footer-heading {
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-    color: #422774;
-}
+        .footer-heading {
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            color: #422774;
+        }
 
-.footer-heading::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 2px;
-    background-color: #FF793E;
-    margin: 8px auto;
-}
+        .footer-heading::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #FF793E;
+            margin: 8px auto;
+        }
 
-.footer-subtext {
-    margin: 10px 0;
-    font-size: 14px;
-}
+        .footer-subtext {
+            margin: 10px 0;
+            font-size: 14px;
+        }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
 
-.contact-item a {
-    color: #000;
-    text-decoration: none;
-}
+        .contact-item a {
+            color: #000;
+            text-decoration: none;
+        }
 
-.contact-item a:hover {
-    text-decoration: underline;
-}
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
 
-.footer-nav {
-    list-style: none;
-    padding: 0;
-}
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer-nav li {
-    margin: 5px 0;
-}
+        .footer-nav li {
+            margin: 5px 0;
+        }
 
-.footer-nav a {
-    color: #000;
-    text-decoration: none;
-}
+        .footer-nav a {
+            color: #000;
+            text-decoration: none;
+        }
 
-.footer-nav a:hover {
-    text-decoration: underline;
-    color: #ffa500;
-}
+        .footer-nav a:hover {
+            text-decoration: underline;
+            color: #ffa500;
+        }
 
-.image-container {
-    position: relative;
-    text-align: center;
-}
+        .image-container {
+            position: relative;
+            text-align: center;
+        }
 
-.image-container img {
-    max-width: 280px;
-    height: 200px;
-}
+        .image-container img {
+            max-width: 280px;
+            height: 200px;
+        }
 
-.image-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    background-color: F4F4F4;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 13px;
-    text-align: center;
-}
+        .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            background-color: F4F4F4;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            text-align: center;
+        }
 
-/* .logo {
+        /* .logo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -15599,37 +15679,36 @@ window.addEventListener('load', function () {
     font-size: 24px;
 } */
 
-.social-iconss {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
+        .social-iconss {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
 
-.social-iconss a {
-    color: #422774;
-    font-size: 18px;
-    text-decoration: none;
-}
+        .social-iconss a {
+            color: #422774;
+            font-size: 18px;
+            text-decoration: none;
+        }
 
-.social-iconss a:hover {
-    color: #ffa500;
-}
+        .social-iconss a:hover {
+            color: #ffa500;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-section {
-        flex: 1 1 100%;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-section {
+                flex: 1 1 100%;
+            }
 
-    .contact-info {
-        align-items: center;
-    }
+            .contact-info {
+                align-items: center;
+            }
 
-    .image-text {
-        font-size: 12px;
-    }
-}
-
+            .image-text {
+                font-size: 12px;
+            }
+        }
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
