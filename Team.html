@@ -13530,9 +13530,9 @@
 																		</div>
 																	</div> -->
 
-									<div class="card-container"
+									<div class="card-containers"
 										style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
-																	border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
+																    border-radius: 25px; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 										<!-- Image container -->
 										<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
 											alt="Renee"
@@ -13545,39 +13545,36 @@
 										</div>
 
 										<!-- Description paragraph (initially hidden, visible on hover) -->
-										<div class="description-Renees"
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-											<p style="margin: 5px 0; text-align: justify;">
-												I started my dental career in 1997 as a Surgical Dental Assistant.
+										<div class="description-Renee"
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 8px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+											<p style="margin: 5px 0; text-align: justify;"> I started my dental career
+												in 1997 as a Surgical Dental
+												Assistant.
 												I expanded my dental career and became a Registered Dental Hygienist
 												in 2008. I have worked with Dr. Ghobrial since 2010 and continue
 												now to work for Stonebridge Dentistry. I have 2 small children and
-												enjoy spending time with friends and family.
-											</p>
+												enjoy spending time with friends and family.</p>
 										</div>
 									</div>
-
 									<script>
 										// JavaScript to handle hover effect
-										const Reneecard = document.querySelector('.card-container');
-										const Reneeimg = Reneecard.querySelector('img');
-										const Reneename = Reneecard.querySelector('.card-names');
-										const Reneeparagraph = Reneecard.querySelector('.description-Renees'); // Corrected selector
+										const Marandacards = document.querySelector('.card-containers');
+										const Marandaimgs = Marandacard.querySelector('img');
+										const Marandanames = Marandacard.querySelector('.card-names');
+										const Marandaparagraphs = Marandacard.querySelector('.description-Renee');
 
-										Reneecard.addEventListener('mouseover', () => {
-											Reneeimg.style.transform = 'scale(1.1)';
-											Reneename.style.opacity = '0';
-											Reneeparagraph.style.opacity = '1';
+										Marandacards.addEventListener('mouseover', () => {
+											Marandaimgs.style.transform = 'scale(1.1)';
+											Marandanames.style.opacity = '0';
+											Marandaparagraphs.style.opacity = '1';
 										});
 
-										Reneecard.addEventListener('mouseout', () => {
-											Reneeimg.style.transform = 'scale(1)';
-											Reneename.style.opacity = '1';
-											Reneeparagraph.style.opacity = '0';
+										Marandacards.addEventListener('mouseout', () => {
+											Marandaimgs.style.transform = 'scale(1)';
+											Marandanames.style.opacity = '1';
+											Marandaparagraphs.style.opacity = '0';
 										});
 									</script>
-
-
 
 								</div>
 
@@ -13608,7 +13605,7 @@
 									/* Optional: Hover effect for description paragraph */
 									.bt_bb_column:hover .description {
 										opacity: 1 !important;
-										visibility: visible;
+										visibility: invisible;
 										transition: opacity 0.3s ease-in;
 									}
 								</style>
