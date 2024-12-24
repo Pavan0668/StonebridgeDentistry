@@ -13309,9 +13309,7 @@
 									</div> -->
 									<!-- CSS for responsiveness -->
 									<style>
-										@media (max-width: 768px) {
-											
-										}
+										@media (max-width: 768px) {}
 									</style>
 									<!-- Second Column -->
 									<!-- <div class="bt_bb_column"
@@ -13348,7 +13346,7 @@
 											Sue
 										</div>
 
-										
+
 									</div>
 
 									<!-- Second Column -->
@@ -13388,7 +13386,7 @@
 											Roxanne
 										</div>
 
-										
+
 									</div>
 
 									<!-- Third Column -->
@@ -13432,45 +13430,60 @@
 											</div>
 										</div>
 									</div> -->
-									<div
-									style="width: 220px; height: 310px; position: relative;border-style: groove;border-width: 5px;
-									border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
-									<!-- Image container -->
-									<img src="https://static.wixstatic.com/media/a4e5eb_a6aee50d9aa240ac9fdfbddb2daf9b14~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2791_JPG.jpg"
-										alt="Maranda"
-										style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+									<div class="card-container"
+										style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
+    border-radius: 25px; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
+										<!-- Image container -->
+										<img src="https://static.wixstatic.com/media/a4e5eb_a6aee50d9aa240ac9fdfbddb2daf9b14~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2791_JPG.jpg"
+											alt="Maranda"
+											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
 
-									<!-- Name of the person (initially visible, hidden on hover) -->
-									<div
-										style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
-										Maranda
+										<!-- Name of the person (initially visible, hidden on hover) -->
+										<div class="card-name"
+											style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
+											Maranda
+										</div>
+
+										<!-- Description paragraph (initially hidden, visible on hover) -->
+										<div class="description-Maranda"
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 8px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+											<p style="margin: 5px 0; text-align: justify;">I graduated with honors from
+												the Restorative Dental Hygiene
+												program at George Brown College in Toronto in 2004. I have taken
+												extensive training throughout North
+												America and around the world including Chicago, Michigan, Germany, and
+												the Las Vegas institute for
+												Esthetic Dentistry. I have kept my skills current by constantly
+												upgrading my skills, especially in
+												Esthetic Anterior restorations. Prior to returning to study restorative
+												hygiene, I graduated from the
+												Dental Hygiene Program at George Brown in 1999.</p>
+										</div>
 									</div>
+									<script>
+										// JavaScript to handle hover effect
+										const Marandacard = document.querySelector('.card-container');
+										const Marandaimg = Marandacard.querySelector('img');
+										const Marandaname = Marandacard.querySelector('.card-name');
+										const Marandaparagraph = Marandacard.querySelector('.description-Maranda');
 
-									<!-- Description paragraph (initially hidden, visible on hover) -->
-									<!-- Description paragraph (initially hidden, visible on hover) -->
-									<div class="description"
-									style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-									<p style="margin: 5px 0;text-align: justify;">I graduated with
-										honors from the
-										Restorative Dental Hygiene program at George Brown College in
-										Toronto in 2004.</p>
-									<p style="margin: 5px 0;text-align: justify;">I have taken extensive
-										training throughout
-										North America and around the world including Chicago, Michigan,
-										Germany, and the Las Vegas institute for Esthetic Dentistry.</p>
-									<p style="margin: 5px 0;text-align: justify;">I have kept my skills
-										current by
-										constantly upgrading my skills, especially in Esthetic Anterior
-										restorations. Prior to returning to study restorative hygiene, I
-										graduated from the Dental Hygiene Program at George Brown in
-										1999.</p>
-								</div>
-								</div>
+										Marandacard.addEventListener('mouseover', () => {
+											Marandaimg.style.transform = 'scale(1.1)';
+											Marandaname.style.opacity = '0';
+											Marandaparagraph.style.opacity = '1';
+										});
 
-									
+										Marandacard.addEventListener('mouseout', () => {
+											Marandaimg.style.transform = 'scale(1)';
+											Marandaname.style.opacity = '1';
+											Marandaparagraph.style.opacity = '0';
+										});
+									</script>
+
+
 									<div
 										style="width: 220px; height: 310px; position: relative;border-style: groove;border-width: 5px;
-										border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
+																		border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 										<!-- Image container -->
 										<img src="https://static.wixstatic.com/media/a4e5eb_97a043c40ca64d0893deab875464ebb6~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2868_JPG.jpg"
 											alt="LISA"
@@ -13480,92 +13493,91 @@
 										<div
 											style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
 											LISA
-										</div>										
+										</div>
 									</div>
 									<!-- <div class="bt_bb_columnss"
-										style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden;">
-										<div class="bt_bb_column_content" style="position: relative; height: 100%;">
-											<div class="container"
-												style="width: 278px;text-align: center; position: relative; height: 100%;"
-												onmouseover="this.querySelector('.name').style.opacity='0';"
-												onmouseout="this.querySelector('.name').style.opacity='1';">
-												<a href="#" target="_self" title="RENEE" style="text-decoration: none;">
-													<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
-														alt="RENEE" class="image"
-														style="width: 100%; height: auto; opacity: 1; display: block; transition: opacity 0.5s ease; backface-visibility: hidden;">
-												</a>
-												
-												<div class="name"
-													style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 2; transition: opacity 0.3s ease;">
-													Renee
-												</div>
-												
-												<div class="description"
-													style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-													<p style="margin: 5px 0;text-align: justify;">
-														I started my dental career in 1997 as a Surgical Dental
-														Assistant.
-														I expanded my dental career and became a Registered Dental
-														Hygienist
-														in 2008. I have worked with Dr. Ghobrial since 2010 and continue
-														now
-														to work for Stonebridge Dentistry. I have 2 small children and
-														enjoy
-														spending time with friends and family</p>
-												</div>
-											</div>
+																		style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden;">
+																		<div class="bt_bb_column_content" style="position: relative; height: 100%;">
+																			<div class="container"
+																				style="width: 278px;text-align: center; position: relative; height: 100%;"
+																				onmouseover="this.querySelector('.name').style.opacity='0';"
+																				onmouseout="this.querySelector('.name').style.opacity='1';">
+																				<a href="#" target="_self" title="RENEE" style="text-decoration: none;">
+																					<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
+																						alt="RENEE" class="image"
+																						style="width: 100%; height: auto; opacity: 1; display: block; transition: opacity 0.5s ease; backface-visibility: hidden;">
+																				</a>
+																				
+																				<div class="name"
+																					style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 2; transition: opacity 0.3s ease;">
+																					Renee
+																				</div>
+																				
+																				<div class="description"
+																					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+																					<p style="margin: 5px 0;text-align: justify;">
+																						I started my dental career in 1997 as a Surgical Dental
+																						Assistant.
+																						I expanded my dental career and became a Registered Dental
+																						Hygienist
+																						in 2008. I have worked with Dr. Ghobrial since 2010 and continue
+																						now
+																						to work for Stonebridge Dentistry. I have 2 small children and
+																						enjoy
+																						spending time with friends and family</p>
+																				</div>
+																			</div>
+																		</div>
+																	</div> -->
+
+									<div class="card-container"
+										style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
+																	border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
+										<!-- Image container -->
+										<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
+											alt="Renee"
+											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+
+										<!-- Name of the person (initially visible, hidden on hover) -->
+										<div class="card-names"
+											style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
+											Renee
 										</div>
-									</div> -->
 
-									<div
-									style="width: 220px; height: 310px; position: relative;border-style: groove;border-width: 5px;
-									border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
-									<!-- Image container -->
-									<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
-										alt="Renee"
-										style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-
-									<!-- Name of the person (initially visible, hidden on hover) -->
-									<div
-										style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
-										Renee
+										<!-- Description paragraph (initially hidden, visible on hover) -->
+										<div class="description-Renees"
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+											<p style="margin: 5px 0; text-align: justify;">
+												I started my dental career in 1997 as a Surgical Dental Assistant.
+												I expanded my dental career and became a Registered Dental Hygienist
+												in 2008. I have worked with Dr. Ghobrial since 2010 and continue
+												now to work for Stonebridge Dentistry. I have 2 small children and
+												enjoy spending time with friends and family.
+											</p>
+										</div>
 									</div>
 
-									<!-- Description paragraph (initially hidden, visible on hover) -->
-									<!-- Description paragraph (initially hidden, visible on hover) -->
-									<div class="description"
-													style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-													<p style="margin: 5px 0;text-align: justify;">
-														I started my dental career in 1997 as a Surgical Dental
-														Assistant.
-														I expanded my dental career and became a Registered Dental
-														Hygienist
-														in 2008. I have worked with Dr. Ghobrial since 2010 and continue
-														now
-														to work for Stonebridge Dentistry. I have 2 small children and
-														enjoy
-														spending time with friends and family</p>
-												</div>
-								</div>
 									<script>
-										// JavaScript to handle hover effect for Maranda's card
-										const ReneeCard = document.querySelector('.bt_bb_column:nth-child(3) .container'); // Target the correct card
-										const ReneeImg = ReneeCard.querySelector('img');
-										const ReneeName = ReneeCard.querySelector('.name');
-										const ReneeParagraph = ReneeCard.querySelector('.description');
+										// JavaScript to handle hover effect
+										const Reneecard = document.querySelector('.card-container');
+										const Reneeimg = Reneecard.querySelector('img');
+										const Reneename = Reneecard.querySelector('.card-names');
+										const Reneeparagraph = Reneecard.querySelector('.description-Renees'); // Corrected selector
 
-										ReneeCard.addEventListener('mouseover', () => {
-											ReneeImg.style.transform = 'scale(1.1)';
-											ReneeName.style.opacity = '0';
-											ReneeParagraph.style.opacity = '1';
+										Reneecard.addEventListener('mouseover', () => {
+											Reneeimg.style.transform = 'scale(1.1)';
+											Reneename.style.opacity = '0';
+											Reneeparagraph.style.opacity = '1';
 										});
 
-										ReneeCard.addEventListener('mouseout', () => {
-											ReneeImg.style.transform = 'scale(1)';
-											ReneeName.style.opacity = '1';
-											ReneeParagraph.style.opacity = '0';
+										Reneecard.addEventListener('mouseout', () => {
+											Reneeimg.style.transform = 'scale(1)';
+											Reneename.style.opacity = '1';
+											Reneeparagraph.style.opacity = '0';
 										});
 									</script>
+
+
 
 								</div>
 
@@ -13601,25 +13613,7 @@
 									}
 								</style>
 
-								<script>
-									// JavaScript to handle hover effect for Maranda's card
-									const marandaCard = document.querySelector('.bt_bb_column:nth-child(3) .container'); // Target the correct card
-									const marandaImg = marandaCard.querySelector('img');
-									const marandaName = marandaCard.querySelector('.name');
-									const marandaParagraph = marandaCard.querySelector('.description');
 
-									marandaCard.addEventListener('mouseover', () => {
-										marandaImg.style.transform = 'scale(1.1)';
-										marandaName.style.opacity = '0';
-										marandaParagraph.style.opacity = '1';
-									});
-
-									marandaCard.addEventListener('mouseout', () => {
-										marandaImg.style.transform = 'scale(1)';
-										marandaName.style.opacity = '1';
-										marandaParagraph.style.opacity = '0';
-									});
-								</script>
 
 
 								<br>
@@ -13628,7 +13622,7 @@
 
 
 
-									
+
 
 									<!-- <div class="bt_bb_column"
 										style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden;">
@@ -13670,56 +13664,58 @@
 											</div>
 										</div>
 									</div> -->
-									<div
-	style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
+									<div style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
 	border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;"
-	class="card-container">
-	<!-- Image container -->
-	<img src="https://static.wixstatic.com/media/a4e5eb_1323c17d642d4b2faf3ae7d147bb89d3~mv2.jpg/v1/crop/x_25,y_0,w_3399,h_4830/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/crystal.jpg"
-		alt="Crystal"
-		style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+										class="card-container">
+										<!-- Image container -->
+										<img src="https://static.wixstatic.com/media/a4e5eb_1323c17d642d4b2faf3ae7d147bb89d3~mv2.jpg/v1/crop/x_25,y_0,w_3399,h_4830/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/crystal.jpg"
+											alt="Crystal" class="image-crystal"
+											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
 
-	<!-- Name of the person (initially visible, hidden on hover) -->
-	<div
-		style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;"
-		class="card-name">
-		Crystal
-	</div>
-	
-	<!-- Description paragraph (initially hidden, visible on hover) -->
-	<div class="description-crystal"
-		style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 9px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-		<p style="margin: 5px 0; text-align: justify;">I graduated with honors in 2009 from
-			the Dental Hygiene program at Georgian College in Orillia. I have a true passion for
-			Dental Hygiene and enjoy getting to know my clients personally.</p>
-		<p style="margin: 5px 0; text-align: justify;"> I’m highly skilled
-			and have the ability to make patients feel at
-			ease and relaxed in my chair. With my acquired knowledge,
-			I’m able to deliver individualized treatment plans essential for good oral health.</p>
-		<p style="margin: 5px 0; text-align: justify;">I will continue to work at Stonebridge
-			Dentistry for many years to come.</p>
-	</div>
-</div>
+										<!-- Name of the person (initially visible, hidden on hover) -->
+										<div style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;"
+											class="card-names">
+											Crystal
+										</div>
 
-<script>
-	// JavaScript to handle hover effect
-	const Crycard = document.querySelector('.card-container');
-	const Cryimg = Crycard.querySelector('img');
-	const Cryname = Crycard.querySelector('.card-name');
-	const Cryparagraph = Crycard.querySelector('.description-crystal');
+										<!-- Description paragraph (initially hidden, visible on hover) -->
+										<div class="description-crystalss"
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 9px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+											<p style="margin: 5px 0; text-align: justify;">I graduated with honors in
+												2009 from
+												the Dental Hygiene program at Georgian College in Orillia. I have a true
+												passion for
+												Dental Hygiene and enjoy getting to know my clients personally.</p>
+											<p style="margin: 5px 0; text-align: justify;"> I’m highly skilled
+												and have the ability to make patients feel at
+												ease and relaxed in my chair. With my acquired knowledge,
+												I’m able to deliver individualized treatment plans essential for good
+												oral health.</p>
+											<p style="margin: 5px 0; text-align: justify;">I will continue to work at
+												Stonebridge
+												Dentistry for many years to come.</p>
+										</div>
+									</div>
 
-	Crycard.addEventListener('mouseover', () => {
-		Cryimg.style.transform = 'scale(1.1)';
-		Cryname.style.opacity = '0';
-		Cryparagraph.style.opacity = '1';
-	});
+									<script>
+										// JavaScript to handle hover effect
+										const Crycard = document.querySelector('.card-container');
+										const Cryimg = Crycard.querySelector('image-crystal');
+										const Cryname = Crycard.querySelector('.card-names');
+										const Cryparagraph = Crycard.querySelector('.description-crystalss');
 
-	Crycard.addEventListener('mouseout', () => {
-		Cryimg.style.transform = 'scale(1)';
-		Cryname.style.opacity = '1';
-		Cryparagraph.style.opacity = '0';
-	});
-</script>
+										Crycard.addEventListener('mouseover', () => {
+											Cryimg.style.transform = 'scale(1.1)';
+											Cryname.style.opacity = '0';
+											Cryparagraph.style.opacity = '1';
+										});
+
+										Crycard.addEventListener('mouseout', () => {
+											Cryimg.style.transform = 'scale(1)';
+											Cryname.style.opacity = '1';
+											Cryparagraph.style.opacity = '0';
+										});
+									</script>
 
 									<!-- <div class="bt_bb_column"
 										style="flex: 1; margin: 0; height: 400px; max-width: 300px; position: relative; overflow: hidden;">
@@ -13754,7 +13750,7 @@
 										<div
 											style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
 											Charlotte
-										</div>										
+										</div>
 									</div>
 
 									<!-- <div class="bt_bb_column"
@@ -13782,8 +13778,9 @@
 																			border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 										<!-- Image container -->
 										<img src="https://static.wixstatic.com/media/a4e5eb_da21ac8890ed420c86b7bcf0c7a6c779~mv2.jpg/v1/crop/x_0,y_411,w_2304,h_3274/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/alpa.jpg"
-											alt="Alpa" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-									
+											alt="Alpa"
+											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+
 										<!-- Name of the person (initially visible, hidden on hover) -->
 										<div
 											style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
