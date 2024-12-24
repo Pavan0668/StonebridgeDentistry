@@ -15506,15 +15506,15 @@
 
 
 
-    <footer class="footer" style="margin-top: 0px;padding-top: 0px;">
+    <footer class="footer" style="margin-top: 0px;padding-top: 0px;margin-bottom: 0px;padding-bottom: 0px;">
         <!-- Section 1 -->
         <div class="footer-section" id="footer-section-1">
             <h3 class="footer-heading">
                 <span style="color: #422774;">Stonebridge</span>
                 <span style="color: #FF793E;">Dentistry</span>
-              </h3>
-            <p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
-            <div class="contact-info">
+            </h3>
+            <p class="footer-subtext" style="margin-top: 5px;">A team of dentists working to ensure you receive the best treatment.</p>
+            <div class="contact-info" style="align-items: center;">
                 <div class="contact-item">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     <a href="tel:(705)422-2490">(705) 422-2490</a>
@@ -15656,12 +15656,18 @@
     background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
+    gap: 0; /* Removes spacing between sections */
+}
+#footer-section-1,
+#footer-section-2 {
+    margin-bottom: 0; /* Ensure no extra margin between sections */
 }
 
 .footer-section {
     flex: 1 1 25%;
     padding: 20px;
     box-sizing: border-box;
+    margin-bottom: 0; /* Remove any bottom margin between sections */
 }
 
 .footer-heading {
@@ -15714,6 +15720,7 @@
 
 .footer-nav li {
     margin: 5px 0;
+    font-size: 14px;
 }
 
 .footer-nav a {
@@ -15732,7 +15739,7 @@
 }
 
 .image-container img {
-    max-width: 280px;
+    max-width: 290px;
     height: 200px;
 }
 
@@ -15745,7 +15752,7 @@
     background-color: F4F4F4;
     padding: 10px;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 14px;
     text-align: center;
 }
 
