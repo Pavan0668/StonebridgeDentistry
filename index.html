@@ -12573,6 +12573,7 @@
         });
 
     </script>
+    <link rel="stylesheet" href="HeaderCSS/style.css">
 </head>
 
 
@@ -12585,7 +12586,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHZKTQL" height="0" width="0"
             style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="btPageWrap" id="top">
+    
 
 
         <div class="loader-containers" id="loader">
@@ -12596,270 +12597,214 @@
             </div>
         </div>
 
+		<style>
+			/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
+			@media (max-width: 768px) {
+				/* Hide the navbar links */
+				.navbar-collapse {
+					display: none;
+				}
+		
+				/* Display the hamburger menu */
+				.navbar-toggler {
+					display: block;
+					border: none;
+					background: none;
+				}
+		
+				/* Custom styling for the hamburger icon (circular) */
+				.navbar-toggler-icon {
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					background-color: #034CAE;
+					position: relative;
+				}
+		
+				.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+					content: '';
+					position: absolute;
+					width: 20px;
+					height: 2px;
+					background-color: white;
+					left: 5px;
+					transition: all 0.3s ease;
+				}
+		
+				.navbar-toggler-icon::before {
+					top: 8px;
+				}
+		
+				.navbar-toggler-icon::after {
+					top: 14px;
+				}
+		
+				/* Add a cross (X) effect on click */
+				.navbar-toggler.collapsed .navbar-toggler-icon::before {
+					transform: rotate(45deg);
+					top: 10px;
+				}
+		
+				.navbar-toggler.collapsed .navbar-toggler-icon::after {
+					transform: rotate(-45deg);
+					top: 10px;
+				}
+		
+				/* Ensure the top bar is responsive */
+				.top-bar {
+					display: block;
+				}
+		
+				.top-bar .container {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				}
+		
+				/* Social media and contact details should be stacked vertically on small screens */
+				.social1, .social2 {
+					display: flex;
+					justify-content: flex-start;
+					flex-direction: column;
+					gap: 10px;
+				}
+		
+				.social2 {
+					justify-content: flex-end;
+				}
+		
+				.contact-details {
+					display: flex;
+					justify-content: flex-end;
+					flex-direction: column;
+					gap: 10px;
+				}
+		
+				/* Navbar items are stacked vertically on small screens */
+				.navbar-nav {
+					flex-direction: column;
+					width: 100%;
+					text-align: center;
+				}
+		
+				.nav-link {
+					padding: 10px 20px;
+				}
+		
+				/* Book Appointment button */
+				.book-appointment-btn {
+					height: 30px;
+					font-size: 12px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 150px;
+					background-color: #1D9BF0;
+					color: #FFFFFF;
+					margin-right: 20px;
+				}
+			}
+		
+			/* For large screens (desktop) */
+			@media (min-width: 769px) {
+				.navbar-collapse {
+					display: flex;
+				}
+		
+				.navbar-toggler {
+					display: none;
+				}
+			}
+		
+			/* Box sizing for all elements */
+			* {
+				box-sizing: border-box;
+			}
+		</style>
+		
+		<!-- Top bar -->
+		<div class="top-bar" style="background-color: blue; padding: 5px 0;">
+			<div class="container">
+				<div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+					<!-- Social media links on the left -->
+					<div class="social1" style="flex: 1; display: flex; justify-content: flex-start;">
+						<div class="social-media">
+							<ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 20px;">
+								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-google-plus-g"></i></a></li>
+								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Contact details on the right -->
+					<div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
+						<div class="contact-details">
+							<a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+								<span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705) 422-2490</span>
+							</a>
+						</div>&nbsp;&nbsp;&nbsp;&nbsp;
+						<!-- Book Appointment Button -->
+						<a href="Contact-New.html" class="book-appointment-btn" style="font-size: 14px;height: 30px;border:groove;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;margin-right: 30px;">Book Appointment</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
+			<div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+				<!-- Logo aligned to the left -->
+				<a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: 40px;">
+					<img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;"/>
+				</a>
+				<!-- Hamburger Menu Button (visible on small devices) -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Navbar items aligned to the right -->
+				<div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; justify-content: flex-end;">
+					<ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
+						<li class="nav-item active" style="margin-right: 20px;">
+							<a class="nav-link" href="index.html" style="color: #000; padding: 5px 10px;">Home</a>
+						</li>
+						<li class="nav-item" style="margin-right: 20px;">
+							<a class="nav-link" href="About-Us.html" style="color: #000; padding: 5px 10px;">About</a>
+						</li>
+						<li class="nav-item" style="margin-right: 20px;">
+							<a class="nav-link" href="Services.html" style="color: #000; padding: 5px 10px;">Services</a>
+						</li>
+						<li class="nav-item" style="margin-right: 20px;">
+							<a class="nav-link" href="Team.html" style="color: #000; padding: 5px 10px;">Our Team</a>
+						</li>
+						<li class="nav-item" style="margin-right: 20px;">
+							<a class="nav-link" href="Testimonials.html" style="color: #000; padding: 5px 10px;">Testimonials</a>
+						</li>
+						<li class="nav-item" style="margin-right: 20px;">
+							<a class="nav-link" href="Technology.html" style="color: #000; padding: 5px 10px;">Our Office</a>
+						</li>
+						<li class="nav-item" style="margin-right: 20px;">
+							<a class="nav-link" href="Contact-Us.html" style="color: #000; padding: 5px 10px;">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+<style>
+    .nav-link:hover {
+        text-decoration: none; /* Remove default underline */
+        border-top: 2px solid #034CAE; /* Top underline */
+        border-bottom: 2px solid #034CAE; /* Bottom underline */
+        color: #2CB5E5;
+        border-top: 50%; /* Position the top border at the middle */
+        border-bottom: 50%; /* Position the top border at the middle */
+    }
+</style>
 
 
 
-        <!-- <div class="btVerticalHeaderTop">
-            <div class="btVerticalMenuTrigger">
-                &nbsp;
-                <div class="bt_bb_icon bt_bb_text_empty" data-bt-override-class="{}">
-                    <a href="#" target="_self" data-ico-fa="&#xf0c9;" class="bt_bb_icon_holder"></a>
-                </div>
-            </div>
-
-            <div class="btLogoArea">
-                <div class="logo">
-                    <span>
-                        <a href="index.html"><img class="btMainLogo" data-hw="1.8461538461538" src="img/asset 0.png"
-                                alt="Allen"></a>
-                    </span>
-                </div>
-            </div>
-        </div> -->
-
-        <header class="main-header" style="margin-bottom: 0; background-color: #A9A9A9;">
-            <div class="header-container"
-                style="display: flex; justify-content: space-between; align-items: center;height: 60px;">
-                <!-- Logo Area -->
-                <div class="logo-area" style="display: flex; align-items: center;">
-                    <button id="hamburger-icon" class="hamburger-menu" aria-label="Toggle navigation">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <a href="index.html" class="logo" style="margin-left: 10px;">
-                        <img src="img/asset 0.png" alt="Logo" style="height: 60px;">
-                    </a>
-                </div>
-
-                <!-- Contact and Button -->
-                <div class="topBarInLogoArea" style="display: flex; align-items: center;">
-                    <div class="topBarInLogoAreaCell" style="display: flex; align-items: center;">
-                        <!-- Phone Icon and Contact Number -->
-                        <div class="btIconWidgetIcon" style="display: inline-block; margin-right: 10px;">
-                            <span class="fas fa-phone"
-                                style="font-size: 25px;transform: rotateY(180deg);color: #FFBD0D;"></span>
-                        </div>
-                        <div class="btIconWidgetContent" style="display: inline-block; margin-right: 20px;">
-                            <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-                                <span class="btIconWidgetTitle"
-                                    style="font-size: 14px; font-weight: bold;color: #2C2D78;">(705) 422-2490</span>
-                            </a>
-                        </div>
-                        <!-- Book Appointment Button -->
-                        <a href="Contact-New.html" class="book-appointment-btn"
-                            style="height: 30px; font-size:12px; display: flex; justify-content: center; align-items: center;width: 150px;background-color: #2C2D78;color: #FFBD0D;margin-right: 20px;">Book
-                            Appointment</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Bar -->
-            <nav class="navbar" id="main-nav" style="background-color: #5783B8;height: -100px;">
-                <ul class="navbar-menu"
-                    style="display: flex; justify-content: center; list-style: none; margin: 0; padding: 5px; gap: 30px;">
-                    <li class="menu-item active"><a href="index.html">HOME</a></li>
-                    <li class="menu-item"><a href="About-Us.html">About</a></li>
-                    <li class="menu-item"><a href="Services.html">Services</a></li>
-                    <li class="menu-item"><a href="Team.html">Our Team</a></li>
-                    <li class="menu-item"><a href="Testimonials.html">Testimonials</a></li>
-                    <li class="menu-item"><a href="Technology.html">Our Office</a></li>
-                    <li class="menu-item"><a href="Contact-Us.html">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- <hr/ style="width: 1000px;height: -10px;color: #00d084;"> -->
-        </header>
-
-
-        <style>
-            /* General Styles */
-            .navbar-header {
-                background-color: #A9A9A9;
-                padding: 0;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-
-            }
-
-            .navbar-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .navbar {
-                display: flex;
-                justify-content: left;
-                align-items: left;
-                min-height: 30px;
-                padding-left: 150px;
-            }
-
-            .navbar-menu {
-                list-style: none;
-                display: flex;
-                gap: 30px;
-                /* Spacing between menu items */
-                padding: 0;
-                margin: 0;
-            }
-
-            .menu-item {
-                position: relative;
-                /* font-family:'Futura Std Condensed Light'; */
-            }
-
-            .menu-item a {
-                text-decoration: none;
-                font-size: 12px;
-                color: #333;
-                padding: 5px 10px;
-                border-radius: 5px;
-                background-color: white;
-            }
-
-            .menu-item.active a {
-                font-weight: bold;
-                color: #fff;
-                background-color: #2CB5E5;
-            }
-
-            .menu-item a:hover {
-                background-color: #2D2D79;
-                color: #fff;
-            }
-
-            /* Media Queries */
-            @media screen and (max-width: 768px) {
-                .navbar {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    padding: 10px 0;
-                }
-
-                .navbar-menu {
-                    flex-direction: column;
-                    gap: 10px;
-                    /* Reduce spacing on smaller screens */
-                }
-
-                .menu-item a {
-                    padding: 10px 20px;
-                    font-size: 12px;
-                }
-            }
-        </style>
-
-        <!-- CSS -->
-        <style>
-            /* General Styles */
-            .book-appointment-btn {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #3A3A3A;
-                color: white;
-                text-decoration: none;
-                font-size: 16px;
-                font-weight: bold;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            }
-
-            /* Responsive Styles */
-            @media screen and (max-width: 768px) {
-                .btHorizontalMenuTrigger {
-                    display: block;
-                    position: absolute;
-                    top: 15px;
-                    left: 15px;
-                    z-index: 1000;
-                }
-
-                #carousel-ta {
-                    display: none;
-                    visibility: hidden;
-                }
-
-                #hamburger-icon {
-                    background: none;
-                    border: none;
-                    cursor: pointer;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    height: 24px;
-                    width: 30px;
-                }
-
-                .hamburger-line {
-                    width: 30px;
-                    height: 3px;
-                    background-color: black;
-                    border-radius: 5px;
-                }
-
-                #main-nav {
-                    display: none;
-                    flex-direction: column;
-                    background-color: #f0f0f0;
-                    position: absolute;
-                    top: 60px;
-                    left: 0;
-                    right: 0;
-                    z-index: 999;
-                    padding: 5px;
-
-                }
-
-                #main-nav.active {
-                    display: flex;
-                }
-
-                #mainHeaderInne {
-                    height: 100px;
-                }
-
-                .menuPort ul {
-                    flex-direction: column;
-                    padding: 0;
-                    list-style: none;
-                }
-
-                .menuPort ul li {
-                    padding: 10px 0;
-                    text-align: center;
-                }
-
-                .topBarInLogoArea {
-                    flex-direction: column;
-                    align-items: flex-end;
-                    padding: 1px;
-                }
-
-                .logo {
-                    align-items: flex-end;
-                    margin-top: 40px;
-                    margin-right: 130px;
-                }
-
-                .book-appointment-btn {
-                    margin: 15px auto;
-                }
-            }
-        </style>
-
-        <!-- JavaScript -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const hamburger = document.getElementById("hamburger-icon");
-                const mainNav = document.getElementById("main-nav");
-
-                hamburger.addEventListener("click", function () {
-                    mainNav.classList.toggle("active");
-                });
-            });
-
-        </script>
 
         <div class="btContentWrap btClear" style="margin-top: 0;">
 
@@ -12867,15 +12812,15 @@
                 style="padding-top: 0;padding-bottom: 0;margin-top: -20px;padding-top: -20px;padding-bottom: -30px;margin-bottom: -30px;">
                 <ul class="carousel-nav">
                     <li class="tab active" data-slide="0"
-                        style="font-size: 12px;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
+                        style="font-size: 14px;height: 60px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
                         Accepting New
                         Patients</li>
                     <li class="tab" data-slide="1"
-                        style="font-size: 12px;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
+                        style="font-size: 14px;height: 60px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
                         Direct Billing to
                         Insurance</li>
                     <li class="tab" data-slide="2"
-                        style="font-size: 12px;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
+                        style="font-size: 14px;height: 60px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;">
                         Accepting CDCP Patients
                     </li>
                 </ul>
@@ -12886,7 +12831,7 @@
 
                     <section id="bt_bb_section6657ed330fe19"
                         class="bt_bb_section bt_bb_layout_wide bt_bb_vertical_align_top" data-bt-override-class="null">
-                        <div class="bt_bb_port">
+                        <div class="bt_bb_ports">
                             <div class="bt_bb_cell">
                                 <div class="bt_bb_cell_inner">
                                     <div class="bt_bb_row_wrapper">
@@ -14412,7 +14357,7 @@
 											</div>
 										</div>
 									</div> -->
-									<div
+									<div class="main-container"
 										style="width: 220px; height: 310px; position: relative;border-style: groove;border-width: 5px;
 										border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 										<!-- Image container -->
@@ -14421,13 +14366,24 @@
 											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
 
 										<!-- Name of the person (initially visible, hidden on hover) -->
-										<div
+										<div class="namecards"
 											style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
 											Sue
 										</div>
 
 
 									</div>
+                                    <script>
+										// JavaScript to handle hover effect
+										const maincard = document.querySelector('.main-container');										
+										const mainname = maincard.querySelector('.namecards');
+										maincard.addEventListener('mouseover', () => {
+											mainname.style.opacity = '0';
+										});
+										maincard.addEventListener('mouseout', () => {
+											mainname.style.opacity = '1';
+										});
+									</script>
 
 									<!-- Second Column -->
 									<!-- <div class="bt_bb_column"
@@ -14452,22 +14408,35 @@
 											</div>
 										</div>
 									</div> -->
-									<div
-										style="width: 220px; height: 310px; position: relative;border-style: groove;border-width: 5px;
-										border-radius: 25px;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
-										<!-- Image container -->
-										<img src="https://static.wixstatic.com/media/a4e5eb_dfbdd77ce60346c69bf6fcaad2f78352~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2866_JPG.jpg"
-											alt="Roxanne"
-											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    <div class="main-containeree"
+                                        style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
+                                        border-radius: 25px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
+                                        <!-- Image container -->
+                                        <img src="https://static.wixstatic.com/media/a4e5eb_dfbdd77ce60346c69bf6fcaad2f78352~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2866_JPG.jpg"
+                                            alt="Roxanne" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    
+                                        <!-- Name of the person (initially visible, hidden on hover) -->
+                                        <div class="namecardsee"
+                                            style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%);
+                                            font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: all 0.5s ease;">
+                                            Roxanne
+                                        </div>
+                                    </div>
+                                    <script>
+                                        // JavaScript to handle hover effect
+                                        const maincardee = document.querySelector('.main-containeree');
+                                        const mainnameee = maincardee.querySelector('.namecardsee');
 
-										<!-- Name of the person (initially visible, hidden on hover) -->
-										<div
-											style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
-											Roxanne
-										</div>
+                                        maincardee.addEventListener('mouseover', () => {
+                                            //mainnameee.style.transform = 'translate(-50%, 150%)';
+                                            mainnameee.style.opacity = '0';
+                                        });
 
-
-									</div>
+                                        maincardee.addEventListener('mouseout', () => {
+                                            //mainname.style.transform = 'translate(-50%, -50%)';
+                                            mainname.style.opacity = '1';
+                                        });
+                                    </script>
 
 									<!-- Third Column -->
 									<!-- <div class="bt_bb_column"
@@ -14610,63 +14579,67 @@
 																		</div>
 																	</div> -->
 
-									<div class="card-container"
-										style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
-																	border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
-										<!-- Image container -->
-										<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
-											alt="Renee"
-											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                                                    <div class="custom-card-container"
+                                                                        style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
+                                                                                                                                               border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+                                                                                                                                               transition: transform 0.3s ease; cursor: pointer;">
+                                                                        <!-- Image container -->
+                                                                        <img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
+                                                                            alt="Renee" class="custom-card-image"
+                                                                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                                                    
+                                                                        <!-- Name of the person (initially visible, hidden on hover) -->
+                                                                        <div class="custom-card-name" style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%);
+                                                                                                                                                   font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; 
+                                                                                                                                                   transition: opacity 0.3s ease;">
+                                                                            Renee
+                                                                        </div>
+                                                                    
+                                                                        <!-- Description paragraph (initially hidden, visible on hover) -->
+                                                                        <div class="custom-card-description"
+                                                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 8px;
+                                                                                                                                                   color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; 
+                                                                                                                                                   transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+                                                                            <p style="margin: 5px 0; text-align: justify;">
+                                                                                I started my dental career in 1997 as a Surgical Dental Assistant.
+                                                                                I expanded my dental career and became a Registered Dental Hygienist
+                                                                                in 2008. I have worked with Dr. Ghobrial since 2010 and continue
+                                                                                now to work for Stonebridge Dentistry. I have 2 small children and
+                                                                                enjoy spending time with friends and family.
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <script>
+                                                                        // JavaScript to handle hover effect
+                                                                        const customCard = document.querySelector('.custom-card-container');
+                                                                        const customCardImage = customCard.querySelector('.custom-card-image');
+                                                                        const customCardName = customCard.querySelector('.custom-card-name');
+                                                                        const customCardDescription = customCard.querySelector('.custom-card-description');
 
-										<!-- Name of the person (initially visible, hidden on hover) -->
-										<div class="card-names"
-											style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
-											Renee
-										</div>
+                                                                        customCard.addEventListener('mouseover', () => {
+                                                                            customCardImage.style.transform = 'scale(1.1)';
+                                                                            customCardName.style.opacity = '0';
+                                                                            customCardDescription.style.opacity = '1';
+                                                                        });
 
-										<!-- Description paragraph (initially hidden, visible on hover) -->
-										<div class="description-Renees"
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-											<p style="margin: 5px 0; text-align: justify;">
-												I started my dental career in 1997 as a Surgical Dental Assistant.
-												I expanded my dental career and became a Registered Dental Hygienist
-												in 2008. I have worked with Dr. Ghobrial since 2010 and continue
-												now to work for Stonebridge Dentistry. I have 2 small children and
-												enjoy spending time with friends and family.
-											</p>
-										</div>
-									</div>
+                                                                        customCard.addEventListener('mouseout', () => {
+                                                                            customCardImage.style.transform = 'scale(1)';
+                                                                            customCardName.style.opacity = '1';
+                                                                            customCardDescription.style.opacity = '0';
+                                                                        });
 
-									<script>
-										// JavaScript to handle hover effect
-										const Reneecard = document.querySelector('.card-container');
-										const Reneeimg = Reneecard.querySelector('img');
-										const Reneename = Reneecard.querySelector('.card-names');
-										const Reneeparagraph = Reneecard.querySelector('.description-Renees'); // Corrected selector
-
-										Reneecard.addEventListener('mouseover', () => {
-											Reneeimg.style.transform = 'scale(1.1)';
-											Reneename.style.opacity = '0';
-											Reneeparagraph.style.opacity = '1';
-										});
-
-										Reneecard.addEventListener('mouseout', () => {
-											Reneeimg.style.transform = 'scale(1)';
-											Reneename.style.opacity = '1';
-											Reneeparagraph.style.opacity = '0';
-										});
-									</script>
-
-
-
-								</div>
-
-								<!-- CSS for responsiveness -->
-								<style>
-									@media (max-width: 768px) {
-										.bt_bb_row {
-											flex-direction: column !important;
-											align-items: center;
+                                                                    </script>
+                                                                    
+                                                                    
+                                                                    
+                                                                    </div>
+                                                                    
+                                                                    <!-- CSS for responsiveness -->
+                                                                    <style>
+                                                                        @media (max-width: 768px) {
+                                                                            .bt_bb_row {
+                                                                                flex-direction: column !important;
+                                                                                align-items: center;
 										}
 
 										.bt_bb_column {
@@ -14744,58 +14717,61 @@
 											</div>
 										</div>
 									</div> -->
-									<div style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
-	border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;"
-										class="card-container">
-										<!-- Image container -->
-										<img src="https://static.wixstatic.com/media/a4e5eb_1323c17d642d4b2faf3ae7d147bb89d3~mv2.jpg/v1/crop/x_25,y_0,w_3399,h_4830/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/crystal.jpg"
-											alt="Crystal" class="image-crystal"
-											style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    <div style="width: 220px; height: 310px; position: relative; border-style: groove; border-width: 5px;
+                                                                        border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;"
+                                        class="card-containers">
+                                        <!-- Image container -->
+                                        <img src="https://static.wixstatic.com/media/a4e5eb_1323c17d642d4b2faf3ae7d147bb89d3~mv2.jpg/v1/crop/x_25,y_0,w_3399,h_4830/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/crystal.jpg"
+                                            alt="Crystal" class="card-images"
+                                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    
+                                        <!-- Name of the person (initially visible, hidden on hover) -->
+                                        <div style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%);
+                                                                            font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;"
+                                            class="card-names">
+                                            Crystal
+                                        </div>
+                                    
+                                        <!-- Description paragraph (initially hidden, visible on hover) -->
+                                        <div class="card-descriptions"
+                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 8px; color: #ffffff;
+                                                                            background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+                                            <p style="margin: 5px 0; text-align: justify;">I graduated with honors in
+                                                2009 from
+                                                the Dental Hygiene program at Georgian College in Orillia. I have a true
+                                                passion for
+                                                Dental Hygiene and enjoy getting to know my clients personally.</p>
+                                            <p style="margin: 5px 0; text-align: justify;"> I’m highly skilled
+                                                and have the ability to make patients feel at
+                                                ease and relaxed in my chair. With my acquired knowledge,
+                                                I’m able to deliver individualized treatment plans essential for good
+                                                oral health.</p>
+                                            <p style="margin: 5px 0; text-align: justify;">I will continue to work at
+                                                Stonebridge
+                                                Dentistry for many years to come.</p>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        // JavaScript to handle hover effect
+                                        const cardContainer = document.querySelector('.card-containers');
+                                        const cardImage = cardContainer.querySelector('.card-images');
+                                        const cardName = cardContainer.querySelector('.card-names');
+                                        const cardDescription = cardContainer.querySelector('.card-descriptions');
 
-										<!-- Name of the person (initially visible, hidden on hover) -->
-										<div style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;"
-											class="card-names">
-											Crystal
-										</div>
+                                        cardContainer.addEventListener('mouseover', () => {
+                                            cardImage.style.transform = 'scale(1.1)';
+                                            cardName.style.opacity = '0';
+                                            cardDescription.style.opacity = '1';
+                                        });
 
-										<!-- Description paragraph (initially hidden, visible on hover) -->
-										<div class="description-crystalss"
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 9px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-											<p style="margin: 5px 0; text-align: justify;">I graduated with honors in
-												2009 from
-												the Dental Hygiene program at Georgian College in Orillia. I have a true
-												passion for
-												Dental Hygiene and enjoy getting to know my clients personally.</p>
-											<p style="margin: 5px 0; text-align: justify;"> I’m highly skilled
-												and have the ability to make patients feel at
-												ease and relaxed in my chair. With my acquired knowledge,
-												I’m able to deliver individualized treatment plans essential for good
-												oral health.</p>
-											<p style="margin: 5px 0; text-align: justify;">I will continue to work at
-												Stonebridge
-												Dentistry for many years to come.</p>
-										</div>
-									</div>
+                                        cardContainer.addEventListener('mouseout', () => {
+                                            cardImage.style.transform = 'scale(1)';
+                                            cardName.style.opacity = '1';
+                                            cardDescription.style.opacity = '0';
+                                        });
 
-									<script>
-										// JavaScript to handle hover effect
-										const Crycard = document.querySelector('.card-container');
-										const Cryimg = Crycard.querySelector('image-crystal');
-										const Cryname = Crycard.querySelector('.card-names');
-										const Cryparagraph = Crycard.querySelector('.description-crystalss');
-
-										Crycard.addEventListener('mouseover', () => {
-											Cryimg.style.transform = 'scale(1.1)';
-											Cryname.style.opacity = '0';
-											Cryparagraph.style.opacity = '1';
-										});
-
-										Crycard.addEventListener('mouseout', () => {
-											Cryimg.style.transform = 'scale(1)';
-											Cryname.style.opacity = '1';
-											Cryparagraph.style.opacity = '0';
-										});
-									</script>
+                                    </script>
+                                
 
 									<!-- <div class="bt_bb_column"
 										style="flex: 1; margin: 0; height: 400px; max-width: 300px; position: relative; overflow: hidden;">
