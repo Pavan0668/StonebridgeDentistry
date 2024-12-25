@@ -12466,77 +12466,16 @@
 
     </script>
         <!-- Add Bootstrap JS and jQuery -->
-        
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <!-- Include Bootstrap CSS (if not already included) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-       <!-- Updated CSS -->
-<style>
-    /* Navbar custom styles */
-.navbar {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-}
+<!-- Add jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 
-.navbar-toggler {
-    border: none;
-    background: none;
-    cursor: pointer;
-}
 
-.navbar-toggler-icon {
-    width: 30px;
-    height: 30px;
-    background-color: #034CAE;
-    border-radius: 50%;
-    position: relative;
-}
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    left: 5px;
-    transition: all 0.3s ease;
-}
 
-.navbar-toggler-icon::before {
-    top: 8px;
-}
-
-.navbar-toggler-icon::after {
-    top: 14px;
-}
-
-.navbar-toggler.collapsed .navbar-toggler-icon::before {
-    transform: rotate(45deg);
-    top: 10px;
-}
-
-.navbar-toggler.collapsed .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
-    top: 10px;
-}
-
-/* Ensuring navbar collapse works properly */
-.navbar-collapse {
-    display: none;
-}
-
-@media (min-width: 769px) {
-    .navbar-collapse {
-        display: flex !important;
-    }
-
-    .navbar-toggler {
-        display: none;
-    }
-}
-
-</style>
 </head>
 
 
@@ -12547,63 +12486,43 @@
             style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
+
     
-    
-    <!-- Add Bootstrap JS and jQuery -->
-    
-    
-    
-    
-    <!-- Top bar -->
-    <div class="top-bar" style="background-color: blue; padding: 5px 0;">
-        <div class="containerss">
-            <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-                <!-- Social media links on the left -->
-                <div class="social1" style="flex: 1; display: flex; justify-content: flex-start;">
-                    <div class="social-media">
-                        <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 20px;">
-                            <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-google-plus-g"></i></a>
-                            </li>
-                            <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                            <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Contact details on the right -->
-                <div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
-                    <div class="contact-details">
-                        <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-                            <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705)
-                                422-2490</span>
-                        </a>
-                    </div>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!-- Book Appointment Button -->
-                    <a href="Contact-New.html" class="book-appointment-btn"
-                        style="font-size: 14px;height: 30px;border:groove;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;margin-right: 30px;">Book
-                        Appointment</a>
-                </div>
+  <!-- Include Bootstrap CSS (if not already included) -->
+
+
+<!-- Top bar -->
+<div class="top-bar" style="background-color: blue; padding: 5px 0;">
+    <div class="containers">
+        <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- Contact details on the right -->
+            <div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
+                <div class="contact-details">
+                    <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                        <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705) 422-2490</span>
+                    </a>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- Book Appointment Button -->
+                <a href="Contact-New.html" class="book-appointment-btn" style="font-size: 14px;height: 30px;border:groove;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;margin-right: 30px;">Book Appointment</a>
             </div>
         </div>
     </div>
+</div>
       
-      <!-- Updated Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light top-nav" style="padding: 10px 0;">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
     <div class="containers" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/asset 0.png" alt="Logo" style="height: 85px;">
+        <!-- Logo aligned to the left -->
+        <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: 50px;">
+            <img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;"/>
         </a>
-        <!-- Collapse button for mobile view -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#customNavbarResponsive" aria-controls="customNavbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Hamburger Menu Button (visible on small devices) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Collapsible menu -->
-        <div class="collapse navbar-collapse" id="customNavbarResponsive">
-            <ul class="navbar-nav ml-auto" style="list-style: none; padding: 0; margin: 0;">
+        <!-- Navbar items aligned to the right -->
+        <div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; padding-right: 50px; justify-content: flex-end;">
+            <ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
                 <li class="nav-item active" style="margin-right: 20px;">
                     <a class="nav-link" href="index.html" style="color: #000; padding: 5px 10px;">Home</a>
                 </li>
@@ -12630,34 +12549,142 @@
     </div>
 </nav>
 
+<!-- Include Bootstrap JS and jQuery (for toggler) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Updated Script -->
-<script>
-   // Ensure the collapse functionality is toggling correctly with Bootstrap's built-in collapse method
-$(document).ready(function () {
-    // Enable collapse functionality for the menu
-    $('.navbar-toggler').click(function () {
-        $(this).toggleClass('collapsed');
-        $('#customNavbarResponsive').collapse('toggle');
-    });
+<style>
+    .nav-link:hover {
+        text-decoration: none; /* Remove default underline */
+        border-top: 2px solid #034CAE; /* Top underline */
+        border-bottom: 2px solid #034CAE; /* Bottom underline */
+        color: #2CB5E5;
+        border-top: 50%; /* Position the top border at the middle */
+        border-bottom: 50%; /* Position the top border at the middle */
+    }
+</style>
 
-    // Ensure the menu closes when clicking outside on smaller screens
-    $(document).click(function (event) {
-        if (!$(event.target).closest('.navbar').length) {
-            $('#customNavbarResponsive').collapse('hide');
-            $('.navbar-toggler').removeClass('collapsed');
-        }
-    });
-});
+<style>
+    /* For small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Ensure the top bar items are in one line */
+    .top-bar .containers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-</script>
+    .top-bar .social2 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .top-bar .contact-details {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .book-appointment-btn {
+        height: 30px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2C2D78;
+        color: #FFBD0D;
+        margin-left: 15px; /* Add space between the mobile number and button */
+    }
+
+    .navbar-collapse {
+        display: none; /* Hide navbar items on small screens */
+    }
+
+    /* Display the hamburger menu */
+    .navbar-toggler {
+        display: block;
+        border: none;
+        background: none;
+    }
+
+    .navbar-toggler-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #034CAE;
+        position: relative;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        left: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+        top: 8px;
+    }
+
+    .navbar-toggler-icon::after {
+        top: 14px;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+
+    /* Navbar items should be stacked vertically on small screens */
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 10px 20px;
+    }
+}
+
+/* For larger screens (min-width: 769px) */
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: flex; /* Show navbar items on larger screens */
+    }
+
+    .navbar-toggler {
+        display: none; /* Hide hamburger menu on larger screens */
+    }
+}
+
+        
+</style>
+
+
+
+
+
+
 <!-- Add these to your <head> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
+
       <style>
         .nav-link:hover {
             text-decoration: none; /* Remove default underline */
