@@ -12502,242 +12502,231 @@
 	<!-- End Google Tag Manager (noscript) -->
 	<div class="btPageWrap" id="top">
 
-		<!-- <div class="btVerticalHeaderTop">
-            <div class="btVerticalMenuTrigger">
-                &nbsp;
-                <div class="bt_bb_icon bt_bb_text_empty" data-bt-override-class="{}">
-                    <a href="#" target="_self" data-ico-fa="&#xf0c9;" class="bt_bb_icon_holder"></a>
-                </div>
-            </div>
-        
-            <div class="btLogoArea">
-                <div class="logo">
-                    <span>
-                        <a href="index.html"><img class="btMainLogo" data-hw="1.8461538461538" src="img/asset 0.png" alt="Allen"></a>
-                    </span>
-                </div>
-            </div>
-        </div> -->
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-		<style>
-			/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
-			@media (max-width: 768px) {
-		
-				/* Hide the navbar links */
-				.navbar-collapse {
-					display: none;
-				}
-		
-				/* Display the hamburger menu */
-				.navbar-toggler {
-					display: block;
-					border: none;
-					background: none;
-				}
-		
-				/* Custom styling for the hamburger icon (circular) */
-				.navbar-toggler-icon {
-					width: 30px;
-					height: 30px;
-					border-radius: 50%;
-					background-color: #034CAE;
-					position: relative;
-				}
-		
-				.navbar-toggler-icon::before,
-				.navbar-toggler-icon::after {
-					content: '';
-					position: absolute;
-					width: 20px;
-					height: 2px;
-					background-color: white;
-					left: 5px;
-					transition: all 0.3s ease;
-				}
-		
-				.navbar-toggler-icon::before {
-					top: 8px;
-				}
-		
-				.navbar-toggler-icon::after {
-					top: 14px;
-				}
-		
-				/* Add a cross (X) effect on click */
-				.navbar-toggler.collapsed .navbar-toggler-icon::before {
-					transform: rotate(45deg);
-					top: 10px;
-				}
-		
-				.navbar-toggler.collapsed .navbar-toggler-icon::after {
-					transform: rotate(-45deg);
-					top: 10px;
-				}
-		
-				/* Ensure the top bar is responsive */
-				.top-bar {
-					display: block;
-				}
-		
-				.top-bar .container {
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-				}
-		
-				/* Social media and contact details should be stacked vertically on small screens */
-				.social1,
-				.social2 {
-					display: flex;
-					justify-content: flex-start;
-					flex-direction: column;
-					gap: 10px;
-				}
-		
-				.social2 {
-					justify-content: flex-end;
-				}
-		
-				.contact-details {
-					display: flex;
-					justify-content: flex-end;
-					flex-direction: column;
-					gap: 10px;
-				}
-		
-				/* Navbar items are stacked vertically on small screens */
-				.navbar-nav {
-					flex-direction: column;
-					width: 100%;
-					text-align: center;
-				}
-		
-				.nav-link {
-					padding: 10px 20px;
-				}
-		
-				/* Book Appointment button */
-				.book-appointment-btn {
-					height: 30px;
-					font-size: 12px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 150px;
-					background-color: #1D9BF0;
-					color: #FFFFFF;
-					margin-right: 20px;
-				}
-			}
-		
-			/* For large screens (desktop) */
-			@media (min-width: 769px) {
-				.navbar-collapse {
-					display: flex;
-				}
-		
-				.navbar-toggler {
-					display: none;
-				}
-			}
-		
-			/* Box sizing for all elements */
-			* {
-				box-sizing: border-box;
-			}
-		</style>
+	<script>
+		// Ensure the hamburger menu toggles correctly
+$(document).ready(function() {
+    // Initially collapse the navbar
+    $('.navbar-collapse').hide();
+
+    // Toggle the menu when the hamburger button is clicked
+    $('.navbar-toggler').click(function() {
+        // Toggle the collapsed state for the hamburger
+        $(this).toggleClass('collapsed');
+        // Show or hide the navbar items
+        $('#navbarResponsive').toggle();
+    });
+});
+
+	</script>
+	
+	<style>
+		/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
+@media (max-width: 768px) {
+    /* Hide the navbar links by default */
+    .navbar-collapse {
+        display: none;
+    }
+
+    /* Display the hamburger menu */
+    .navbar-toggler {
+        display: block;
+        border: none;
+        background: none;
+    }
+
+    /* Custom styling for the hamburger icon (circular) */
+    .navbar-toggler-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #034CAE;
+        position: relative;
+    }
+
+    .navbar-toggler-icon::before, .navbar-toggler-icon::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        left: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+        top: 8px;
+    }
+
+    .navbar-toggler-icon::after {
+        top: 14px;
+    }
+
+    /* Add a cross (X) effect on click */
+    .navbar-toggler.collapsed .navbar-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+
+    /* Ensure the top bar is responsive */
+    .top-bar {
+        display: block;
+    }
+
+    .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Social media and contact details should be stacked vertically on small screens */
+    .social1, .social2 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social2 {
+        justify-content: flex-end;
+    }
+
+    .contact-details {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Navbar items are stacked vertically on small screens */
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 10px 20px;
+    }
+
+    /* Book Appointment button */
+    .book-appointment-btn {
+        height: 30px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        background-color: #1D9BF0;
+        color: #FFFFFF;
+        margin-right: 20px;
+    }
+}
+
+/* For large screens (desktop) */
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+	</style>
+	
 		
 		<!-- Top bar -->
-		<div class="top-bar" style="background-color: blue; padding: 5px 0;">
-			<div class="container">
-				<div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-					<!-- Social media links on the left -->
-					<div class="social1" style="flex: 1; display: flex; justify-content: flex-start;">
-						<div class="social-media">
-							<ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 20px;">
-								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook-f"></i></a>
-								</li>
-								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-google-plus-g"></i></a>
-								</li>
-								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin-in"></i></a>
-								</li>
-								<li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- Contact details on the right -->
-					<div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
-						<div class="contact-details">
-							<a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-								<span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705)
-									422-2490</span>
-							</a>
-						</div>
-						<!-- Book Appointment Button -->
-						<a href="Contact-New.html" class="book-appointment-btn">Book Appointment</a>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="top-bar" style="background-color: blue; padding: 5px 0;">
+    <div class="container">
+        <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- Social media links on the left -->
+            <div class="social1" style="flex: 1; display: flex; justify-content: flex-start;">
+                <div class="social-media">
+                    <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 20px;">
+                        <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Contact details on the right -->
+            <div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
+                <div class="contact-details">
+                    <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                        <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705) 422-2490</span>
+                    </a>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- Book Appointment Button -->
+                <a href="Contact-New.html" class="book-appointment-btn" style="font-size: 14px;height: 30px;border:groove;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;margin-right: 30px;">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+        <!-- Logo aligned to the left -->
+        <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: -10px;">
+            <img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;"/>
+        </a>
+        <!-- Hamburger Menu Button (visible on small devices) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar items aligned to the right -->
+        <div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; justify-content: flex-end;">
+            <ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
+                <li class="nav-item active" style="margin-right: 20px;">
+                    <a class="nav-link" href="index.html" style="color: #000; padding: 5px 10px;">Home</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="About-Us.html" style="color: #000; padding: 5px 10px;">About</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Services.html" style="color: #000; padding: 5px 10px;">Services</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Team.html" style="color: #000; padding: 5px 10px;">Our Team</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Testimonials.html" style="color: #000; padding: 5px 10px;">Testimonials</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Technology.html" style="color: #000; padding: 5px 10px;">Our Office</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Contact-Us.html" style="color: #000; padding: 5px 10px;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 		
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
-			<div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-				<!-- Logo aligned to the left -->
-				<a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: 40px;">
-					<img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;" />
-				</a>
-				<!-- Hamburger Menu Button (visible on small devices) -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-					aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- Navbar items aligned to the right -->
-				<div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; justify-content: flex-end;">
-					<ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
-						<li class="nav-item active" style="margin-right: 20px;">
-							<a class="nav-link" href="index.html" style="color: #000; padding: 5px 10px;">Home</a>
-						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="About-Us.html" style="color: #000; padding: 5px 10px;">About</a>
-						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Services.html" style="color: #000; padding: 5px 10px;">Services</a>
-						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Team.html" style="color: #000; padding: 5px 10px;">Our Team</a>
-						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Testimonials.html"
-								style="color: #000; padding: 5px 10px;">Testimonials</a>
-						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Technology.html" style="color: #000; padding: 5px 10px;">Our Office</a>
-						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Contact-Us.html" style="color: #000; padding: 5px 10px;">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		
-		<style>
-			.nav-link:hover {
-				text-decoration: none;
-				/* Remove default underline */
-				border-top: 2px solid #034CAE;
-				/* Top underline */
-				border-bottom: 2px solid #034CAE;
-				/* Bottom underline */
-				color: #2CB5E5;
-				border-top: 50%;
-				/* Position the top border at the middle */
-				border-bottom: 50%;
-				/* Position the top border at the middle */
-			}
-		</style>
+<style>
+    .nav-link:hover {
+        text-decoration: none; /* Remove default underline */
+        border-top: 2px solid #034CAE; /* Top underline */
+        border-bottom: 2px solid #034CAE; /* Bottom underline */
+        color: #2CB5E5;
+        border-top: 50%; /* Position the top border at the middle */
+        border-bottom: 50%; /* Position the top border at the middle */
+    }
+</style>
 
 		<div class="btContentWrap btClear">
 			<!-- <section

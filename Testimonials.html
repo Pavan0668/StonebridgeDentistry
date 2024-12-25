@@ -50,30 +50,30 @@
 		}
 	</style>
 
- <!-- Script to Activate Tabs -->
- <script>
-	$(document).ready(function () {
-		// Initialize Slick slider
-		$('.slick-slider').slick();
+	<!-- Script to Activate Tabs -->
+	<script>
+		$(document).ready(function () {
+			// Initialize Slick slider
+			$('.slick-slider').slick();
 
-		// Custom tab click function
-		$('.carousel-nav .tab').on('click', function () {
-			var slideIndex = $(this).data('slide');
-			$('.slick-slider').slick('slickGoTo', slideIndex);
+			// Custom tab click function
+			$('.carousel-nav .tab').on('click', function () {
+				var slideIndex = $(this).data('slide');
+				$('.slick-slider').slick('slickGoTo', slideIndex);
 
-			// Remove 'active' class from other tabs
-			$('.carousel-nav .tab').removeClass('active');
-			// Add 'active' class to clicked tab
-			$(this).addClass('active');
+				// Remove 'active' class from other tabs
+				$('.carousel-nav .tab').removeClass('active');
+				// Add 'active' class to clicked tab
+				$(this).addClass('active');
+			});
+
+			// Sync Slick with tabs
+			$('.slick-slider').on('afterChange', function (event, slick, currentSlide) {
+				$('.carousel-nav .tab').removeClass('active');
+				$('.carousel-nav .tab[data-slide="' + currentSlide + '"]').addClass('active');
+			});
 		});
-
-		// Sync Slick with tabs
-		$('.slick-slider').on('afterChange', function (event, slick, currentSlide) {
-			$('.carousel-nav .tab').removeClass('active');
-			$('.carousel-nav .tab[data-slide="' + currentSlide + '"]').addClass('active');
-		});
-	});
-</script>
+	</script>
 
 	<style>
 		.social-icons {
@@ -12521,8 +12521,11 @@
 	<!-- End Google Tag Manager (noscript) -->
 	<div class="btPageWrap" id="top">
 
-		
-
+	    <!-- Add Bootstrap JS and jQuery -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
 		<script>
 			// Ensure the hamburger menu toggles correctly
 	$(document).ready(function() {
@@ -12761,228 +12764,239 @@
 			</section>
 			<br><br>
 
-	  <div class="btContentHolder">
-			
-				
-					<div class="bt_bb_cell">
-							<div class="bt_bb_row_wrapper" style="background-color: lightgrey; padding: 20px; border-radius: 8px;">
-								<header class="bt_bb_headline bt_bb_color_scheme_8 bt_bb_dash_none bt_bb_size_extralarge"
-								style="margin-bottom: 1px;">
-								<h4 class="bt_bb_headline_tag" style="text-align: center;"><span
-										class="bt_bb_headline_content"><span><b>Client</b>
-											<strong>Testimonials</strong></span></span></h4>
-							</header>
-							<br>
-		
-							<div class="testimonial-container">
-								<div class="testimonial-card animate-slide">
-									<div class="testimonial-header">
-										<h4 class="testimonial-name">Anthony Clarke</h4>
-										<div class="testimonial-stars">
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-										</div>
+			<div class="btContentHolder">
+
+
+				<div class="bt_bb_cell">
+					<div class="bt_bb_row_wrapper"
+						style="background-color: lightgrey; padding: 20px; border-radius: 8px;">
+						<header class="bt_bb_headline bt_bb_color_scheme_8 bt_bb_dash_none bt_bb_size_extralarge"
+							style="margin-bottom: 1px;">
+							<h4 class="bt_bb_headline_tag" style="text-align: center;"><span
+									class="bt_bb_headline_content"><span><b>Client</b>
+										<strong>Testimonials</strong></span></span></h4>
+						</header>
+						<br>
+
+						<div class="testimonial-container">
+							<div class="testimonial-card animate-slide">
+								<div class="testimonial-header">
+									<h4 class="testimonial-name">Anthony Clarke</h4>
+									<div class="testimonial-stars">
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
 									</div>
-									<p class="testimonial-text">
-										The office and Dr Panchal helped with an extraction, root canal, and fillings on
-										my front two teeth. The cleanings are painless and I have never really had
-										such a positive experience at a dentist as I have here.
-									</p>
 								</div>
-								<div class="testimonial-card animate-slide">
-									<div class="testimonial-header">
-										<h4 class="testimonial-name">Elaine Murphy</h4>
-										<div class="testimonial-stars">
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-										</div>
-									</div>
-									<p class="testimonial-text">
-										Integrity and compassion!
-										They'll see you when you're in pain
-										and present you with options, rather
-										than pass you off with a referral -
-										How Refreshing. I am very impressed and
-										grateful for my dental implant which was
-										done completely in-house.
-										Everyone in this office truly cares.
-										I can't remember the last time I gave a review,
-										but I wanted other people as frustrated as
-										I was, to know this is a safe and honest place.
-									</p>
-								</div>
-								<div class="testimonial-card animate-slide">
-									<div class="testimonial-header">
-										<h4 class="testimonial-name">Ezana Milton</h4>
-										<div class="testimonial-stars">
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-										</div>
-									</div>
-									<p class="testimonial-text">
-										I've never felt more comfortable respected and
-										treated like a person the service was
-										amazing and I recommend that you make
-										the switch to Stonebridge Dentistry
-		
-										Thanks for everything you did and do
-										Sincerely Satisfied Customer
-									</p>
-								</div>
-								<div class="testimonial-card animate-slide">
-									<div class="testimonial-header">
-										<h4 class="testimonial-name">Yennefer Lynn</h4>
-										<div class="testimonial-stars">
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-											<span class="star">★</span>
-										</div>
-									</div>
-									<p class="testimonial-text">
-										I was in today to get my very first ever.
-										I was really nervous about it hurting and
-										I was not looking forward to having it done.
-										But all the staff that were involved were
-										extremely friendly and assured me that everything
-										would be fine and they were right. No pain at all
-										and it was a quick and easy experience.will to
-										come here and would recommend them to others. Thanks 😊
-									</p>
-								</div>
+								<p class="testimonial-text">
+									The office and Dr Panchal helped with an extraction, root canal, and fillings on
+									my front two teeth. The cleanings are painless and I have never really had
+									such a positive experience at a dentist as I have here.
+								</p>
 							</div>
-		
-							<style>
-								/* General container styling */
-								.testimonial-container {
-									display: flex;
-									gap: 20px; /* Adds space between cards */
-									justify-content: center; /* Centers the cards horizontally */
-									align-items: flex-start; /* Aligns cards at the top */
-									flex-wrap: wrap; /* Ensures cards stack on smaller screens */
+							<div class="testimonial-card animate-slide">
+								<div class="testimonial-header">
+									<h4 class="testimonial-name">Elaine Murphy</h4>
+									<div class="testimonial-stars">
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+									</div>
+								</div>
+								<p class="testimonial-text">
+									Integrity and compassion!
+									They'll see you when you're in pain
+									and present you with options, rather
+									than pass you off with a referral -
+									How Refreshing. I am very impressed and
+									grateful for my dental implant which was
+									done completely in-house.
+									Everyone in this office truly cares.
+									I can't remember the last time I gave a review,
+									but I wanted other people as frustrated as
+									I was, to know this is a safe and honest place.
+								</p>
+							</div>
+							<div class="testimonial-card animate-slide">
+								<div class="testimonial-header">
+									<h4 class="testimonial-name">Ezana Milton</h4>
+									<div class="testimonial-stars">
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+									</div>
+								</div>
+								<p class="testimonial-text">
+									I've never felt more comfortable respected and
+									treated like a person the service was
+									amazing and I recommend that you make
+									the switch to Stonebridge Dentistry
+
+									Thanks for everything you did and do
+									Sincerely Satisfied Customer
+								</p>
+							</div>
+							<div class="testimonial-card animate-slide">
+								<div class="testimonial-header">
+									<h4 class="testimonial-name">Yennefer Lynn</h4>
+									<div class="testimonial-stars">
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+										<span class="star">★</span>
+									</div>
+								</div>
+								<p class="testimonial-text">
+									I was in today to get my very first ever.
+									I was really nervous about it hurting and
+									I was not looking forward to having it done.
+									But all the staff that were involved were
+									extremely friendly and assured me that everything
+									would be fine and they were right. No pain at all
+									and it was a quick and easy experience.will to
+									come here and would recommend them to others. Thanks 😊
+								</p>
+							</div>
+						</div>
+
+						<style>
+							/* General container styling */
+							.testimonial-container {
+								display: flex;
+								gap: 20px;
+								/* Adds space between cards */
+								justify-content: center;
+								/* Centers the cards horizontally */
+								align-items: flex-start;
+								/* Aligns cards at the top */
+								flex-wrap: wrap;
+								/* Ensures cards stack on smaller screens */
+							}
+
+							/* Card styling */
+							.testimonial-card {
+								width: 300px;
+								height: 325px;
+								background: #ffffff;
+								box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+								border-radius: 10px;
+								padding: 20px;
+								text-align: left;
+								color: #333;
+								border: ridge;
+								opacity: 0;
+								/* Hidden before animation */
+								transform: translateX(-50px);
+								/* Slide in from left */
+								animation: slideIn 0.8s ease-out forwards;
+								/* Animation effect */
+							}
+
+							.testimonial-card:hover {
+								transform: scale(1.05);
+								/* Scale slightly on hover */
+								box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+							}
+
+							/* Header styling */
+							.testimonial-header {
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+								margin-bottom: 15px;
+							}
+
+							.testimonial-name {
+								font-size: 18px;
+								font-weight: bold;
+								color: #2c3e50;
+							}
+
+							.testimonial-stars .star {
+								font-size: 18px;
+								color: #f39c12;
+							}
+
+							/* Text styling */
+							.testimonial-text {
+								font-size: 14px;
+								line-height: 1.6;
+								color: #555;
+								text-align: justify;
+							}
+
+							/* Keyframes for slide-in animation */
+							@keyframes slideIn {
+								from {
+									opacity: 0;
+									transform: translateX(-50px);
 								}
-							
-								/* Card styling */
+
+								to {
+									opacity: 1;
+									transform: translateX(0);
+								}
+							}
+
+							/* Stagger the animation for each card */
+							.testimonial-card:nth-child(1) {
+								animation-delay: 0s;
+							}
+
+							.testimonial-card:nth-child(2) {
+								animation-delay: 0.3s;
+							}
+
+							.testimonial-card:nth-child(3) {
+								animation-delay: 0.6s;
+							}
+
+							.testimonial-card:nth-child(4) {
+								animation-delay: 0.9s;
+							}
+
+							/* Media queries for responsiveness */
+							@media screen and (max-width: 768px) {
 								.testimonial-card {
-									width: 300px;
-									height: 325px;
-									background: #ffffff;
-									box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-									border-radius: 10px;
-									padding: 20px;
-									text-align: left;
-									color: #333;
-									border: ridge;
-									opacity: 0; /* Hidden before animation */
-									transform: translateX(-50px); /* Slide in from left */
-									animation: slideIn 0.8s ease-out forwards; /* Animation effect */
+									width: 100%;
+									height: auto;
 								}
-							
-								.testimonial-card:hover {
-									transform: scale(1.05); /* Scale slightly on hover */
-									box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-								}
-							
-								/* Header styling */
-								.testimonial-header {
-									display: flex;
-									justify-content: space-between;
+
+								.testimonial-container {
+									flex-direction: column;
+									/* Stack cards vertically */
 									align-items: center;
-									margin-bottom: 15px;
+									/* Center align the cards */
 								}
-							
+							}
+
+							@media screen and (max-width: 480px) {
+								.testimonial-card {
+									padding: 15px;
+									font-size: 12px;
+								}
+
 								.testimonial-name {
-									font-size: 18px;
-									font-weight: bold;
-									color: #2c3e50;
+									font-size: 16px;
 								}
-							
-								.testimonial-stars .star {
-									font-size: 18px;
-									color: #f39c12;
-								}
-							
-								/* Text styling */
+
 								.testimonial-text {
-									font-size: 14px;
-									line-height: 1.6;
-									color: #555;
-									text-align: justify;
+									font-size: 12px;
 								}
-							
-								/* Keyframes for slide-in animation */
-								@keyframes slideIn {
-									from {
-										opacity: 0;
-										transform: translateX(-50px);
-									}
-							
-									to {
-										opacity: 1;
-										transform: translateX(0);
-									}
-								}
-							
-								/* Stagger the animation for each card */
-								.testimonial-card:nth-child(1) {
-									animation-delay: 0s;
-								}
-							
-								.testimonial-card:nth-child(2) {
-									animation-delay: 0.3s;
-								}
-							
-								.testimonial-card:nth-child(3) {
-									animation-delay: 0.6s;
-								}
-							
-								.testimonial-card:nth-child(4) {
-									animation-delay: 0.9s;
-								}
-							
-								/* Media queries for responsiveness */
-								@media screen and (max-width: 768px) {
-									.testimonial-card {
-										width: 100%;
-										height: auto;
-									}
-							
-									.testimonial-container {
-										flex-direction: column; /* Stack cards vertically */
-										align-items: center; /* Center align the cards */
-									}
-								}
-							
-								@media screen and (max-width: 480px) {
-									.testimonial-card {
-										padding: 15px;
-										font-size: 12px;
-									}
-							
-									.testimonial-name {
-										font-size: 16px;
-									}
-							
-									.testimonial-text {
-										font-size: 12px;
-									}
-								}
-							</style>
-							
-							</div>
-						
+							}
+						</style>
+
 					</div>
-				
-				
+
+				</div>
+
+
 				<section id="section664fb57da0b30" class="responsive-section">
 					<!-- Left Side Content -->
 					<div class="left-side-content">
@@ -13296,7 +13310,7 @@
 				<h3 class="footer-heading">
 					<span style="color: #422774;">Stonebridge</span>
 					<span style="color: #FF793E;">Dentistry</span>
-				  </h3>
+				</h3>
 				<p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
 				<div class="contact-info">
 					<div class="contact-item">
@@ -13313,7 +13327,7 @@
 					</div>
 				</div>
 			</div>
-		
+
 			<!-- Section 2 -->
 			<div class="footer-section" id="footer-section-2">
 				<h3 class="footer-heading">About</h3>
@@ -13324,12 +13338,13 @@
 					<li><a href="About-Us.html">About</a></li>
 				</ul>
 			</div>
-		
+
 			<!-- Section 3 -->
 			<div class="footer-section" id="footer-section-3">
 				<h3 class="footer-heading">Our Awards</h3>
 				<div class="image-container">
-					<img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png" alt="Sample Image">
+					<img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
+						alt="Sample Image">
 					<div class="image-text">
 						Stonebridge is a multiple award winner<br>
 						<strong>Best Patient Care 2017</strong><br>
@@ -13338,13 +13353,13 @@
 					</div>
 				</div>
 			</div>
-		
+
 			<!-- Section 4 -->
 			<div class="footer-section" id="footer-section-4">
-				
+
 				<h3 class="footer-heading">Social Networks</h3>
 				<p class="footer-subtext">
-					Visit Stonebridge on these social links and connect with us. 
+					Visit Stonebridge on these social links and connect with us.
 					Make sure to follow our accounts for regular updates.
 				</p>
 				<div class="social-iconss">
@@ -13355,7 +13370,7 @@
 				</div>
 			</div>
 		</footer>
-		
+
 		<div class="footer-navigation">
 			<div class="menu-footer-menu-container">
 				<ul id="menu-footer-menu" class="menu">
@@ -13368,172 +13383,177 @@
 				</ul>
 			</div>
 		</div>
-		
-	
+
+
 		<style>
-	
 			/* Footer Navigation Strip */
-	.footer-navigation {
-		background-color: #003478; /* Footer background color */
-		color: #ffffff;
-		padding: 5px 10px;
-		position: relative;
-	}
-	
-	.menu-footer-menu-container {
-		display: flex;
-		justify-content: flex-end; /* Align navigation to the right */
-		margin: 0 auto;
-		max-width: 1200px;
-	}
-	
-	.menu {
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap; /* Ensure responsive wrapping */
-		gap: 15px;
-		padding: 0;
-		margin: 0;
-	}
-	
-	.menu-items {
-		font-size: 14px;
-	}
-	
-	.menu-items a {
-		color: #ffffff;
-		text-decoration: none;
-		transition: color 0.3s;
-	}
-	
-	.menu-items a:hover {
-		color: #ffa500; /* Light orange hover effect */
-		font-weight: bold;
-	}
-	
-	/* Responsive Design */
-	@media (max-width: 768px) {
-		.menu-footer-menu-container {
-			justify-content: center; /* Center align for smaller devices */
-		}
-	
-		.menu {
-			gap: 10px;
-			font-size: 12px;
-		}
-	}
-	
-	@media (max-width: 480px) {
-		.menu {
-			flex-direction: column; /* Stack items vertically on small screens */
-			align-items: center;
-		}
-	
-		.menu-item {
-			margin-bottom: 5px;
-		}
-	}
-	
-		 .footer {
-		display: flex;
-		flex-wrap: wrap;
-		background-color: #f4f4f4;
-		padding: 20px;
-		text-align: center;
-	}
-	
-	.footer-section {
-		flex: 1 1 25%;
-		padding: 20px;
-		box-sizing: border-box;
-	}
-	
-	.footer-heading {
-		font-size: 18px;
-		font-weight: bold;
-		position: relative;
-		color: #422774;
-	}
-	
-	.footer-heading::after {
-		content: "";
-		display: block;
-		width: 50px;
-		height: 2px;
-		background-color: #FF793E;
-		margin: 8px auto;
-	}
-	
-	.footer-subtext {
-		margin: 10px 0;
-		font-size: 14px;
-	}
-	
-	.contact-info {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
-	
-	.contact-item {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-size: 14px;
-	}
-	
-	.contact-item a {
-		color: #000;
-		text-decoration: none;
-	}
-	
-	.contact-item a:hover {
-		text-decoration: underline;
-	}
-	
-	.footer-nav {
-		list-style: none;
-		padding: 0;
-	}
-	
-	.footer-nav li {
-		margin: 5px 0;
-	}
-	
-	.footer-nav a {
-		color: #000;
-		text-decoration: none;
-	}
-	
-	.footer-nav a:hover {
-		text-decoration: underline;
-		color: #FF793E;
-	}
-	
-	.image-container {
-		position: relative;
-		text-align: center;
-	}
-	
-	.image-container img {
-		max-width: 280px;
-		height: 200px;
-	}
-	
-	.image-text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: black;
-		background-color: F4F4F4;
-		padding: 10px;
-		border-radius: 5px;
-		font-size: 13px;
-		text-align: center;
-	}
-	
-	/* .logo {
+			.footer-navigation {
+				background-color: #003478;
+				/* Footer background color */
+				color: #ffffff;
+				padding: 5px 10px;
+				position: relative;
+			}
+
+			.menu-footer-menu-container {
+				display: flex;
+				justify-content: flex-end;
+				/* Align navigation to the right */
+				margin: 0 auto;
+				max-width: 1200px;
+			}
+
+			.menu {
+				list-style: none;
+				display: flex;
+				flex-wrap: wrap;
+				/* Ensure responsive wrapping */
+				gap: 15px;
+				padding: 0;
+				margin: 0;
+			}
+
+			.menu-items {
+				font-size: 14px;
+			}
+
+			.menu-items a {
+				color: #ffffff;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			.menu-items a:hover {
+				color: #ffa500;
+				/* Light orange hover effect */
+				font-weight: bold;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.menu-footer-menu-container {
+					justify-content: center;
+					/* Center align for smaller devices */
+				}
+
+				.menu {
+					gap: 10px;
+					font-size: 12px;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.menu {
+					flex-direction: column;
+					/* Stack items vertically on small screens */
+					align-items: center;
+				}
+
+				.menu-item {
+					margin-bottom: 5px;
+				}
+			}
+
+			.footer {
+				display: flex;
+				flex-wrap: wrap;
+				background-color: #f4f4f4;
+				padding: 20px;
+				text-align: center;
+			}
+
+			.footer-section {
+				flex: 1 1 25%;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+
+			.footer-heading {
+				font-size: 18px;
+				font-weight: bold;
+				position: relative;
+				color: #422774;
+			}
+
+			.footer-heading::after {
+				content: "";
+				display: block;
+				width: 50px;
+				height: 2px;
+				background-color: #FF793E;
+				margin: 8px auto;
+			}
+
+			.footer-subtext {
+				margin: 10px 0;
+				font-size: 14px;
+			}
+
+			.contact-info {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+			}
+
+			.contact-item {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 14px;
+			}
+
+			.contact-item a {
+				color: #000;
+				text-decoration: none;
+			}
+
+			.contact-item a:hover {
+				text-decoration: underline;
+			}
+
+			.footer-nav {
+				list-style: none;
+				padding: 0;
+			}
+
+			.footer-nav li {
+				margin: 5px 0;
+			}
+
+			.footer-nav a {
+				color: #000;
+				text-decoration: none;
+			}
+
+			.footer-nav a:hover {
+				text-decoration: underline;
+				color: #FF793E;
+			}
+
+			.image-container {
+				position: relative;
+				text-align: center;
+			}
+
+			.image-container img {
+				max-width: 280px;
+				height: 200px;
+			}
+
+			.image-text {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: black;
+				background-color: F4F4F4;
+				padding: 10px;
+				border-radius: 5px;
+				font-size: 13px;
+				text-align: center;
+			}
+
+			/* .logo {
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
@@ -13548,38 +13568,37 @@
 		color: #fff;
 		font-size: 24px;
 	} */
-	
-	.social-iconss {
-		display: flex;
-		justify-content: center;
-		gap: 15px;
-	}
-	
-	.social-iconss a {
-		color: #422774;
-		font-size: 18px;
-		text-decoration: none;
-	}
-	
-	.social-iconss a:hover {
-		color: #ffa500;
-	}
-	
-	/* Responsive Design */
-	@media (max-width: 768px) {
-		.footer-section {
-			flex: 1 1 100%;
-		}
-	
-		.contact-info {
-			align-items: center;
-		}
-	
-		.image-text {
-			font-size: 12px;
-		}
-	}
-	
+
+			.social-iconss {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+			}
+
+			.social-iconss a {
+				color: #422774;
+				font-size: 18px;
+				text-decoration: none;
+			}
+
+			.social-iconss a:hover {
+				color: #ffa500;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.footer-section {
+					flex: 1 1 100%;
+				}
+
+				.contact-info {
+					align-items: center;
+				}
+
+				.image-text {
+					font-size: 12px;
+				}
+			}
 		</style>
 		<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
