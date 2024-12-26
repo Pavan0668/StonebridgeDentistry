@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -12466,16 +12466,18 @@
 
     </script>
         <!-- Add Bootstrap JS and jQuery -->
-      <!-- Include Bootstrap CSS (if not already included) -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Add jQuery and Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
-
-
-
+    <!-- Include Bootstrap CSS (if not already included) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Add jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap JS and jQuery (for toggler) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    
 </head>
 
 
@@ -12491,190 +12493,219 @@
   <!-- Include Bootstrap CSS (if not already included) -->
 
 
+  <script>
+    // Ensure the hamburger menu toggles correctly
+$(document).ready(function() {
+// Initially collapse the navbar
+$('.navbar-collapse').hide();
+
+// Toggle the menu when the hamburger button is clicked
+$('.navbar-toggler').click(function() {
+    // Toggle the collapsed state for the hamburger
+    $(this).toggleClass('collapsed');
+    // Show or hide the navbar items
+    $('#navbarResponsive').toggle();
+});
+});
+
+</script>
+
+<style>
+    /* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
+@media (max-width: 768px) {
+/* Hide the navbar links by default */
+.navbar-collapse {
+    display: none;
+}
+
+/* Display the hamburger menu */
+.navbar-toggler {
+    display: block;
+    border: none;
+    background-color: black;
+}
+
+/* Custom styling for the hamburger icon (circular) */
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+}
+
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    left: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: 8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 14px;
+}
+
+/* Add a cross (X) effect on click */
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+/* Ensure the top bar is responsive */
+.top-bar {
+    display: block;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Social media and contact details should be stacked vertically on small screens */
+.social1, .social2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social2 {
+    justify-content: flex-end;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Navbar items are stacked vertically on small screens */
+.navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-link {
+    padding: 10px 20px;
+}
+
+/* Book Appointment button */
+.book-appointment-btn {
+    height: 30px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: #1D9BF0;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+}
+
+/* For large screens (desktop) */
+@media (min-width: 769px) {
+.navbar-collapse {
+    display: flex;
+}
+
+.navbar-toggler {
+    display: none;
+}
+}
+
+</style>
+
+    
+    <!-- Top bar -->
 <!-- Top bar -->
 <div class="top-bar" style="background-color: blue; padding: 5px 0;">
-    <div class="containers">
-        <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-            <!-- Contact details on the right -->
-            <div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
-                <div class="contact-details">
-                    <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
-                        <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705) 422-2490</span>
-                    </a>
-                </div>&nbsp;&nbsp;&nbsp;&nbsp;
-                <!-- Book Appointment Button -->
-                <a href="Contact-New.html" class="book-appointment-btn" style="font-size: 14px;height: 30px;border:groove;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;margin-right: 30px;">Book Appointment</a>
-            </div>
-        </div>
-    </div>
+  <div class="containerss">
+      <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+
+          <div class="social2" style="flex: 1; display: flex; justify-content: flex-end;">
+              <div class="contact-details">
+                  <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                      <span class="btIconWidgetTitle"
+                          style="font-size: 14px; font-weight: bold;color: #FFFFFF;">(705) 422-2490</span>
+                  </a>
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;
+              <!-- Book Appointment Button -->
+              <a href="Contact-New.html" class="book-appointment-btn"
+                  style="font-size: 14px;height: 30px;border:groove;height: 30px; display: flex; justify-content: center; align-items: center;background-color: #2C2D78;color: #FFBD0D;margin-right: 30px;">Book
+                  Appointment</a>
+          </div>
+      </div>
+  </div>
 </div>
-      
+
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
-    <div class="containers" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-        <!-- Logo aligned to the left -->
-        <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: 50px;">
-            <img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;"/>
-        </a>
-        <!-- Hamburger Menu Button (visible on small devices) -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar items aligned to the right -->
-        <div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; padding-right: 50px; justify-content: flex-end;">
-            <ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
-                <li class="nav-item active" style="margin-right: 20px;">
-                    <a class="nav-link" href="index.html" style="color: #000; padding: 5px 10px;">Home</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="About-Us.html" style="color: #000; padding: 5px 10px;">About</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Services.html" style="color: #000; padding: 5px 10px;">Services</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Team.html" style="color: #000; padding: 5px 10px;">Our Team</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Testimonials.html" style="color: #000; padding: 5px 10px;">Testimonials</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Technology.html" style="color: #000; padding: 5px 10px;">Our Office</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Contact-Us.html" style="color: #000; padding: 5px 10px;">Contact</a>
-                </li>
-            </ul>
-        </div>
+<div class="containers" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+    <!-- Logo aligned to the left -->
+    <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: -10px;">
+        <img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;"/>
+    </a>
+    <!-- Hamburger Menu Button (visible on small devices) -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar items aligned to the right -->
+    <div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; justify-content: flex-end;">
+        <ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
+            <li class="nav-item active" style="margin-right: 20px;">
+                <a class="nav-link" href="index.html" style="color: #000; padding: 5px 10px;">Home</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link" href="About-Us.html" style="color: #000; padding: 5px 10px;">About</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link" href="Services.html" style="color: #000; padding: 5px 10px;">Services</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link" href="Team.html" style="color: #000; padding: 5px 10px;">Our Team</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link" href="Testimonials.html" style="color: #000; padding: 5px 10px;">Testimonials</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link" href="Technology.html" style="color: #000; padding: 5px 10px;">Our Office</a>
+            </li>
+            <li class="nav-item" style="margin-right: 20px;">
+                <a class="nav-link" href="Contact-Us.html" style="color: #000; padding: 5px 10px;">Contact</a>
+            </li>
+        </ul>
     </div>
+</div>
 </nav>
 
-<!-- Include Bootstrap JS and jQuery (for toggler) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    
 <style>
-    .nav-link:hover {
-        text-decoration: none; /* Remove default underline */
-        border-top: 2px solid #034CAE; /* Top underline */
-        border-bottom: 2px solid #034CAE; /* Bottom underline */
-        color: #2CB5E5;
-        border-top: 50%; /* Position the top border at the middle */
-        border-bottom: 50%; /* Position the top border at the middle */
-    }
-</style>
-
-<style>
-    /* For small screens (max-width: 768px) */
-@media (max-width: 768px) {
-    /* Ensure the top bar items are in one line */
-    .top-bar .containers {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .top-bar .social2 {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .top-bar .contact-details {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .book-appointment-btn {
-        height: 30px;
-        font-size: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #2C2D78;
-        color: #FFBD0D;
-        margin-left: 15px; /* Add space between the mobile number and button */
-    }
-
-    .navbar-collapse {
-        display: none; /* Hide navbar items on small screens */
-    }
-
-    /* Display the hamburger menu */
-    .navbar-toggler {
-        display: block;
-        border: none;
-        background: none;
-    }
-
-    .navbar-toggler-icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: #034CAE;
-        position: relative;
-    }
-
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        left: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .navbar-toggler-icon::before {
-        top: 8px;
-    }
-
-    .navbar-toggler-icon::after {
-        top: 14px;
-    }
-
-    .navbar-toggler.collapsed .navbar-toggler-icon::before {
-        transform: rotate(45deg);
-        top: 10px;
-    }
-
-    .navbar-toggler.collapsed .navbar-toggler-icon::after {
-        transform: rotate(-45deg);
-        top: 10px;
-    }
-
-    /* Navbar items should be stacked vertically on small screens */
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-link {
-        padding: 10px 20px;
-    }
+.nav-link:hover {
+    text-decoration: none; /* Remove default underline */
+    border-top: 2px solid #034CAE; /* Top underline */
+    border-bottom: 2px solid #034CAE; /* Bottom underline */
+    color: #2CB5E5;
+    border-top: 50%; /* Position the top border at the middle */
+    border-bottom: 50%; /* Position the top border at the middle */
 }
-
-/* For larger screens (min-width: 769px) */
-@media (min-width: 769px) {
-    .navbar-collapse {
-        display: flex; /* Show navbar items on larger screens */
-    }
-
-    .navbar-toggler {
-        display: none; /* Hide hamburger menu on larger screens */
-    }
-}
-
-        
 </style>
-
-
-
-
 
 
 <!-- Add these to your <head> -->

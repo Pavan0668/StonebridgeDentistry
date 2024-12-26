@@ -12905,13 +12905,20 @@ $(document).ready(function() {
 	</script>
 	
 	<style>
+
+		
 		/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
 @media (max-width: 768px) {
     /* Hide the navbar links by default */
     .navbar-collapse {
         display: none;
     }
+	.top-bar {
+            height: 50px;
+            padding: 5px 0;
+        }
 
+       
     /* Display the hamburger menu */
     .navbar-toggler {
         display: block;
@@ -12957,16 +12964,7 @@ $(document).ready(function() {
         top: 10px;
     }
 
-    /* Ensure the top bar is responsive */
-    .top-bar {
-        display: block;
-    }
-
-    .top-bar .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+   
 
     /* Social media and contact details should be stacked vertically on small screens */
     .social1, .social2 {
@@ -13027,7 +13025,7 @@ $(document).ready(function() {
 	
 		
     <!-- Top bar -->
-    <div class="top-bar" style="background-color: blue; padding: 5px 0;">
+    <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;">
         <div class="containerss">
             <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
 
