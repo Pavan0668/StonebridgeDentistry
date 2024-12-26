@@ -12573,16 +12573,16 @@
         });
 
     </script>
-    
 
 
-  
+
+
 
     <!-- Add Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -12615,6 +12615,7 @@
         .top-bar {
             background-color: blue;
             padding: 5px 0;
+            
         }
 
         .top-bar a {
@@ -12625,8 +12626,10 @@
         .navbar {
             background-color: #f8f9fa;
             padding: 10px 20px;
-            z-index: 1030; /* Ensures it appears above other content */
-            position: relative; /* Prevents overlapping issues */
+            z-index: 1030;
+            /* Ensures it appears above other content */
+            position: relative;
+            /* Prevents overlapping issues */
         }
 
         .navbar-brand img {
@@ -12635,314 +12638,407 @@
         }
 
         .nav-link {
-        color: #000;
-        font-size: 18px;
-        padding: 5px 10px;
-    }
+            color: #000;
+            font-size: 18px;
+            padding: 5px 10px;
+        }
 
         .nav-link:hover {
-        text-decoration: none;
-        border-top: 2px solid #034CAE;
-        border-bottom: 2px solid #034CAE;
-        color: #2CB5E5;
-    }
-    .navbar-collapse {
-        background-color: #f8f9fa; /* Matches the navbar background for a smooth collapse */
-    }
-   
-/* Responsive styles */
-@media (max-width: 768px) {
-    .custom-navbar-collapse {
-        display: none; /* Initially hidden */
-        flex-direction: column; /* Align items vertically */
-        align-items: center; /* Center-align the menu items */
-        justify-content: center; /* Center-align vertically */
-        background-color: #ffffff; /* White background */
-        width: 100%; /* Full width of the parent container */
-        position: absolute; /* Position the menu below the navbar */
-        top: 100%; /* Position it directly below the navbar */
-        left: 0; /* Align to the left edge */
-        z-index: 1000; /* Ensure it appears above other content */
-        border-top: 1px solid #ddd; /* Optional: Add a subtle border for separation */
-        padding: 10px 0; /* Add padding for vertical spacing */
-        padding-left: 190px;
-    }
+            text-decoration: none;
+            border-top: 2px solid #034CAE;
+            border-bottom: 2px solid #034CAE;
+            color: #2CB5E5;
+        }
 
-    /* When the menu is expanded */
-    .custom-navbar-collapse.show {
-        display: flex; /* Show the menu in flex layout */
-    }
+        .navbar-collapse {
+            background-color: #f8f9fa;
+            /* Matches the navbar background for a smooth collapse */
+        }
 
-    /* Navbar links */
-    .custom-navbar-collapse .nav-link {
-        padding: 10px 15px; /* Add spacing around each menu item */
-        color: #000; /* Black text color */
-        font-size: 18px; /* Font size for better visibility */
-        text-align: center; /* Center-align text */
-        text-decoration: none; /* Remove underline */
-        width: 100%; /* Ensure each link spans full width */
-    }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .custom-navbar-collapse {
+                display: none;
+                /* Initially hidden */
+                flex-direction: column;
+                /* Align items vertically */
+                align-items: center;
+                /* Center-align the menu items */
+                justify-content: center;
+                /* Center-align vertically */
+                background-color: #ffffff;
+                /* White background */
+                width: 100%;
+                /* Full width of the parent container */
+                position: absolute;
+                /* Position the menu below the navbar */
+                top: 100%;
+                /* Position it directly below the navbar */
+                left: 0;
+                /* Align to the left edge */
+                z-index: 1000;
+                /* Ensure it appears above other content */
+                border-top: 1px solid #ddd;
+                /* Optional: Add a subtle border for separation */
+                padding: 10px 0;
+                /* Add padding for vertical spacing */
+                padding-left: 190px;
+            }
 
-    /* Hover effects for the links */
-    .custom-navbar-collapse .nav-link:hover {
-        background-color: #e9ecef; /* Subtle gray background on hover */
-        color: #2CB5E5; /* Highlight color for text */
-        border-radius: 5px; /* Optional: Rounded corners for hover effect */
-    }
+            /* When the menu is expanded */
+            .custom-navbar-collapse.show {
+                display: flex;
+                /* Show the menu in flex layout */
+            }
 
-    .custom-navbar-toggler {
-        display: block;
-        border: none;
-        background: white;
-    }
+            /* Navbar links */
+            .custom-navbar-collapse .nav-link {
+                padding: 10px 15px;
+                /* Add spacing around each menu item */
+                color: #000;
+                /* Black text color */
+                font-size: 18px;
+                /* Font size for better visibility */
+                text-align: center;
+                /* Center-align text */
+                text-decoration: none;
+                /* Remove underline */
+                width: 100%;
+                /* Ensure each link spans full width */
+            }
 
-    .custom-navbar-toggler-icon {
-        width: 30px;
-        height: 30px;
-        background-color: #034CAE;
-        position: relative;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+            /* Hover effects for the links */
+            .custom-navbar-collapse .nav-link:hover {
+                background-color: #e9ecef;
+                /* Subtle gray background on hover */
+                color: #2CB5E5;
+                /* Highlight color for text */
+                border-radius: 5px;
+                /* Optional: Rounded corners for hover effect */
+            }
 
-    .custom-navbar-toggler-icon::before,
-    .custom-navbar-toggler-icon::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        left: 5px;
-        transition: all 0.3s ease;
-    }
+            .custom-navbar-toggler {
+                display: block;
+                border: none;
+                background: white;
+            }
 
-    .custom-navbar-toggler-icon::before {
-        top: 8px;
-    }
+            .custom-navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+                background-color: #034CAE;
+                position: relative;
+                border-radius: 50%;
+                cursor: pointer;
+            }
 
-    .custom-navbar-toggler-icon::after {
-        top: 14px;
-    }
+            .custom-navbar-toggler-icon::before,
+            .custom-navbar-toggler-icon::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                background-color: white;
+                left: 5px;
+                transition: all 0.3s ease;
+            }
 
-    .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::before {
-        transform: rotate(45deg);
-        top: 10px;
-    }
+            .custom-navbar-toggler-icon::before {
+                top: 8px;
+            }
 
-    .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::after {
-        transform: rotate(-45deg);
-        top: 10px;
-    }
-}
+            .custom-navbar-toggler-icon::after {
+                top: 14px;
+            }
 
-@media (min-width: 769px) {
-    .custom-navbar-collapse {
-        display: flex;
-        justify-content: flex-end;
-    }
+            .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::before {
+                transform: rotate(45deg);
+                top: 10px;
+            }
 
-    .custom-navbar-toggler {
-        display: none;
-    }
-}
+            .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::after {
+                transform: rotate(-45deg);
+                top: 10px;
+            }
+
+            .top-bar .containerss .row {
+                flex-direction: row;
+                /* Ensure items are in a row */
+                justify-content: center;
+                /* Center align for smaller screens */
+                margin-left: 100px;
+            }
+
+            .top-bar .contact-details {
+                display: flex;
+                flex-direction: row;
+                /* Keep items in a row horizontally */
+                align-items: center;
+                gap: 15px;
+                /* Add spacing between phone and button */
+            }
+
+            .top-bar .contact-details a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                /* Spacing between the icon and text */
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .top-bar .book-appointment-btn {
+                font-size: 14px;
+                /* Adjust font size for the button */
+                height: 40px;
+                /* Maintain button height */
+                width: 170px;
+                padding: 0 15px;
+                /* Adjust padding for better spacing */
+                background-color: #2C2D78;
+                color: #FFBD0D;
+                border-radius: 5px;
+                /* Rounded corners */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            .top-bar .btn-phone {
+                width: 100px;
+            }
+
+            .top-bar .btIconWidgetTitle {
+                font-size: 14px;
+                /* Font size for phone number */
+                color: #FFFFFF;
+                /* Ensure text is visible */
+            }
+
+            .top-bar .contact-details i {
+                font-size: 14px;
+                /* Icon size */
+                color: #FFFFFF;
+                /* Icon color */
+            }
 
 
+        }
 
+        @media (min-width: 769px) {
+            .custom-navbar-collapse {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .custom-navbar-toggler {
+                display: none;
+            }
+        }
     </style>
-    <!-- Top bar -->
-    <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;">
+    <!-- Top Bar -->
+    <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;padding-right: 160px;">
         <div class="containerss">
             <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-
                 <div class="social2" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
                     <!-- Contact Details -->
                     <div class="contact-details" style="display: flex; align-items: center; gap: 15px;">
-                        <!-- Phone Number -->
-                        <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                        <!-- Phone Number with Icon -->
+                        <a href="tel:+17054222490" class="btn-phone"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-phone-alt" style="color: #FFFFFF; font-size: 14px;"></i>
                             <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold; color: #FFFFFF;">
                                 (705) 422-2490
                             </span>
                         </a>
                         <!-- Book Appointment Button -->
                         <a href="Contact-New.html" class="book-appointment-btn"
-                            style="font-size: 14px; height: 30px; padding: 0 15px; border: groove; display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none; border-radius: 5px;">
+                            style="font-size: 14px; height: 30px; padding: 0 15px; display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none; border-radius: 5px;">
                             Book Appointment
                         </a>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 
-   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
-    <div class="containers"
-    style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/asset 0.png" alt="Logo">
-        </a>
-        <button class="custom-navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#customNavbarResponsive" aria-controls="customNavbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <div class="custom-navbar-toggler-icon"></div>
-        </button>
-        <div class="custom-navbar-collapse collapse" id="customNavbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="index.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Home</a>
-                </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="About-Us.html" style="color: #000; font-size: 18px; padding: 5px 10px;">About</a>
-                </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Services.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Services</a>
-                </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Team.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Our Team</a>
-                </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Testimonials.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Testimonials</a>
-                </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Technology.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Our Office</a>
-                </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Contact-Us.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Contact</a>
-                </li>
-            </ul>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
+        <div class="containers"
+            style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/asset 0.png" alt="Logo">
+            </a>
+            <button class="custom-navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#customNavbarResponsive" aria-controls="customNavbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="custom-navbar-toggler-icon"></div>
+            </button>
+            <div class="custom-navbar-collapse collapse" id="customNavbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="index.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">Home</a>
+                    </li>
+                    <li class="nav-item" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="About-Us.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">About</a>
+                    </li>
+                    <li class="nav-item" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="Services.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">Services</a>
+                    </li>
+                    <li class="nav-item" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="Team.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">Our Team</a>
+                    </li>
+                    <li class="nav-item" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="Testimonials.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">Testimonials</a>
+                    </li>
+                    <li class="nav-item" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="Technology.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">Our Office</a>
+                    </li>
+                    <li class="nav-item" style="margin-bottom: 10px;">
+                        <a class="nav-link" href="Contact-Us.html"
+                            style="color: #000; font-size: 18px; padding: 5px 10px;">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<style>
-    .navbar-nav{
-        display: flex;
-        margin: 0;
-         padding: 0;
-          list-style: none;
-          margin-right: 40x;
-    }
-.navbar-brand
-{
-    margin-left:20px ;
-}
-.custom-navbar-collapse
-{
-    padding-right: 190px;
-}
+    </nav>
+    <style>
+        .navbar-nav {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-right: 40x;
+        }
 
-    /* Responsive styles */
-@media (max-width: 768px) {
+        .navbar-brand {
+            margin-left: 20px;
+        }
 
-    .navbar-nav{
-        display: flex;
-         flex-direction: column; 
-         margin: 0;
-          padding: 0; 
-          padding-right: 40px;
-           list-style: none;
-            align-items: center;
-    }
-    .navbar-brand img
-    {
-        padding-left: 0px;
-    }
-}
-</style>
-<script>
-    // Ensure the hamburger menu toggles correctly
-    $(document).ready(function () {
-        // Initially collapse the navbar
-        $('.navbar-collapse').hide();
+        .custom-navbar-collapse {
+            padding-right: 190px;
+        }
 
-        // Toggle the menu when the hamburger button is clicked
-        $('.custom-navbar-toggler').click(function () {
-            // Toggle the collapsed state for the hamburger
-            $(this).toggleClass('custom-collapsed');
-            // Show or hide the navbar items
-            $('#customNavbarResponsive').toggle();
+        /* Responsive styles */
+        @media (max-width: 768px) {
+
+            .navbar-nav {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                padding-right: 40px;
+                list-style: none;
+                align-items: center;
+            }
+
+            .navbar-brand img {
+                padding-left: 0px;
+            }
+        }
+    </style>
+    <script>
+        // Ensure the hamburger menu toggles correctly
+        $(document).ready(function () {
+            // Initially collapse the navbar
+            $('.navbar-collapse').hide();
+
+            // Toggle the menu when the hamburger button is clicked
+            $('.custom-navbar-toggler').click(function () {
+                // Toggle the collapsed state for the hamburger
+                $(this).toggleClass('custom-collapsed');
+                // Show or hide the navbar items
+                $('#customNavbarResponsive').toggle();
+            });
         });
-    });
-</script>
+    </script>
 
 
 
 
     <div class="btContentWrap btClear" style="margin-top: 0;">
 
-        <div class="carousel-tabs" id="carousel-ta" 
-     style="padding-top: 0; padding-bottom: 0; margin-top: -20px; margin-bottom: -30px;">
-    <ul class="carousel-nav">
-        <li class="tab active" data-slide="0">
-            Accepting New Patients
-        </li>
-        <li class="tab" data-slide="1">
-            Direct Billing to Insurance
-        </li>
-        <li class="tab" data-slide="2">
-            Accepting CDCP Patients
-        </li>
-    </ul>
-</div>
+        <div class="carousel-tabs" id="carousel-ta"
+            style="padding-top: 0; padding-bottom: 0; margin-top: -20px; margin-bottom: -30px;">
+            <ul class="carousel-nav">
+                <li class="tab active" data-slide="0">
+                    Accepting New Patients
+                </li>
+                <li class="tab" data-slide="1">
+                    Direct Billing to Insurance
+                </li>
+                <li class="tab" data-slide="2">
+                    Accepting CDCP Patients
+                </li>
+            </ul>
+        </div>
 
-<style>
-    .carousel-nav {
-        display: flex;
-        justify-content: space-between;
-        margin: 0;
-        padding: 0;
-        padding-left: 200px;
-        width: 1200px;
-        /* accepting new patient  */
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
+        <style>
+            .carousel-nav {
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                padding: 0;
+                padding-left: 200px;
+                width: 1200px;
+                /* accepting new patient  */
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
 
-    .carousel-nav .tab {
-        flex: 1;
-        text-align: center;
-        font-size: 20px;
-        height: 50px;
-        padding: 10px;
-        margin: 0 5px;
-        background-color: #2C2D78;
-        color: #FFBD0D;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+            .carousel-nav .tab {
+                flex: 1;
+                text-align: center;
+                font-size: 20px;
+                height: 50px;
+                padding: 10px;
+                margin: 0 5px;
+                background-color: #2C2D78;
+                color: #FFBD0D;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-    @media (max-width: 768px) {
-        .carousel-nav {
-            flex-direction: column;
-            align-items: center;
-            padding-left: 20px;
-            width: 400px;
-        }
+            @media (max-width: 768px) {
+                .carousel-nav {
+                    flex-direction: column;
+                    align-items: center;
+                    padding-left: 20px;
+                    width: 400px;
+                }
 
-        .carousel-nav .tab {
-            width: 100%;
-            font-size: 18px;
-            margin: 5px 0;
-            padding-right: 20px;
-        }
-    }
+                .carousel-nav .tab {
+                    width: 100%;
+                    font-size: 18px;
+                    margin: 5px 0;
+                    padding-right: 20px;
+                }
+            }
 
-    @media (max-width: 480px) {
-        .carousel-nav {
-            flex-direction: column;
-            align-items: center;
-            width: 350px;
-        }
+            @media (max-width: 480px) {
+                .carousel-nav {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 350px;
+                }
 
-        .carousel-nav .tab {
-            width: 100%;
-            font-size: 18px;
-            margin: 5px 0;
-        }
-    }
-</style>
+                .carousel-nav .tab {
+                    width: 100%;
+                    font-size: 18px;
+                    margin: 5px 0;
+                }
+            }
+        </style>
 
         <div class="btContentHolder">
 
@@ -15579,7 +15675,7 @@
 
     <footer class="footer" style="margin-top: 0px;padding-top: 0px;">
         <!-- Section 1 -->
-        <div class="footer-section" id="footer-section-1" >
+        <div class="footer-section" id="footer-section-1">
             <h3 class="footer-heading">
                 <span style="color: #422774;">Stonebridge</span>
                 <span style="color: #FF793E;">Dentistry</span>
@@ -15587,22 +15683,22 @@
             <p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
             <div class="contact-info" style="display: flex; justify-content: center; align-items: center;">
                 <div class="contact-item">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  <a href="tel:(705)422-2490">(705) 422-2490</a>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <a href="tel:(705)422-2490">(705) 422-2490</a>
                 </div>
                 <div class="contact-item">
-                  <i class="fas fa-envelope"></i>
-                  <a href="mailto:info@stonebridgedentistry.ca">Email Us</a>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@stonebridgedentistry.ca">Email Us</a>
                 </div>
                 <div class="contact-item">
-                  <i class="fas fa-globe"></i>
-                  <a href="https://stonebridgedentistry.ca/" target="_blank">Stonebridgedentistry.ca</a>
+                    <i class="fas fa-globe"></i>
+                    <a href="https://stonebridgedentistry.ca/" target="_blank">Stonebridgedentistry.ca</a>
                 </div>
-              </div>
+            </div>
         </div>
 
         <!-- Section 2 -->
-        <div class="footer-section" id="footer-section-2" >
+        <div class="footer-section" id="footer-section-2">
             <h3 class="footer-heading">About</h3>
             <ul class="footer-nav">
                 <li><a href="Team.html">Our Dental Team</a></li>
@@ -15667,15 +15763,20 @@
             padding: 5px 10px;
             position: relative;
         }
-        .footer-section-2
-        {
-            padding-right: 80px;
 
-        }
-        .footer-section-3
+        .footer-section-1
         {
+          width: 100px;
+        }
+        .footer-section-2 {
+            padding-right: 80px;
+            
+        }
+
+        .footer-section-3 {
             padding-right: 80px;
         }
+
         .menu-footer-menu-container {
             display: flex;
             justify-content: flex-end;
@@ -15710,23 +15811,27 @@
             font-weight: bold;
         }
 
-        
+
 
         .footer {
             display: flex;
             flex-wrap: wrap;
             background-color: #f4f4f4;
-            padding: 0; /* Remove padding from the footer */
+            padding: 0;
+            /* Remove padding from the footer */
             text-align: center;
-            
+
         }
 
         .footer-section {
             flex: 1 1 25%;
-            padding: 10px; /* Reduce the padding inside sections */
-            margin: 0; /* Remove margin between sections */
+            padding: 10px;
+            /* Reduce the padding inside sections */
+            margin: 0;
+            /* Remove margin between sections */
             box-sizing: border-box;
             
+
         }
 
         .footer-heading {
@@ -15746,20 +15851,23 @@
         }
 
         .footer-subtext {
-            margin: 5px 0; /* Reduce the space between subtext */
+            margin: 5px 0;
+            /* Reduce the space between subtext */
             font-size: 14px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 4px; /* Reduce the gap between contact items */
+            gap: 4px;
+            /* Reduce the gap between contact items */
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px; /* Reduce the gap between icons and text */
+            gap: 8px;
+            /* Reduce the gap between icons and text */
             font-size: 14px;
         }
 
@@ -15775,11 +15883,13 @@
         .footer-nav {
             list-style: none;
             padding: 0;
-            margin: 0; /* Remove margin between nav items */
+            margin: 0;
+            /* Remove margin between nav items */
         }
 
         .footer-nav li {
-            margin: 2px 0; /* Reduce margin between nav items */
+            margin: 2px 0;
+            /* Reduce margin between nav items */
         }
 
         .footer-nav a {
@@ -15809,17 +15919,19 @@
             transform: translate(-50%, -50%);
             color: black;
             background-color: F4F4F4;
-            padding: 5px; /* Reduce padding in the image text */
+            padding: 5px;
+            /* Reduce padding in the image text */
             border-radius: 5px;
             font-size: 13px;
             text-align: center;
         }
 
-       
+
         .social-iconss {
             display: flex;
             justify-content: center;
-            gap: 10px; /* Reduce the gap between social icons */
+            gap: 10px;
+            /* Reduce the gap between social icons */
         }
 
         .social-iconss a {
@@ -15846,7 +15958,6 @@
                 font-size: 12px;
             }
         }
-        
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 

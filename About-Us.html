@@ -60,110 +60,119 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<style>
 		/* Container styling */
-.services-section {
-  text-align: center;
-  padding: 10px 0;
-  background-color: transparent;
-}
+		.services-section {
+			text-align: center;
+			padding: 10px 0;
+			background-color: transparent;
+		}
 
-/* Service items styling */
-.services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+		/* Service items styling */
+		.services-container {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 30px;
+		}
 
-/* Service item animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+		/* Service item animation */
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(20px);
+			}
 
-.service-item {
-  width: 180px; /* Increased width */
-  height: 180px; /* Increased height */
-  border-radius: 50%;
-  background-color: #2CB5E5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 15px;
-  transition: transform 0.3s ease;
-  opacity: 0;
-  border: groove;
-  animation: fadeIn 0.6s ease-out forwards;
-  animation-delay: var(--delay); /* Delay each item */
-}
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
 
-/* Hover effect */
-.service-item:hover {
-  transform: scale(1.1);
-}
+		.service-item {
+			width: 180px;
+			/* Increased width */
+			height: 180px;
+			/* Increased height */
+			border-radius: 50%;
+			background-color: #2CB5E5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 15px;
+			transition: transform 0.3s ease;
+			opacity: 0;
+			border: groove;
+			animation: fadeIn 0.6s ease-out forwards;
+			animation-delay: var(--delay);
+			/* Delay each item */
+		}
 
-.service-icon {
-  font-size: 50px; /* Increased icon size */
-  color: #fff;
-  margin-bottom: 10px;
-}
+		/* Hover effect */
+		.service-item:hover {
+			transform: scale(1.1);
+		}
 
-.service-title {
-  font-size: 16px; /* Increased font size */
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-}
+		.service-icon {
+			font-size: 50px;
+			/* Increased icon size */
+			color: #fff;
+			margin-bottom: 10px;
+		}
 
-/* Services section title */
-h2 {
-  color: #444;
-  font-size: 36px;
-  margin-bottom: 30px;
-}
+		.service-title {
+			font-size: 16px;
+			/* Increased font size */
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+		}
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .services-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .service-item {
-    width: 150px; /* Smaller width for mobile */
-    height: 150px; /* Smaller height for mobile */
-  }
-  h2 {
-    font-size: 28px;
-  }
-}
+		/* Services section title */
+		h2 {
+			color: #444;
+			font-size: 36px;
+			margin-bottom: 30px;
+		}
 
+		/* Responsive design */
+		@media (max-width: 768px) {
+			.services-container {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.service-item {
+				width: 150px;
+				/* Smaller width for mobile */
+				height: 150px;
+				/* Smaller height for mobile */
+			}
+
+			h2 {
+				font-size: 28px;
+			}
+		}
 	</style>
 
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-  const serviceItems = document.querySelectorAll('.service-item');
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const serviceItems = document.querySelectorAll('.service-item');
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('fade-in-visible');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.5 });
 
-  serviceItems.forEach(item => {
-    observer.observe(item);
-  });
-});
+			serviceItems.forEach(item => {
+				observer.observe(item);
+			});
+		});
 
-</script>
+	</script>
 
 	<style>
 		.bt_bb_column {
@@ -12873,299 +12882,375 @@ h2 {
 <body>
 
 
-	
+
 
 	<!-- GTM Container placement set to automatic -->
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHZKTQL" height="0" width="0"
 			style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
-	
-<!-- Top bar and Navbar code as before -->
 
-    <!-- Add Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Top bar and Navbar code as before -->
+
+	<!-- Add Bootstrap JS and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	<script>
 		// Ensure the hamburger menu toggles correctly
-$(document).ready(function() {
-    // Initially collapse the navbar
-    $('.navbar-collapse').hide();
+		$(document).ready(function () {
+			// Initially collapse the navbar
+			$('.navbar-collapse').hide();
 
-    // Toggle the menu when the hamburger button is clicked
-    $('.navbar-toggler').click(function() {
-        // Toggle the collapsed state for the hamburger
-        $(this).toggleClass('collapsed');
-        // Show or hide the navbar items
-        $('#navbarResponsive').toggle();
-    });
-});
+			// Toggle the menu when the hamburger button is clicked
+			$('.navbar-toggler').click(function () {
+				// Toggle the collapsed state for the hamburger
+				$(this).toggleClass('collapsed');
+				// Show or hide the navbar items
+				$('#navbarResponsive').toggle();
+			});
+		});
 
 	</script>
-	
-	<style>
 
-		
+	<style>
+		.top-bar {
+            background-color: blue;
+            padding: 5px 0;
+            
+        }
+
+        .top-bar a {
+            text-decoration: none;
+            color: white;
+        }
 		/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
-@media (max-width: 768px) {
-    /* Hide the navbar links by default */
-    .navbar-collapse {
-        display: none;
-    }
-	.top-bar .containerss .row {
-        flex-direction: row; /* Ensure items are in a row */
-        justify-content: center; /* Center align for smaller screens */
+		@media (max-width: 768px) {
+
+			/* Hide the navbar links by default */
+			.navbar-collapse {
+				display: none;
+			}
+            
+			@media (max-width: 768px) {
+    .top-bar .containerss .row {
+        flex-direction: row;
+        /* Ensure items are in a row */
+        justify-content: center;
+        /* Center align for smaller screens */
+        margin-left: 120px; /* Adjust margin for smaller screens */
     }
 
     .top-bar .contact-details {
         display: flex;
-        flex-direction: row; /* Keep items in a row horizontally */
+        flex-direction: row;
+        /* Keep items in a row horizontally */
         align-items: center;
-        gap: 10px; /* Add spacing between phone and button */
+        gap: 15px;
+        /* Add spacing between phone and button */
+        padding-left: 20px; /* Add padding-left for the contact details */
+    }
+
+    .top-bar .contact-details a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        /* Spacing between the icon and text */
+        text-decoration: none;
+        color: inherit;
     }
 
     .top-bar .book-appointment-btn {
-        font-size: 12px; /* Adjust font size for smaller screens */
-        height: 28px; /* Slightly smaller height for compact design */
-        padding: 0 10px; /* Adjust padding for better spacing */
-    }
-
-    .top-bar .btIconWidgetTitle {
-        font-size: 12px; /* Adjust phone number font size */
-    }
-
-       
-    /* Display the hamburger menu */
-    .navbar-toggler {
-        display: block;
-        border: none;
-        background: none;
-    }
-
-    /* Custom styling for the hamburger icon (circular) */
-    .navbar-toggler-icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: #034CAE;
-        position: relative;
-    }
-
-    .navbar-toggler-icon::before, .navbar-toggler-icon::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        left: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .navbar-toggler-icon::before {
-        top: 8px;
-    }
-
-    .navbar-toggler-icon::after {
-        top: 14px;
-    }
-
-    /* Add a cross (X) effect on click */
-    .navbar-toggler.collapsed .navbar-toggler-icon::before {
-        transform: rotate(45deg);
-        top: 10px;
-    }
-
-    .navbar-toggler.collapsed .navbar-toggler-icon::after {
-        transform: rotate(-45deg);
-        top: 10px;
-    }
-
-   
-
-   
-
-    .contact-details {
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Navbar items are stacked vertically on small screens */
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-link {
-        padding: 10px 20px;
-    }
-
-    /* Book Appointment button */
-    .book-appointment-btn {
-        height: 30px;
-        font-size: 12px;
+        font-size: 14px;
+        /* Adjust font size for the button */
+        height: 40px;
+        /* Maintain button height */
+        width: 170px;
+        padding: 0 15px;
+        /* Adjust padding for better spacing */
+        background-color: #2C2D78;
+        color: #FFBD0D;
+        border-radius: 5px;
+        /* Rounded corners */
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 150px;
-        background-color: #1D9BF0;
-        color: #FFFFFF;
-        margin-right: 20px;
+        text-decoration: none;
+        padding-left: 90px; /* Add padding-left for the phone number */
     }
-}
 
-/* For large screens (desktop) */
-@media (min-width: 769px) {
-    .navbar-collapse {
+    .top-bar .btn-phone {
         display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-left: 60px; /* Add padding-left for the phone number */
     }
 
-    .navbar-toggler {
-        display: none;
+    .top-bar .btIconWidgetTitle {
+        font-size: 14px;
+        /* Font size for phone number */
+        color: #FFFFFF;
+        /* Ensure text is visible */
+    }
+
+    .top-bar .contact-details i {
+        font-size: 14px;
+        /* Icon size */
+        color: #FFFFFF;
+        /* Icon color */
     }
 }
 
+
+
+			/* Display the hamburger menu */
+			.navbar-toggler {
+				display: block;
+				border: none;
+				background: none;
+			}
+
+			/* Custom styling for the hamburger icon (circular) */
+			.navbar-toggler-icon {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background-color: #034CAE;
+				position: relative;
+			}
+
+			.navbar-toggler-icon::before,
+			.navbar-toggler-icon::after {
+				content: '';
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				background-color: white;
+				left: 5px;
+				transition: all 0.3s ease;
+			}
+
+			.navbar-toggler-icon::before {
+				top: 8px;
+			}
+
+			.navbar-toggler-icon::after {
+				top: 14px;
+			}
+
+			/* Add a cross (X) effect on click */
+			.navbar-toggler.collapsed .navbar-toggler-icon::before {
+				transform: rotate(45deg);
+				top: 10px;
+			}
+
+			.navbar-toggler.collapsed .navbar-toggler-icon::after {
+				transform: rotate(-45deg);
+				top: 10px;
+			}
+			.contact-details {
+				display: flex;
+				justify-content: flex-end;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			/* Navbar items are stacked vertically on small screens */
+			.navbar-nav {
+				flex-direction: column;
+				width: 100%;
+				text-align: center;
+			}
+
+			.nav-link {
+				padding: 10px 20px;
+			}
+
+			/* Book Appointment button */
+			.book-appointment-btn {
+				height: 30px;
+				font-size: 12px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 150px;
+				background-color: #1D9BF0;
+				color: #FFFFFF;
+				margin-right: 20px;
+			}
+		}
+
+		/* For large screens (desktop) */
+		@media (min-width: 769px) {
+			.navbar-collapse {
+				display: flex;
+			}
+
+			.navbar-toggler {
+				display: none;
+			}
+		}
 	</style>
-	
-		
-     <!-- Top bar -->
-	 <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;">
+
+
+	<!-- Top Bar -->
+    <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;padding-right: 160px;">
         <div class="containerss">
             <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="social2" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
                     <!-- Contact Details -->
                     <div class="contact-details" style="display: flex; align-items: center; gap: 15px;">
-                        <!-- Phone Number -->
-                        <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                        <!-- Phone Number with Icon -->
+                        <a href="tel:+17054222490" class="btn-phone"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-phone-alt" style="color: #FFFFFF; font-size: 14px;"></i>
                             <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold; color: #FFFFFF;">
                                 (705) 422-2490
                             </span>
                         </a>
                         <!-- Book Appointment Button -->
                         <a href="Contact-New.html" class="book-appointment-btn"
-                            style="font-size: 14px; height: 30px; padding: 0 15px; border: groove; display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none; border-radius: 5px;">
+                            style="font-size: 14px; height: 30px; padding: 0 15px; display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none; border-radius: 5px;">
                             Book Appointment
                         </a>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
-    <div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-        <!-- Logo aligned to the left -->
-        <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: -10px;">
-            <img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;"/>
-        </a>
-        <!-- Hamburger Menu Button (visible on small devices) -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar items aligned to the right -->
-        <div class="collapse navbar-collapse" id="navbarResponsive" style="display: flex; justify-content: flex-end;">
-            <ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
-                <li class="nav-item active" style="margin-right: 20px;">
-                    <a class="nav-link" href="index.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Home</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="About-Us.html" style="color: #000;font-size: 18px; padding: 5px 10px;">About</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Services.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Services</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Team.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Our Team</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Testimonials.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Testimonials</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Technology.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Our Office</a>
-                </li>
-                <li class="nav-item" style="margin-right: 20px;">
-                    <a class="nav-link" href="Contact-Us.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-		
-<style>
-    .nav-link:hover {
-        text-decoration: none; /* Remove default underline */
-        border-top: 2px solid #034CAE; /* Top underline */
-        border-bottom: 2px solid #034CAE; /* Bottom underline */
-        color: #2CB5E5;
-        border-top: 50%; /* Position the top border at the middle */
-        border-bottom: 50%; /* Position the top border at the middle */
-    }
-</style>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav" style="padding: 10px 0;">
+		<div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+			<!-- Logo aligned to the left -->
+			<a class="navbar-brand" href="index.html" style="display: flex; align-items: center; padding-left: -10px;">
+				<img src="img/asset 0.png" alt="logo" style="height: 85px; width: auto;" />
+			</a>
+			<!-- Hamburger Menu Button (visible on small devices) -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Navbar items aligned to the right -->
+			<div class="collapse navbar-collapse" id="navbarResponsive"
+				style="display: flex; justify-content: flex-end;">
+				<ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
+					<li class="nav-item active" style="margin-right: 20px;">
+						<a class="nav-link" href="index.html"
+							style="color: #000;font-size: 18px; padding: 5px 10px;">Home</a>
+					</li>
+					<li class="nav-item" style="margin-right: 20px;">
+						<a class="nav-link" href="About-Us.html"
+							style="color: #000;font-size: 18px; padding: 5px 10px;">About</a>
+					</li>
+					<li class="nav-item" style="margin-right: 20px;">
+						<a class="nav-link" href="Services.html"
+							style="color: #000;font-size: 18px; padding: 5px 10px;">Services</a>
+					</li>
+					<li class="nav-item" style="margin-right: 20px;">
+						<a class="nav-link" href="Team.html" style="color: #000;font-size: 18px; padding: 5px 10px;">Our
+							Team</a>
+					</li>
+					<li class="nav-item" style="margin-right: 20px;">
+						<a class="nav-link" href="Testimonials.html"
+							style="color: #000;font-size: 18px; padding: 5px 10px;">Testimonials</a>
+					</li>
+					<li class="nav-item" style="margin-right: 20px;">
+						<a class="nav-link" href="Technology.html"
+							style="color: #000;font-size: 18px; padding: 5px 10px;">Our Office</a>
+					</li>
+					<li class="nav-item" style="margin-right: 20px;">
+						<a class="nav-link" href="Contact-Us.html"
+							style="color: #000;font-size: 18px; padding: 5px 10px;">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 
-		<style>
-			/* Responsive Design for Android Devices */
-			@media (max-width: 768px) {
-				.bt_bb_port {
-					padding-bottom: 400px; /* Increased padding */
-					margin-bottom: 400px;  /* Increased margin */
-					height: 400px;         /* Adjusted height */
-				}
-				.bt_bb_section {
-					height: 400px;         /* Ensure the section height matches the container */
-				}
+	<style>
+		.nav-link:hover {
+			text-decoration: none;
+			/* Remove default underline */
+			border-top: 2px solid #034CAE;
+			/* Top underline */
+			border-bottom: 2px solid #034CAE;
+			/* Bottom underline */
+			color: #2CB5E5;
+			border-top: 50%;
+			/* Position the top border at the middle */
+			border-bottom: 50%;
+			/* Position the top border at the middle */
+		}
+	</style>
+
+
+	<style>
+		/* Responsive Design for Android Devices */
+		@media (max-width: 768px) {
+			.bt_bb_port {
+				padding-bottom: 400px;
+				/* Increased padding */
+				margin-bottom: 400px;
+				/* Increased margin */
+				height: 400px;
+				/* Adjusted height */
 			}
-		
-			/* Additional Adjustment for Very Small Screens (Optional) */
-			@media (max-width: 480px) {
-				.bt_bb_port {
-					padding-bottom: 500px;
-					margin-bottom: 500px;
-					height: 500px;
-				}
-				.bt_bb_section {
-					height: 500px;
-				}
+
+			.bt_bb_section {
+				height: 400px;
+				/* Ensure the section height matches the container */
 			}
-		</style>
-		
-		<div class="btContentWrap btClear">
-			<div class="btContentHolder">
-				<div class="btContent">
-					<section id="bt_bb_section664fb57d9720e"
-    class="bt_bb_section bt_bb_color_scheme_2 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_overlay_light_solid"
-    style="--section-primary-color: #191919; padding-top: 1px; --section-secondary-color: #ffffff; padding: 10px 0; position: relative; overflow: hidden; background-image: url('https://img.freepik.com/free-photo/woman-patient-dentist_1303-9355.jpg?t=st=1733998648~exp=1734002248~hmac=882ee51acb61d84e05dbf5e1520aa2745412709f3e78ef17f4e15a43f5a8e507&w=740'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
-			   <!-- Content -->
-			   <div class="bt_bb_port" style="padding-top: 10px;">
-				   <div class="bt_bb_cell">
-					   <!-- Header Row -->
-					   <div class="bt_bb_row_wrapper" style="padding-top: 1px;">
-						   <div class="bt_bb_row">
-							   <div class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal">
-								   <div class="bt_bb_column_content">
-									   <header class="bt_bb_headline bt_bb_font_weight_bolder bt_bb_color_scheme_17 bt_bb_size_huge"
-											   style="--primary-color:#422774; --secondary-color:#FF793E;">
-										   <h1 class="bt_bb_headline_tag">
-											   <span class="bt_bb_headline_content">
-												   <small style="display: block;">We love to</small>
-												   <span>See you smile</span>
-											   </span>
-										   </h1>
-									   </header>
-								   </div>
-							   </div>
-						   </div>
-					   </div>
-		   
-					   <!-- Separator Row -->
-					   <!-- <div class="bt_bb_row_wrapper">
+		}
+
+		/* Additional Adjustment for Very Small Screens (Optional) */
+		@media (max-width: 480px) {
+			.bt_bb_port {
+				padding-bottom: 500px;
+				margin-bottom: 500px;
+				height: 500px;
+			}
+
+			.bt_bb_section {
+				height: 500px;
+			}
+		}
+	</style>
+
+	<div class="btContentWrap btClear">
+		<div class="btContentHolder">
+			<div class="btContent">
+				<section id="bt_bb_section664fb57d9720e"
+					class="bt_bb_section bt_bb_color_scheme_2 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_overlay_light_solid"
+					style="--section-primary-color: #191919; padding-top: 1px; --section-secondary-color: #ffffff; padding: 10px 0; position: relative; overflow: hidden; background-image: url('https://img.freepik.com/free-photo/woman-patient-dentist_1303-9355.jpg?t=st=1733998648~exp=1734002248~hmac=882ee51acb61d84e05dbf5e1520aa2745412709f3e78ef17f4e15a43f5a8e507&w=740'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+					<!-- Content -->
+					<div class="bt_bb_port" style="padding-top: 10px;">
+						<div class="bt_bb_cell">
+							<!-- Header Row -->
+							<div class="bt_bb_row_wrapper" style="padding-top: 1px;">
+								<div class="bt_bb_row">
+									<div
+										class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal">
+										<div class="bt_bb_column_content">
+											<header
+												class="bt_bb_headline bt_bb_font_weight_bolder bt_bb_color_scheme_17 bt_bb_size_huge"
+												style="--primary-color:#422774; --secondary-color:#FF793E;">
+												<h1 class="bt_bb_headline_tag">
+													<span class="bt_bb_headline_content">
+														<small style="display: block;">We love to</small>
+														<span>See you smile</span>
+													</span>
+												</h1>
+											</header>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Separator Row -->
+							<!-- <div class="bt_bb_row_wrapper">
 						   <div class="bt_bb_row">
 							   <div class="bt_bb_column col-xxl-12 col-xl-12">
 								   <div class="bt_bb_column_content">
@@ -13174,848 +13259,900 @@ $(document).ready(function() {
 							   </div>
 						   </div>
 					   </div> -->
-		   
-					   <!-- Content Row -->
-					   <div class="bt_bb_row_wrapper">
-						   <div class="bt_bb_row">
-							   <!-- Left Content -->
-							   <div class="bt_bb_column col-xxl-6 col-xl-6 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal">
-								   <div class="bt_bb_column_content">
-									   <div class="bt_bb_text">
-										   <p style="color: #000;text-align: justify; font-size: 14px; ">
-											   Our mission is to provide the finest, highest-quality dental care. We're committed
-											   to a lifetime of optimum oral health in partnership with our patients. We strive to
-											   build relationships on trust and provide service with a truly personal touch.
-										   </p>
-										   <p style="color: #000;text-align: justify; font-size: 14px; ">
-											   We offer comprehensive dental care with an equal commitment to preventative,
-											   restorative, and cosmetic dentistry. Our primary goal is to provide excellence in
-											   all facets of dentistry and to carry it out in a gentle and caring way using the
-											   latest techniques.
-										   </p>
-									   </div>
-								   </div>
-							   </div>
-		   
-							   <!-- Right Empty Space -->
-							   <div class="bt_bb_column col-xxl-6 col-xl-6 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal">
-								   <div class="bt_bb_column_content"></div>
-							   </div>
-						   </div>
-					   </div>
-				   </div>
-			   </div>
-		   </section>
-		   
-		   
-		  
 
-					<!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small bt_bb_hidden_md bt_bb_hidden_lg"
-								data-bt-override-class="null"></div> -->
-					<div class="container">
-						<section class="services-section">
-							<h2>Services</h2>
-							<div class="services-container">
-								<!-- First Row of Service Items -->
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-tooth service-icon"></i>
-									<p class="service-title">Comprehensive Exams</p>
-								</div>
+							<!-- Content Row -->
+							<div class="bt_bb_row_wrapper">
+								<div class="bt_bb_row">
+									<!-- Left Content -->
+									<div
+										class="bt_bb_column col-xxl-6 col-xl-6 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal">
+										<div class="bt_bb_column_content">
+											<div class="bt_bb_text">
+												<p style="color: #000;text-align: justify; font-size: 14px; ">
+													Our mission is to provide the finest, highest-quality dental care.
+													We're committed
+													to a lifetime of optimum oral health in partnership with our
+													patients. We strive to
+													build relationships on trust and provide service with a truly
+													personal touch.
+												</p>
+												<p style="color: #000;text-align: justify; font-size: 14px; ">
+													We offer comprehensive dental care with an equal commitment to
+													preventative,
+													restorative, and cosmetic dentistry. Our primary goal is to provide
+													excellence in
+													all facets of dentistry and to carry it out in a gentle and caring
+													way using the
+													latest techniques.
+												</p>
+											</div>
+										</div>
+									</div>
 
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-shield-alt service-icon"></i>
-									<p class="service-title">Hygiene Services</p>
-								</div>
-
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-fill service-icon"></i>
-									<p class="service-title">Tooth Coloured Fillings</p>
-								</div>
-
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-crown service-icon"></i>
-									<p class="service-title">Crowns and Bridges</p>
-								</div>
-
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-procedures service-icon"></i>
-									<p class="service-title">Root Canal Treatments</p>
-								</div>
-
-								<!-- Second Row of Service Items -->
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-tooth service-icon"></i>
-									<p class="service-title">Dentures</p>
-								</div>
-
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-teeth service-icon"></i>
-									<p class="service-title">Orthodontics</p>
-								</div>
-
-								<div class="service-item" style="--delay: 1s;">
-									<i class="fas fa-align-center service-icon"></i>
-									<p class="service-title">Invisalign</p>
+									<!-- Right Empty Space -->
+									<div
+										class="bt_bb_column col-xxl-6 col-xl-6 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal">
+										<div class="bt_bb_column_content"></div>
+									</div>
 								</div>
 							</div>
-						</section>
+						</div>
 					</div>
-					<br>
-					<style>
-                        /* General Styling */
-                    * {
-                        margin: 0;
-                        padding: 0;
-                        box-sizing: border-box;
-                    }
-                    
-                    body {
-                        font-family: Arial, sans-serif;
-                    }
-                    
-                    /* Section Styles */
-                    .responsive-section {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        height: 120vh;
-                        background-color: #A9A9A9;
-                        padding: 0;
-                        
-                    }
-                    
-                    /* Left Side Content */
-                    .left-side-content {
-                        flex: 1;
-                        padding: 0;
-                        height: 120vh;
-                    }
-                    
-                    .left-side-background {
-                        background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
-                        background-size: cover;
-                        background-position: center;
-                        height: 120vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
-                    }
-                    
-                    .appointment-box {
-                        background-color: rgba(255, 255, 255, 0.8);
-                        padding: 20px;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        text-align: center;
-                        width: 500px;
-                    }
-                    
-                    .appointment-title {
-                        font-size: 24px;
-                        color: #000;
-                    }
-                    
-                    /* Button Styles */
-						.buttons {
-							display: inline-block;
-							padding: 10px 20px;
-							background-color: #2CB5E5;
-							color: white;
-							/* Ensures the text is always white */
-							text-decoration: none;
-							font-size: 18px;
-							font-weight: bold;
-							border-radius: 5px;
-							transition: background-color 0.3s ease;
-							width: 100%;
-							text-align: center;
-							box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-							margin-bottom: 15px;
-							/* Normal gap between buttons */
-							white-space: nowrap;
-							/* Prevent text from wrapping */
-						}
+				</section>
 
-						/* Call Us Button */
-						.call-us {
-							margin-bottom: 15px;
-							/* Adds space below the call button */
-						}
 
-						/* Email Us Button */
-						.email-us {
-							margin-bottom: 15px;
-							/* Adds space below the email button */
-							white-space: nowrap;
-							/* Ensures the email address fits inside the button */
-						}
-                    
-                    .button i {
-                        margin-right: 10px;
-                    }
-                    
-                    /* Right Side Contact Form */
-                    .right-side-content {
-                        flex: 1;
-                        padding: 10px;
-                        background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
-                        background-size: cover;
-                        background-position: center;
-                        filter: blur(-12px);
-                        position: relative;
-                        height: 120vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    
-                    .contact-form {
-                        background-color: rgba(255, 255, 255, 0.9);
-                        padding: 30px;
-                        border: 10px solid #f7c594;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        font-family: 'Arial', sans-serif;
-                        width: 500px;
-                    }
-                    
-                    .form-title {
-                        font-size: 24px;
-                        color: #003478;
-                        padding-bottom: 10px;
-                        padding-top: 10px;
-                        text-align: center;
-                    }
-                    
-                    .form-field {
-                        margin-bottom: 20px;
-                    }
-                    
-                    .form-field label {
-                        display: block;
-                        font-size: 14px;
-                        color: #003478;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .form-field input,
-                    .form-field textarea {
-                        width: 100%;
-                        border: none;
-                        border-bottom: 2px solid #003478;
-                        padding: 5px 0;
-                        outline: none;
-                        font-size: 0.850rem;
-                    }
-                    
-                    /* Button Styles */
-                    .submit-button {
-                        background-color: #003478;
-                        color: #ffffff;
-                        border: none;
-                        padding: 10px 20px;
-                        font-size: 16px;
-                        cursor: pointer;
-                        text-align: center;
-                        width: 100%;
-                        border-radius: 5px;
-                        transition: background-color 0.3s ease;
-                    }
-                    
-                    /* Responsive Design */
-                    @media (max-width: 768px) {
-                        .responsive-section {
-                            flex-direction: column;
-                            height: auto;
-                        }
-                    
-                        .left-side-background,
-                        .right-side-content {
-                            height: auto;
-                        }
-                    
-                        .appointment-box,
-                        .contact-form {
-                            width: 90%;
-                            margin: 10px;
-                        }
-                    
-                        .name-fields {
-                            flex-direction: column;
-                        }
-                    
-                        .form-field {
-                            width: 100%;
-                        }
-                    
-                        .buttons {
-                            font-size: 12px;
-                        }
-                    
-                        .form-title {
-                            font-size: 20px;
-                        }
-                    }
-                    
-                    </style>
-<section id="section664fb57da0b30" class="responsive-section" >
-    <!-- Left Side Content -->
-    <div class="left-side-content">
-        <div class="left-side-background">
-            <div class="appointment-box">
-                <h3 class="appointment-title">Book Appointment</h3>
 
-                <!-- Call Us button -->
-                <div class="call-button">
-                    <a href="tel:+17054222490" class="buttons call-us" style="color: white;">
-                        <i class="fas fa-phone"></i> (705) 422-2490
-                    </a>
-                </div>
 
-                <!-- Email Us button -->
-                <div class="email-button">
-                    <a href="mailto:reception.Stonebridgedentistry@gmail.com" class="buttons email-us" style="color: white;">
-                        <i class="fas fa-envelope"></i> reception.Stonebridgedentistry@gmail.com
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+				<!-- <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small bt_bb_hidden_md bt_bb_hidden_lg"
+								data-bt-override-class="null"></div> -->
+				<div class="container">
+					<section class="services-section">
+						<h2>Services</h2>
+						<div class="services-container">
+							<!-- First Row of Service Items -->
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-tooth service-icon"></i>
+								<p class="service-title">Comprehensive Exams</p>
+							</div>
 
-    <!-- Right Side Contact Form -->
-    <div class="right-side-content">
-        <form class="contact-form">
-            <h2 class="form-title">Contact Us</h2>
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-shield-alt service-icon"></i>
+								<p class="service-title">Hygiene Services</p>
+							</div>
 
-            <!-- First and Last Name Fields -->
-            <div class="name-fields">
-                <div class="form-field">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-field">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-            </div>
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-fill service-icon"></i>
+								<p class="service-title">Tooth Coloured Fillings</p>
+							</div>
 
-            <!-- Email Field -->
-            <div class="form-field">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-crown service-icon"></i>
+								<p class="service-title">Crowns and Bridges</p>
+							</div>
 
-            <!-- Phone Field -->
-            <div class="form-field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-procedures service-icon"></i>
+								<p class="service-title">Root Canal Treatments</p>
+							</div>
 
-            <!-- Message Field -->
-            <div class="form-field">
-                <label for="message">Write a Message</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-            </div>
+							<!-- Second Row of Service Items -->
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-tooth service-icon"></i>
+								<p class="service-title">Dentures</p>
+							</div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="submit-button">
-                Submit
-            </button>
-        </form>
-    </div>
-</section>
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-teeth service-icon"></i>
+								<p class="service-title">Orthodontics</p>
+							</div>
 
-		   
-		   <!-- Media Queries for Mobile -->
-		   <style>
-			 @media only screen and (max-width: 767px) {
-			   #bt_bb_section664fb57da0b30 {
-				 flex-direction: column; /* Stack items vertically on small screens */
-				 height: auto;
-			   }
-			   .bt_bb_section664fb57da0b30 > div {
-				 width: 100%; /* Make sure both columns are full width on mobile */
-				 padding: 15px;
-			   }
-			   .bt_bb_section664fb57da0b30 > div:first-child {
-				 background-image: none; /* Remove background blur on mobile for better readability */
-			   }
-			   .bt_bb_section664fb57da0b30 > div:last-child {
-				 background-image: none; /* Remove background blur on mobile for better readability */
-			   }
-			   form {
-				 width: 90%; /* Adjust form width for mobile */
-			   }
-			   .bt_bb_column {
-				 width: 100%; /* Ensure columns take up full width */
-			   }
-			 }
-		   </style>
-					 <section id="location-working-hours-section" class="location-working-hours-section">
-                        <div class="content-container">
-                            <div class="column-container">
-                                <!-- Location Card -->
-                                <div class="location-card">
-                                    <div class="card-content">
-                                        <h4 class="card-title day">
-                                            <i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i>
-                                           Location
-                                          </h4>
-                                        <div class="map-container" style="border: ridge;">
-                                            <iframe
-                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5519456949146!2d-80.0092124246058!3d44.52433009565658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a83d53bb6efef%3A0xff83ab9925fd3a36!2sStonebridge%20Dentistry!5e0!3m2!1sen!2sin!4v1718860622063!5m2!1sen!2sin"
-                                                width="415px" height="350px" frameborder="0" style="border:0;"
-                                                allowfullscreen="" loading="lazy"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Working Hours Card -->
-                                <div class="working-hours-card">
-                                    <div class="card-content">
-                                        <h4 class="card-title day">
-                                            <i class="fas fa-clock" style="margin-right: 5px;"></i> 
-                                            Working Hours
-                                          </h4>
-                                        <p class="description day">Check out DentiCare's Office hours to plan your visit.
-                                        </p>
-                                        <div class="working-hours-inner">
-                                            <div class="working-hour">
-                                                <div class="day">Monday</div>
-                                                <div class="hours">8AM-9PM</div>
-                                            </div> 
-                                            <div class="working-hour">
-                                                <div class="day">Tuesday</div>
-                                                <div class="hours">8AM-9PM</div>
-                                            </div>
-                                            <div class="working-hour">
-                                                <div class="day">Wednesday</div>
-                                                <div class="hours">9AM-6:30PM</div>
-                                            </div>
-                                            <div class="working-hour">
-                                                <div class="day">Thursday</div>
-                                                <div class="hours">8AM-9PM</div>
-                                            </div>
-                                            <div class="working-hour">
-                                                <div class="day">Friday</div>
-                                                <div class="hours">8AM-9PM</div>
-                                            </div>
-                                            <div class="working-hour">
-                                                <div class="day">Weekend</div>
-                                                <div class="hours">Closed</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <style>
-                        /* Section Styling */
-                        .location-working-hours-section {
-                            background-image: url('https://images.pexels.com/photos/4269700/pexels-photo-4269700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-                            background-size: cover;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            padding: 50px 0;
-							margin-bottom: 5px;
-							padding-bottom: 5px;
-							margin-top: 5px;
-							padding-top: 5px;
-                        }
-
-                        /* Container to center the content */
-                        .content-container {
-                            display: flex;
-                            justify-content: center;
-							margin-bottom: 0px;
-							
-                        }
-
-                        /* Column Container */
-                        .column-container {
-                            max-width: 900px;
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-between;
-                            gap: 20px;
-                            flex-wrap: wrap;
-                        }
-
-                        /* Location Card */
-                        .location-card {
-                            width: 48%;
-                            background-color: #fff;
-                            padding: 20px;
-                            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-                            height: 580px;
-							background-color: rgb(245,225,253);
-							border: ridge;
-                        }
-
-                        .location-card .card-content {
-                            text-align: center;
-                        }
-
-                        .location-card .card-title {
-                            margin-bottom: 20px;
-                        }
-
-                        .map-container {
-                            width: 100%;
-                            height: 450px;
-                            padding: 10px;
-                            box-sizing: border-box;
-                            margin-bottom: 20px;
-							
-                        }
-
-                        .map-container iframe {
-                            width: 100%;
-                            height: 100%;
-                            border: 0;
-                        }
-                        .day{
-                            color: #462B77;
-                        }
-                        .hours{
-                            color: #462B77;
-                        }
-                        /* Working Hours Card */
-                        .working-hours-card {
-                            width: 48%;
-                            background-color: rgb(245,225,253);
-                            padding: 20px;
-                            color: white;
-                            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-                            height: 580px;
-							border: ridge;
-                            
-                        }
-
-                        .working-hours-card .card-content {
-                            text-align: center;
-                        }
-
-                        .working-hours-card .card-title {
-                            margin-bottom: 20px;
-                        }
-
-                        .working-hours-card .description {
-                            margin-bottom: 20px;
-                        }
-
-                        .working-hours-inner {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 15px;
-                        }
-
-                        .working-hour {
-                            display: flex;
-                            justify-content: space-between;
-                            padding: 15px;
-                        }
-
-                        .working-hour .day {
-                            font-weight: bold;
-                        }
-
-                        .working-hour .hours {
-                            text-align: right;
-                        }
-
-                        /* Responsive Design */
-                        @media (max-width: 768px) {
-                            .column-container {
-                                flex-direction: column;
-                            }
-
-                            .location-card,
-                            .working-hours-card {
-                                width: 100%;
-                                height: auto;
-                                margin-bottom: 20px;
-                            }
-
-                            .map-container iframe {
-                                height: 450px !important;
-
-                            }
-
-                            .location-card .card-title,
-                            .working-hours-card .card-title {
-                                font-size: 18px;
-                            }
-
-                            .working-hours-inner {
-                                grid-template-columns: 1fr 1fr;
-                                /* Two columns */
-                                grid-template-rows: repeat(6, auto);
-                                /* Six rows for days and hours */
-                                grid-gap: 20px;
-                            }
-
-                            .working-hour {
-                                margin-bottom: 10px;
-                            }
-
-                            .working-hour .day,
-                            .working-hour .hours {
-                                font-size: 16px;
-                            }
-
-                        }
-                    </style>
+							<div class="service-item" style="--delay: 1s;">
+								<i class="fas fa-align-center service-icon"></i>
+								<p class="service-title">Invisalign</p>
+							</div>
+						</div>
+					</section>
 				</div>
-			</div><!-- /boldthemes_content -->
-		</div><!-- /contentHolder -->
+				<br>
+				<style>
+					/* General Styling */
+					* {
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+					}
+
+					body {
+						font-family: Arial, sans-serif;
+					}
+
+					/* Section Styles */
+					.responsive-section {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						height: 120vh;
+						background-color: #A9A9A9;
+						padding: 0;
+
+					}
+
+					/* Left Side Content */
+					.left-side-content {
+						flex: 1;
+						padding: 0;
+						height: 120vh;
+					}
+
+					.left-side-background {
+						background-image: url(https://img.freepik.com/free-photo/beautiful-girl-sitting-dentist-s-office_1157-23500.jpg);
+						background-size: cover;
+						background-position: center;
+						height: 120vh;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						position: relative;
+					}
+
+					.appointment-box {
+						background-color: rgba(255, 255, 255, 0.8);
+						padding: 20px;
+						border-radius: 8px;
+						box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+						text-align: center;
+						width: 500px;
+					}
+
+					.appointment-title {
+						font-size: 24px;
+						color: #000;
+					}
+
+					/* Button Styles */
+					.buttons {
+						display: inline-block;
+						padding: 10px 20px;
+						background-color: #2CB5E5;
+						color: white;
+						/* Ensures the text is always white */
+						text-decoration: none;
+						font-size: 18px;
+						font-weight: bold;
+						border-radius: 5px;
+						transition: background-color 0.3s ease;
+						width: 100%;
+						text-align: center;
+						box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+						margin-bottom: 15px;
+						/* Normal gap between buttons */
+						white-space: nowrap;
+						/* Prevent text from wrapping */
+					}
+
+					/* Call Us Button */
+					.call-us {
+						margin-bottom: 15px;
+						/* Adds space below the call button */
+					}
+
+					/* Email Us Button */
+					.email-us {
+						margin-bottom: 15px;
+						/* Adds space below the email button */
+						white-space: nowrap;
+						/* Ensures the email address fits inside the button */
+					}
+
+					.button i {
+						margin-right: 10px;
+					}
+
+					/* Right Side Contact Form */
+					.right-side-content {
+						flex: 1;
+						padding: 10px;
+						background-image: url(https://img.freepik.com/premium-photo/dental-equipment-dentist-office-new-modern-stomatological-clinic-room-background-dental-chair-accessories_289152-7450.jpg);
+						background-size: cover;
+						background-position: center;
+						filter: blur(-12px);
+						position: relative;
+						height: 120vh;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.contact-form {
+						background-color: rgba(255, 255, 255, 0.9);
+						padding: 30px;
+						border: 10px solid #f7c594;
+						border-radius: 8px;
+						box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+						font-family: 'Arial', sans-serif;
+						width: 500px;
+					}
+
+					.form-title {
+						font-size: 24px;
+						color: #003478;
+						padding-bottom: 10px;
+						padding-top: 10px;
+						text-align: center;
+					}
+
+					.form-field {
+						margin-bottom: 20px;
+					}
+
+					.form-field label {
+						display: block;
+						font-size: 14px;
+						color: #003478;
+						margin-bottom: 5px;
+					}
+
+					.form-field input,
+					.form-field textarea {
+						width: 100%;
+						border: none;
+						border-bottom: 2px solid #003478;
+						padding: 5px 0;
+						outline: none;
+						font-size: 0.850rem;
+					}
+
+					/* Button Styles */
+					.submit-button {
+						background-color: #003478;
+						color: #ffffff;
+						border: none;
+						padding: 10px 20px;
+						font-size: 16px;
+						cursor: pointer;
+						text-align: center;
+						width: 100%;
+						border-radius: 5px;
+						transition: background-color 0.3s ease;
+					}
+
+					/* Responsive Design */
+					@media (max-width: 768px) {
+						.responsive-section {
+							flex-direction: column;
+							height: auto;
+						}
+
+						.left-side-background,
+						.right-side-content {
+							height: auto;
+						}
+
+						.appointment-box,
+						.contact-form {
+							width: 90%;
+							margin: 10px;
+						}
+
+						.name-fields {
+							flex-direction: column;
+						}
+
+						.form-field {
+							width: 100%;
+						}
+
+						.buttons {
+							font-size: 12px;
+						}
+
+						.form-title {
+							font-size: 20px;
+						}
+					}
+				</style>
+				<section id="section664fb57da0b30" class="responsive-section">
+					<!-- Left Side Content -->
+					<div class="left-side-content">
+						<div class="left-side-background">
+							<div class="appointment-box">
+								<h3 class="appointment-title">Book Appointment</h3>
+
+								<!-- Call Us button -->
+								<div class="call-button">
+									<a href="tel:+17054222490" class="buttons call-us" style="color: white;">
+										<i class="fas fa-phone"></i> (705) 422-2490
+									</a>
+								</div>
+
+								<!-- Email Us button -->
+								<div class="email-button">
+									<a href="mailto:reception.Stonebridgedentistry@gmail.com" class="buttons email-us"
+										style="color: white;">
+										<i class="fas fa-envelope"></i> reception.Stonebridgedentistry@gmail.com
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Side Contact Form -->
+					<div class="right-side-content">
+						<form class="contact-form">
+							<h2 class="form-title">Contact Us</h2>
+
+							<!-- First and Last Name Fields -->
+							<div class="name-fields">
+								<div class="form-field">
+									<label for="firstName">First Name</label>
+									<input type="text" id="firstName" name="firstName" required>
+								</div>
+								<div class="form-field">
+									<label for="lastName">Last Name</label>
+									<input type="text" id="lastName" name="lastName" required>
+								</div>
+							</div>
+
+							<!-- Email Field -->
+							<div class="form-field">
+								<label for="email">Email *</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+
+							<!-- Phone Field -->
+							<div class="form-field">
+								<label for="phone">Phone</label>
+								<input type="tel" id="phone" name="phone">
+							</div>
+
+							<!-- Message Field -->
+							<div class="form-field">
+								<label for="message">Write a Message</label>
+								<textarea id="message" name="message" rows="4"></textarea>
+							</div>
+
+							<!-- Submit Button -->
+							<button type="submit" class="submit-button">
+								Submit
+							</button>
+						</form>
+					</div>
+				</section>
+
+
+				<!-- Media Queries for Mobile -->
+				<style>
+					@media only screen and (max-width: 767px) {
+						#bt_bb_section664fb57da0b30 {
+							flex-direction: column;
+							/* Stack items vertically on small screens */
+							height: auto;
+						}
+
+						.bt_bb_section664fb57da0b30>div {
+							width: 100%;
+							/* Make sure both columns are full width on mobile */
+							padding: 15px;
+						}
+
+						.bt_bb_section664fb57da0b30>div:first-child {
+							background-image: none;
+							/* Remove background blur on mobile for better readability */
+						}
+
+						.bt_bb_section664fb57da0b30>div:last-child {
+							background-image: none;
+							/* Remove background blur on mobile for better readability */
+						}
+
+						form {
+							width: 90%;
+							/* Adjust form width for mobile */
+						}
+
+						.bt_bb_column {
+							width: 100%;
+							/* Ensure columns take up full width */
+						}
+					}
+				</style>
+				<section id="location-working-hours-section" class="location-working-hours-section">
+					<div class="content-container">
+						<div class="column-container">
+							<!-- Location Card -->
+							<div class="location-card">
+								<div class="card-content">
+									<h4 class="card-title day">
+										<i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i>
+										Location
+									</h4>
+									<div class="map-container" style="border: ridge;">
+										<iframe
+											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5519456949146!2d-80.0092124246058!3d44.52433009565658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a83d53bb6efef%3A0xff83ab9925fd3a36!2sStonebridge%20Dentistry!5e0!3m2!1sen!2sin!4v1718860622063!5m2!1sen!2sin"
+											width="415px" height="350px" frameborder="0" style="border:0;"
+											allowfullscreen="" loading="lazy"></iframe>
+									</div>
+								</div>
+							</div>
+							<!-- Working Hours Card -->
+							<div class="working-hours-card">
+								<div class="card-content">
+									<h4 class="card-title day">
+										<i class="fas fa-clock" style="margin-right: 5px;"></i>
+										Working Hours
+									</h4>
+									<p class="description day">Check out DentiCare's Office hours to plan your visit.
+									</p>
+									<div class="working-hours-inner">
+										<div class="working-hour">
+											<div class="day">Monday</div>
+											<div class="hours">8AM-9PM</div>
+										</div>
+										<div class="working-hour">
+											<div class="day">Tuesday</div>
+											<div class="hours">8AM-9PM</div>
+										</div>
+										<div class="working-hour">
+											<div class="day">Wednesday</div>
+											<div class="hours">9AM-6:30PM</div>
+										</div>
+										<div class="working-hour">
+											<div class="day">Thursday</div>
+											<div class="hours">8AM-9PM</div>
+										</div>
+										<div class="working-hour">
+											<div class="day">Friday</div>
+											<div class="hours">8AM-9PM</div>
+										</div>
+										<div class="working-hour">
+											<div class="day">Weekend</div>
+											<div class="hours">Closed</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<style>
+					/* Section Styling */
+					.location-working-hours-section {
+						background-image: url('https://images.pexels.com/photos/4269700/pexels-photo-4269700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+						background-size: cover;
+						background-position: center;
+						background-repeat: no-repeat;
+						padding: 50px 0;
+						margin-bottom: 5px;
+						padding-bottom: 5px;
+						margin-top: 5px;
+						padding-top: 5px;
+					}
+
+					/* Container to center the content */
+					.content-container {
+						display: flex;
+						justify-content: center;
+						margin-bottom: 0px;
+
+					}
+
+					/* Column Container */
+					.column-container {
+						max-width: 900px;
+						width: 100%;
+						display: flex;
+						justify-content: space-between;
+						gap: 20px;
+						flex-wrap: wrap;
+					}
+
+					/* Location Card */
+					.location-card {
+						width: 48%;
+						background-color: #fff;
+						padding: 20px;
+						box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+						height: 580px;
+						background-color: rgb(245, 225, 253);
+						border: ridge;
+					}
+
+					.location-card .card-content {
+						text-align: center;
+					}
+
+					.location-card .card-title {
+						margin-bottom: 20px;
+					}
+
+					.map-container {
+						width: 100%;
+						height: 450px;
+						padding: 10px;
+						box-sizing: border-box;
+						margin-bottom: 20px;
+
+					}
+
+					.map-container iframe {
+						width: 100%;
+						height: 100%;
+						border: 0;
+					}
+
+					.day {
+						color: #462B77;
+					}
+
+					.hours {
+						color: #462B77;
+					}
+
+					/* Working Hours Card */
+					.working-hours-card {
+						width: 48%;
+						background-color: rgb(245, 225, 253);
+						padding: 20px;
+						color: white;
+						box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+						height: 580px;
+						border: ridge;
+
+					}
+
+					.working-hours-card .card-content {
+						text-align: center;
+					}
+
+					.working-hours-card .card-title {
+						margin-bottom: 20px;
+					}
+
+					.working-hours-card .description {
+						margin-bottom: 20px;
+					}
+
+					.working-hours-inner {
+						display: flex;
+						flex-direction: column;
+						gap: 15px;
+					}
+
+					.working-hour {
+						display: flex;
+						justify-content: space-between;
+						padding: 15px;
+					}
+
+					.working-hour .day {
+						font-weight: bold;
+					}
+
+					.working-hour .hours {
+						text-align: right;
+					}
+
+					/* Responsive Design */
+					@media (max-width: 768px) {
+						.column-container {
+							flex-direction: column;
+						}
+
+						.location-card,
+						.working-hours-card {
+							width: 100%;
+							height: auto;
+							margin-bottom: 20px;
+						}
+
+						.map-container iframe {
+							height: 450px !important;
+
+						}
+
+						.location-card .card-title,
+						.working-hours-card .card-title {
+							font-size: 18px;
+						}
+
+						.working-hours-inner {
+							grid-template-columns: 1fr 1fr;
+							/* Two columns */
+							grid-template-rows: repeat(6, auto);
+							/* Six rows for days and hours */
+							grid-gap: 20px;
+						}
+
+						.working-hour {
+							margin-bottom: 10px;
+						}
+
+						.working-hour .day,
+						.working-hour .hours {
+							font-size: 16px;
+						}
+
+					}
+				</style>
+			</div>
+		</div><!-- /boldthemes_content -->
+	</div><!-- /contentHolder -->
 	</div><!-- /contentWrap -->
 
-    <footer class="footer" style="margin-top: 0px;padding-top: 0px;">
-        <!-- Section 1 -->
-        <div class="footer-section" id="footer-section-1">
-            <h3 class="footer-heading">
-                <span style="color: #422774;">Stonebridge</span>
-                <span style="color: #FF793E;">Dentistry</span>
-              </h3>
-            <p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
-            <div class="contact-info" style="display: flex; justify-content: center; align-items: center;">
-                <div class="contact-item">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <a href="tel:(705)422-2490">(705) 422-2490</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@stonebridgedentistry.ca">Email Us</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <a href="https://stonebridgedentistry.ca/" target="_blank">Stonebridgedentistry.ca</a>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Section 2 -->
-        <div class="footer-section" id="footer-section-2">
-            <h3 class="footer-heading">About</h3>
-            <ul class="footer-nav">
-                <li><a href="Team.html">Our Dental Team</a></li>
-                <li><a href="Testimonials.html">Testimonials</a></li>
-                <li><a href="Services.html">Dental Services</a></li>
-                <li><a href="About-Us.html">About</a></li>
-            </ul>
-        </div>
-    
-        <!-- Section 3 -->
-        <div class="footer-section" id="footer-section-3">
-            <h3 class="footer-heading">Our Awards</h3>
-            <div class="image-container">
-                <img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png" alt="Sample Image">
-                <div class="image-text">
-                    Stonebridge is a multiple award winner<br>
-                    <strong>Best Patient Care <span style="color: #422774;">2017</span></strong><br>
-                    <strong>Best Practice & Team <span style="color: #422774;">2016</span></strong><br>
-                    <strong>Best Patient Care <span style="color: #422774;">2014</span></strong>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Section 4 -->
-        <div class="footer-section" id="footer-section-4">
-            
-            <h3 class="footer-heading">Social Networks</h3>
-            <p class="footer-subtext">
-                Visit Stonebridge on these social links and connect with us. 
-                Make sure to follow our accounts for regular updates.
-            </p>
-            <div class="social-iconss">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin-in"></a>
-            </div>
-        </div>
-    </footer>
-    
-    <div class="footer-navigation">
-        <div class="menu-footer-menu-container">
-            <ul id="menu-footer-menu" class="menu">
-                <li class="menu-items"><a href="About-Us.html">ABOUT US</a></li>
-                <li class="menu-items"><a href="Services.html">SERVICES</a></li>
-                <li class="menu-items"><a href="Testimonials.html">TESTIMONIALS</a></li>
-                <li class="menu-items"><a href="Team.html">OUR TEAM</a></li>
-                <li class="menu-items"><a href="Contact-Us.html">CONTACT US</a></li>
-                <li class="menu-items bt_bb_back_to_top"><a href="#top">BACK TO TOP</a></li>
-            </ul>
-        </div>
-    </div>
-    
+	<footer class="footer" style="margin-top: 0px;padding-top: 0px;">
+		 <!-- Section 1 -->
+		 <div class="footer-section footer-section-1">
+			<h3 class="footer-heading">
+				<span style="color: #422774;">Stonebridge</span>
+				<span style="color: #FF793E;">Dentistry</span>
+			</h3>
+			<p class="footer-subtext">A team of dentists working to ensure you receive the best treatment.</p>
+			<div class="contact-info" style="display: flex; justify-content: center; align-items: center;">
+				<div class="contact-item" >
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<a href="tel:(705)422-2490">(705) 422-2490</a>
+				</div>
+				<div class="contact-item">
+					<i class="fas fa-envelope"></i>
+					<a href="mailto:info@stonebridgedentistry.ca">Email Us</a>
+				</div>
+				<div class="contact-item">
+					<i class="fas fa-globe"></i>
+					<a href="https://stonebridgedentistry.ca/" target="_blank">Stonebridgedentistry.ca</a>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Section 2 -->
+		<div class="footer-section footer-section-2">
+			<h3 class="footer-heading">About</h3>
+			<ul class="footer-nav">
+				<li><a href="Team.html" style="font-size: 14px;">Our Dental Team</a></li>
+				<li><a href="Testimonials.html" style="font-size: 14px;">Testimonials</a></li>
+				<li><a href="Services.html" style="font-size: 14px;">Dental Services</a></li>
+				<li><a href="About-Us.html" style="font-size: 14px;">About</a></li>
+			</ul>
+		</div>
+	
+		<!-- Section 3 -->
+		<div class="footer-section footer-section-3">
+			<h3 class="footer-heading">Our Awards</h3>
+			<div class="image-container">
+				<img src="https://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/footer-awards-new.png"
+					alt="Awards">
+				<div class="image-text">
+					Stonebridge multiple award winner<br>
+					<strong>Best Patient Care <span style="color: #422774;">2017</span></strong><br>
+					<strong>Best Practice & Team <span style="color: #422774;">2016</span></strong><br>
+					<strong>Best Patient Care <span style="color: #422774;">2014</span></strong>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Section 4 -->
+		<div class="footer-section footer-section-4">
+			<h3 class="footer-heading">Social Networks</h3>
+			<p class="footer-subtext" style="font-size: 14px;font-family: sans-serif;">
+				Visit Stonebridge on these social links and connect with us.
+				Make sure to follow our accounts for regular updates.
+			</p>
+			<div class="social-iconss">
+				<a href="#" class="fab fa-facebook-f"></a>
+				<a href="#" class="fab fa-twitter"></a>
+				<a href="#" class="fab fa-instagram"></a>
+				<a href="#" class="fab fa-linkedin-in"></a>
+			</div>
+		</div>
+	</footer>
 
-    <style>
+	<div class="footer-navigation">
+		<div class="menu-footer-menu-container">
+			<ul id="menu-footer-menu" class="menu">
+				<li class="menu-items"><a href="About-Us.html">ABOUT US</a></li>
+				<li class="menu-items"><a href="Services.html">SERVICES</a></li>
+				<li class="menu-items"><a href="Testimonials.html">TESTIMONIALS</a></li>
+				<li class="menu-items"><a href="Team.html">OUR TEAM</a></li>
+				<li class="menu-items"><a href="Contact-Us.html">CONTACT US</a></li>
+				<li class="menu-items bt_bb_back_to_top"><a href="#top">BACK TO TOP</a></li>
+			</ul>
+		</div>
+	</div>
 
-        /* Footer Navigation Strip */
-.footer-navigation {
-    background-color: #003478; /* Footer background color */
-    color: #ffffff;
-    padding: 5px 10px;
-    position: relative;
-}
 
-.menu-footer-menu-container {
+	<style>
+		/* Footer Navigation Strip */
+		.footer-navigation {
+			background-color: #003478;
+			/* Footer background color */
+			color: #ffffff;
+			padding: 5px 10px;
+			position: relative;
+		}
+
+		.menu-footer-menu-container {
+			display: flex;
+			justify-content: flex-end;
+			/* Align navigation to the right */
+			margin: 0 auto;
+			max-width: 1200px;
+		}
+
+		.menu {
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			/* Ensure responsive wrapping */
+			gap: 15px;
+			padding: 0;
+			margin: 0;
+		}
+
+		.menu-items {
+			font-size: 14px;
+		}
+
+		.menu-items a {
+			color: #ffffff;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.menu-items a:hover {
+			color: #ffa500;
+			/* Light orange hover effect */
+			font-weight: bold;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.menu-footer-menu-container {
+				justify-content: center;
+				/* Center align for smaller devices */
+			}
+
+			.menu {
+				gap: 10px;
+				font-size: 12px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.menu {
+				flex-direction: column;
+				/* Stack items vertically on small screens */
+				align-items: center;
+			}
+
+			.menu-item {
+				margin-bottom: 5px;
+			}
+		}
+
+		.footer {
     display: flex;
-    justify-content: flex-end; /* Align navigation to the right */
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap; /* Ensure responsive wrapping */
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-items {
-    font-size: 14px;
-}
-
-.menu-items a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.menu-items a:hover {
-    color: #ffa500; /* Light orange hover effect */
-	font-weight: bold;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu-footer-menu-container {
-        justify-content: center; /* Center align for smaller devices */
-    }
-
-    .menu {
-        gap: 10px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: center;
-    }
-
-    .menu-item {
-        margin-bottom: 5px;
-    }
-}
-
-     .footer {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f4f4f4;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f3f3f3;
     padding: 20px;
-    text-align: center;
 }
 
 .footer-section {
-    flex: 1 1 25%;
     padding: 20px;
     box-sizing: border-box;
-}
-
-.footer-heading {
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-    color: #422774;
-}
-
-.footer-heading::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 2px;
-    background-color: #FF793E;
-    margin: 8px auto;
-}
-
-.footer-subtext {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
-
-.contact-item a {
-    color: #000;
-    text-decoration: none;
-}
-
-.contact-item a:hover {
-    text-decoration: underline;
-}
-
-.footer-nav {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-nav li {
-    margin: 5px 0;
-}
-
-.footer-nav a {
-    color: #000;
-    text-decoration: none;
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
-    color: #FF793E;
-}
-
-.image-container {
-    position: relative;
     text-align: center;
 }
 
-.image-container img {
-    max-width: 280px;
+.footer-section-1 {
+    flex: 1;
+    height: 150px;
+    /* background-color: #f7e8ff; */
+}
+
+.footer-section-2 {
+    flex: 0.5;
     height: 200px;
+    /* background-color: #e8f7ff; */
 }
 
-.image-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    background-color: F4F4F4;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 13px;
-    text-align: center;
+.footer-section-3 {
+    flex: 1.5;
+    height: 250px;
+    /* background-color: #fffbe8; */
 }
 
-/* .logo {
+.footer-section-4 {
+    flex: 1;
+    height: 180px;
+    /* background-color: #e8ffe8; */
+}
+
+		.footer-heading {
+			font-size: 18px;
+			font-weight: bold;
+			position: relative;
+			color: #422774;
+		}
+
+		.footer-heading::after {
+			content: "";
+			display: block;
+			width: 50px;
+			height: 2px;
+			background-color: #FF793E;
+			margin: 8px auto;
+		}
+
+		.footer-subtext {
+			margin: 10px 0;
+			font-size: 14px;
+		}
+
+		.contact-info {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.contact-item {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-size: 14px;
+		}
+
+		.contact-item a {
+			color: #000;
+			text-decoration: none;
+		}
+
+		.contact-item a:hover {
+			text-decoration: underline;
+		}
+
+		.footer-nav {
+			list-style: none;
+			padding: 0;
+		}
+
+		.footer-nav li {
+			margin: 5px 0;
+		}
+
+		.footer-nav a {
+			color: #000;
+			text-decoration: none;
+		}
+
+		.footer-nav a:hover {
+			text-decoration: underline;
+			color: #FF793E;
+		}
+
+		.image-container {
+			position: relative;
+			text-align: center;
+		}
+
+		.image-container img {
+			max-width: 320px;
+			height: 200px;
+			padding-bottom: 50px;
+		}
+
+		.image-text {
+			position: absolute;
+			top: 35%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: black;
+			background-color: F4F4F4;
+			padding: 10px;
+			border-radius: 5px;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		/* .logo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -14031,39 +14168,98 @@ $(document).ready(function() {
     font-size: 24px;
 } */
 
-.social-iconss {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
+		.social-iconss {
+			display: flex;
+			justify-content: center;
+			gap: 15px;
+		}
 
-.social-iconss a {
-    color: #422774;
-    font-size: 18px;
-    text-decoration: none;
-}
+		.social-iconss a {
+			color: #422774;
+			font-size: 18px;
+			text-decoration: none;
+		}
 
-.social-iconss a:hover {
-    color: #ffa500;
-}
+		.social-iconss a:hover {
+			color: #ffa500;
+		}
 
-/* Responsive Design */
+		/* Responsive Design */
 @media (max-width: 768px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: #f4f4f4; /* Optional for a background */
+    }
+
     .footer-section {
         flex: 1 1 100%;
+        margin-bottom: 20px; /* Adds spacing between sections */
+        text-align: center; /* Centers content within each section */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .footer-section h3.footer-heading {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer-section p.footer-subtext {
+        font-size: 14px;
+        margin-bottom: 15px;
     }
 
     .contact-info {
+        flex-direction: column; /* Stacks contact items vertically */
         align-items: center;
     }
 
+    .contact-item {
+        margin-bottom: 10px;
+    }
+
+    .footer-nav {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-nav li {
+        margin-bottom: 10px;
+    }
+
+    .footer-nav a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .image-container {
+        text-align: center;
+    }
+
     .image-text {
-        font-size: 12px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .social-iconss {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Adds spacing between icons */
+    }
+
+    .social-iconss a {
+        font-size: 20px;
+        color: #333;
+        text-decoration: none;
     }
 }
 
-    </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	</style>
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
 	<!-- BEGIN recaptcha, injected by plugin wp-recaptcha-integration  -->

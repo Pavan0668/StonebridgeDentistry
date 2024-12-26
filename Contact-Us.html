@@ -12578,26 +12578,75 @@ $(document).ready(function() {
     }
 
 	.top-bar .containerss .row {
-        flex-direction: row; /* Ensure items are in a row */
-        justify-content: center; /* Center align for smaller screens */
-    }
+					flex-direction: row;
+					/* Ensure items are in a row */
+					justify-content: center;
+					/* Center align for smaller screens */
+					margin-left: 240px;
+					/* Adjust margin for smaller screens */
+				}
 
-    .top-bar .contact-details {
-        display: flex;
-        flex-direction: row; /* Keep items in a row horizontally */
-        align-items: center;
-        gap: 10px; /* Add spacing between phone and button */
-    }
+				.top-bar .contact-details {
+					display: flex;
+					flex-direction: row;
+					/* Keep items in a row horizontally */
+					align-items: center;
+					gap: 15px;
+					/* Add spacing between phone and button */
+					padding-left: 240px;
+					/* Add padding-left for the contact details */
+				}
 
-    .top-bar .book-appointment-btn {
-        font-size: 12px; /* Adjust font size for smaller screens */
-        height: 28px; /* Slightly smaller height for compact design */
-        padding: 0 10px; /* Adjust padding for better spacing */
-    }
+				.top-bar .contact-details a {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+					/* Spacing between the icon and text */
+					text-decoration: none;
+					color: inherit;
+				}
 
-    .top-bar .btIconWidgetTitle {
-        font-size: 12px; /* Adjust phone number font size */
-    }
+				.top-bar .book-appointment-btn {
+					font-size: 14px;
+					/* Adjust font size for the button */
+					height: 40px;
+					/* Maintain button height */
+					width: 170px;
+					padding: 0 15px;
+					/* Adjust padding for better spacing */
+					background-color: #2C2D78;
+					color: #FFBD0D;
+					border-radius: 5px;
+					/* Rounded corners */
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-decoration: none;
+					padding-left: 240px;
+					/* Add padding-left for the phone number */
+				}
+
+				.top-bar .btn-phone {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+					padding-left: 240px;
+					/* Add padding-left for the phone number */
+				}
+
+				.top-bar .btIconWidgetTitle {
+					font-size: 14px;
+					/* Font size for phone number */
+					color: #FFFFFF;
+					/* Ensure text is visible */
+				}
+
+				.top-bar .contact-details i {
+					font-size: 14px;
+					/* Icon size */
+					color: #FFFFFF;
+					/* Icon color */
+				}
 
     /* Navbar items are stacked vertically on small screens */
     .navbar-nav {
@@ -12639,7 +12688,7 @@ $(document).ready(function() {
 	
 		
 		    <!-- Top bar -->
-    <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;">
+    <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;padding-right: 160px;">
         <div class="containerss">
             <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
 
@@ -12654,7 +12703,7 @@ $(document).ready(function() {
                         </a>
                         <!-- Book Appointment Button -->
                         <a href="Contact-New.html" class="book-appointment-btn"
-                            style="font-size: 14px; height: 30px; padding: 0 15px; border: groove; display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none; border-radius: 5px;">
+                            style="font-size: 14px; height: 30px; padding: 0 15px;display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none;">
                             Book Appointment
                         </a>
                     </div>
