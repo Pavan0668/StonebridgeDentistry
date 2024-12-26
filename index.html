@@ -12631,6 +12631,7 @@
 
         .navbar-brand img {
             height: 85px;
+            padding-left: 120px;
         }
 
         .nav-link {
@@ -12664,6 +12665,7 @@
         z-index: 1000; /* Ensure it appears above other content */
         border-top: 1px solid #ddd; /* Optional: Add a subtle border for separation */
         padding: 10px 0; /* Add padding for vertical spacing */
+        padding-left: 190px;
     }
 
     /* When the menu is expanded */
@@ -12817,9 +12819,12 @@
     }
 .navbar-brand
 {
-    margin-left:40px ;
+    margin-left:20px ;
 }
-
+.custom-navbar-collapse
+{
+    padding-right: 190px;
+}
 
     /* Responsive styles */
 @media (max-width: 768px) {
@@ -12832,6 +12837,10 @@
           padding-right: 40px;
            list-style: none;
             align-items: center;
+    }
+    .navbar-brand img
+    {
+        padding-left: 0px;
     }
 }
 </style>
@@ -15604,9 +15613,9 @@
                     alt="Sample Image">
                 <div class="image-text">
                     Stonebridge is a multiple award winner<br>
-                    <strong>Best Patient Care 2017</strong><br>
-                    <strong>Best Practice & Team 2016</strong><br>
-                    <strong>Best Patient Care 2014</strong>
+                    <strong>Best Patient Care <span style="color: #422774;">2017</span></strong><br>
+                    <strong>Best Practice & Team <span style="color: #422774;">2016</span></strong><br>
+                    <strong>Best Patient Care <span style="color: #422774;">2014</span></strong>
                 </div>
             </div>
         </div>
