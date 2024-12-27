@@ -12611,32 +12611,39 @@
             margin: 0;
             padding: 0;
         }
+
         @keyframes pendulum {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(15deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(-15deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-.btIconWidgetTitle i {
-    display: inline-block;
-    animation: pendulum 2s infinite ease-in-out;
-    /* Adjust animation duration and easing */
-    transform-origin: top center;
-    /* Set rotation point */
-    color: #FFFFFF;
-    font-size: 14px;
-}
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(15deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(-15deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .btIconWidgetTitle i {
+            display: inline-block;
+            animation: pendulum 2s infinite ease-in-out;
+            /* Adjust animation duration and easing */
+            transform-origin: top center;
+            /* Set rotation point */
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
         .top-bar {
             background-color: blue;
             padding: 5px 0;
@@ -12666,6 +12673,9 @@
             color: #000;
             font-size: 18px;
             padding: 5px 10px;
+            font-family: sans-serif;
+            /* text-transform: uppercase; */
+            white-space: nowrap;
         }
 
         .nav-link:hover {
@@ -12692,7 +12702,7 @@
                 /* Center-align the menu items */
                 justify-content: center;
                 /* Center-align vertically */
-                background-color: #ffffff;
+                background-color: #4579BA;
                 /* White background */
                 width: 100%;
                 /* Full width of the parent container */
@@ -12708,7 +12718,7 @@
                 /* Optional: Add a subtle border for separation */
                 padding: 10px 0;
                 /* Add padding for vertical spacing */
-                padding-left: 190px;
+                padding-left: 40px;
             }
 
             /* When the menu is expanded */
@@ -12721,9 +12731,11 @@
             .custom-navbar-collapse .nav-link {
                 padding: 10px 15px;
                 /* Add spacing around each menu item */
-                color: #000;
+                color: #FFFFFF;
                 /* Black text color */
                 font-size: 18px;
+                font-family: sans-serif;
+                text-transform: uppercase;
                 /* Font size for better visibility */
                 text-align: center;
                 /* Center-align text */
@@ -12742,58 +12754,116 @@
                 border-radius: 5px;
                 /* Optional: Rounded corners for hover effect */
             }
+
+            /* Style for navigation items */
             .nav-item a {
-        display: inline-block; /* Ensure the link behaves like an inline element */
-        border-top: 1px solid #2CB5E5; /* Top border */
-        border-bottom: 1px solid #2CB5E5; /* Bottom border */
-        background-color: #e9ecef;
-        padding: 5px 10px; /* Retain the padding */
-    }
+                display: inline-block;
+                /* Inline element with block behavior */
+                padding: 8px 15px;
+                /* Increase padding for better spacing */
+                font-size: 16px;
+                /* Adjust font size for readability */
+                font-weight: 500;
+                /* Slightly bold for emphasis */
+                color: #FFFFFF;
+                /* White text on hover */
+                /* Professional blue color */
+                text-decoration: none;
+                /* Remove underline */
+                border: 2px solid transparent;
+                /* No visible border initially */
+                transition: all 0.3s ease;
+                /* Smooth transition */
+                background-color: transparent;
+                /* Transparent background by default */
+            }
+
+            .nav-item a:hover,
+            .nav-item a:focus {
+                color: #FFFFFF;
+                /* White text on hover */
+                background-color: #2CB5E5;
+                /* Blue background on hover */
+                border: 2px solid #2CB5E5;
+                /* Match border with hover background */
+                border-radius: 5px;
+                /* Rounded corners for a modern look */
+                text-decoration: none;
+                /* Maintain no underline */
+            }
+
+            /* Style for navbar toggler */
             .custom-navbar-toggler {
                 display: block;
+                /* Ensure visibility */
+                background: transparent;
+                /* Transparent background */
                 border: none;
-                background: white;
-                padding-right: 35px;
+                /* Remove default border */
+                padding: 10px;
+                /* Add padding for spacing */
+                cursor: pointer;
+                /* Pointer cursor */
+                padding-right: 30px;
             }
 
             .custom-navbar-toggler-icon {
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                /* Adjust size for a cleaner look */
+                height: 3px;
+                /* Thin line for a modern feel */
                 background-color: #034CAE;
+                /* Dark blue color */
                 position: relative;
-                border-radius: 50%;
-                cursor: pointer;
-
+                /* Relative positioning for pseudo-elements */
+                transition: all 0.3s ease;
+                /* Smooth transition */
             }
 
             .custom-navbar-toggler-icon::before,
             .custom-navbar-toggler-icon::after {
                 content: '';
                 position: absolute;
-                width: 20px;
-                height: 2px;
-                background-color: white;
-                left: 5px;
+                width: 30px;
+                /* Match width of main line */
+                height: 3px;
+                /* Thin line for consistency */
+                background-color: #034CAE;
+                /* Dark blue color */
                 transition: all 0.3s ease;
+                /* Smooth transition */
             }
 
             .custom-navbar-toggler-icon::before {
-                top: 8px;
+                top: -8px;
+                /* Position above main line */
             }
 
             .custom-navbar-toggler-icon::after {
-                top: 14px;
+                top: 8px;
+                /* Position below main line */
+            }
+
+            /* Transition to X (collapsed state) */
+            .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon {
+                background-color: transparent;
+                /* Hide main line */
             }
 
             .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::before {
                 transform: rotate(45deg);
-                top: 10px;
+                /* Rotate to form X */
+                top: 0;
+                /* Align with center */
             }
 
             .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::after {
                 transform: rotate(-45deg);
-                top: 10px;
+                /* Rotate to form X */
+                top: 0;
+                /* Align with center */
             }
+
 
             .top-bar {
                 padding: 12px 30px;
@@ -12894,9 +12964,9 @@
                         <!-- Phone Number with Icon -->
                         <a href="tel:+17054222490" class="btn-phone"
                             style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
-                            
+
                             <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold; color: #FFFFFF;">
-								<i class="fas fa-phone-alt" style="color: #FFFFFF; font-size: 14px;"></i>  (705) 422-2490
+                                <i class="fas fa-phone-alt" style="color: #FFFFFF; font-size: 14px;"></i> (705) 422-2490
                             </span>
                         </a>
                         <!-- Book Appointment Button -->
@@ -12926,32 +12996,29 @@
             <div class="custom-navbar-collapse collapse" id="customNavbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active" style="margin-bottom: 10px;">
-                        <a class="nav-link" href="index.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">Home</a>
+                        <a class="nav-link" href="index.html" style=" font-size: 18px; padding: 5px 10px;">HOME</a>
                     </li>
                     <li class="nav-item" style="margin-bottom: 10px;">
-                        <a class="nav-link" href="About-Us.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">About Us</a>
+                        <a class="nav-link" href="About-Us.html" style=" font-size: 18px; padding: 5px 10px;">ABOUT</a>
                     </li>
                     <li class="nav-item" style="margin-bottom: 10px;">
                         <a class="nav-link" href="Services.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">Services</a>
+                            style=" font-size: 18px; padding: 5px 10px;">SERVICES</a>
                     </li>
                     <li class="nav-item" style="margin-bottom: 10px;">
-                        <a class="nav-link" href="Team.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">Our Team</a>
+                        <a class="nav-link" href="Team.html" style=" font-size: 18px; padding: 5px 10px;">OUR TEAM</a>
                     </li>
                     <li class="nav-item" style="margin-bottom: 10px;">
                         <a class="nav-link" href="Testimonials.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">Testimonials</a>
+                            style=" font-size: 18px; padding: 5px 10px;">TESTIMONIALS</a>
                     </li>
                     <li class="nav-item" style="margin-bottom: 10px;">
-                        <a class="nav-link" href="Technology.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">Our Office</a>
+                        <a class="nav-link" href="Technology.html" style=" font-size: 18px; padding: 5px 10px;">OUR
+                            OFFICE</a>
                     </li>
                     <li class="nav-item" style="margin-bottom: 10px;">
                         <a class="nav-link" href="Contact-Us.html"
-                            style="color: #000; font-size: 18px; padding: 5px 10px;">Contact</a>
+                            style=" font-size: 18px; padding: 5px 10px;">CONTACT</a>
                     </li>
                 </ul>
             </div>
@@ -15489,7 +15556,7 @@
                                         <i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i>
                                         Location
                                     </h4>
-                                    <div class="map-container" >
+                                    <div class="map-container">
                                         <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5519456949146!2d-80.0092124246058!3d44.52433009565658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a83d53bb6efef%3A0xff83ab9925fd3a36!2sStonebridge%20Dentistry!5e0!3m2!1sen!2sin!4v1718860622063!5m2!1sen!2sin"
                                             width="415px" height="350px" frameborder="0" style="border:0;"
@@ -15576,8 +15643,8 @@
                         padding: 20px;
                         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
                         height: 580px;
-                        background-color: rgb(255,255,255);
-                        
+                        background-color: rgb(255, 255, 255);
+
                     }
 
                     .location-card .card-content {
@@ -15614,12 +15681,12 @@
                     /* Working Hours Card */
                     .working-hours-card {
                         width: 48%;
-                        background-color: rgb(255,255,255);
+                        background-color: rgb(255, 255, 255);
                         padding: 20px;
                         color: white;
                         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
                         height: 580px;
-                        
+
 
                     }
 
@@ -15970,7 +16037,7 @@
 
         .image-text {
             position: absolute;
-            top: 35%;
+            top: 28%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: black;

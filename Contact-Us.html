@@ -12532,177 +12532,268 @@
 		</script>
 
 		<style>
-			
+			.nav-link
+			{
+				color: #000;
+			}
 			/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
-			@media (max-width: 768px) {
+		@media (max-width: 768px) {
+			/* Style for navigation items */ 
+			.nav-item a {
+				display: inline-block;
+				/* Inline element with block behavior */
+				padding: 8px 15px;
+				/* Increase padding for better spacing */
+				font-size: 16px;
+				/* Adjust font size for readability */
+				font-weight: 500;
+				border: 2px solid transparent;
+				/* No visible border initially */
+				transition: all 0.3s ease;
 
-				/* Hide the navbar links by default */
-				.navbar-collapse {
-					display: none;
-				}
-
-				/* Display the hamburger menu */
-				.navbar-toggler {
-					display: block;
-					border: none;
-					background: none;
-				}
-
-				/* Custom styling for the hamburger icon (circular) */
-				.navbar-toggler-icon {
-					width: 30px;
-					height: 30px;
-					border-radius: 50%;
-					background-color: #034CAE;
-					position: relative;
-				}
-
-				.navbar-toggler-icon::before,
-				.navbar-toggler-icon::after {
-					content: '';
-					position: absolute;
-					width: 20px;
-					height: 2px;
-					background-color: white;
-					left: 5px;
-					transition: all 0.3s ease;
-				}
-
-				.navbar-toggler-icon::before {
-					top: 8px;
-				}
-
-				.navbar-toggler-icon::after {
-					top: 14px;
-				}
-
-				/* Add a cross (X) effect on click */
-				.navbar-toggler.collapsed .navbar-toggler-icon::before {
-					transform: rotate(45deg);
-					top: 10px;
-				}
-
-				.navbar-toggler.collapsed .navbar-toggler-icon::after {
-					transform: rotate(-45deg);
-					top: 10px;
-				}
-
-				.top-bar {
-					padding: 12px 30px;
-					/* Add padding for smaller screens */
-
-				}
-
-				.top-bar .containerss .row {
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					/* Ensure space between phone and button */
-					align-items: center;
-					/* Center align items horizontally */
-					gap: 20px;
-				}
-
-				.top-bar .contact-details {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					gap: 10px;
-					/* Adjust spacing between elements */
-					flex-wrap: nowrap;
-					/* Prevent wrapping */
-				}
-
-				.top-bar .btn-phone {
-					display: flex;
-					align-items: center;
-					gap: 5px;
-					text-decoration: none;
-					color: inherit;
-					font-size: 14px;
-					font-weight: bold;
-					color: #FFFFFF;
-					white-space: nowrap;
-					/* Prevent text wrapping */
-				}
-
-				.top-bar .btIconWidgetTitle {
-					font-size: 16px;
-					color: #FFFFFF;
-					padding-left: 50px;
-					/* display: inline-block; */
-					white-space: nowrap;
-				}
-
-				.top-bar .book-appointment-btn {
-					font-size: 14px;
-					height: 36px;
-					/* Adjust button height */
-					padding: 0 10px;
-					background-color: #2C2D78;
-					color: #FFBD0D;
-					border-radius: 5px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					text-decoration: none;
-					white-space: nowrap;
-					/* Prevent text wrapping */
-				}
-
-				.top-bar .contact-details i {
-					font-size: 14px;
-					color: #FFFFFF;
-				}
-
-				/* Ensure the button and phone number fit horizontally */
-				.top-bar .contact-details {
-					max-width: 100%;
-					justify-content: space-between;
-				}
-
-				/* Navbar items are stacked vertically on small screens */
-				.navbar-nav {
-					flex-direction: column;
-					width: 100%;
-					text-align: center;
-				}
-
-				.nav-link {
-					padding: 10px 20px;
-				}
-				.nav-item a {
-        display: inline-block; /* Ensure the link behaves like an inline element */
-        border-top: 1px solid #2CB5E5; /* Top border */
-        border-bottom: 1px solid #2CB5E5; /* Bottom border */
-        background-color: #e9ecef;
-        padding: 5px 10px; /* Retain the padding */
-    }
-
-				/* Book Appointment button */
-				.book-appointment-btn {
-					height: 30px;
-					font-size: 12px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 150px;
-					background-color: #1D9BF0;
-					color: #FFFFFF;
-					margin-right: 20px;
-				}
 			}
 
-			/* For large screens (desktop) */
-			@media (min-width: 769px) {
-				.navbar-collapse {
-					display: flex;
-				}
+			.navbar-collapse .nav-link {
+                padding: 10px 15px;
+                /* Add spacing around each menu item */
+                color: #FFFFFF;
+                /* Black text color */
+                font-size: 18px;
+                text-transform: uppercase;
+                /* Font size for better visibility */
+                text-align: left;
+                /* Center-align text */
+                /* text-decoration: none; */
+                /* Remove underline */
+                width: 100%;
+                /* Ensure each link spans full width */
+				/* display: inline-block; */
+            }
+			.navbar-collapse .nav-link:hover {
+                /* background-color: #e9ecef; */
+                /* Subtle gray background on hover */
+                /* color: #2CB5E5; */
+                /* Highlight color for text */
+                border-radius: 5px;
+                /* Optional: Rounded corners for hover effect */
+            }
 
-				.navbar-toggler {
-					display: none;
-				}
+			.navbar-collapse {
+				display: none;
+                white-space: nowrap;
+                /* Initially hidden */
+                flex-direction: column;
+                /* Align items vertically */
+                align-items: center;
+                /* Center-align the menu items */
+                justify-content: center;
+                /* Center-align vertically */
+                background-color: #4579BA;
+                /* White background */
+                width: 100%;
+                /* Full width of the parent container */
+                position: absolute;
+                /* Position the menu below the navbar */
+                top: 100%;
+                /* Position it directly below the navbar */
+                left: 0;
+                /* Align to the left edge */
+                z-index: 1000;
+                /* Ensure it appears above other content */
+                border-top: 1px solid #ddd;
+                /* Optional: Add a subtle border for separation */
+                padding: 10px 0;
+                /* Add padding for vertical spacing */
+                padding-left: 40px;
 			}
+		}
+
+		@media (max-width: 768px) {
+			.top-bar {
+				padding: 12px 30px;
+				/* Add padding for smaller screens */
+
+			}
+
+			.top-bar .containerss .row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				/* Ensure space between phone and button */
+				align-items: center;
+				/* Center align items horizontally */
+				gap: 20px;
+			}
+
+			.top-bar .contact-details {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 10px;
+				/* Adjust spacing between elements */
+				flex-wrap: nowrap;
+				/* Prevent wrapping */
+			}
+
+			.top-bar .btn-phone {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				text-decoration: none;
+				color: inherit;
+				font-size: 14px;
+				font-weight: bold;
+				color: #FFFFFF;
+				white-space: nowrap;
+				/* Prevent text wrapping */
+			}
+
+			.top-bar .btIconWidgetTitle {
+				font-size: 16px;
+				color: #FFFFFF;
+				padding-left: 50px;
+				/* display: inline-block; */
+				white-space: nowrap;
+			}
+
+			.top-bar .book-appointment-btn {
+				font-size: 14px;
+				height: 36px;
+				/* Adjust button height */
+				padding: 0 10px;
+				background-color: #2C2D78;
+				color: #FFBD0D;
+				border-radius: 5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-decoration: none;
+				white-space: nowrap;
+				/* Prevent text wrapping */
+			}
+
+			.top-bar .contact-details i {
+				font-size: 14px;
+				color: #FFFFFF;
+			}
+
+			/* Ensure the button and phone number fit horizontally */
+			.top-bar .contact-details {
+				max-width: 100%;
+				justify-content: space-between;
+			}
+		
+
+
+
+		/* Display the hamburger menu */
+		.navbar-toggler {
+			display: block;
+                /* Ensure visibility */
+                background: transparent;
+                /* Transparent background */
+                border: none;
+                /* Remove default border */
+                padding: 10px;
+                /* Add padding for spacing */
+                cursor: pointer;
+                /* Pointer cursor */
+                padding-right: 30px;
+		}
+
+		/* Custom styling for the hamburger icon (circular) */
+		.navbar-toggler-icon {
+			width: 30px;
+                /* Adjust size for a cleaner look */
+                height: 3px;
+                /* Thin line for a modern feel */
+                background-color: #034CAE;
+                /* Dark blue color */
+                position: relative;
+                /* Relative positioning for pseudo-elements */
+                transition: all 0.3s ease;
+                /* Smooth transition */
+		}
+
+		.navbar-toggler-icon::before,
+		.navbar-toggler-icon::after {
+			content: '';
+                position: absolute;
+                width: 30px;
+                /* Match width of main line */
+                height: 3px;
+                /* Thin line for consistency */
+                background-color: #034CAE;
+                /* Dark blue color */
+                transition: all 0.3s ease;
+                /* Smooth transition */
+		}
+
+		.navbar-toggler-icon::before {
+			top: -8px;
+			/* Position above main line */
+		}
+
+		.navbar-toggler-icon::after {
+			top: 8px;
+                /* Position below main line */
+		}
+		.navbar-toggler.collapsed .navbar-toggler-icon
+		{
+			background-color: transparent;
+			/* Hide main line */
+		}
+
+		/* Add a cross (X) effect on click */
+		.navbar-toggler.collapsed .navbar-toggler-icon::before {
+			transform: rotate(45deg);
+                /* Rotate to form X */
+                top: 0;
+                /* Align with center */
+		}
+
+		.navbar-toggler.collapsed .navbar-toggler-icon::after {
+			transform: rotate(-45deg);
+                /* Rotate to form X */
+                top: 0;
+                /* Align with center */
+		}
+
+		.contact-details {
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		/* Navbar items are stacked vertically on small screens */
+		.navbar-nav {
+			flex-direction: column;
+			width: 100%;
+			text-align: center;
+
+		}
+
+		.nav-link {
+			padding: 10px 20px;
+
+		}
+
+		
+
+		/* Book Appointment button */
+		.book-appointment-btn {
+			height: 30px;
+			font-size: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 150px;
+			background-color: #1D9BF0;
+			color: #FFFFFF;
+			margin-right: 20px;
+		}
+	}
 		</style>
 
 
@@ -12779,33 +12870,30 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive"
 					style="display: flex; justify-content: flex-end;">
 					<ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
-						<li class="nav-item active" style="margin-right: 20px;">
-							<a class="nav-link" href="index.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">Home</a>
+						<li class="nav-item active" style="margin-bottom: 10px;">
+							<a class="nav-link" href="index.html" style=" font-size: 18px; padding: 5px 10px;">HOME</a>
 						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="About-Us.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">About Us</a>
+						<li class="nav-item" style="margin-bottom: 10px;">
+							<a class="nav-link" href="About-Us.html" style=" font-size: 18px; padding: 5px 10px;">ABOUT</a>
 						</li>
-						<li class="nav-item" style="margin-right: 20px;">
+						<li class="nav-item" style="margin-bottom: 10px;">
 							<a class="nav-link" href="Services.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">Services</a>
+								style=" font-size: 18px; padding: 5px 10px;">SERVICES</a>
 						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Team.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">Our Team</a>
+						<li class="nav-item" style="margin-bottom: 10px;">
+							<a class="nav-link" href="Team.html" style=" font-size: 18px; padding: 5px 10px;">OUR TEAM</a>
 						</li>
-						<li class="nav-item" style="margin-right: 20px;">
+						<li class="nav-item" style="margin-bottom: 10px;">
 							<a class="nav-link" href="Testimonials.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">Testimonials</a>
+								style=" font-size: 18px; padding: 5px 10px;">TESTIMONIALS</a>
 						</li>
-						<li class="nav-item" style="margin-right: 20px;">
-							<a class="nav-link" href="Technology.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">Our Office</a>
+						<li class="nav-item" style="margin-bottom: 10px;">
+							<a class="nav-link" href="Technology.html" style=" font-size: 18px; padding: 5px 10px;">OUR
+								OFFICE</a>
 						</li>
-						<li class="nav-item" style="margin-right: 20px;">
+						<li class="nav-item" style="margin-bottom: 10px;">
 							<a class="nav-link" href="Contact-Us.html"
-								style="color: #000;font-size: 18px; padding: 5px 10px;">Contact</a>
+								style=" font-size: 18px; padding: 5px 10px;">CONTACT</a>
 						</li>
 					</ul>
 				</div>
@@ -12822,6 +12910,7 @@
 				border-bottom: 2px solid #034CAE;
 				/* Bottom underline */
 				color: #2CB5E5;
+				
 				border-top: 50%;
 				/* Position the top border at the middle */
 				border-bottom: 50%;

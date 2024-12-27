@@ -12570,98 +12570,182 @@
     font-size: 14px;
 }
    
-/* Responsive styles */
-@media (max-width: 768px) {
-    .custom-navbar-collapse {
-        display: none; /* Initially hidden */
-        white-space: nowrap;
-        flex-direction: column; /* Align items vertically */
-        align-items: center; /* Center-align the menu items */
-        justify-content: center; /* Center-align vertically */
-        background-color: #ffffff; /* White background */
-        width: 100%; /* Full width of the parent container */
-        position: absolute; /* Position the menu below the navbar */
-        top: 100%; /* Position it directly below the navbar */
-        left: 0; /* Align to the left edge */
-        z-index: 1000; /* Ensure it appears above other content */
-        border-top: 1px solid #ddd; /* Optional: Add a subtle border for separation */
-        padding: 10px 0; /* Add padding for vertical spacing */
-        padding-left: 180px;
-    }
+         /* Responsive styles */
+         @media (max-width: 768px) {
+            .custom-navbar-collapse {
+                display: none;
+                white-space: nowrap;
+                /* Initially hidden */
+                flex-direction: column;
+                /* Align items vertically */
+                align-items: center;
+                /* Center-align the menu items */
+                justify-content: center;
+                /* Center-align vertically */
+                background-color: #4579BA;
+                /* White background */
+                width: 100%;
+                /* Full width of the parent container */
+                position: absolute;
+                /* Position the menu below the navbar */
+                top: 100%;
+                /* Position it directly below the navbar */
+                left: 0;
+                /* Align to the left edge */
+                z-index: 1000;
+                /* Ensure it appears above other content */
+                border-top: 1px solid #ddd;
+                /* Optional: Add a subtle border for separation */
+                padding: 10px 0;
+                /* Add padding for vertical spacing */
+                padding-left: 40px;
+            }
 
-    /* When the menu is expanded */
-    .custom-navbar-collapse.show {
-        display: flex; /* Show the menu in flex layout */
-    }
+            /* When the menu is expanded */
+            .custom-navbar-collapse.show {
+                display: flex;
+                /* Show the menu in flex layout */
+            }
 
-    /* Navbar links */
-    .custom-navbar-collapse .nav-link {
-        padding: 10px 15px; /* Add spacing around each menu item */
-        color: #000; /* Black text color */
-        font-size: 18px; /* Font size for better visibility */
-        text-align: center; /* Center-align text */
-        text-decoration: none; /* Remove underline */
-        width: 100%; /* Ensure each link spans full width */
-    }
+            /* Navbar links */
+            .custom-navbar-collapse .nav-link {
+                padding: 10px 15px;
+                /* Add spacing around each menu item */
+                color: #FFFFFF;
+                /* Black text color */
+                font-size: 18px;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                /* Font size for better visibility */
+                text-align: center;
+                /* Center-align text */
+                text-decoration: none;
+                /* Remove underline */
+                width: 100%;
+                /* Ensure each link spans full width */
+            }
 
-    /* Hover effects for the links */
-    .custom-navbar-collapse .nav-link:hover {
-        background-color: #e9ecef; /* Subtle gray background on hover */
-        color: #2CB5E5; /* Highlight color for text */
-        border-radius: 5px; /* Optional: Rounded corners for hover effect */
-    }
-    .nav-item a {
-        display: inline-block; /* Ensure the link behaves like an inline element */
-        border-top: 1px solid #2CB5E5; /* Top border */
-        border-bottom: 1px solid #2CB5E5; /* Bottom border */
-        background-color: #e9ecef;
-        padding: 5px 10px; /* Retain the padding */
-    }
-    .custom-navbar-toggler {
-        display: block;
-        border: none;
-        background: white;
-    }
+            /* Hover effects for the links */
+            .custom-navbar-collapse .nav-link:hover {
+                background-color: #e9ecef;
+                /* Subtle gray background on hover */
+                color: #2CB5E5;
+                /* Highlight color for text */
+                border-radius: 5px;
+                /* Optional: Rounded corners for hover effect */
+            }
 
-    .custom-navbar-toggler-icon {
-        width: 30px;
-        height: 30px;
-        background-color: #034CAE;
-        position: relative;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+            /* Style for navigation items */
+            .nav-item a {
+                display: inline-block;
+                /* Inline element with block behavior */
+                padding: 8px 15px;
+                /* Increase padding for better spacing */
+                font-size: 16px;
+                /* Adjust font size for readability */
+                font-weight: 500;
+                /* Slightly bold for emphasis */
+                color: #FFFFFF;
+                /* White text on hover */
+                /* Professional blue color */
+                text-decoration: none;
+                /* Remove underline */
+                border: 2px solid transparent;
+                /* No visible border initially */
+                transition: all 0.3s ease;
+                /* Smooth transition */
+                background-color: transparent;
+                /* Transparent background by default */
+            }
 
-    .custom-navbar-toggler-icon::before,
-    .custom-navbar-toggler-icon::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        left: 5px;
-        transition: all 0.3s ease;
-    }
+            .nav-item a:hover,
+            .nav-item a:focus {
+                color: #FFFFFF;
+                /* White text on hover */
+                background-color: #2CB5E5;
+                /* Blue background on hover */
+                border: 2px solid #2CB5E5;
+                /* Match border with hover background */
+                border-radius: 5px;
+                /* Rounded corners for a modern look */
+                text-decoration: none;
+                /* Maintain no underline */
+            }
 
-    .custom-navbar-toggler-icon::before {
-        top: 8px;
-    }
+            /* Style for navbar toggler */
+            .custom-navbar-toggler {
+                display: block;
+                /* Ensure visibility */
+                background: transparent;
+                /* Transparent background */
+                border: none;
+                /* Remove default border */
+                padding: 10px;
+                /* Add padding for spacing */
+                cursor: pointer;
+                /* Pointer cursor */
+                padding-right: 30px;
+            }
 
-    .custom-navbar-toggler-icon::after {
-        top: 14px;
-    }
+            .custom-navbar-toggler-icon {
+                width: 30px;
+                /* Adjust size for a cleaner look */
+                height: 3px;
+                /* Thin line for a modern feel */
+                background-color: #034CAE;
+                /* Dark blue color */
+                position: relative;
+                /* Relative positioning for pseudo-elements */
+                transition: all 0.3s ease;
+                /* Smooth transition */
+            }
 
-    .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::before {
-        transform: rotate(45deg);
-        top: 10px;
-    }
+            .custom-navbar-toggler-icon::before,
+            .custom-navbar-toggler-icon::after {
+                content: '';
+                position: absolute;
+                width: 30px;
+                /* Match width of main line */
+                height: 3px;
+                /* Thin line for consistency */
+                background-color: #034CAE;
+                /* Dark blue color */
+                transition: all 0.3s ease;
+                /* Smooth transition */
+            }
 
-    .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::after {
-        transform: rotate(-45deg);
-        top: 10px;
-    }
+            .custom-navbar-toggler-icon::before {
+                top: -8px;
+                /* Position above main line */
+            }
 
-    .top-bar {
+            .custom-navbar-toggler-icon::after {
+                top: 8px;
+                /* Position below main line */
+            }
+
+            /* Transition to X (collapsed state) */
+            .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon {
+                background-color: transparent;
+                /* Hide main line */
+            }
+
+            .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::before {
+                transform: rotate(45deg);
+                /* Rotate to form X */
+                top: 0;
+                /* Align with center */
+            }
+
+            .custom-navbar-toggler.custom-collapsed .custom-navbar-toggler-icon::after {
+                transform: rotate(-45deg);
+                /* Rotate to form X */
+                top: 0;
+                /* Align with center */
+            }
+
+
+            .top-bar {
                 padding: 12px 30px;
                 /* Add padding for smaller screens */
 
@@ -12684,7 +12768,7 @@
                 gap: 10px;
                 /* Adjust spacing between elements */
                 flex-wrap: nowrap;
-                flex-direction: row;
+                /* Prevent wrapping */
             }
 
             .top-bar .btn-phone {
@@ -12706,12 +12790,7 @@
                 padding-left: 50px;
                 /* display: inline-block; */
                 white-space: nowrap;
-                animation: pendulum 2s infinite ease-in-out;
-    /* Adjust animation duration and easing */
-    transform-origin: top center;
-    /* Set rotation point */
             }
-            
 
             .top-bar .book-appointment-btn {
                 font-size: 14px;
@@ -12739,18 +12818,21 @@
                 max-width: 100%;
                 justify-content: space-between;
             }
-}
 
-@media (min-width: 769px) {
-    .custom-navbar-collapse {
-        display: flex;
-        justify-content: flex-end;
-    }
 
-    .custom-navbar-toggler {
-        display: none;
-    }
-}
+
+        }
+
+        @media (min-width: 769px) {
+            .custom-navbar-collapse {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .custom-navbar-toggler {
+                display: none;
+            }
+        }
 
 
 
@@ -12796,26 +12878,33 @@
         </button>
         <div class="custom-navbar-collapse collapse" id="customNavbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="index.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Home</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="index.html"
+                        style="font-size: 18px; padding: 5px 10px;">Home</a>
                 </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="About-Us.html" style="color: #000; font-size: 18px; padding: 5px 10px;">About Us</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="About-Us.html"
+                        style="font-size: 18px; padding: 5px 10px;">About Us</a>
                 </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Services.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Services</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Services.html"
+                        style="font-size: 18px; padding: 5px 10px;">Services</a>
                 </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Team.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Our Team</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Team.html" style="font-size: 18px; padding: 5px 10px;">Our
+                        Team</a>
                 </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Testimonials.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Testimonials</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Testimonials.html"
+                        style="font-size: 18px; padding: 5px 10px;">Testimonials</a>
                 </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Technology.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Our Office</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Technology.html"
+                        style="font-size: 18px; padding: 5px 10px;">Our Office</a>
                 </li>
-                <li class="nav-item" style="margin-bottom: 10px;">
-                    <a class="nav-link" href="Contact-Us.html" style="color: #000; font-size: 18px; padding: 5px 10px;">Contact</a>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="Contact-Us.html"
+                        style="font-size: 18px; padding: 5px 10px;">Contact</a>
                 </li>
             </ul>
         </div>
