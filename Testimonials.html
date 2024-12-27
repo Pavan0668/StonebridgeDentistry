@@ -12544,6 +12544,33 @@
 		</script>
 		
 		<style>
+
+@keyframes pendulum {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.btIconWidgetTitle i {
+    display: inline-block;
+    animation: pendulum 2s infinite ease-in-out;
+    /* Adjust animation duration and easing */
+    transform-origin: top center;
+    /* Set rotation point */
+    color: #FFFFFF;
+    font-size: 14px;
+}
 			/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
 	@media (max-width: 768px) {
 		/* Hide the navbar links by default */
@@ -12690,6 +12717,14 @@
 		.nav-link {
 			padding: 10px 20px;
 		}
+
+		.nav-item a {
+        display: inline-block; /* Ensure the link behaves like an inline element */
+        border-top: 1px solid #2CB5E5; /* Top border */
+        border-bottom: 1px solid #2CB5E5; /* Bottom border */
+        background-color: #e9ecef;
+        padding: 5px 10px; /* Retain the padding */
+    }
 	
 		/* Book Appointment button */
 		.book-appointment-btn {

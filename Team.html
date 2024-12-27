@@ -12758,6 +12758,33 @@
 			  </script>
 			  
 			  <style>
+
+@keyframes pendulum {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.btIconWidgetTitle i {
+    display: inline-block;
+    animation: pendulum 2s infinite ease-in-out;
+    /* Adjust animation duration and easing */
+    transform-origin: top center;
+    /* Set rotation point */
+    color: #FFFFFF;
+    font-size: 14px;
+}
 				  /* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
 		  @media (max-width: 768px) {
 			  /* Hide the navbar links by default */
@@ -12895,7 +12922,13 @@
 			  .nav-link {
 				  padding: 10px 20px;
 			  }
-		  
+			  .nav-item a {
+        display: inline-block; /* Ensure the link behaves like an inline element */
+        border-top: 1px solid #2CB5E5; /* Top border */
+        border-bottom: 1px solid #2CB5E5; /* Bottom border */
+        background-color: #e9ecef;
+        padding: 5px 10px; /* Retain the padding */
+    }
 			  /* Book Appointment button */
 			  .book-appointment-btn {
 				  height: 30px;
@@ -14234,14 +14267,14 @@
 
 	/* Location Card */
 	.location-card {
-		width: 48%;
-		background-color: #fff;
-		padding: 20px;
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-		height: 580px;
-		background-color: rgb(245,225,253);
-		border: ridge;
-	}
+                        width: 48%;
+                        background-color: #fff;
+                        padding: 20px;
+                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                        height: 580px;
+                        background-color: rgb(255,255,255);
+                        
+                    }
 
 	.location-card .card-content {
 		text-align: center;
@@ -14265,23 +14298,25 @@
 		height: 100%;
 		border: 0;
 	}
-	.day{
-		color: #462B77;
-	}
-	.hours{
-		color: #462B77;
-	}
-	/* Working Hours Card */
-	.working-hours-card {
-		width: 48%;
-		background-color: rgb(245,225,253);
-		padding: 20px;
-		color: white;
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-		height: 580px;
-		border: ridge;
-		
-	}
+	.day {
+                        color: #1B1B1B;
+                    }
+
+                    .hours {
+                        color: #1B1B1B;
+                    }
+
+					/* Working Hours Card */
+                    .working-hours-card {
+                        width: 48%;
+                        background-color: rgb(255,255,255);
+                        padding: 20px;
+                        color: white;
+                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                        height: 580px;
+                        
+
+                    }
 
 	.working-hours-card .card-content {
 		text-align: center;

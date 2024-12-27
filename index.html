@@ -12611,7 +12611,32 @@
             margin: 0;
             padding: 0;
         }
-
+        @keyframes pendulum {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.btIconWidgetTitle i {
+    display: inline-block;
+    animation: pendulum 2s infinite ease-in-out;
+    /* Adjust animation duration and easing */
+    transform-origin: top center;
+    /* Set rotation point */
+    color: #FFFFFF;
+    font-size: 14px;
+}
         .top-bar {
             background-color: blue;
             padding: 5px 0;
@@ -12717,7 +12742,13 @@
                 border-radius: 5px;
                 /* Optional: Rounded corners for hover effect */
             }
-
+            .nav-item a {
+        display: inline-block; /* Ensure the link behaves like an inline element */
+        border-top: 1px solid #2CB5E5; /* Top border */
+        border-bottom: 1px solid #2CB5E5; /* Bottom border */
+        background-color: #e9ecef;
+        padding: 5px 10px; /* Retain the padding */
+    }
             .custom-navbar-toggler {
                 display: block;
                 border: none;
@@ -15469,7 +15500,7 @@
                                         <i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i>
                                         Location
                                     </h4>
-                                    <div class="map-container" style="border: ridge;">
+                                    <div class="map-container" >
                                         <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5519456949146!2d-80.0092124246058!3d44.52433009565658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a83d53bb6efef%3A0xff83ab9925fd3a36!2sStonebridge%20Dentistry!5e0!3m2!1sen!2sin!4v1718860622063!5m2!1sen!2sin"
                                             width="415px" height="350px" frameborder="0" style="border:0;"
@@ -15556,8 +15587,8 @@
                         padding: 20px;
                         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
                         height: 580px;
-                        background-color: rgb(245, 225, 253);
-                        border: ridge;
+                        background-color: rgb(255,255,255);
+                        
                     }
 
                     .location-card .card-content {
@@ -15584,22 +15615,22 @@
                     }
 
                     .day {
-                        color: #462B77;
+                        color: #1B1B1B;
                     }
 
                     .hours {
-                        color: #462B77;
+                        color: #1B1B1B;
                     }
 
                     /* Working Hours Card */
                     .working-hours-card {
                         width: 48%;
-                        background-color: rgb(245, 225, 253);
+                        background-color: rgb(255,255,255);
                         padding: 20px;
                         color: white;
                         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
                         height: 580px;
-                        border: ridge;
+                        
 
                     }
 
