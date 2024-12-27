@@ -13091,27 +13091,79 @@ h2 {
 		  top: 10px;
 	  }
   
-	  .top-bar .containerss .row {
-        flex-direction: row; /* Ensure items are in a row */
-        justify-content: center; /* Center align for smaller screens */
-    }
+	  .top-bar {
+                padding: 12px 30px;
+                /* Add padding for smaller screens */
 
-    .top-bar .contact-details {
-        display: flex;
-        flex-direction: row; /* Keep items in a row horizontally */
-        align-items: center;
-        gap: 10px; /* Add spacing between phone and button */
-    }
+            }
 
-    .top-bar .book-appointment-btn {
-        font-size: 12px; /* Adjust font size for smaller screens */
-        height: 28px; /* Slightly smaller height for compact design */
-        padding: 0 10px; /* Adjust padding for better spacing */
-    }
+            .top-bar .containerss .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                /* Ensure space between phone and button */
+                align-items: center;
+                /* Center align items horizontally */
+                gap: 20px;
+            }
 
-    .top-bar .btIconWidgetTitle {
-        font-size: 12px; /* Adjust phone number font size */
-    }
+            .top-bar .contact-details {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                /* Adjust spacing between elements */
+                flex-wrap: nowrap;
+                /* Prevent wrapping */
+            }
+
+            .top-bar .btn-phone {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                color: inherit;
+                font-size: 14px;
+                font-weight: bold;
+                color: #FFFFFF;
+                white-space: nowrap;
+                /* Prevent text wrapping */
+            }
+
+            .top-bar .btIconWidgetTitle {
+                font-size: 16px;
+                color: #FFFFFF;
+                padding-left: 50px;
+                /* display: inline-block; */
+                white-space: nowrap;
+            }
+
+            .top-bar .book-appointment-btn {
+                font-size: 14px;
+                height: 36px;
+                /* Adjust button height */
+                padding: 0 10px;
+                background-color: #2C2D78;
+                color: #FFBD0D;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                white-space: nowrap;
+                /* Prevent text wrapping */
+            }
+
+            .top-bar .contact-details i {
+                font-size: 14px;
+                color: #FFFFFF;
+            }
+
+            /* Ensure the button and phone number fit horizontally */
+            .top-bar .contact-details {
+                max-width: 100%;
+                justify-content: space-between;
+            }
   
 	  /* Navbar items are stacked vertically on small screens */
 	  .navbar-nav {
@@ -13152,28 +13204,28 @@ h2 {
 	  </style>
 	  
 		  
-	<!-- Top bar -->
+	<!-- Top Bar -->
     <div class="top-bar" style="background-color: #4579BA; padding: 5px 0;padding-right: 160px;">
         <div class="containerss">
             <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-
                 <div class="social2" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
                     <!-- Contact Details -->
                     <div class="contact-details" style="display: flex; align-items: center; gap: 15px;">
-                        <!-- Phone Number -->
-                        <a href="tel:+17054222490" style="text-decoration: none; color: inherit;">
+                        <!-- Phone Number with Icon -->
+                        <a href="tel:+17054222490" class="btn-phone"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
+                            
                             <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold; color: #FFFFFF;">
-                                (705) 422-2490
+								<i class="fas fa-phone-alt  fa-rotate-90" style="color: #FFFFFF; font-size: 14px;"></i>  (705) 422-2490
                             </span>
                         </a>
                         <!-- Book Appointment Button -->
                         <a href="Contact-New.html" class="book-appointment-btn"
-                            style="font-size: 14px; height: 30px; padding: 0 15px;  display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none;">
+                            style="font-size: 14px; height: 30px; padding: 0 15px; display: flex; justify-content: center; align-items: center; background-color: #2C2D78; color: #FFBD0D; text-decoration: none; border-radius: 5px;">
                             Book Appointment
                         </a>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -13961,6 +14013,8 @@ h2 {
    align-items: flex-start;
    background-color: #f3f3f3;
    padding: 20px;
+   padding-left: 60px;
+   padding-right: 60px;
 }
 
 .footer-section {
@@ -14077,6 +14131,7 @@ h2 {
 		   border-radius: 5px;
 		   font-size: 14px;
 		   text-align: center;
+		   white-space: nowrap; /* This is the key change */
 	   }
 
 	   /* .logo {
@@ -14168,7 +14223,7 @@ h2 {
    }
 
    .image-text {
-	   font-size: 14px;
+	   
 	   margin-top: 10px;
    }
 

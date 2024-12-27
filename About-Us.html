@@ -12933,72 +12933,79 @@
 			}
             
 			@media (max-width: 768px) {
-    .top-bar .containerss .row {
-        flex-direction: row;
-        /* Ensure items are in a row */
-        justify-content: center;
-        /* Center align for smaller screens */
-        margin-left: 120px; /* Adjust margin for smaller screens */
-    }
+				.top-bar {
+                padding: 12px 30px;
+                /* Add padding for smaller screens */
 
-    .top-bar .contact-details {
-        display: flex;
-        flex-direction: row;
-        /* Keep items in a row horizontally */
-        align-items: center;
-        gap: 15px;
-        /* Add spacing between phone and button */
-        padding-left: 20px; /* Add padding-left for the contact details */
-    }
+            }
 
-    .top-bar .contact-details a {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        /* Spacing between the icon and text */
-        text-decoration: none;
-        color: inherit;
-    }
+            .top-bar .containerss .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                /* Ensure space between phone and button */
+                align-items: center;
+                /* Center align items horizontally */
+                gap: 20px;
+            }
 
-    .top-bar .book-appointment-btn {
-        font-size: 14px;
-        /* Adjust font size for the button */
-        height: 40px;
-        /* Maintain button height */
-        width: 170px;
-        padding: 0 15px;
-        /* Adjust padding for better spacing */
-        background-color: #2C2D78;
-        color: #FFBD0D;
-        border-radius: 5px;
-        /* Rounded corners */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        padding-left: 90px; /* Add padding-left for the phone number */
-    }
+            .top-bar .contact-details {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                /* Adjust spacing between elements */
+                flex-wrap: nowrap;
+                /* Prevent wrapping */
+            }
 
-    .top-bar .btn-phone {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding-left: 60px; /* Add padding-left for the phone number */
-    }
+            .top-bar .btn-phone {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                color: inherit;
+                font-size: 14px;
+                font-weight: bold;
+                color: #FFFFFF;
+                white-space: nowrap;
+                /* Prevent text wrapping */
+            }
 
-    .top-bar .btIconWidgetTitle {
-        font-size: 14px;
-        /* Font size for phone number */
-        color: #FFFFFF;
-        /* Ensure text is visible */
-    }
+            .top-bar .btIconWidgetTitle {
+                font-size: 16px;
+                color: #FFFFFF;
+                padding-left: 50px;
+                /* display: inline-block; */
+                white-space: nowrap;
+            }
 
-    .top-bar .contact-details i {
-        font-size: 14px;
-        /* Icon size */
-        color: #FFFFFF;
-        /* Icon color */
-    }
+            .top-bar .book-appointment-btn {
+                font-size: 14px;
+                height: 36px;
+                /* Adjust button height */
+                padding: 0 10px;
+                background-color: #2C2D78;
+                color: #FFBD0D;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                white-space: nowrap;
+                /* Prevent text wrapping */
+            }
+
+            .top-bar .contact-details i {
+                font-size: 14px;
+                color: #FFFFFF;
+            }
+
+            /* Ensure the button and phone number fit horizontally */
+            .top-bar .contact-details {
+                max-width: 100%;
+                justify-content: space-between;
+            }
 }
 
 
@@ -13103,9 +13110,9 @@
                         <!-- Phone Number with Icon -->
                         <a href="tel:+17054222490" class="btn-phone"
                             style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-phone-alt" style="color: #FFFFFF; font-size: 14px;"></i>
+                            
                             <span class="btIconWidgetTitle" style="font-size: 14px; font-weight: bold; color: #FFFFFF;">
-                                (705) 422-2490
+								<i class="fas fa-phone-alt fa-rotate-90" style="color: #FFFFFF; font-size: 14px;"></i>  (705) 422-2490
                             </span>
                         </a>
                         <!-- Book Appointment Button -->
@@ -14034,6 +14041,8 @@
     align-items: flex-start;
     background-color: #f3f3f3;
     padding: 20px;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 
 .footer-section {
@@ -14150,6 +14159,7 @@
 			border-radius: 5px;
 			font-size: 14px;
 			text-align: center;
+			white-space: nowrap; /* This is the key change */
 		}
 
 		/* .logo {
@@ -14241,7 +14251,7 @@
     }
 
     .image-text {
-        font-size: 14px;
+        
         margin-top: 10px;
     }
 
