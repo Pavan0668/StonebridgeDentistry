@@ -12792,7 +12792,8 @@
 
 		/* For small screens (max-width: 768px), make the navbar items hidden and show the hamburger menu */
 		@media (max-width: 768px) {
-			/* Style for navigation items */ 
+
+			/* Style for navigation items */
 			.nav-item a {
 				display: inline-block;
 				/* Inline element with block behavior */
@@ -12802,10 +12803,10 @@
 				/* Adjust font size for readability */
 				font-weight: 500;
 				/* Slightly bold for emphasis */
-			
+
 				/* White text on hover */
 				/* Professional blue color */
-				
+
 				/* Remove underline */
 				border: 2px solid transparent;
 				/* No visible border initially */
@@ -12816,58 +12817,59 @@
 			}
 
 			.navbar-collapse .nav-link {
-                padding: 10px 15px;
-                /* Add spacing around each menu item */
-                color: #FFFFFF;
-                /* Black text color */
-                font-size: 16px;
-                text-transform: uppercase;
-                /* Font size for better visibility */
+				padding: 10px 15px;
+				/* Add spacing around each menu item */
+				color: #FFFFFF;
+				/* Black text color */
+				font-size: 16px;
+				text-transform: uppercase;
+				/* Font size for better visibility */
 				font-family: sans-serif;
-                text-align: left;
-                /* Center-align text */
-                /* text-decoration: none; */
-                /* Remove underline */
-                width: 100%;
-                /* Ensure each link spans full width */
+				text-align: left;
+				/* Center-align text */
+				/* text-decoration: none; */
+				/* Remove underline */
+				width: 100%;
+				/* Ensure each link spans full width */
 				/* display: inline-block; */
-            }
+			}
+
 			.navbar-collapse .nav-link:hover {
-                /* background-color: #e9ecef; */
-                /* Subtle gray background on hover */
-                /* color: #2CB5E5; */
-                /* Highlight color for text */
-                border-radius: 5px;
-                /* Optional: Rounded corners for hover effect */
-            }
+				/* background-color: #e9ecef; */
+				/* Subtle gray background on hover */
+				/* color: #2CB5E5; */
+				/* Highlight color for text */
+				border-radius: 5px;
+				/* Optional: Rounded corners for hover effect */
+			}
 
 			.navbar-collapse {
 				display: none;
-                white-space: nowrap;
-                /* Initially hidden */
-                flex-direction: column;
-                /* Align items vertically */
-                align-items: center;
-                /* Center-align the menu items */
-                justify-content: center;
-                /* Center-align vertically */
-                background-color: #4579BA;
-                /* White background */
-                width: 100%;
-                /* Full width of the parent container */
-                position: absolute;
-                /* Position the menu below the navbar */
-                top: 100%;
-                /* Position it directly below the navbar */
-                left: 0;
-                /* Align to the left edge */
-                z-index: 1000;
-                /* Ensure it appears above other content */
-                border-top: 1px solid #ddd;
-                /* Optional: Add a subtle border for separation */
-                padding: 10px 0;
-                /* Add padding for vertical spacing */
-                padding-left: 40px;
+				white-space: nowrap;
+				/* Initially hidden */
+				flex-direction: column;
+				/* Align items vertically */
+				align-items: center;
+				/* Center-align the menu items */
+				justify-content: center;
+				/* Center-align vertically */
+				background-color: #4579BA;
+				/* White background */
+				width: 100%;
+				/* Full width of the parent container */
+				position: absolute;
+				/* Position the menu below the navbar */
+				top: 100%;
+				/* Position it directly below the navbar */
+				left: 0;
+				/* Align to the left edge */
+				z-index: 1000;
+				/* Ensure it appears above other content */
+				border-top: 1px solid #ddd;
+				/* Optional: Add a subtle border for separation */
+				padding: 10px 0;
+				/* Add padding for vertical spacing */
+				padding-left: 40px;
 			}
 		}
 
@@ -12945,118 +12947,118 @@
 				max-width: 100%;
 				justify-content: space-between;
 			}
-		
 
 
 
-		/* Display the hamburger menu */
-		.navbar-toggler {
-			display: block;
-                /* Ensure visibility */
-                background: transparent;
-                /* Transparent background */
-                border: none;
-                /* Remove default border */
-                padding: 10px;
-                /* Add padding for spacing */
-                cursor: pointer;
-                /* Pointer cursor */
-                padding-right: 30px;
+
+			/* Display the hamburger menu */
+			.navbar-toggler {
+				display: block;
+				/* Ensure visibility */
+				background: transparent;
+				/* Transparent background */
+				border: none;
+				/* Remove default border */
+				padding: 10px;
+				/* Add padding for spacing */
+				cursor: pointer;
+				/* Pointer cursor */
+				padding-right: 30px;
+			}
+
+			/* Custom styling for the hamburger icon (circular) */
+			.navbar-toggler-icon {
+				width: 30px;
+				/* Adjust size for a cleaner look */
+				height: 3px;
+				/* Thin line for a modern feel */
+				background-color: #034CAE;
+				/* Dark blue color */
+				position: relative;
+				/* Relative positioning for pseudo-elements */
+				transition: all 0.3s ease;
+				/* Smooth transition */
+			}
+
+			.navbar-toggler-icon::before,
+			.navbar-toggler-icon::after {
+				content: '';
+				position: absolute;
+				width: 30px;
+				/* Match width of main line */
+				height: 3px;
+				/* Thin line for consistency */
+				background-color: #034CAE;
+				/* Dark blue color */
+				transition: all 0.3s ease;
+				/* Smooth transition */
+			}
+
+			.navbar-toggler-icon::before {
+				top: -8px;
+				/* Position above main line */
+			}
+
+			.navbar-toggler-icon::after {
+				top: 8px;
+				/* Position below main line */
+			}
+
+			.navbar-toggler.collapsed .navbar-toggler-icon {
+				background-color: transparent;
+				/* Hide main line */
+			}
+
+			/* Add a cross (X) effect on click */
+			.navbar-toggler.collapsed .navbar-toggler-icon::before {
+				transform: rotate(45deg);
+				/* Rotate to form X */
+				top: 0;
+				/* Align with center */
+			}
+
+			.navbar-toggler.collapsed .navbar-toggler-icon::after {
+				transform: rotate(-45deg);
+				/* Rotate to form X */
+				top: 0;
+				/* Align with center */
+			}
+
+			.contact-details {
+				display: flex;
+				justify-content: flex-end;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			/* Navbar items are stacked vertically on small screens */
+			.navbar-nav {
+				flex-direction: column;
+				width: 100%;
+				text-align: center;
+
+			}
+
+			.nav-link {
+				padding: 10px 20px;
+
+			}
+
+
+
+			/* Book Appointment button */
+			.book-appointment-btn {
+				height: 30px;
+				font-size: 12px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 150px;
+				background-color: #1D9BF0;
+				color: #FFFFFF;
+				margin-right: 20px;
+			}
 		}
-
-		/* Custom styling for the hamburger icon (circular) */
-		.navbar-toggler-icon {
-			width: 30px;
-                /* Adjust size for a cleaner look */
-                height: 3px;
-                /* Thin line for a modern feel */
-                background-color: #034CAE;
-                /* Dark blue color */
-                position: relative;
-                /* Relative positioning for pseudo-elements */
-                transition: all 0.3s ease;
-                /* Smooth transition */
-		}
-
-		.navbar-toggler-icon::before,
-		.navbar-toggler-icon::after {
-			content: '';
-                position: absolute;
-                width: 30px;
-                /* Match width of main line */
-                height: 3px;
-                /* Thin line for consistency */
-                background-color: #034CAE;
-                /* Dark blue color */
-                transition: all 0.3s ease;
-                /* Smooth transition */
-		}
-
-		.navbar-toggler-icon::before {
-			top: -8px;
-			/* Position above main line */
-		}
-
-		.navbar-toggler-icon::after {
-			top: 8px;
-                /* Position below main line */
-		}
-		.navbar-toggler.collapsed .navbar-toggler-icon
-		{
-			background-color: transparent;
-			/* Hide main line */
-		}
-
-		/* Add a cross (X) effect on click */
-		.navbar-toggler.collapsed .navbar-toggler-icon::before {
-			transform: rotate(45deg);
-                /* Rotate to form X */
-                top: 0;
-                /* Align with center */
-		}
-
-		.navbar-toggler.collapsed .navbar-toggler-icon::after {
-			transform: rotate(-45deg);
-                /* Rotate to form X */
-                top: 0;
-                /* Align with center */
-		}
-
-		.contact-details {
-			display: flex;
-			justify-content: flex-end;
-			flex-direction: column;
-			gap: 10px;
-		}
-
-		/* Navbar items are stacked vertically on small screens */
-		.navbar-nav {
-			flex-direction: column;
-			width: 100%;
-			text-align: center;
-
-		}
-
-		.nav-link {
-			padding: 10px 20px;
-
-		}
-
-		
-
-		/* Book Appointment button */
-		.book-appointment-btn {
-			height: 30px;
-			font-size: 12px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 150px;
-			background-color: #1D9BF0;
-			color: #FFFFFF;
-			margin-right: 20px;
-		}
-	}
 	</style>
 
 
@@ -13105,12 +13107,11 @@
 				style="display: flex; justify-content: flex-end;">
 				<ul class="navbar-nav ml-auto" style="display: flex; margin: 0; padding: 0; list-style: none;">
 					<li class="nav-item" style="margin-right: 20px;">
-						<a class="nav-link" href="index.html"
-							style="font-size: 16px; padding: 5px 10px;">Home</a>
+						<a class="nav-link" href="index.html" style="font-size: 16px; padding: 5px 10px;">Home</a>
 					</li>
 					<li class="nav-item" style="margin-right: 20px;">
-						<a class="nav-link" href="About-Us.html"
-							style="font-size: 16px; padding: 5px 10px;">About Us</a>
+						<a class="nav-link" href="About-Us.html" style="font-size: 16px; padding: 5px 10px;">About
+							Us</a>
 					</li>
 					<li class="nav-item" style="margin-right: 20px;">
 						<a class="nav-link" href="Services.html"
@@ -13125,8 +13126,8 @@
 							style="font-size: 16px; padding: 5px 10px;">Testimonials</a>
 					</li>
 					<li class="nav-item" style="margin-right: 20px;">
-						<a class="nav-link" href="Technology.html"
-							style="font-size: 16px; padding: 5px 10px;">Our Office</a>
+						<a class="nav-link" href="Technology.html" style="font-size: 16px; padding: 5px 10px;">Our
+							Office</a>
 					</li>
 					<li class="nav-item" style="margin-right: 20px;">
 						<a class="nav-link" href="Contact-Us.html"
@@ -13139,10 +13140,10 @@
 
 
 	<style>
-		.nav-link
-		{
+		.nav-link {
 			color: #000;
 		}
+
 		.nav-link:hover {
 			text-decoration: none;
 			/* Remove default underline */
@@ -13271,7 +13272,60 @@
 					}
 				</style>
 
+				<style>
+					@media (max-width: 768px) {
+						#bt_bb_section6658036a7b280 {
+							padding-top: 100px;
+						}
 
+						.main-container,
+						.main-containeree,
+						.card-container,
+						.custom-card-container {
+							margin-bottom: 20px;
+							/* Adjust the gap between the cards vertically */
+						}
+
+						.main-container:nth-child(odd),
+						.main-containeree:nth-child(odd),
+						.card-container:nth-child(odd),
+						.custom-card-container:nth-child(odd) {
+							margin-right: 10px;
+							/* Optional: Add horizontal spacing for odd cards */
+						}
+
+						.main-container:nth-child(even),
+						.main-containeree:nth-child(even),
+						.card-container:nth-child(even),
+						.custom-card-container:nth-child(even) {
+							margin-left: 10px;
+							/* Optional: Add horizontal spacing for even cards */
+						}
+
+						/* Adjust container wrapping if needed */
+						#main-container {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: center;
+							gap: 20px;
+							/* General gap for grid layout */
+
+						}
+
+						#card-containers {
+							padding-top: 20px;
+							padding-bottom: 20px;
+						}
+
+						.card-containers,
+						.main-container {
+							margin-top: 20px;
+							/* Add margin for smaller screens */
+						}
+
+
+					}
+				</style>
 
 
 				<br>
@@ -13466,9 +13520,7 @@
 										</div>
 									</div> -->
 								<!-- CSS for responsiveness -->
-								<style>
-									@media (max-width: 768px) {}
-								</style>
+
 								<!-- Second Column -->
 								<!-- <div class="bt_bb_column"
 										style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden; padding: 10px;">
@@ -13490,7 +13542,7 @@
 											</div>
 										</div>
 									</div> -->
-								<div
+								<div class="main-container"
 									style="width: 220px; height: 310px; position: relative;overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 									<!-- Image container -->
 									<img src="https://static.wixstatic.com/media/a4e5eb_893a8b854c3749148ba43c2b1f91bc3d~mv2.jpg/v1/crop/x_25,y_0,w_3277,h_4656/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2790.jpg"
@@ -13529,7 +13581,7 @@
 											</div>
 										</div>
 									</div> -->
-								<div
+								<div class="main-containeree"
 									style="width: 220px; height: 310px; position: relative;  overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 									<!-- Image container -->
 									<img src="https://static.wixstatic.com/media/a4e5eb_dfbdd77ce60346c69bf6fcaad2f78352~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2866_JPG.jpg"
@@ -13541,8 +13593,6 @@
 										style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
 										Roxanne
 									</div>
-
-
 								</div>
 
 								<!-- Third Column -->
@@ -13636,7 +13686,7 @@
 								</script>
 
 
-								<div
+								<div class="main-container"
 									style="width: 220px; height: 310px; position: relative;overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 									<!-- Image container -->
 									<img src="https://static.wixstatic.com/media/a4e5eb_97a043c40ca64d0893deab875464ebb6~mv2.jpg/v1/crop/x_5,y_0,w_704,h_1000/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_2868_JPG.jpg"
@@ -13650,83 +13700,86 @@
 									</div>
 								</div>
 								<!-- <div class="bt_bb_columnss"
-																		style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden;">
-																		<div class="bt_bb_column_content" style="position: relative; height: 100%;">
-																			<div class="container"
-																				style="width: 278px;text-align: center; position: relative; height: 100%;"
-																				onmouseover="this.querySelector('.name').style.opacity='0';"
-																				onmouseout="this.querySelector('.name').style.opacity='1';">
-																				<a href="#" target="_self" title="RENEE" style="text-decoration: none;">
-																					<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
-																						alt="RENEE" class="image"
-																						style="width: 100%; height: auto; opacity: 1; display: block; transition: opacity 0.5s ease; backface-visibility: hidden;">
-																				</a>
-																				
-																				<div class="name"
-																					style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 2; transition: opacity 0.3s ease;">
-																					Renee
-																				</div>
-																				
-																				<div class="description"
-																					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-																					<p style="margin: 5px 0;text-align: justify;">
-																						I started my dental career in 1997 as a Surgical Dental
-																						Assistant.
-																						I expanded my dental career and became a Registered Dental
-																						Hygienist
-																						in 2008. I have worked with Dr. Ghobrial since 2010 and continue
-																						now
-																						to work for Stonebridge Dentistry. I have 2 small children and
-																						enjoy
-																						spending time with friends and family</p>
-																				</div>
-																			</div>
-																		</div>
-																	</div> -->
+																										style="flex: 1; margin: 0; height: 400px; position: relative; overflow: hidden;">
+																										<div class="bt_bb_column_content" style="position: relative; height: 100%;">
+																											<div class="container"
+																												style="width: 278px;text-align: center; position: relative; height: 100%;"
+																												onmouseover="this.querySelector('.name').style.opacity='0';"
+																												onmouseout="this.querySelector('.name').style.opacity='1';">
+																												<a href="#" target="_self" title="RENEE" style="text-decoration: none;">
+																													<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
+																														alt="RENEE" class="image"
+																														style="width: 100%; height: auto; opacity: 1; display: block; transition: opacity 0.5s ease; backface-visibility: hidden;">
+																												</a>
+																												
+																												<div class="name"
+																													style="position: absolute;background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 2; transition: opacity 0.3s ease;">
+																													Renee
+																												</div>
+																												
+																												<div class="description"
+																													style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 12px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+																													<p style="margin: 5px 0;text-align: justify;">
+																														I started my dental career in 1997 as a Surgical Dental
+																														Assistant.
+																														I expanded my dental career and became a Registered Dental
+																														Hygienist
+																														in 2008. I have worked with Dr. Ghobrial since 2010 and continue
+																														now
+																														to work for Stonebridge Dentistry. I have 2 small children and
+																														enjoy
+																														spending time with friends and family</p>
+																												</div>
+																											</div>
+																										</div>
+																									</div> -->
 
-								<div class="card-containers"
-									style="width: 220px; height: 310px; position: relative;overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
+								<div class="custom-card-container" style="width: 220px; height: 310px; position: relative;  overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+																																																			   transition: transform 0.3s ease; cursor: pointer;">
 									<!-- Image container -->
 									<img src="https://static.wixstatic.com/media/a4e5eb_273eb9f543eb486b81c706220f702bda~mv2.jpg/v1/crop/x_0,y_214,w_5464,h_7764/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/238A1589_JPG.jpg"
-										alt="Renee"
+										alt="Renee" class="custom-card-image"
 										style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
 
 									<!-- Name of the person (initially visible, hidden on hover) -->
-									<div class="card-names"
-										style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; transition: opacity 0.3s ease;">
+									<div class="custom-card-name" style="position: absolute; background-color: #242323; top: 90%; left: 50%; transform: translate(-50%, -50%);
+																																																				   font-size: 16px; color: #F0B87A; font-weight: bold; text-align: center; z-index: 1; 
+																																																				   transition: opacity 0.3s ease;">
 										Renee
 									</div>
 
 									<!-- Description paragraph (initially hidden, visible on hover) -->
-									<div class="description-Renee"
-										style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 8px; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
-										<p style="margin: 5px 0; text-align: justify;"> I started my dental career
-											in 1997 as a Surgical Dental
-											Assistant.
+									<div class="custom-card-description" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 10px; font-size: 8px;
+																																																				   color: #ffffff; background-color: rgba(0, 0, 0, 0.8); opacity: 0; text-align: center; 
+																																																				   transition: opacity 0.3s ease; z-index: 3; overflow-y: auto;">
+										<p style="margin: 5px 0; text-align: justify;">
+											I started my dental career in 1997 as a Surgical Dental Assistant.
 											I expanded my dental career and became a Registered Dental Hygienist
 											in 2008. I have worked with Dr. Ghobrial since 2010 and continue
 											now to work for Stonebridge Dentistry. I have 2 small children and
-											enjoy spending time with friends and family.</p>
+											enjoy spending time with friends and family.
+										</p>
 									</div>
 								</div>
 								<script>
 									// JavaScript to handle hover effect
-									const Marandacards = document.querySelector('.card-containers');
-									const Marandaimgs = Marandacard.querySelector('img');
-									const Marandanames = Marandacard.querySelector('.card-names');
-									const Marandaparagraphs = Marandacard.querySelector('.description-Renee');
+									const customCard = document.querySelector('.custom-card-container');
+									const customCardImage = customCard.querySelector('.custom-card-image');
+									const customCardName = customCard.querySelector('.custom-card-name');
+									const customCardDescription = customCard.querySelector('.custom-card-description');
 
-									Marandacards.addEventListener('mouseover', () => {
-										Marandaimgs.style.transform = 'scale(1.1)';
-										Marandanames.style.opacity = '0';
-										Marandaparagraphs.style.opacity = '1';
+									customCard.addEventListener('mouseover', () => {
+										customCardImage.style.transform = 'scale(1.1)';
+										customCardName.style.opacity = '0';
+										customCardDescription.style.opacity = '1';
 									});
 
-									Marandacards.addEventListener('mouseout', () => {
-										Marandaimgs.style.transform = 'scale(1)';
-										Marandanames.style.opacity = '1';
-										Marandaparagraphs.style.opacity = '0';
+									customCard.addEventListener('mouseout', () => {
+										customCardImage.style.transform = 'scale(1)';
+										customCardName.style.opacity = '1';
+										customCardDescription.style.opacity = '0';
 									});
+
 								</script>
 
 							</div>
@@ -13921,7 +13974,7 @@
 											</div>
 										</div>
 									</div> -->
-								<div
+								<div class="main-container"
 									style="width: 220px; height: 310px; position: relative;overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; cursor: pointer;">
 									<!-- Image container -->
 									<img src="https://static.wixstatic.com/media/a4e5eb_da21ac8890ed420c86b7bcf0c7a6c779~mv2.jpg/v1/crop/x_0,y_411,w_2304,h_3274/fill/w_278,h_395,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/alpa.jpg"
